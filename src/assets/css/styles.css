@@ -91,6 +91,9 @@ a:focus {
     font-size: 0.7em;
     display: block;
     color: #fafafa;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
 #sidebar ul li a:hover {
@@ -122,7 +125,6 @@ ul ul a {
 }
 
 ul.CTAs {
-    padding: 0 5px 0 5px;
 }
 
 ul.CTAs a {
