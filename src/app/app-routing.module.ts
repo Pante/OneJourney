@@ -12,7 +12,12 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'reward', component: RewardComponent },
   { path: 'medCert', component: MedSubmissionComponent },
-  { path: 'leaderboard', component: LeaderboardComponent }
+  { path: 'leaderboard', component: LeaderboardComponent },
+  {
+    path: '',
+    redirectTo: '/event',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

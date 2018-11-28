@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
   title = 'one-journey';
 
   ngOnInit() {
-      $(document).ready(function() {
-        $('#sidebar').scroll();
+    $(function() {
+        /*$('#sidebar').scroll();*/
 
         $('#sidebarCollapse').on('click',
           function() {
