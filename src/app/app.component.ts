@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
       $(document).ready(function() {
-        $("#sidebar").scroll();
+        $('#sidebar').scroll();
 
         $('#sidebarCollapse').on('click',
           function() {
