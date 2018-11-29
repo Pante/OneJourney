@@ -1,9 +1,20 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { AuthConfig } from 'angular-oauth2-oidc';
+
+
+export const authentication : AuthConfig = {
+    clientId : 'TBC',
+    redirectUri : 'TBC',
+    issuer: 'TBC',
+    scope: 'TBC'
+}
 
 export const environment = {
-  production: false
+    production: false,
+    authentication: authentication,
+    api: 'https://ictpjfin.ict.np.edu.sg'
 };
 
 /*
