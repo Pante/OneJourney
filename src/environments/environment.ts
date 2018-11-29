@@ -4,12 +4,12 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
 
-export const authentication : AuthConfig = {
-    clientId : 'TBC',
-    redirectUri : 'TBC',
+export const authentication: AuthConfig = {
+    clientId: 'TBC',
+    redirectUri: 'TBC',
     issuer: 'TBC',
     scope: 'TBC'
-}
+};
 
 export const environment = {
     production: false,

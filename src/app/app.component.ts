@@ -13,15 +13,15 @@ import { AuthenticationService } from './authentication/authentication-service';
 export class AppComponent implements OnInit {
 
     title = 'one-journey';
-    authentication : AuthenticationService;
+    authentication: AuthenticationService;
     
     
-    constructor(authentication : AuthenticationService ) {
+    constructor(authentication: AuthenticationService ) {
         this.authentication = authentication.initialise();
     }
-    
 
-    public ngOnInit() : void {
+
+    ngOnInit(): void {
         $(function () {
             /*$('#sidebar').scroll();*/
 
