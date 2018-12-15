@@ -5,16 +5,19 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 
 export const authentication: AuthConfig = {
-    clientId: 'TBC',
-    redirectUri: 'TBC',
-    issuer: 'TBC',
-    scope: 'TBC'
+    issuer: "https://login.microsoftonline.com/common/v2.0/",
+    clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
+    redirectUri: window.location.origin + "/index.html",
+    oidc: false,
+    requestAccessToken: true,
+    requireHttps: false,
+    strictDiscoveryDocumentValidation: false
 };
 
 export const environment = {
     production: false,
     authentication: authentication,
-    api: 'https://ictpjfin.ict.np.edu.sg'
+    api: 'https://onejourney.karuslabs.com'
 };
 
 /*

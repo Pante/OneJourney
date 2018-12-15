@@ -17,14 +17,13 @@ export class AppComponent implements OnInit {
     
     
     constructor(authentication: AuthenticationService ) {
-        this.authentication = authentication.initialise();
+        this.authentication = authentication;
     }
 
 
     ngOnInit(): void {
+        this.authentication.initialise();
         $(function () {
-            /*$('#sidebar').scroll();*/
-
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar, #content').toggleClass('active');
                 $('.collapse.in').toggleClass('in');
