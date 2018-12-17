@@ -5,13 +5,13 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 
 export const authentication: AuthConfig = {
-    issuer: "https://login.microsoftonline.com/common/v2.0/",
+    loginUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
+    logoutUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/logout',
+    tokenEndpoint: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+    userinfoEndpoint: 'https://graph.microsoft.com/oidc/userinfo',
+    
     clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
-    redirectUri: window.location.origin + "/index.html",
-    oidc: false,
-    requestAccessToken: true,
-    requireHttps: false,
-    strictDiscoveryDocumentValidation: false
+    redirectUri: window.location.origin,
 };
 
 export const environment = {

@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.authentication.initialise();
+        this.authentication.login();
         $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar, #content').toggleClass('active');
