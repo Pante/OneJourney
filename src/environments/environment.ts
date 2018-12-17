@@ -1,9 +1,23 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { AuthConfig } from 'angular-oauth2-oidc';
+
+
+export const authentication: AuthConfig = {
+    loginUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
+    logoutUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/logout',
+    tokenEndpoint: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+    userinfoEndpoint: 'https://graph.microsoft.com/oidc/userinfo',
+    
+    clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
+    redirectUri: window.location.origin,
+};
 
 export const environment = {
-  production: false
+    production: false,
+    authentication: authentication,
+    api: 'https://onejourney.karuslabs.com'
 };
 
 /*
