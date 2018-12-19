@@ -23,7 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
     ],
     imports: [
         BrowserModule,
-        AuthenticationModule,
+        AuthenticationModule.forRoot(),
         AppRoutingModule
     ],
     providers: [],

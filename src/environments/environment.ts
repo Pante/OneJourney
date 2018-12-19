@@ -4,19 +4,22 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
 
-export const authentication: AuthConfig = {
-    loginUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
-    logoutUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/logout',
-    tokenEndpoint: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
-    userinfoEndpoint: 'https://graph.microsoft.com/oidc/userinfo',
-    
+export const configuration: AuthConfig = {
     clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
     redirectUri: window.location.origin,
+    skipIssuerCheck: true,
+    oidc: false,
+    
+    loginUrl: 'https://login.microsoftonline.com/cba9e115-3016-4462-a1ab-a565cba0cdf1/oauth2/v2.0/authorize',
+    logoutUrl: 'https://login.microsoftonline.com/cba9e115-3016-4462-a1ab-a565cba0cdf1/oauth2/v2.0/logout',
+    tokenEndpoint: 'https://login.microsoftonline.com/cba9e115-3016-4462-a1ab-a565cba0cdf1/oauth2/v2.0/token',
+    userinfoEndpoint: 'https://graph.microsoft.com/oidc/userinfo',
 };
 
 export const environment = {
     production: false,
-    authentication: authentication,
+    configuration: configuration,
+    jwks: 'https://login.microsoftonline.com/cba9e115-3016-4462-a1ab-a565cba0cdf1/discovery/v2.0/keys',
     api: 'https://onejourney.karuslabs.com'
 };
 
