@@ -19,7 +19,7 @@
     "@angular/http": "~7.0.4",
     "@angular/platform-browser": "~7.0.4",
     "@angular/platform-browser-dynamic": "~7.0.4",
-    "@angular/router": "~7.0.0",
+    "@angular/router": "~7.0.4",
     "@types/jquery": "^3.3.28",
     "angular-oauth2-oidc": "^5.0.2",
     "bootstrap": "^4.1.3",
