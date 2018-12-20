@@ -19,7 +19,6 @@ export const configuration: AuthConfig = {
 export const environment = {
     production: false,
     configuration: configuration,
-    jwks: 'https://login.microsoftonline.com/cba9e115-3016-4462-a1ab-a565cba0cdf1/discovery/v2.0/keys',
     api: 'https://onejourney.karuslabs.com'
 };
 
