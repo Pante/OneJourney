@@ -56,7 +56,7 @@ export class AuthenticationService {
         }
     }
     
-    async login() : Promise<void> {
+    async login(): Promise<void> {
         await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
         await this.service.initImplicitFlow();
     }

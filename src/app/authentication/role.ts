@@ -13,10 +13,10 @@ export namespace Role {
         }
         
         switch (body.data.type) {
-            case "staffs":
+            case 'staffs':
                 return Role.STAFF;
                 
-            case "student":
+            case 'student':
                 return Role.STUDENT;
                 
             default:
