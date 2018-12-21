@@ -7,6 +7,7 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const configuration: AuthConfig = {
     clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
     redirectUri: window.location.origin,
+    silentRefreshRedirectUri: window.location.origin + '/silent-refresh',
     skipIssuerCheck: true,
     oidc: false,
     

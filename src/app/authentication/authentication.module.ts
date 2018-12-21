@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule, ValidationHandler, JwksValidationHandler, AuthConfig, OAuthStorage } from 'angular-oauth2-oidc';
 
 import { AuthenticationService } from './authentication-service';
+import { StaffGuardService, StudentGuardService } from './guard-service';
 import { environment } from '../../environments/environment';
 
 
@@ -23,7 +24,7 @@ import { environment } from '../../environments/environment';
         OAuthModule
     ],
     providers: [
-        AuthenticationService
+        AuthenticationService, StaffGuardService, StudentGuardService
     ]
 })
 export class AuthenticationModule {
