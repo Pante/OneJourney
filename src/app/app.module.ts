@@ -9,6 +9,7 @@ import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { MedSubmissionComponent } from './med-submission/med-submission.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -19,11 +20,12 @@ import { ProfileComponent } from './profile/profile.component';
         RewardsComponent,
         MedSubmissionComponent,
         LeaderboardComponent,
+        LoginComponent,
         ProfileComponent
     ],
     imports: [
         BrowserModule,
-        AuthenticationModule,
+        AuthenticationModule.forRoot(),
         AppRoutingModule
     ],
     providers: [],

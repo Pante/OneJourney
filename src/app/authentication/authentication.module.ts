@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthModule, ValidationHandler, JwksValidationHandler, AuthConfig, OAuthStorage } from 'angular-oauth2-oidc';
 
 import { AuthenticationService } from './authentication-service';
+import { StaffGuardService, StudentGuardService } from './guard-service';
 import { environment } from '../../environments/environment';
 
 
@@ -13,7 +14,7 @@ import { environment } from '../../environments/environment';
         HttpClientModule,
         OAuthModule.forRoot({
             resourceServer: {
-                allowedUrls: [environment.api],
+                allowedUrls: [environment.api, environment.configuration.userinfoEndpoint],
                 sendAccessToken: true
             }
         })
@@ -23,7 +24,18 @@ import { environment } from '../../environments/environment';
         OAuthModule
     ],
     providers: [
-        AuthenticationService
+        AuthenticationService, StaffGuardService, StudentGuardService
     ]
 })
-export class AuthenticationModule {}
+export class AuthenticationModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: AuthenticationModule,
+            providers: [
+                {provide: AuthConfig, useValue: environment.configuration},
+                {provide: ValidationHandler, useClass: JwksValidationHandler},
+                {provide: OAuthStorage, useValue: localStorage},
+            ]
+        };
+    }
+}

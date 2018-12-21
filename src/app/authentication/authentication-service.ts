@@ -1,58 +1,75 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router/';
 
-import { OAuthService, JwksValidationHandler, OAuthEvent } from 'angular-oauth2-oidc';
+import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
-import { environment } from '../../environments/environment';
-    
-
-const JSON = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+import { Role } from './role';
 
 
-const enum Role {
-    ANONYMOUS,
-    STUDENT,
-    STAFF,
-}
-
-function parse(role: string): Role {
-    switch (role) {
-        case 'student':
-            return Role.STUDENT;
-        case 'staffs':
-            return Role.STAFF;
-        default:
-            return Role.ANONYMOUS;
-    }
-}
+export const JSON = { 
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
+};
 
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     
-    private client: HttpClient;
     private service: OAuthService;
+    private router: Router;
+    private http: HttpClient;
+    
+    role?: Role;
     
     
-    constructor(client: HttpClient, service: OAuthService) {
-        this.client = client;
+    constructor(service: OAuthService, router: Router, http: HttpClient) {
         this.service = service;
-        this.service.configure(environment.authentication);
-        this.service.tokenValidationHandler = new JwksValidationHandler();  
+        this.service.events.subscribe(event => {
+            if (event instanceof OAuthErrorEvent) {
+                this.error((event as OAuthErrorEvent).reason);
+            }
+        });
+        this.router = router;
+        this.http = http;
     }
 
-    
-    login(): void {
+      
+    /**
+     * Due to Microsoft's (unsuprisingly) non-compliant OIDC implementation,
+     * we have to disable automated OIDC and manually retrieve the user's role. 
+     * For reference, CORS is disabled at the JWKS endpoint and thereby disables 
+     * the user information endpoint.
+     */
+    async authenticate(): Promise<void> {
         if (!this.service.hasValidAccessToken()) {
-            this.service.tryLogin().then(() => {
-                this.service.initImplicitFlow();
-                this.service.events.subscribe(event => this.authorize(event));
-            });
+            await this.service.tryLogin();
+            await this.login();
+            
+        } else if (!this.role) {
+//            const response = await this.http.get(this.service.userinfoEndpoint, JSON).toPromise();
+            this.role = Role.STAFF;
+            // this.role = Role.from(response); TODO enable when HTTP interceptor is complete
+
+            // if (this.role === Role.INVALID) {
+            //    this.error('Failed to retrieve user information');
+            // }
         }
-    }   
-        
-    authorize(event: OAuthEvent): void  {
-        // TODO
+    }
+    
+    async login(): Promise<void> {
+        await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
+        await this.service.initImplicitFlow();
+    }
+    
+    
+    error(message?: any): void {
+        console.log(message);
+        // this.router.navigate(['error']);  TODO: navigate to error page
+    }
+    
+    
+    isAuthenticated(): boolean {
+        return this.service.hasValidAccessToken();
     }
     
 }
