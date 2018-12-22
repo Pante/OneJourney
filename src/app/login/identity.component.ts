@@ -5,11 +5,10 @@ import { AuthenticationService } from './../authentication/authentication-servic
 
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    selector: 'app-identity',
+    templateUrl: './identity.component.html'
 })
-export class LoginComponent {
+export class IdentityComponent {
     
     authentication: AuthenticationService;
     router: Router;
@@ -19,8 +18,8 @@ export class LoginComponent {
         this.authentication = authentication;
         this.router = router;
         this.router.events.subscribe(event => {
-            if (event instanceof NavigationEnd && event.urlAfterRedirects.includes('/login')) {
-                this.authentication.authenticate(false);
+            if (event instanceof NavigationEnd && event.urlAfterRedirects.includes('/identity')) {
+                this.authentication.identity();
             }
         });
     }

@@ -7,7 +7,7 @@
     </div>
     <ul class="list-unstyled components">
       <li class="text-center">
-        <a routerLink = '/event'><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
+        <a routerLink = '/events'><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
       </li>
       <li class="text-center">
         <a routerLink= '/profile'><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
@@ -19,12 +19,12 @@
         <a routerLink ='/medCert'><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
       </li>
       <li class="text-center">
-        <a routerLink = '/reward'><span><i class="fas fa-gift"></i></span><br />Rewards</a>
+        <a routerLink = '/rewards'><span><i class="fas fa-gift"></i></span><br />Rewards</a>
       </li>
     </ul>
     <ul class="list-unstyled CTAs">
       <li class="text-center">
-        <a class="download"><span><i class="fas fa-sign-out-alt"></i></span><br />Logout</a>
+        <a class="download" (click)='authentication.authenticate(true)'><span><i class="fas fa-sign-out-alt"></i></span><br />Logout</a>
       </li>
     </ul>
   </nav>

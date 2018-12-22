@@ -6,8 +6,9 @@ import { RewardsComponent } from './rewards/rewards.component';
 import { MedSubmissionComponent } from './med-submission/med-submission.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { LoginComponent } from './login/login.component';
+import { IdentityComponent } from './login/identity.component';
 import { ProfileComponent } from './profile/profile.component';
-import { StudentGuardService } from './authentication/guard-service';
+import { StaffGuardService, StudentGuardService } from './authentication/guard-service';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'medCert', component: MedSubmissionComponent, canActivate: [StudentGuardService] },
   { path: 'leaderboard', component: LeaderboardComponent, canActivate: [StudentGuardService] },
   { path: 'login', component: LoginComponent },
+  { path: 'identity', component: IdentityComponent },
   {
     path: '',
     redirectTo: '/login',
