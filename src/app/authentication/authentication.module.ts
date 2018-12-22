@@ -5,6 +5,7 @@ import { OAuthModule, ValidationHandler, JwksValidationHandler, AuthConfig, OAut
 
 import { AuthenticationService } from './authentication-service';
 import { StaffGuardService, StudentGuardService } from './guard-service';
+import { authentication } from '../../environments/authentication';
 import { environment } from '../../environments/environment';
 
 
@@ -14,7 +15,7 @@ import { environment } from '../../environments/environment';
         HttpClientModule,
         OAuthModule.forRoot({
             resourceServer: {
-                allowedUrls: [environment.api, environment.configuration.userinfoEndpoint],
+                allowedUrls: [environment.api, authentication.userinfoEndpoint],
                 sendAccessToken: true
             }
         })
@@ -24,7 +25,9 @@ import { environment } from '../../environments/environment';
         OAuthModule
     ],
     providers: [
-        AuthenticationService, StaffGuardService, StudentGuardService
+        AuthenticationService, 
+        StaffGuardService, 
+        StudentGuardService
     ]
 })
 export class AuthenticationModule {
@@ -32,7 +35,7 @@ export class AuthenticationModule {
         return {
             ngModule: AuthenticationModule,
             providers: [
-                {provide: AuthConfig, useValue: environment.configuration},
+                {provide: AuthConfig, useValue: authentication},
                 {provide: ValidationHandler, useClass: JwksValidationHandler},
                 {provide: OAuthStorage, useValue: localStorage},
             ]

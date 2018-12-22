@@ -1,17 +1,19 @@
 export enum Role {
-
     STAFF = 'staffs',
-    STUDENT = 'student',
-    INVALID = 'invalid'
+    STUDENT = 'student'
+}
+
+export class InvalidRoleError extends Error {
+    
+    constructor(message: string) {
+        super(message);
+    }
+    
 }
 
 export namespace Role {
     
     export function from(body: any): Role {
-        if (!body.data || !body.data.type) {
-            return Role.INVALID;
-        }
-        
         switch (body.data.type) {
             case 'staffs':
                 return Role.STAFF;
@@ -20,7 +22,7 @@ export namespace Role {
                 return Role.STUDENT;
                 
             default:
-                return Role.INVALID;
+                throw new InvalidRoleError(`Invalid role: ${body.data.type}`);
         }
     }
     

@@ -5,6 +5,7 @@ import { Router } from '@angular/router/';
 import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
 import { Role } from './role';
+import { authentication } from 'src/environments/authentication';
 
 
 export const JSON = { 
@@ -40,25 +41,40 @@ export class AuthenticationService {
      * For reference, CORS is disabled at the JWKS endpoint and thereby disables 
      * the user information endpoint.
      */
-    async authenticate(): Promise<void> {
-        if (!this.service.hasValidAccessToken()) {
-            await this.service.tryLogin();
-            await this.login();
-            
-        } else if (!this.role) {
-//            const response = await this.http.get(this.service.userinfoEndpoint, JSON).toPromise();
-            this.role = Role.STAFF;
-            // this.role = Role.from(response); TODO enable when HTTP interceptor is complete
-
-            // if (this.role === Role.INVALID) {
-            //    this.error('Failed to retrieve user information');
-            // }
+    async authenticate(logout: boolean): Promise<void> {
+        if (logout) {
+            await this.service.logOut();
         }
-    }
+        
+        if (!this.service.hasValidAccessToken()) {
+            try {
+                await this.service.tryLogin();
+                await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
+                await this.service.initImplicitFlow();
+
+            } catch {
+                this.error('Unable to login');
+            }
+            
+        } else {
+            this.router.navigate(['/identity']);
+        }
+    }    
     
-    async login(): Promise<void> {
-        await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
-        await this.service.initImplicitFlow();
+    async identity(): Promise<void> {
+        if (!this.role) {
+            try {
+                this.service.tryLogin();
+                const response = await this.http.get(authentication.userinfoEndpoint, JSON).toPromise();
+                this.role = Role.from(response);
+
+            } catch {
+                this.error('Unable to retrieve role');
+            }
+            
+        }
+        
+        this.router.navigate(['/events']);
     }
     
     
