@@ -5,6 +5,7 @@ import { Router } from '@angular/router/';
 import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
 import { Role } from './role';
+import { ErrorService } from '../error/error-service';
 import { authentication } from 'src/environments/authentication';
 
 
@@ -17,17 +18,19 @@ export const JSON = {
 export class AuthenticationService {
     
     private service: OAuthService;
+    private errors: ErrorService;
     private router: Router;
     private http: HttpClient;
     
     role?: Role;
     
     
-    constructor(service: OAuthService, router: Router, http: HttpClient) {
+    constructor(service: OAuthService, errors: ErrorService, router: Router, http: HttpClient) {
         this.service = service;
+        this.errors = errors;
         this.service.events.subscribe(event => {
             if (event instanceof OAuthErrorEvent) {
-                this.error((event as OAuthErrorEvent).reason);
+                this.errors.report((event as OAuthErrorEvent).reason);
             }
         });
         this.router = router;
@@ -41,7 +44,7 @@ export class AuthenticationService {
      * For reference, CORS is disabled at the JWKS endpoint and thereby disables 
      * the user information endpoint.
      */
-    async authenticate(logout: boolean): Promise<void> {
+    async authenticate(logout: boolean = false): Promise<void> {
         if (logout) {
             await this.service.logOut();
         }
@@ -49,11 +52,11 @@ export class AuthenticationService {
         if (!this.service.hasValidAccessToken()) {
             try {
                 await this.service.tryLogin();
-                await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
-                await this.service.initImplicitFlow();
+                this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
+                this.service.initImplicitFlow();
 
             } catch {
-                this.error('Unable to login');
+                return this.errors.report('Unable to login', 'Please try again later');
             }
             
         } else {
@@ -69,18 +72,12 @@ export class AuthenticationService {
                 this.role = Role.from(response);
 
             } catch {
-                this.error('Unable to retrieve role');
+                return this.errors.report('Unable to retrieve user information', 'Please try to login again');
             }
             
         }
         
         this.router.navigate(['/events']);
-    }
-    
-    
-    error(message?: any): void {
-        console.log(message);
-        // this.router.navigate(['error']);  TODO: navigate to error page
     }
     
     

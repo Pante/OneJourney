@@ -19,10 +19,8 @@ export abstract class GuardService implements CanActivate {
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const authenticated = this.authentication.isAuthenticated() && this.validate();
-        localStorage['1st'] = authenticated;
-        localStorage['2nd'] = this.validate();
         if (!authenticated) {
-            this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
+            this.router.navigate(['/']);
         }
         
         return authenticated;
@@ -58,7 +56,6 @@ export class StudentGuardService extends GuardService {
     
     protected validate(): boolean {
         const role = this.authentication.role;
-        localStorage['role'] = role;
         return role === Role.STUDENT || role === Role.STAFF;
     }
     
