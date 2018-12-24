@@ -1,17 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router/';
 
 import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
-import { Role } from './role';
+import { Identity } from './identity/identity';
 import { ErrorService } from '../error/error-service';
 import { authentication } from 'src/environments/authentication';
-
-
-export const JSON = { 
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
-};
 
 
 @Injectable({ providedIn: 'root' })
@@ -22,7 +17,7 @@ export class AuthenticationService {
     private router: Router;
     private http: HttpClient;
     
-    role?: Role;
+    identity?: Identity;
     
     
     constructor(service: OAuthService, errors: ErrorService, router: Router, http: HttpClient) {
@@ -62,26 +57,26 @@ export class AuthenticationService {
         } else {
             this.router.navigate(['/identity']);
         }
-    }    
-    
-    async identity(): Promise<void> {
-        if (!this.role) {
+    }
+
+    async fetch(): Promise<void> {
+        if (!this.identity) {
             try {
                 this.service.tryLogin();
-                const response = await this.http.get(authentication.userinfoEndpoint, JSON).toPromise();
-                this.role = Role.from(response);
+                const response = await this.http.get(authentication.userinfoEndpoint).toPromise();
+                this.identity = Identity.from(response);
 
             } catch {
                 return this.errors.report('Unable to retrieve user information', 'Please try to login again');
             }
-            
+
         }
-        
+
         this.router.navigate(['/events']);
     }
     
     
-    isAuthenticated(): boolean {
+    loggedIn(): boolean {
         return this.service.hasValidAccessToken();
     }
     
