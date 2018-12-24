@@ -15,7 +15,7 @@ export class EventsComponent implements OnInit, OnDestroy {
     
     private service: EventService;
     private subscription: Subscription;
-    events : Event[];
+    events: Event[];
     
     
     constructor(service: EventService) {

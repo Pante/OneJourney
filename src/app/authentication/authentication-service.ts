@@ -64,7 +64,7 @@ export class AuthenticationService {
             try {
                 this.service.tryLogin();
                 const response = await this.http.get(authentication.userinfoEndpoint).toPromise();
-                this.identity= Identity.from(response);
+                this.identity = Identity.from(response);
 
             } catch {
                 return this.errors.report('Unable to retrieve user information', 'Please try to login again');
