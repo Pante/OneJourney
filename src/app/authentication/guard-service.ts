@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 import { AuthenticationService } from './authentication-service';
-import { Role } from './role';
+import { Role } from './identity/identity';
 
 
 export abstract class GuardService implements CanActivate {
@@ -18,7 +18,7 @@ export abstract class GuardService implements CanActivate {
     
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const authenticated = this.authentication.isAuthenticated() && this.validate();
+        const authenticated = this.authentication.loggedIn() && this.validate();
         if (!authenticated) {
             this.router.navigate(['/']);
         }
@@ -39,8 +39,7 @@ export class StaffGuardService extends GuardService {
     
     
     protected validate(): boolean {
-        const role = this.authentication.role;
-        return role === Role.STAFF;
+        return this.authentication.identity.role === Role.STAFF;
     }
     
 }
@@ -55,7 +54,7 @@ export class StudentGuardService extends GuardService {
     
     
     protected validate(): boolean {
-        const role = this.authentication.role;
+        const role = this.authentication.identity.role;
         return role === Role.STUDENT || role === Role.STAFF;
     }
     

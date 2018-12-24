@@ -12,7 +12,7 @@ import { AuthenticationComponent } from '../authentication-component';
 export class IdentityComponent extends AuthenticationComponent {    
     
     constructor(authentication: AuthenticationService, router: Router) {
-        super(authentication, router, '/identity', () => this.authentication.identity());
+        super(authentication, router, '/identity', () => this.authentication.fetch());
     }
 
 }

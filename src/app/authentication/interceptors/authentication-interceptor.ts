@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { authentication } from 'src/environments/authentication';
-import { Role } from '../role';
+import { Identity, Role } from '../identity/identity';
 
 
 export const staff = {

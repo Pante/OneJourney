@@ -1,8 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-
-import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from './../authentication-service';
 import { AuthenticationComponent } from '../authentication-component';

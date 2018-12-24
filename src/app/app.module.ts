@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image'
+
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,7 +31,8 @@ import { interceptors } from 'src/environments/environment';
     imports: [
         BrowserModule,
         AuthenticationModule.forRoot(),
-        AppRoutingModule
+        AppRoutingModule,
+        LazyLoadImageModule
     ],
     providers: [
         ErrorService, interceptors
