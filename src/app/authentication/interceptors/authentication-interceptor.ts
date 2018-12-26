@@ -5,18 +5,28 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { authentication } from 'src/environments/authentication';
-import { Identity, Role } from '../identity/identity';
+import { Role } from '../identity/identity';
+
+
+export const student = {
+    data: {
+        id: 1,
+        type: Role['STUDENT'],
+        attributes: {
+            name: "ICT-FintechDemo1/ ICT"
+        }
+    }
+};
+
 
 
 export const staff = {
     data: {
-        type: Role['STAFF']
-    }
-};
-
-export const student = {
-    data: {
-        type: Role['STUDENT']
+        id: 2,
+        type: Role['STAFF'],
+        attributes: {
+            name: "ICT-FintechDemo2/ ICT"
+        }
     }
 };
 
@@ -35,10 +45,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     }
     
     replace(event: HttpResponse<any>): HttpEvent<any> {
-        if (event.body.name === 'ICT-FintechDemo2 /ICT') {
+        if (event.body.name === 'ICT-FintechDemo1 /ICT') {
             event = event.clone({ body: staff });
             
-        } else if (event.body.name === 'ICT-FintechDemo1 /ICT') {
+        } else if (event.body.name === 'ICT-FintechDemo2 /ICT') {
             event = event.clone({ body: student });
         }
         

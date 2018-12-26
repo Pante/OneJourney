@@ -14,7 +14,7 @@ export class InvalidRoleError extends Error {
 export namespace Role {
     
     export function from(json: any): Role {
-        switch (json.data.type) {
+        switch (json.data['account-type']) {
             case 'staffs':
                 return Role.STAFF;
                 
@@ -22,7 +22,7 @@ export namespace Role {
                 return Role.STUDENT;
                 
             default:
-                throw new InvalidRoleError(`Invalid role: ${json.data.type}`);
+                throw new InvalidRoleError(`Invalid role: ${json.data['account-type']}`);
         }
     }
     
@@ -41,8 +41,8 @@ export namespace Identity {
     
     export function from(json: any): Identity {
         return {
-            name: '',
-            id: '',
+            name: json.data.attributes.name,
+            id: json.data.id,
             role: Role.from(json)
         };
     }
