@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\app\\error",
     "\\src\\assets",
-    "\\src\\assets\\css"
+    "\\src\\assets\\images"
   ],
-  "SelectedNode": "\\src\\assets\\css\\styles.css",
+  "SelectedNode": "\\src\\assets\\images\\error404.png",
   "PreviewInSolutionExplorer": false
 }
