@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
@@ -13,12 +14,19 @@ import { StaffGuardService, StudentGuardService } from './authentication/guard-s
 
 
 const routes: Routes = [
+  {
+    path: 'main',
+    component: MainComponent,
+    canActivate: [StudentGuardService],
+    children: [
+      { path: 'events', component: EventsComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'rewards', component: RewardsComponent },
+      { path: 'medCert', component: MedSubmissionComponent },
+      { path: 'leaderboard', component: LeaderboardComponent }
+    ]
+  },
   { path: 'error', component: ErrorComponent },
-  { path: 'events', component: EventsComponent, canActivate: [StudentGuardService] },
-  { path: 'profile', component: ProfileComponent, canActivate: [StudentGuardService] },
-  { path: 'rewards', component: RewardsComponent, canActivate: [StudentGuardService] },
-  { path: 'medCert', component: MedSubmissionComponent, canActivate: [StudentGuardService] },
-  { path: 'leaderboard', component: LeaderboardComponent, canActivate: [StudentGuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'identity', component: IdentityComponent },
   {
@@ -29,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

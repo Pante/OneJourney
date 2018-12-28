@@ -4,7 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div>TODO: Login Page</div>
+    <body style="background-color: #754486">
+      <form>
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email">
+          <small id="helper" class="form-text text-muted">Only School Email accepted</small>
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
     </body>
 </html>

@@ -16,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { ErrorService } from './error/error-service';
 import { interceptors } from 'src/environments/environment';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { interceptors } from 'src/environments/environment';
         RewardsComponent,
         MedSubmissionComponent,
         LeaderboardComponent,
-        ProfileComponent
+        ProfileComponent,
+        MainComponent
     ],
     imports: [
         BrowserModule,
