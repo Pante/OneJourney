@@ -1,0 +1,242 @@
+{
+    "data": [
+        {
+            "id": "47",
+            "type": "activities",
+            "attributes": {
+                "title": null,
+                "description": "Be a part of Redcamp 15 as an ICT student helper and introduce O-Level campers to life in NP in the area of IT!",
+                "event-datetime": "2018-11-21T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2018-10-08T02:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/47/activity47.jpeg"
+            }
+        },
+        {
+            "id": "46",
+            "type": "activities",
+            "attributes": {
+                "title": "Radin Mas L3 (Life Long Learning) 20 Jan",
+                "description": "Join us to assist the elderly in picking up IT skills from  8.15am to 12pm @ Redhill Gardens RC. PM Bryan Chew @ 98185674 to sign up!",
+                "event-datetime": "2018-01-20T00:15:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2018-01-09T07:45:21.000Z",
+                "activity-awards": [
+                    {
+                        "id": 77,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/46/activity46.jpeg"
+            }
+        },
+        {
+            "id": "45",
+            "type": "activities",
+            "attributes": {
+                "title": "IMDA Silver IT - 16 Dec",
+                "description": "Join us for to educate the elderly about conveniences and dangers of online transactions!",
+                "event-datetime": "2017-12-16T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-12-03T08:09:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 76,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/45/activity45.jpeg"
+            }
+        },
+        {
+            "id": "44",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver IT Workshop (19 Nov)",
+                "description": "Volunteer to serve the community through IT workshops in November! Sign up at https://tinyurl.com/y9fnladk",
+                "event-datetime": "2017-11-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/44/activity44.jpeg"
+            }
+        },
+        {
+            "id": "35",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified. Sign up link: https://tinyurl.com/ydyl7xv6",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "34",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart (18,21 \u0026 25 Sep)",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        }
+    ]
+}
