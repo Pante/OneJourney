@@ -7,6 +7,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
@@ -15,20 +16,20 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { ErrorService } from './error/error-service';
-import { interceptors } from 'src/environments/environment';
-import { MainComponent } from './main/main.component';
+import { EventService } from './events/event-service';
+import { interceptors } from 'src/environments/interceptors';
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        MainComponent,
         ErrorComponent,
         EventsComponent,
         RewardsComponent,
         MedSubmissionComponent,
         LeaderboardComponent,
         ProfileComponent,
-        MainComponent
     ],
     imports: [
         BrowserModule,
@@ -37,7 +38,7 @@ import { MainComponent } from './main/main.component';
         LazyLoadImageModule
     ],
     providers: [
-        ErrorService, interceptors
+        ErrorService, EventService, interceptors
     ],
     bootstrap: [AppComponent]
 })

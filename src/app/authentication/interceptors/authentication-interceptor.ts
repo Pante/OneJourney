@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { authentication } from 'src/environments/authentication';
 import { Role } from '../identity/identity';
@@ -13,7 +13,7 @@ export const student = {
         id: 1,
         type: Role['STUDENT'],
         attributes: {
-            name: "ICT-FintechDemo1/ ICT"
+            name: 'ICT-FintechDemo1/ ICT'
         }
     }
 };
@@ -25,7 +25,7 @@ export const staff = {
         id: 2,
         type: Role['STAFF'],
         attributes: {
-            name: "ICT-FintechDemo2/ ICT"
+            name: 'ICT-FintechDemo2/ ICT'
         }
     }
 };
@@ -35,13 +35,10 @@ export const staff = {
 export class AuthenticationInterceptor implements HttpInterceptor {
     
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(request).pipe(map(event => {
-            if (event instanceof HttpResponse && event.url === authentication.userinfoEndpoint) {
-                event = this.replace(event);
-            }
-            
-            return event;
-        }));
+        return next.handle(request).pipe(
+            filter(event => event instanceof HttpResponse && event.url === authentication.userinfoEndpoint), 
+            map(event => this.replace(event as HttpResponse<any>))
+        );
     }
     
     replace(event: HttpResponse<any>): HttpEvent<any> {
