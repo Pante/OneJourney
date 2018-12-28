@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
 
+import { AuthenticationService } from '../authentication/authentication-service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -9,7 +11,12 @@ import * as $ from 'jquery';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  authentication: AuthenticationService;
+
+
+  constructor(authentication: AuthenticationService) {
+      this.authentication = authentication;
+  }
 
   ngOnInit(): void {
     $(function () {
