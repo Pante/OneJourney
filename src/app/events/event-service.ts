@@ -23,7 +23,7 @@ export class EventService {
     
     
     events(): Observable<Event[]> {
-        return this.http.get(`${environment.api}/activities/?id=${this.authentication.identity.id}`).pipe(
+        return this.http.get(`${environment.api}/activities?id=${this.authentication.identity.id}`).pipe(
             map((response: any) => (response.data as any[]).map(event => Event.deserialize(event)))
         );
     }

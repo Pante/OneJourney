@@ -18,7 +18,7 @@ export abstract class GuardService implements CanActivate {
     
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const authenticated = this.authentication.loggedIn() && this.validate();
+        const authenticated = this.authentication.loggedIn() && this.isIdentified() && this.validate();
         if (!authenticated) {
             this.router.navigate(['/']);
         }
@@ -27,6 +27,10 @@ export abstract class GuardService implements CanActivate {
     }
     
     protected abstract validate(): boolean;
+    
+    protected isIdentified(): boolean {
+        return this.authentication.identity !== undefined;
+    }
     
 }
 

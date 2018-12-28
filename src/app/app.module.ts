@@ -15,7 +15,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { ErrorService } from './error/error-service';
-import { interceptors } from 'src/environments/environment';
+import { EventService } from './events/event-service';
+import { interceptors } from 'src/environments/interceptors';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { interceptors } from 'src/environments/environment';
         LazyLoadImageModule
     ],
     providers: [
-        ErrorService, interceptors
+        ErrorService, EventService, interceptors
     ],
     bootstrap: [AppComponent]
 })
