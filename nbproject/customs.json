@@ -1,6 +1,11 @@
 {
-    "elements": {},
+    "elements": {
+        "ng-template": {}
+    },
     "attributes": {
+        "*ngif": {
+            "context": "div"
+        },
         "*ngfor": {}
     }
 }

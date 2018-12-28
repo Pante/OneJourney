@@ -67,15 +67,15 @@ export interface Event {
 
 export namespace Event {
         
-    export function serialize(event: Event): any {
+    export function serialize(data: Event): any {
         return null;
     }
      
-    export function deserialize(json: any): Event {
-        const attributes = json.data.attributes;
+    export function deserialize(data: any): Event {
+        const attributes = data.attributes;
         return {
-            id: json.data.id,
-            type: json.data.type,
+            id: data.id,
+            type: data.type,
 
             image: attributes['image-url'],
 

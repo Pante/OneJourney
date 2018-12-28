@@ -8,6 +8,8 @@ export interface Message {
     
     message: any;
     details?: string;
+    button?: string;
+    action?: () => void;
     
 }
 
@@ -25,8 +27,8 @@ export class ErrorService {
     }
     
     
-    report(message: any, details?: string): void {
-        this.messages.next({ message: message, details: details });
+    report(message: any, details?: string, button?: string, action?: () => void): void {
+        this.messages.next({ message: message, details: details, button: button, action: action });
         this.router.navigate(['/error']);
     }
     

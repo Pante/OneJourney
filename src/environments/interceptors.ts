@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthenticationInterceptor } from 'src/app/authentication/interceptors/authentication-interceptor';
-import { EventInterceptor } from 'src/app/events/interceptors/event-interceptor';
+import { EventInterceptor } from 'src/app/main/events/interceptors/event-interceptor';
 
 
 export const interceptors = [

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { Event } from './event';
 import { environment } from 'src/environments/environment';
-import { AuthenticationService } from '../authentication/authentication-service';
+import { AuthenticationService } from '../../authentication/authentication-service';
 
 
 @Injectable({ providedIn: 'root' })
@@ -24,7 +24,7 @@ export class EventService {
     
     events(): Observable<Event[]> {
         return this.http.get(`${environment.api}/activities?id=${this.authentication.identity.id}`).pipe(
-            map((response: any) => (response.data as any[]).map(event => Event.deserialize(event)))
+            map((response: any) => (response['data'] as any[]).map(data => Event.deserialize(data)))
         );
     }
     

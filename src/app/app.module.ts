@@ -9,14 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
-import { EventsComponent } from './events/events.component';
-import { RewardsComponent } from './rewards/rewards.component';
-import { MedSubmissionComponent } from './med-submission/med-submission.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { ProfileComponent } from './profile/profile.component';
+import { EventsComponent } from './main/events/events.component';
+import { RewardsComponent } from './main/rewards/rewards.component';
+import { MedSubmissionComponent } from './main/med-submission/med-submission.component';
+import { LeaderboardComponent } from './main/leaderboard/leaderboard.component';
+import { ProfileComponent } from './main/profile/profile.component';
 
 import { ErrorService } from './error/error-service';
-import { EventService } from './events/event-service';
+import { EventService } from './main/events/event-service';
 import { interceptors } from 'src/environments/interceptors';
 
 

@@ -35,9 +35,15 @@ export const staff = {
 export class AuthenticationInterceptor implements HttpInterceptor {
     
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(request).pipe(
-            filter(event => event instanceof HttpResponse && event.url === authentication.userinfoEndpoint), 
-            map(event => this.replace(event as HttpResponse<any>))
+        return next.handle(request).pipe( 
+            map(event => {
+                if (event instanceof HttpResponse && event.url === authentication.userinfoEndpoint) {
+                    return this.replace(event as HttpResponse<any>);
+                    
+                }  else {
+                    return event;
+                }
+            })
         );
     }
     

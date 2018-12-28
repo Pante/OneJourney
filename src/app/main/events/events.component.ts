@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { EventService } from './event-service';
 import { Event } from './event';
@@ -24,7 +25,8 @@ export class EventsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.events().subscribe(events => this.events = events);
+        this.subscription = this.service.events().pipe(tap(events => localStorage['tap()'] = events))
+                                                 .subscribe(events => { localStorage['subscribe()'] = events; return this.events = events; });
     }
     
     ngOnDestroy() {

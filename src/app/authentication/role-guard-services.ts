@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 import { AuthenticationService } from './authentication-service';
+import { GuardService } from './guard-services';
 import { Role } from './identity/identity';
 
 
-export abstract class GuardService implements CanActivate {
-    
-    protected authentication: AuthenticationService;
-    protected router: Router;
-    
+export abstract class RoleGuardService extends GuardService {
     
     constructor(authentication: AuthenticationService, router: Router) {
-        this.authentication = authentication;
-        this.router = router;
+        super(authentication, router);
     }
     
     
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const authenticated = this.authentication.loggedIn() && this.isIdentified() && this.validate();
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        const authenticated = this.authentication.authenticated() && this.validate();
         if (!authenticated) {
             this.router.navigate(['/']);
         }
@@ -28,14 +24,11 @@ export abstract class GuardService implements CanActivate {
     
     protected abstract validate(): boolean;
     
-    protected isIdentified(): boolean {
-        return this.authentication.identity !== undefined;
-    }
-    
 }
 
+
 @Injectable({ providedIn: 'root' })
-export class StaffGuardService extends GuardService {
+export class StaffGuardService extends RoleGuardService {
     
     constructor(authentication: AuthenticationService, router: Router) {
         super(authentication, router);
@@ -50,7 +43,7 @@ export class StaffGuardService extends GuardService {
 
 
 @Injectable({ providedIn: 'root' })
-export class StudentGuardService extends GuardService {
+export class StudentGuardService extends RoleGuardService {
     
     constructor(authentication: AuthenticationService, router: Router) {
         super(authentication, router);

@@ -8,8 +8,8 @@ import { AuthenticationService } from './authentication-service';
 
 
 export abstract class AuthenticationComponent implements OnDestroy {
-
-    protected authentication: AuthenticationService;
+    
+    authentication: AuthenticationService;
     protected router: Router;
     protected subscription: Subscription;
     

@@ -7,7 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { IdentityComponent } from './identity/identity.component';
 
 import { AuthenticationService } from './authentication-service';
-import { StaffGuardService, StudentGuardService } from './guard-service';
+import { LoginGuardService, IdentityGuardService } from './guard-services';
+import { StaffGuardService, StudentGuardService } from './role-guard-services';
 import { authentication } from '../../environments/authentication';
 import { environment } from '../../environments/environment';
 
@@ -31,7 +32,9 @@ import { environment } from '../../environments/environment';
         OAuthModule
     ],
     providers: [
-        AuthenticationService, 
+        AuthenticationService,
+        LoginGuardService,
+        IdentityGuardService, 
         StaffGuardService, 
         StudentGuardService
     ]

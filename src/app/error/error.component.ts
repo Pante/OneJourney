@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { take } from 'rxjs/operators';
 
-import { ErrorService } from './error-service';
+import { ErrorService, Message } from './error-service';
+import { AuthenticationService } from '../authentication/authentication-service';
 
 
 @Component({
@@ -12,23 +14,25 @@ import { ErrorService } from './error-service';
 })
 export class ErrorComponent implements OnInit { 
     
-    private service: ErrorService;
-    message: string;
-    details: string;
+    private errors: ErrorService;
+    authentication: AuthenticationService;
+    location: Location;
+    error: Message;
     
     
-    constructor(service: ErrorService) {
-        this.service = service;
-        this.message = '404';
-        this.details = 'This is not the page you are looking for';
+    constructor(errors: ErrorService, authentication: AuthenticationService, location: Location) {
+        this.errors = errors;
+        this.authentication = authentication;
+        this.location = location;
+        this.error = {
+            message: '404',
+            details: 'This is not the page you are looking for.'
+        };
     }
 
 
     ngOnInit() {
-        this.service.errors().pipe(take(1)).subscribe(error => {
-            this.message = error.message;
-            this.details = error.details;
-        });
+        this.errors.errors().pipe(take(1)).subscribe(error => this.error = error);
     }
 
 }
