@@ -44,8 +44,7 @@ export class AuthenticationService {
             this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
             this.service.initImplicitFlow();
 
-        }
-        catch {
+        } catch {
             return this.errors.report('Unable to login', 'Well, this is embarrassing...', 'Try to login again', () => this.login());
         }
     }
