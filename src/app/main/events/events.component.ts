@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
+import { Paginated } from 'src/app/shared/paginated';
 import { EventService } from './event-service';
 import { Event } from './event';
 
@@ -16,18 +17,17 @@ export class EventsComponent implements OnInit, OnDestroy {
     
     private service: EventService;
     private subscription: Subscription;
-    events: Event[];
+    events: Paginated<Event>;
     
     
-    constructor(service: EventService) {
+    constructor(service: EventService, device: DeviceDetectorService) {
         this.service = service;
-        this.events = [];
+        this.events = Paginated.of<Event>(device);
     }
 
     ngOnInit() {
-        this.subscription = this.service.events().pipe(tap(events => localStorage['tap()'] = events))
-                                                 .subscribe(events => { localStorage['subscribe()'] = events; return this.events = events; });
-    }
+        this.subscription = this.service.get().subscribe(events => this.events.load(events));
+}
     
     ngOnDestroy() {
         this.subscription.unsubscribe();

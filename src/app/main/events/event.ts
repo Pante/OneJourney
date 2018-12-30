@@ -4,13 +4,13 @@ export const formats = [''];
 
 
 export enum Enrolement {
-    
+    // TODO
 }
 
 export namespace Enrolement {
     
-    export function from(json: any): Enrolement {
-        return null;
+    export function deserialize(json: any): Enrolement {
+        return null; // TODO
     }
     
 }
@@ -26,7 +26,7 @@ export interface Award {
 
 export namespace Award {
     
-    export function from(award: any): Award {
+    export function deserialize(award: any): Award {
         return {
             name: award['award-name'],
             id: award.id,
@@ -68,7 +68,7 @@ export interface Event {
 export namespace Event {
         
     export function serialize(data: Event): any {
-        return null;
+        return null; // TODO
     }
      
     export function deserialize(data: any): Event {
@@ -86,7 +86,7 @@ export namespace Event {
                 points: attributes.points,
                 
                 staff: attributes.staff,
-                enrolement: Enrolement.from(attributes['enrol-status']),
+                enrolement: Enrolement.deserialize(attributes['enrol-status']),
                 updated: moment(attributes['updated-at']).toDate(),
                 groups: attributes['mentor-group']
            },
@@ -96,7 +96,7 @@ export namespace Event {
                description: attributes.description
            },
            
-            awards: (attributes['activity-awards'] as any[]).map(award => Award.from(award))
+            awards: (attributes['activity-awards'] as any[]).map(award => Award.deserialize(award))
         };
     }
     
