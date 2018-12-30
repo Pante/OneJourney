@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { DeviceDetectorModule } from 'ngx-device-detector';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { AuthenticationModule } from './authentication/authentication.module';
@@ -17,6 +18,7 @@ import { ProfileComponent } from './main/profile/profile.component';
 
 import { ErrorService } from './error/error-service';
 import { EventService } from './main/events/event-service';
+import { RewardService } from './main/rewards/reward-service';
 import { interceptors } from 'src/environments/interceptors';
 
 
@@ -33,12 +35,13 @@ import { interceptors } from 'src/environments/interceptors';
     ],
     imports: [
         BrowserModule,
+        DeviceDetectorModule.forRoot(),
+        LazyLoadImageModule,
         AuthenticationModule.forRoot(),
-        AppRoutingModule,
-        LazyLoadImageModule
+        AppRoutingModule
     ],
     providers: [
-        ErrorService, EventService, interceptors
+        ErrorService, EventService, RewardService, interceptors
     ],
     bootstrap: [AppComponent]
 })
