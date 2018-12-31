@@ -36,7 +36,7 @@ export class StaffGuardService extends RoleGuardService {
     
     
     protected validate(): boolean {
-        return this.authentication.identity.role === Role.STAFF;
+        return this.authentication.identity().role === Role.STAFF;
     }
     
 }
@@ -51,7 +51,7 @@ export class StudentGuardService extends RoleGuardService {
     
     
     protected validate(): boolean {
-        const role = this.authentication.identity.role;
+        const role = this.authentication.identity().role;
         return role === Role.STUDENT || role === Role.STAFF;
     }
     

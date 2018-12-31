@@ -1,16 +1,12 @@
 import { DeviceDetectorService } from 'ngx-device-detector';
+   
+ 
+export interface Display {
 
+    desktop?: number;
+    mobile?: number;
+    tablet?: number;
 
-export namespace Pagination {
-    
-    export interface Size {
-        
-        desktop?: number;
-        mobile?: number;
-        tablet?: number;
-        
-    }
-    
 }
 
     
@@ -23,15 +19,15 @@ export class Paginated<T> {
     page: number;
       
         
-    static of<T>(device: DeviceDetectorService, size: Pagination.Size = {}): Paginated<T> {
+    static of<T>(device: DeviceDetectorService, display: Display= {}): Paginated<T> {
         if (device.isMobile()) {
-            return new Paginated<T>(size.mobile === undefined ? 1 : size.mobile);
+            return new Paginated<T>(display.mobile === undefined ? 1 : display.mobile);
             
         } else if (device.isTablet()) {
-            return new Paginated<T>(size.mobile === undefined ? 1 : size.mobile);
+            return new Paginated<T>(display.mobile === undefined ? 1 : display.mobile);
             
         } else {
-            return new Paginated<T>(size.desktop === undefined ? 12 : size.desktop);
+            return new Paginated<T>(display.desktop === undefined ? 12 : display.desktop);
         }
     }
     
@@ -65,7 +61,6 @@ export class Paginated<T> {
     last(): void {
         return this.to(Math.ceil(this.items.length / this.size));
     }
-    
     
     set(page: number): boolean {
         const end = page * this.size;

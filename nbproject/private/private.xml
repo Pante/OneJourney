@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/environments/environment.ts</file>
-            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/main/events/event-service.ts</file>
-            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/main/events/interceptors/event-interceptor.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/authentication/identity/identity.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/authentication/guard-services.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/error/error.component.css</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/main/events/events.component.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/main/events/events.component.html</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/authentication/role-guard-services.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/error/error.component.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/authentication/authentication-service.ts</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/assets/images/error404.png</file>
+            <file>file:/C:/Users/NPStudent/Documents/NetBeansProjects/OneJourney/src/app/error/error.component.html</file>
         </group>
     </open-files>
 </project-private>
