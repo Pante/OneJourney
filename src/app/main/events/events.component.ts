@@ -28,7 +28,7 @@ export class EventsComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscription = this.service.events().subscribe(events => this.events.load(events));
     }
-
+  
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }

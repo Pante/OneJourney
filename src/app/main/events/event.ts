@@ -24,7 +24,7 @@ export interface Award {
 
 export namespace Award {
     
-    export function from(award: any): Award {
+    export function deserialize(award: any): Award {
         return {
             name: award['award-name'],
             id: award.id,
@@ -84,8 +84,10 @@ export namespace Event {
                 points: attributes.points,
                 
                 staff: attributes.staff,
+              
                 enrolement: Enrolement.from(attributes['enrol-status']),
                 updated: moment(attributes['updated-at'], moment.HTML5_FMT.DATETIME_LOCAL_MS).toDate(),
+              
                 groups: attributes['mentor-group']
            },
            
@@ -94,7 +96,7 @@ export namespace Event {
                description: attributes.description
            },
            
-            awards: (attributes['activity-awards'] as any[]).map(award => Award.from(award))
+            awards: (attributes['activity-awards'] as any[]).map(award => Award.deserialize(award))
         };
     }
     

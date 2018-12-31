@@ -73,7 +73,6 @@ export class Paginated<T> {
         return inbound;
     }
         
-    
     private to(page: number, end: number = page * this.size): void {
         this.displayed = this.items.slice(end - this.size, end);
         this.page = page;

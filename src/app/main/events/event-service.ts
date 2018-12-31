@@ -11,17 +11,11 @@ import { Event } from './event';
 
 
 @Injectable({ providedIn: 'root' })
-export class EventService {
-    
-    private authentication: AuthenticationService;
-    private http: HttpClient;
-    
+export class EventService extends RESTListService<Event> {
     
     constructor(authentication: AuthenticationService, http: HttpClient) {
-        this.authentication = authentication;
-        this.http = http;
+        super(authentication, http, `activities?id=${authentication.identity.id}`);
     }
-    
     
     events(): Observable<Event[]> {
         return this.http.get<List>(`${environment.api}/activities?id=`).pipe(
