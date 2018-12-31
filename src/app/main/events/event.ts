@@ -88,7 +88,7 @@ export namespace Event {
                 enrolement: Enrolement.from(attributes['enrol-status']),
                 updated: moment(attributes['updated-at'], moment.HTML5_FMT.DATETIME_LOCAL_MS).toDate(),
               
-                groups: attributes['mentor-group']
+                groups: attributes['mentor-groups']
            },
            
            category: {
