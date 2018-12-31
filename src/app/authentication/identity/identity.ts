@@ -52,7 +52,7 @@ export class Identity {
     
             
     static from(json: any): Identity {
-        return new Identity(json.attributes.name, json.id,Role.from(json.type));
+        return new Identity(json.attributes.name, json.id, Role.from(json.type));
     }
     
     static to(identity: Identity): any {

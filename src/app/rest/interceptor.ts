@@ -21,7 +21,7 @@ export class RESTInterceptor implements HttpInterceptor {
     
     
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        for (let entry of this.urls) {
+        for (const entry of this.urls) {
             if (request.url.includes(entry[0])) {
                 return of(new HttpResponse({ status: 200, body: entry[1]}));
             }
