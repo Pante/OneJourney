@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { take } from 'rxjs/operators';
@@ -10,7 +10,8 @@ import { AuthenticationService } from '../authentication/authentication-service'
 @Component({
     selector: 'app-error',
     templateUrl: './error.component.html',
-    styleUrls: ['./error.component.css']
+    styleUrls: ['./error.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ErrorComponent implements OnInit { 
     

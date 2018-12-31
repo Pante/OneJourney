@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 import { AuthenticationService } from './authentication-service';
+import {Identity} from './identity/identity';
 
 
 export abstract class GuardService implements CanActivate {
@@ -41,15 +42,18 @@ export class LoginGuardService extends GuardService {
 
 
 @Injectable({ providedIn: 'root' })
-export class IdentityGuardService extends GuardService {
+export class IdentityGuardService implements CanActivate {
     
-    constructor(authentication: AuthenticationService, router: Router) {
-        super(authentication, router);
+    private router: Router;
+    
+    
+    constructor(router: Router) {
+        this.router = router;
     }
     
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if (this.authentication.identity) {
+        if (Identity.exists()) {
             this.router.navigate(['/main']);
         }
         

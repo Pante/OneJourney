@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Reward } from './reward';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { environment } from 'src/environments/environment';
+import { List } from 'src/app/rest/body';
 import { AuthenticationService } from '../../authentication/authentication-service';
-import { RESTListService } from 'src/app/shared/rest/rest-list-service';
+import { Reward } from './reward';
 
 
 @Injectable({ providedIn: 'root' })
-export class RewardService extends RESTListService<Reward> {
+export class RewardService {
+    
+    private authentication: AuthenticationService;
+    private http: HttpClient;
+    
     
     constructor(authentication: AuthenticationService, http: HttpClient) {
-        super(authentication, http, `reward_catelogues?id=${authentication.identity.id}`);
+        this.authentication = authentication;
+        this.http = http;
     }
     
-    protected deserialize(data: any): Reward {
-        return Reward.deserialize(data);
+    
+    rewards(): Observable<Reward[]> {
+        return this.http.get<List>(`${environment.api}/reward_catelogues?id=`).pipe(
+            map(response => response.data.map(data => Reward.from(data)))
+        );
     }
     
 }

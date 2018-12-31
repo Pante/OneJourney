@@ -4,7 +4,7 @@ export enum Role {
 }
 
 export class InvalidRoleError extends Error {
-    
+
     constructor(message: string) {
         super(message);
     }
@@ -29,22 +29,56 @@ export namespace Role {
 }
 
 
-export interface Identity {
+export class Identity {
     
-    name: string;
-    id: string;
-    role: Role;
+    readonly name: string;
+    readonly id: number;
+    readonly role: Role;
     
-}
-
-export namespace Identity {
     
-    export function from(json: any): Identity {
+    static cached(): Identity {
+        const stored = localStorage['identity'];
+        if (stored) {
+            return Identity.from(JSON.parse(stored));
+            
+        } else {
+            return undefined;
+        }
+    }
+    
+    static exists(): boolean {
+        return localStorage['identity'] !== undefined;
+    }
+    
+            
+    static from(json: any): Identity {
+        return new Identity(json.attributes.name, json.id,Role.from(json.type));
+    }
+    
+    static to(identity: Identity): any {
         return {
-            name: json.data.attributes.name,
-            id: json.data.id,
-            role: Role.from(json.data.type)
+            id: identity.id,
+            type: identity.role,
+            attributes: {
+                name: identity.name
+            }
         };
+    }
+    
+    
+    private constructor(name: string, id: number, role: Role) {
+        this.name = name;
+        this.id = id;
+        this.role = role;
+    }
+    
+    
+    store(): void {
+        localStorage['identity'] = JSON.stringify(Identity.to(this));
+    }  
+    
+    clear(): void {
+        localStorage.removeItem('identity');
     }
     
 }

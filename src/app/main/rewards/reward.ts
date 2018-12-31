@@ -1,11 +1,27 @@
 export enum Redemption {
-    // TODO
+    
+    ELIGIBLE = 'Eligible',
+    PENDING = 'Pending',
+    REDEEMED = 'Redeemed'
+    
 }
 
 export namespace Redemption {
     
-    export function deserialize(json: any): Redemption {
-        return null; // TODO
+    export function from(redemption: any): Redemption {
+        switch (redemption) {
+            case 'Eligible':
+                return Redemption.ELIGIBLE;
+                
+            case 'Pending':
+                return Redemption.PENDING;
+                
+            case 'Redeemed':
+                return Redemption.REDEEMED;
+            
+            default:
+                return undefined;
+        }
     }
     
 }
@@ -28,22 +44,22 @@ export interface Reward {
 
 export namespace Reward {
     
-    export function serialize(reward: Reward): any {
+    export function to(reward: Reward): any {
         return null; // TODO
     }
     
-    export function deserialize(data: any): Reward {
-        const attributes = data.attributes;
+    export function from(reward: any): Reward {
+        const attributes = reward.attributes;
         return {
-            id: data.id,
-            type: data.type,
+            id: reward.id,
+            type: reward.type,
             
             image: attributes['image-url'],
             
             information: {
                 description: attributes.description,
                 points: attributes.points,
-                status: Redemption.deserialize(attributes['redeem-status'])
+                status: Redemption.from(attributes['redeem-status'])
             }
         };
     } 

@@ -26,8 +26,8 @@ export class RewardsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.get().subscribe(events => this.rewards.load(events));
-}
+        this.subscription = this.service.rewards().subscribe(events => this.rewards.load(events));
+    }
     
     ngOnDestroy() {
         this.subscription.unsubscribe();
