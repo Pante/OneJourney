@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="container-fluid" style="padding: 50px 50px 50px 50px; background-color: #754486">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
                 </div>
@@ -29,7 +29,7 @@
                     </ng-template>
                     
                     <ng-template #default>
-                        <div *ngIf="authentication.loggedIn(); then back; else login"></div>
+                        <div *ngIf="authentication.authenticated(); then back; else login"></div>
                         <ng-template #back>
                             <button type="button" class="btn btn-outline-warning" (click) = "location.back()">Take me back</button>
                         </ng-template>

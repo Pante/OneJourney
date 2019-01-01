@@ -1,7 +1,5 @@
 import * as moment from 'moment';
 
-export const formats = [''];
-
 
 export enum Enrolement {
     // TODO
@@ -9,7 +7,7 @@ export enum Enrolement {
 
 export namespace Enrolement {
     
-    export function deserialize(json: any): Enrolement {
+    export function from(enrolment: any): Enrolement {
         return null; // TODO
     }
     
@@ -67,28 +65,30 @@ export interface Event {
 
 export namespace Event {
         
-    export function serialize(data: Event): any {
+    export function to(event: Event): any {
         return null; // TODO
     }
      
-    export function deserialize(data: any): Event {
-        const attributes = data.attributes;
+    export function from(event: any): Event {
+        const attributes = event.attributes;
         return {
-            id: data.id,
-            type: data.type,
+            id: event.id,
+            type: event.type,
 
             image: attributes['image-url'],
 
             information: {
                 title: attributes.title,
                 description: attributes.description,
-                date: moment(attributes['event-datetime'], formats).toDate(),
+                date: moment(attributes['event-datetime'], moment.HTML5_FMT.DATETIME_LOCAL_MS).toDate(),
                 points: attributes.points,
                 
                 staff: attributes.staff,
-                enrolement: Enrolement.deserialize(attributes['enrol-status']),
-                updated: moment(attributes['updated-at']).toDate(),
-                groups: attributes['mentor-group']
+              
+                enrolement: Enrolement.from(attributes['enrol-status']),
+                updated: moment(attributes['updated-at'], moment.HTML5_FMT.DATETIME_LOCAL_MS).toDate(),
+              
+                groups: attributes['mentor-groups']
            },
            
            category: {
