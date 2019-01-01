@@ -16,6 +16,7 @@ export class RESTInterceptor implements HttpInterceptor {
         this.urls = new Array<[string, any]>(
             [`${environment.api}/activities?id=`, require('./mock/events.json')],
             [`${environment.api}/reward_catelogues?id=`, require('./mock/rewards.json')],
+            [`${environment.api}/factions`, require('./mock/factions.json')],
         );
     }
     
