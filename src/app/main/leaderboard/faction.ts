@@ -1,32 +1,34 @@
-export interface Factions {
+export interface Faction {
     id: number;
     type: string;
 
+    image: string;
+    
     info: {
         name: string;
         points: number;
     };
-    image: string;
 }
 
-export namespace Factions {
+export namespace Faction {
 
-    export function to(data: Factions): any {
+    export function to(data: Faction): any {
         return null;
     }
 
-    export function from(data: any): Factions {
+    export function from(data: any): Faction {
         const attributes = data.attributes;
 
         return {
             id: data.id,
             type: data.type,
+            
+            image: attributes['image-url'],
 
             info: {
                 name: attributes.name,
                 points: attributes.points
-            },
-            image: `../../../assets/images/team/id${data.id}${attributes.name}shield.png`
+            }
         };
     }
 }
