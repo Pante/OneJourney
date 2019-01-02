@@ -1,14 +1,4 @@
 <div class="row">
-    <div class="col-12">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Events</a></li>
-            </ol>
-        </nav>
-    </div>
-</div>
-<div class="row">
     <div class="col-12 text-center">
         <h1 class="display-4 text-White">Events</h1>
         <p class="lead">
@@ -20,9 +10,9 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-11">
-      <div class="row">
-        <div class="p-3" *ngFor="let event of events.displayed">
-          <div class="card" style="width: 18rem;">
+        <div class="row">
+             <div class="p-3" *ngFor="let event of events.displayed">
+                <div class="card" style="width: 18rem;">
                     <div class="card-header text-white" style="background-color: #8B2F8A;">
                         <span class="badge badge-secondary bg-warning">New</span>
                     </div>
@@ -41,44 +31,9 @@
                             </div>
                         </div>
                     </div>
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-11">
-      <div class="d-flex justify-content-center">
-          <div class="p-2">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link bg-purple text-white" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-purple text-white" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&#10092;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link bg-purple text-white" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link bg-purple text-white" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link bg-purple text-white" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link bg-purple text-white" href="#" aria-label="Next">
-                      <span aria-hidden="true">&#10093;</span>
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-purple text-white" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-            </nav>
-          </div>
-      </div>
-    </div>
+    <div class="col"></div>
 </div>

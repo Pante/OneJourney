@@ -4,28 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                </div>
-                <div class="col-6 text-center">
-                  <img src="../../../assets/images/loginRedirect.png" alt='Login Redirect'style="width:50%; height:100%;"/>
-                </div>
-                <div class="col">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <h1 class="display-2 text-white">Loading</h1>
-                    <p><em>Please Wait to be redirected.......</em></p>
-                </div>
-            </div>
-            <div class="row" style="margin: 30px 30px 30px 30px;">
-                <div class="col text-center">
-                    <button type="button" class="btn btn-outline-info btn-lg" (click)="authentication.login()">Login</button>
-                </div>
-            </div>
+    <body style="background-color: #754486">
+        <div class="d-flex d-row justify-content-center" style="margin-top:15%;">
+            <button type="button" class="btn btn-primary" (click)="authentication.login()">Login</button>
         </div>
     </body>
 </html>

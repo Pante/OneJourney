@@ -1,26 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Factions } from './factions';
-import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { environment } from 'src/environments/environment';
 import { List } from 'src/app/rest/body';
-import { AuthenticationService } from '../../authentication/authentication-service';
+import { Faction } from './faction';
+
 
 @Injectable({ providedIn: 'root' })
 export class LeaderboardService {
 
-    private authentication: AuthenticationService;
     private http: HttpClient;
 
-    constructor(authentication: AuthenticationService, http: HttpClient) {
-        this.authentication = authentication;
+
+    constructor(http: HttpClient) {
         this.http = http;
     }
 
-    factions(): Observable<Factions[]> {
+
+    factions(): Observable<Faction[]> {
         return this.http.get<List>(`${environment.api}/factions`).pipe(
-            map(response => response.data.map(data => Factions.from(data))));
+            map(response => response.data.map(data => Faction.from(data))));
     }
+    
 }
