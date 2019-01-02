@@ -12,7 +12,7 @@ import { Identity } from './identity/identity';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    
+
     private service: OAuthService;
     private errors: ErrorService;
     private router: Router;
@@ -48,52 +48,52 @@ export class AuthenticationService {
             return this.errors.report('Unable to login', 'Well, this is embarrassing...', 'Try to login again', () => this.login());
         }
     }
-    
+
     async logout(): Promise<void> {
         await this.service.logOut();
         this.current.clear();
-        
+
         await this.login();
     }
-    
+
 
     async identify(): Promise<void> {
         try {
             if (this.service.hasValidAccessToken() && (this.current = Identity.cached())) {
-                this.router.navigate(['/main']);  
+                this.router.navigate(['/main']);
             }
-            
+
             const success = await this.service.tryLogin();
-            if (success) {                         
+            if (success) {
                 const response = await this.http.get<Box>(authentication.userinfoEndpoint).toPromise();
                 this.current = Identity.from(response.data);
                 this.current.store();
-                
-                this.router.navigate(['/main']); 
-                
+
+                this.router.navigate(['/main']);
+
             } else {
                 this.router.navigate(['/login']);
             }
-            
+
         } catch {
             return this.errors.report('Unable to find user', 'Do we even exist?', 'Try to login again', () => this.login());
         }
     }
-    
-    
+
+
     identity(): Identity {
         if (!this.current) {
             this.current = Identity.cached();
         }
-        
+
         return this.current;
     }
-    
-    
+
+
     authenticated(): boolean {
         return this.service.hasValidAccessToken() && Identity.exists();
     }
-    
+
     loggedIn(): boolean {
         return this.service.hasValidAccessToken();
     }
