@@ -1,0 +1,36 @@
+.bg-purple {
+  background-color: #AA54AA;
+}
+
+p.text-purple {
+  color: #AA54AA;
+}
+p.text-warning {
+  color: #ffc107;
+}
+
+.padding-center {
+  margin-top: 25%;
+  margin-bottom: 15%;
+}
+
+.bg-big-card-transparent {
+  width: 15rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+
+.bg-medium-card-transparent {
+  width: 13rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+  margin-top: 2.5%;
+}
+
+.bg-small-card-transparent {
+  padding-top: 5%;
+  width: 11rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+  margin-top: 4.5%;
+}

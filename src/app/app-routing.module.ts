@@ -19,12 +19,13 @@ const routes: Routes = [
     {
         path: 'main',
         component: MainComponent,
+        canActivate: [StudentGuardService],
         children: [
-            { path: 'events', component: EventsComponent, canActivate: [StudentGuardService] },
-            { path: 'profile', component: ProfileComponent, canActivate: [StudentGuardService] },
-            { path: 'rewards', component: RewardsComponent, canActivate: [StudentGuardService] },
-            { path: 'medCert', component: MedSubmissionComponent, canActivate: [StudentGuardService] },
-            { path: 'leaderboard', component: LeaderboardComponent, canActivate: [StudentGuardService] },
+            { path: 'events', component: EventsComponent },
+            { path: 'profile', component: ProfileComponent },
+            { path: 'rewards', component: RewardsComponent },
+            { path: 'medCert', component: MedSubmissionComponent },
+            { path: 'leaderboard', component: LeaderboardComponent },
             {
                 path: '',
                 redirectTo: 'events',
@@ -45,7 +46,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -12,7 +12,7 @@ import { Identity } from './identity/identity';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    
+
     private service: OAuthService;
     private errors: ErrorService;
     private router: Router;
@@ -41,55 +41,59 @@ export class AuthenticationService {
      */
     async login(): Promise<void> {
         try {
-            await this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
-            await this.service.initImplicitFlow();
+            this.service.setupAutomaticSilentRefresh(); // Remember to include silent-refresh in build
+            this.service.initImplicitFlow();
 
         } catch {
             return this.errors.report('Unable to login', 'Well, this is embarrassing...', 'Try to login again', () => this.login());
         }
     }
-    
+
     async logout(): Promise<void> {
         await this.service.logOut();
         this.current.clear();
-        
+
         await this.login();
     }
-    
+
 
     async identify(): Promise<void> {
         try {
-            if ((this.current = Identity.cached()) && this.service.hasValidAccessToken()) {
+            if (this.service.hasValidAccessToken() && (this.current = Identity.cached())) {
                 this.router.navigate(['/main']);
-                
-            } else {
-                await this.service.tryLogin();
+            }
+
+            const success = await this.service.tryLogin();
+            if (success) {
                 const response = await this.http.get<Box>(authentication.userinfoEndpoint).toPromise();
                 this.current = Identity.from(response.data);
                 this.current.store();
 
-                this.router.navigate(['/main']); 
+                this.router.navigate(['/main']);
+
+            } else {
+                this.router.navigate(['/login']);
             }
-            
+
         } catch {
-            this.errors.report('Unable to find user', 'Do we even exist?', 'Try to login again', () => this.login());
+            return this.errors.report('Unable to find user', 'Do we even exist?', 'Try to login again', () => this.login());
         }
     }
-    
-    
+
+
     identity(): Identity {
         if (!this.current) {
             this.current = Identity.cached();
         }
-        
+
         return this.current;
     }
-    
-    
+
+
     authenticated(): boolean {
         return this.service.hasValidAccessToken() && Identity.exists();
     }
-    
+
     loggedIn(): boolean {
         return this.service.hasValidAccessToken();
     }
