@@ -39,25 +39,3 @@ export class LoginGuardService extends GuardService {
     }
     
 }
-
-
-@Injectable({ providedIn: 'root' })
-export class IdentityGuardService implements CanActivate {
-    
-    private router: Router;
-    
-    
-    constructor(router: Router) {
-        this.router = router;
-    }
-    
-    
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if (Identity.exists()) {
-            this.router.navigate(['/main']);
-        }
-        
-        return true;
-    }
-    
-}

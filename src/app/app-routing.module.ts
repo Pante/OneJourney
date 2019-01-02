@@ -11,7 +11,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { IdentityComponent } from './authentication/identity/identity.component';
 import { ProfileComponent } from './main/profile/profile.component';
 
-import { LoginGuardService, IdentityGuardService } from './authentication/guard-services';
+import { LoginGuardService } from './authentication/guard-services';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard-services';
 
 
@@ -34,7 +34,7 @@ const routes: Routes = [
     },
     
     { path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
-    { path: 'identity', component: IdentityComponent, canActivate: [IdentityGuardService] },
+    { path: 'identity', component: IdentityComponent },
     {
         path: '',
         redirectTo: '/login',
@@ -45,7 +45,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
