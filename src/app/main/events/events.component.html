@@ -1,16 +1,6 @@
 <div class="row">
-    <div class="col-12">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Events</a></li>
-            </ol>
-        </nav>
-    </div>
-</div>
-<div class="row">
     <div class="col-12 text-center">
-        <h1 class="display-4 text-White">Events</h1>
+        <h1 class="display-4 text-white">Events</h1>
         <p class="lead">
             What's happening this month......
         </p>
@@ -22,7 +12,7 @@
     <div class="col-11">
       <div class="row">
         <div class="p-3" *ngFor="let event of events.displayed">
-          <div class="card" style="width: 18rem;">
+          <div class="card outline shadows" style="width: 18rem;">
                     <div class="card-header text-white" style="background-color: #8B2F8A;">
                         <span class="badge badge-secondary bg-warning">New</span>
                     </div>
@@ -30,7 +20,7 @@
                     <div class="card-body" style="background-color: #AA54AA;">
                         <h5 class="card-title text-white">Title</h5>
                         <p class="card-text text-white">Description</p>
-                        <div class="row">
+                        <div class="row rounded">
                             <div class="col">
                                 <a href="#" class="btn btn-info btn-sm text-white">Find More....</a>
                             </div>

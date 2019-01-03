@@ -1,0 +1,8 @@
+.bg-main {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,#5b5b5b 20%,#5b5b5b 20%), url('../../assets/images/Main_bg.jpg'); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: darken;
+}
