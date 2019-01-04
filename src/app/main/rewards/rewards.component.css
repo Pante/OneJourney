@@ -14,6 +14,10 @@
   background-color: #b637fb
 }
 
+.bg-violet:hover {
+  background-color: #600392;
+}
+
 .text-purple {
   color: #9505e3;
 }
@@ -40,6 +44,17 @@
 
 .outline:hover {
   box-shadow: 5px 10px 18px grey;
+}
+
+.outline-modal {
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.9;
 }
 
 .shadows {
