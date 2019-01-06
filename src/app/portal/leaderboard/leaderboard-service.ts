@@ -22,7 +22,8 @@ export class LeaderboardService {
 
     factions(): Observable<Faction[]> {
         return this.http.get<List>(`${environment.api}/factions`).pipe(
-            map(response => response.data.map(data => Faction.from(data))));
+            map(response => response.data.map(data => Faction.from(data)))
+        );
     }
     
 }
