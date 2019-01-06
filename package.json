@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^7.1.0",
     "@angular/router": "^7.1.0",
     "@types/jquery": "^3.3.29",
+    "angular-oauth2-oidc": "^5.0.2",
     "bootstrap": "^4.2.1",
     "client-oauth2": "^4.2.3",
     "core-js": "^2.6.1",
