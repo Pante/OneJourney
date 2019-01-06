@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainComponent } from './main/main.component';
+import { PortalComponent } from './portal/portal.component';
 import { ErrorComponent } from './error/error.component';
-import { EventsComponent } from './main/events/events.component';
-import { RewardsComponent } from './main/rewards/rewards.component';
-import { MedSubmissionComponent } from './main/med-submission/med-submission.component';
-import { LeaderboardComponent } from './main/leaderboard/leaderboard.component';
+import { EventsComponent } from './portal/events/events.component';
+import { RewardsComponent } from './portal/rewards/rewards.component';
+import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
+import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { IdentityComponent } from './authentication/identity/identity.component';
-import { ProfileComponent } from './main/profile/profile.component';
+import { ProfileComponent } from './portal/profile/profile.component';
 
 import { LoginGuardService, IdentityGuardService } from './authentication/guard-services';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard-services';
@@ -17,8 +17,8 @@ import { StaffGuardService, StudentGuardService } from './authentication/role-gu
 
 const routes: Routes = [
     {
-        path: 'main',
-        component: MainComponent,
+        path: 'portal',
+        component: PortalComponent,
         children: [
             { path: 'events', component: EventsComponent, canActivate: [StudentGuardService] },
             { path: 'profile', component: ProfileComponent, canActivate: [StudentGuardService] },

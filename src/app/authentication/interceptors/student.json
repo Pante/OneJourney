@@ -1,0 +1,53 @@
+{
+    "data": {
+        "id": "1",
+        "type": "students",
+        "attributes": {
+            "stud-no": "ict-fintechdemo1",
+            "name": "ict-fintechdemo1",
+            "points": 200,
+            "redemption-balance": 120,
+            "mentor-group": {
+                "id": 93,
+                "code": "17T7",
+                "faction": {
+                    "id": 5,
+                    "name": "Commando",
+                    "points": 610
+                },
+                "staff": {
+                    "id": 73,
+                    "name": "ict-fintechdemo2",
+                    "email-id": "ict-fintechdemo2"
+                }
+            },
+            "student-awards": [
+                {
+                    "id": 1,
+                    "amount": 3,
+                    "award-name": "Responsibility"
+                },
+                {
+                    "id": 2,
+                    "amount": 5,
+                    "award-name": "Respect"
+                },
+                {
+                    "id": 3,
+                    "amount": 8,
+                    "award-name": "Resilience"
+                },
+                {
+                    "id": 4,
+                    "amount": 7,
+                    "award-name": "Integrity"
+                },
+                {
+                    "id": 5,
+                    "amount": 2,
+                    "award-name": "Compassion"
+                }
+            ]
+        }
+    }
+}

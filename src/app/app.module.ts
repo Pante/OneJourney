@@ -8,24 +8,26 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
+import { PortalComponent } from './portal/portal.component';
 import { ErrorComponent } from './error/error.component';
-import { EventsComponent } from './main/events/events.component';
-import { RewardsComponent } from './main/rewards/rewards.component';
-import { MedSubmissionComponent } from './main/med-submission/med-submission.component';
-import { LeaderboardComponent } from './main/leaderboard/leaderboard.component';
-import { ProfileComponent } from './main/profile/profile.component';
+import { EventsComponent } from './portal/events/events.component';
+import { RewardsComponent } from './portal/rewards/rewards.component';
+import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
+import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
+import { ProfileComponent } from './portal/profile/profile.component';
 
 import { ErrorService } from './error/error-service';
-import { EventService } from './main/events/event-service';
-import { RewardService } from './main/rewards/reward-service';
+import { EventService } from './portal/events/event-service';
+import { LeaderboardService } from './portal/leaderboard/leaderboard-service';
+import { ProfileService } from './portal/profile/profile-service';
+import { RewardService } from './portal/rewards/reward-service';
 import { interceptors } from 'src/environments/interceptors';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        MainComponent,
+        PortalComponent,
         ErrorComponent,
         EventsComponent,
         RewardsComponent,
@@ -41,7 +43,7 @@ import { interceptors } from 'src/environments/interceptors';
         AppRoutingModule
     ],
     providers: [
-        ErrorService, EventService, RewardService, interceptors
+        ErrorService, EventService, LeaderboardService, ProfileService, RewardService, interceptors
     ],
     bootstrap: [AppComponent]
 })

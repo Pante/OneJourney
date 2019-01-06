@@ -1,11 +1,10 @@
 {
-    "data": [
-        {
+    "data": {
         "id": "1",
-        "type": "students",
+        "type": "staffs",
         "attributes": {
-            "stud-no": "ict-fintechdemo1",
-            "name": "ict-fintechdemo1",
+            "stud-no": "ict-fintechdemo2",
+            "name": "ict-fintechdemo2",
             "points": 200,
             "redemption-balance": 120,
             "mentor-group": {
@@ -33,23 +32,22 @@
                     "amount": 5,
                     "award-name": "Respect"
                 },
-            {
-                "id": 3,
-                "amount": 8,
-                "award-name": "Resilience"
-            },
-            {
-                "id": 4,
-                "amount": 7,
-                "award-name": "Integrity"
-            },
-            {
-                "id": 5,
-                "amount": 2,
-                "award-name": "Compassion"
-            }
-        ]
+                {
+                    "id": 3,
+                    "amount": 8,
+                    "award-name": "Resilience"
+                },
+                {
+                    "id": 4,
+                    "amount": 7,
+                    "award-name": "Integrity"
+                },
+                {
+                    "id": 5,
+                    "amount": 2,
+                    "award-name": "Compassion"
+                }
+            ]
+        }
     }
-  }
-]
 }
