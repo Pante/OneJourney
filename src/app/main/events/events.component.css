@@ -27,6 +27,7 @@
 }
 
 .outline {
+  border: 1px solid darkslategrey;
   margin-bottom: 5%;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
@@ -50,6 +51,19 @@
   background-size: cover;
   background-blend-mode: normal;
   opacity: 0.9;
+}
+
+.outline-pagination {
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.8;
 }
 
 .shadows {

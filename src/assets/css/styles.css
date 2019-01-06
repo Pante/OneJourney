@@ -62,9 +62,9 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #8b2f8a;
-    color: #fff;
-    transition: all 0.3s;
+    background-image: linear-gradient(to bottom,#2b2628 20%,#2b2628 20%);  
+    transition: all 0.2s;
+    opacity: 0.8;
 }
 
 #sidebar.active {
@@ -72,8 +72,8 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 10px;
-    background: #aa54aa;
+    padding: 12px;
+    background: transparent;
 }
 
 #sidebar ul.components {
@@ -98,7 +98,7 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #fcefee;
-    background: #d893d0;
+    background: #ffffff8c;
 }
 
 #sidebar ul li.active>a,
@@ -122,9 +122,6 @@ ul ul a {
     font-size: 0.5em !important;
     padding-left: 10px !important;
     background: #8b2f8a;
-}
-
-ul.CTAs {
 }
 
 ul.CTAs a {
@@ -181,5 +178,11 @@ a.article:hover {
     }
     #sidebarCollapse span {
         display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    #sidebarCollapse {
+        visibility: hidden;
     }
 }
