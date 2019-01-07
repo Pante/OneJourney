@@ -66,7 +66,7 @@
 }
 
 .dark:before {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .outline-modal {
@@ -95,4 +95,26 @@
 
 .shadows {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #E57682;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
 }
