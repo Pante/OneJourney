@@ -182,7 +182,7 @@ a.article:hover {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 770px) {
     #sidebarCollapse {
         visibility: hidden;
     }
