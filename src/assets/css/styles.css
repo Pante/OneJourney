@@ -62,7 +62,8 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background-image: linear-gradient(to bottom,#2b2628 20%,#2b2628 20%);  
+    background-color: #8b2f8a;
+    /*background-image: linear-gradient(to bottom,#2b2628 20%,#2b2628 20%);*/  
     transition: all 0.2s;
     opacity: 0.8;
 }
@@ -97,7 +98,7 @@ a:focus {
   }
 
 #sidebar ul li a:hover {
-    color: #fcefee;
+    color: #fcefeeef;
     background: #ffffff8c;
 }
 

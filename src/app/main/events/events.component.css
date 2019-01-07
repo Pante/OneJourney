@@ -38,8 +38,32 @@
   opacity: 0.9;
 }
 
+/*
 .outline:hover {
   box-shadow: 5px 10px 18px grey;
+}*/
+
+.overlay {
+  position: relative;
+}
+
+.overlay:before{
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: none;
+  z-index:0;
+}
+
+.overlay:hover:before{
+  display: block;
+}
+
+.dark:before {
+  background-color: rgba(0,0,0,0.3);
 }
 
 .outline-modal {
