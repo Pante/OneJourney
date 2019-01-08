@@ -5,7 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background-image: linear-gradient(to bottom,#342A5B 10%,#342A5B 10%), url('../../assets/images/Main_bg.jpg'); 
 }
 
 p {
@@ -60,7 +60,7 @@ a:focus {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 200vh;
     z-index: 999;
     background-color: #8b2f8a;
     /*background-image: linear-gradient(to bottom,#2b2628 20%,#2b2628 20%);*/  
