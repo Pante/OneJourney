@@ -4,7 +4,7 @@ import { Event, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { AuthenticationService } from './authentication-service';
+import { AuthenticationService } from './authentication.service';
 
 
 export abstract class AuthenticationComponent implements OnDestroy {

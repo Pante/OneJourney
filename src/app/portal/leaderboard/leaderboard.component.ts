@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs';
 
-import { LeaderboardService } from './leaderboard-service';
+import { LeaderboardService } from './leaderboard.service';
 import { Faction } from './faction';
 
 
@@ -19,9 +20,10 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
     factions: Faction[];
 
 
-    constructor(service: LeaderboardService) {
+    constructor(service: LeaderboardService, title: Title) {
         this.service = service;
         this.factions = [];
+        title.setTitle('OneJourney - Leaderboard');
     }
 
 

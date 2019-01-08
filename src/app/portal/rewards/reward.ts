@@ -30,15 +30,10 @@ export namespace Redemption {
 export interface Reward {
     
     id: number;
-    type: string;
-    
     image: string;
-    
-    information: {
-        description: string;
-        points: number;
-        status: Redemption;
-    };
+    description: string;
+    points: number;
+    status: Redemption;
     
 }
 
@@ -52,15 +47,10 @@ export namespace Reward {
         const attributes = reward.attributes;
         return {
             id: reward.id,
-            type: reward.type,
-            
             image: attributes['image-url'],
-            
-            information: {
-                description: attributes.description,
-                points: attributes.points,
-                status: Redemption.from(attributes['redeem-status'])
-            }
+            description: attributes.description,
+            points: attributes.points,
+            status: Redemption.from(attributes['redeem-status'])
         };
     } 
     

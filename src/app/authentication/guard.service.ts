@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
-import { AuthenticationService } from './authentication-service';
+import { AuthenticationService } from './authentication.service';
 import { Identity } from './identity/identity';
 
 
@@ -34,27 +34,6 @@ export class LoginGuardService extends GuardService {
         if (this.authentication.loggedIn()) {
             this.router.navigate(['/identity']);
         }
-
-        return true;
-    }
-
-}
-
-@Injectable({ providedIn: 'root' })
-export class IdentityGuardService implements CanActivate {
-
-    private router: Router;
-
-
-    constructor(router: Router) {
-        this.router = router;
-    }
-
-
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-//        if (Identity.exists()) {
-//            this.router.navigate(['/main']);
-//        }
 
         return true;
     }
