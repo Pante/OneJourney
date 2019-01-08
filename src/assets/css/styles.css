@@ -5,7 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient(to bottom,#342A5B 10%,#342A5B 10%), url('../../assets/images/Main_bg.jpg'); 
+    background: #fafafa;
 }
 
 p {
