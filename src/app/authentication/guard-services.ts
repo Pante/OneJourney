@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 import { AuthenticationService } from './authentication-service';
-import {Identity} from './identity/identity';
+import { Identity } from './identity/identity';
 
 
 export abstract class GuardService implements CanActivate {
@@ -53,9 +53,9 @@ export class IdentityGuardService implements CanActivate {
 
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if (Identity.exists()) {
-            this.router.navigate(['/main']);
-        }
+//        if (Identity.exists()) {
+//            this.router.navigate(['/main']);
+//        }
 
         return true;
     }
