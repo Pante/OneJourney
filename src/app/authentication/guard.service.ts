@@ -31,9 +31,9 @@ export class LoginGuardService extends GuardService {
 
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        if (this.authentication.loggedIn()) {
+        /*if (this.authentication.loggedIn()) {
             this.router.navigate(['/identity']);
-        }
+        }*/
 
         return true;
     }

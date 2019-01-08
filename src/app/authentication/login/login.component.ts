@@ -14,7 +14,8 @@ import { AuthenticationComponent } from '../authentication.component';
 export class LoginComponent extends AuthenticationComponent {
 
     constructor(authentication: AuthenticationService, router: Router) {
-        super(authentication, router, '/login', () => this.authentication.login());
+        super(authentication, router, '/login', () => {});
     }
 
 }
+/*this.authentication.login()*/
