@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { Subscription } from 'rxjs';
 
-import { ProfileService } from './profile-service';
+import { ProfileService } from './profile.service';
 import { User } from './user';
 
 
@@ -19,8 +20,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
     user?: User;
 
 
-    constructor(service: ProfileService) {
+    constructor(service: ProfileService, title: Title) {
         this.service = service;
+        title.setTitle('OneJourney - Profile');
     }
 
 

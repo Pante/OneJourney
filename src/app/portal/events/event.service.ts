@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { List } from 'src/app/rest/body';
-import { AuthenticationService } from '../../authentication/authentication-service';
+import { AuthenticationService } from '../../authentication/authentication.service';
 import { Event } from './event';
 
 

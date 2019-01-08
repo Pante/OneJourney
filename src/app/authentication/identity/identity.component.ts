@@ -1,8 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../authentication-service';
-import { AuthenticationComponent } from '../authentication-component';
+import { AuthenticationService } from '../authentication.service';
+import { AuthenticationComponent } from '../authentication.component';
 
 
 @Component({
