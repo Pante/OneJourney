@@ -40,7 +40,6 @@ export class LoginGuardService extends GuardService {
 
 }
 
-
 @Injectable({ providedIn: 'root' })
 export class IdentityGuardService implements CanActivate {
 
