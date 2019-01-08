@@ -1,13 +1,15 @@
-export enum Role {
-    STAFF = 'staffs',
-    STUDENT = 'student'
-}
-
 export class InvalidRoleError extends Error {
 
     constructor(message: string) {
         super(message);
     }
+    
+}
+
+export enum Role {
+    
+    STAFF = 'staffs',
+    STUDENT = 'students'
     
 }
 
@@ -18,7 +20,7 @@ export namespace Role {
             case 'staffs':
                 return Role.STAFF;
                 
-            case 'student':
+            case 'students':
                 return Role.STUDENT;
                 
             default:
@@ -31,8 +33,8 @@ export namespace Role {
 
 export class Identity {
     
-    readonly name: string;
     readonly id: number;
+    readonly name: string;
     readonly role: Role;
     
     

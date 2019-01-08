@@ -35,7 +35,7 @@ import { environment } from '../../environments/environment';
         AuthenticationService,
         LoginGuardService,
         IdentityGuardService, 
-        StaffGuardService, 
+        StaffGuardService,
         StudentGuardService
     ]
 })

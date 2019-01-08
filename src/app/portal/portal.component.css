@@ -6,3 +6,15 @@
     background-size: cover;
     background-blend-mode: darken;
 }
+
+#sidebar, #sidebar-header {
+    background-color: #8b2f8a;
+}
+
+#sidebar a:hover, #sidebar a:visited, #sidebar a:link, #sidebar  a:active {
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    cursor: pointer;
+}

@@ -6,10 +6,10 @@ import { AuthenticationService } from '../authentication/authentication-service'
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  templateUrl: './portal.component.html',
+  styleUrls: ['./portal.component.css']
 })
-export class MainComponent implements OnInit {
+export class PortalComponent implements OnInit {
 
   authentication: AuthenticationService;
 

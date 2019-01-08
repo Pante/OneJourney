@@ -1,3 +1,14 @@
 body {
     background-color: #754486;
 }
+
+a#login {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+a:focus#login, a:hover#login {
+    color: #2f4fa1;
+    transition: all 0.3s;
+    cursor: pointer;
+}

@@ -5,30 +5,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { authentication } from 'src/environments/authentication';
-import { Role } from '../identity/identity';
 
 
-export const student = {
-    data: {
-        id: 1,
-        type: Role['STUDENT'],
-        attributes: {
-            name: 'ICT-FintechDemo1/ ICT'
-        }
-    }
-};
+export const student = require('./student.json');
 
-
-
-export const staff = {
-    data: {
-        id: 2,
-        type: Role['STAFF'],
-        attributes: {
-            name: 'ICT-FintechDemo2/ ICT'
-        }
-    }
-};
+export const staff = require('./staff.json');
 
 
 @Injectable({ providedIn: 'root' })

@@ -10,9 +10,9 @@
                 <div class="col">
                 </div>
                 <div class="text-center">
-                  <div class="spinner-border text-info" style="width: 15rem; height: 15rem;" role="status">
-                    <span class="sr-only">Loading...</span>
-                  </div>
+                    <div class="spinner-border text-info" style="width: 15rem; height: 15rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </div>
                 <div class="col">
                 </div>
@@ -20,7 +20,11 @@
             <div class="row">
                 <div class="col text-center">
                     <h1 class="display-2 text-white">Loading</h1>
-                    <p><em>Please Wait to be redirected.......</em></p>
+                    <p>
+                        <em>Please click <a id="login" (click)="authentication.identify()">here</a> if you are not redirected
+                            within a few seconds
+                        </em>
+                    </p>
                 </div>
             </div>
         </div>
