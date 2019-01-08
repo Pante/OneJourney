@@ -1,0 +1,120 @@
+.bg-magenta {
+  background-color: #912771;
+}
+
+.bg-purple {
+  background-color: #AA54AA;
+}
+
+.bg-orchid {
+  background-color: #7e1e80;
+}
+
+.bg-violet {
+  background-color: #b637fb
+}
+
+.bg-violet:hover {
+  background-color: #600392;
+}
+
+.text-purple {
+  color: #9505e3;
+}
+
+.text-orchid {
+  color: #7e1e80;
+}
+
+.text-violet {
+  color: #b637fb
+}
+
+.outline {
+  border: 1px solid darkslategrey;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.9;
+}
+
+/*.outline:hover {
+  box-shadow: 5px 10px 18px grey;
+}*/
+
+.overlay {
+  position: relative;
+}
+
+.overlay:before{
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: none;
+  z-index:0;
+}
+
+.overlay:hover:before{
+  display: block;
+}
+
+.dark:before {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.outline-modal {
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.outline-pagination {
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.8;
+}
+
+.shadows {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #E57682;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}

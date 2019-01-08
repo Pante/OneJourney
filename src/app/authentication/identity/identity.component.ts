@@ -11,8 +11,8 @@ import { AuthenticationComponent } from '../authentication-component';
     styleUrls: ['./identity.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class IdentityComponent extends AuthenticationComponent {    
-    
+export class IdentityComponent extends AuthenticationComponent {
+
     constructor(authentication: AuthenticationService, router: Router) {
         super(authentication, router, '/identity', () => this.authentication.identify());
     }

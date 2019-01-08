@@ -9,7 +9,7 @@ export class InvalidRoleError extends Error {
 export enum Role {
     
     STAFF = 'staffs',
-    STUDENT = 'student'
+    STUDENT = 'students'
     
 }
 
@@ -20,7 +20,7 @@ export namespace Role {
             case 'staffs':
                 return Role.STAFF;
                 
-            case 'student':
+            case 'students':
                 return Role.STUDENT;
                 
             default:
