@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
 
-import { Paginated } from 'src/app/shared/paginated';
-import { EventService } from './event-service';
+import { Paginated } from '../../pagination/paginated';
+import { EventService } from './event.service';
 import { Event } from './event';
 
 
@@ -20,9 +21,10 @@ export class EventsComponent implements OnInit, OnDestroy {
     events: Paginated<Event>;
     
     
-    constructor(service: EventService, device: DeviceDetectorService) {
+    constructor(service: EventService, device: DeviceDetectorService, title: Title) {
         this.service = service;
         this.events = Paginated.of<Event>(device);
+        title.setTitle('OneJourney - Events');
     }
 
     ngOnInit() {

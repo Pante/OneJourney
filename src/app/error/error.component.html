@@ -1,46 +1,39 @@
-<html>
-    <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                </div>
-                <div class="col-6 text-center">
-                    <img src="../../assets/images/error404.png" style="width:50%; height:100%;" />
-                </div>
-                <div class="col">
-                </div>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    <h1 class="display-2 text-white">{{error.message}}</h1>
-                    <p><em>{{error.details}}</em></p>
-                </div>
+            <div class="col-6 text-center">
+                <img src="../../assets/images/error404.png" style="width:50%; height:100%;" />
             </div>
-            <div class="row" style="margin: 30px 30px 30px 30px;">
-                <div class="col text-center">
-                    <div *ngIf="error.button !== undefined && error.action !== undefined; then custom; else default"></div>
-                    <ng-template #custom>
-                        <button type="button" class="btn btn-outline-warning" (click) = "error.action()">{{error.button}}</button>
-                    </ng-template>
-                    
-                    <ng-template #default>
-                        <div *ngIf="authentication.authenticated(); then back; else login"></div>
-                        <ng-template #back>
-                            <button type="button" class="btn btn-outline-warning" (click) = "location.back()">Take me back</button>
-                        </ng-template>
-                        
-                        <ng-template #login>
-                            <button type="button" class="btn btn-outline-warning" (click) = "authentication.login()">Login</button>
-                        </ng-template>
-                    </ng-template>
-                    
-                </div>
+            <div class="col">
             </div>
         </div>
-    </body>
-</html>
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-2 text-white">{{error.message}}</h1>
+                <p><em>{{error.details}}</em></p>
+            </div>
+        </div>
+        <div class="row" style="margin: 30px 30px 30px 30px;">
+            <div class="col text-center">
+                <div *ngIf="error.button !== undefined && error.action !== undefined; then custom; else default"></div>
+                <ng-template #custom>
+                    <button type="button" class="btn btn-outline-warning" (click) = "error.action()">{{error.button}}</button>
+                </ng-template>
+
+                <ng-template #default>
+                    <div *ngIf="authentication.authenticated(); then back; else login"></div>
+                    <ng-template #back>
+                        <button type="button" class="btn btn-outline-warning" (click) = "location.back()">Take me back</button>
+                    </ng-template>
+
+                    <ng-template #login>
+                        <button type="button" class="btn btn-outline-warning" (click) = "authentication.login()">Login</button>
+                    </ng-template>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</body>

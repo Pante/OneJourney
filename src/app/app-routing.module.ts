@@ -11,8 +11,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { IdentityComponent } from './authentication/identity/identity.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 
-import { LoginGuardService, IdentityGuardService } from './authentication/guard-services';
-import { StaffGuardService, StudentGuardService } from './authentication/role-guard-services';
+import { LoginGuardService } from './authentication/guard.service';
+import { StaffGuardService, StudentGuardService } from './authentication/role-guard.service';
 
 
 const routes: Routes = [
@@ -34,7 +34,7 @@ const routes: Routes = [
     },
     
     { path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
-    { path: 'identity', component: IdentityComponent, canActivate: [IdentityGuardService] },
+    { path: 'identity', component: IdentityComponent },
     {
         path: '',
         redirectTo: '/login',

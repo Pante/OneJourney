@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
 
-import { AuthenticationService } from '../authentication/authentication-service';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-main',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-med-submission',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedSubmissionComponent implements OnInit {
 
-  constructor() { }
+    constructor(title: Title) {
+        title.setTitle('OneJourney - MC');
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        
+    }
 
 }

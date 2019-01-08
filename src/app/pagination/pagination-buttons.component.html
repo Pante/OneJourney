@@ -1,0 +1,38 @@
+<div class="pagination">
+    <span *ngIf="display.page > 1; else disable_first">
+        <a (click)="display.first()">&laquo;&laquo;</a>
+    </span>
+    <ng-template #disable_first>
+        <a class="disabled">&laquo;&laquo;</a>
+    </ng-template>
+
+    <span *ngIf="display.hasBack(); else disable_back">
+        <a (click)="display.back()">&laquo;</a>
+    </span>
+    <ng-template #disable_back>
+        <a class="disabled">&laquo;</a>
+    </ng-template>
+
+    <span *ngFor="let i of display.pages()">
+        <span *ngIf="i === display.page; else page">
+            <a class="active" [style.backgroundColor]="colour">{{i}}</a>
+        </span>
+        <ng-template #page>
+            <a (click)="display.set(i)">{{i}}</a>
+        </ng-template>
+    </span>
+
+    <span *ngIf="display.hasNext(); else disable_next">
+        <a (click)="display.next()">&raquo;</a>
+    </span>
+    <ng-template #disable_next>
+        <a class="disabled">&raquo;</a>
+    </ng-template>
+
+    <span *ngIf="display.page < display.end; else disable_last">
+        <a (click)="display.last()">&raquo;&raquo;</a>
+    </span>
+    <ng-template #disable_last>
+        <a class="disabled">&raquo;&raquo;</a>
+    </ng-template>
+</div>

@@ -15,12 +15,17 @@ import { RewardsComponent } from './portal/rewards/rewards.component';
 import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { ProfileComponent } from './portal/profile/profile.component';
+import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
 
-import { ErrorService } from './error/error-service';
-import { EventService } from './portal/events/event-service';
-import { LeaderboardService } from './portal/leaderboard/leaderboard-service';
-import { ProfileService } from './portal/profile/profile-service';
-import { RewardService } from './portal/rewards/reward-service';
+import { EventCategoryPipe } from './portal/events/event-category.pipe';
+import { RedemptionStatusPipe } from './portal/rewards/redemption-status.pipe';
+import { ShortenPipe } from './shared/shorten.pipe';
+
+import { ErrorService } from './error/error.service';
+import { EventService } from './portal/events/event.service';
+import { LeaderboardService } from './portal/leaderboard/leaderboard.service';
+import { ProfileService } from './portal/profile/profile.service';
+import { RewardService } from './portal/rewards/reward.service';
 import { interceptors } from 'src/environments/interceptors';
 
 
@@ -34,6 +39,11 @@ import { interceptors } from 'src/environments/interceptors';
         MedSubmissionComponent,
         LeaderboardComponent,
         ProfileComponent,
+        PaginationButtonsComponent,
+        
+        EventCategoryPipe,
+        RedemptionStatusPipe,
+        ShortenPipe
     ],
     imports: [
         BrowserModule,

@@ -6,7 +6,7 @@ import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
 import { authentication } from 'src/environments/authentication';
 import { Box } from '../rest/body';
-import { ErrorService } from '../error/error-service';
+import { ErrorService } from '../error/error.service';
 import { Identity } from './identity/identity';
 
 

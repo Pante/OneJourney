@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
-import { AuthenticationService } from '../../authentication/authentication-service';
+import { AuthenticationService } from '../../authentication/authentication.service';
 
 
 export abstract class RESTListService<T> {
