@@ -1,0 +1,67 @@
+.container-outline-purple {
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%);  
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.8;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.container-outline-white {
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.9;
+}
+
+p.text-purple {
+  color: #AA54AA;
+}
+p.text-warning {
+  color: #ffc107;
+}
+
+.padding-center {
+  margin-top: 25%;
+  margin-bottom: 15%;
+}
+
+.bg-big-card-transparent {
+  width: 14rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+
+.bg-medium-card-transparent {
+  width: 12rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+  margin-top: 2.5%;
+}
+
+.bg-small-card-transparent {
+  width: 10rem;
+  background-color: transparent;
+  border: 0px solid transparent;
+  margin-top: 5.5%;
+}
+
+hr {
+  background-color: lightgray;
+}
+
+.shadows {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

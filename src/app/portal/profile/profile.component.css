@@ -1,0 +1,45 @@
+.bg-purple {
+    background-color: #9505e3;
+}
+
+.bg-orchid {
+    background-color: #7e1e80;
+}
+
+.bg-violet {
+    background-color: #b637fb
+}
+
+.text-purple {
+    color: #9505e3;
+}
+
+.text-orchid {
+    color: #7e1e80;
+}
+
+.text-violet {
+    color: #b637fb
+}
+
+.outline {
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.8;
+}
+
+.outline:hover {
+    border-radius: 1rem;
+    box-shadow: 5px 10px 18px grey;
+}
+
+.shadows {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
