@@ -11,55 +11,57 @@
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
         <div class="row justify-content-between">
-              <div class="p-1" *ngFor="let reward of rewards.displayed">
+            <div class="p-1" *ngFor="let reward of rewards.displayed">
                 <div class="card overlay dark outline shadows" style="width:18rem;">
-                  <div class="card-header text-white" style="background-color:#E57682;">
+                    <div class="card-header text-white" style="background-color:#E57682;">
                         <span class="badge badge-secondary" [ngClass]="reward.status | redemption">{{reward.status}}</span>
-                  </div>
-                  <img src={{reward.image}} alt="Reward Image" style="height:150px;">
-                  <div class="card-body" style="background-color:#E57682;">
-                    <h6 class="card-title text-white">{{reward.description}}</h6>
-                    <div class="row">
-                      <div class="col float-left">
-                        <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Find
-                          More....</a>
-                      </div>
-                      <div class="col d-flex justify-content-around">
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
-                      </div>
                     </div>
-                  </div>
+                    <img src={{reward.image}} alt="Reward Image" style="height:150px;">
+                    <div class="card-body" style="background-color:#E57682;">
+                        <h6 class="card-title text-white">{{reward.description}}</h6>
+                        <div class="media">
+                            <img src="../../../assets/images/profile_pic.png" class="mr-3" style="width:3rem;" alt="badges">
+                            <div class="media-body">
+                                <h6 class="mt-0">Bytes</h6>
+                                <p class="text-white">?? Points</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col float-left">
+                                <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Button</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
-              <div class="p-1" *ngFor="let reward of rewards.displayed">
+            <div class="p-1" *ngFor="let reward of rewards.displayed">
                 <div class="card overlay dark outline shadows" style="width:18rem;">
-                  <div class="card-header text-white" style="background-color:#E57682;">
+                    <div class="card-header text-white" style="background-color:#E57682;">
                         <span class="badge badge-secondary" [ngClass]="reward.status | redemption">{{reward.status}}</span>
-                  </div>
-                  <img src={{reward.image}} alt="Reward Image" style="height:150px;">
-                  <div class="card-body" style="background-color:#E57682;">
-                    <h6 class="card-title text-white">{{reward.description}}</h6>
-                    <div class="row">
-                      <div class="col float-left">
-                        <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Find
-                          More....</a>
-                      </div>
-                      <div class="col d-flex justify-content-around">
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                        <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
-                      </div>
                     </div>
-                  </div>
+                    <img src={{reward.image}} alt="Reward Image" style="height:150px;">
+                    <div class="card-body" style="background-color:#E57682;">
+                        <h6 class="card-title text-white">{{reward.description}}</h6>
+                        <div class="media">
+                            <img src="../../../assets/images/profile_pic.png" class="mr-3" style="width:3rem;" alt="badges">
+                            <div class="media-body">
+                                <h6 class="mt-0">Bytes</h6>
+                                <p class="text-white">?? Points</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col float-left">
+                                <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Button</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-        </div>   
+            </div>
+        </div>
     </div>
     <div class="col-1"></div>
 </div>
@@ -78,7 +80,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content outline-modal">
             <div class="modal-header">
@@ -89,11 +91,13 @@
             </div>
             <div class="modal-body">
                 <p class="h5 text-white">Subtitle</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+                    eget
                     quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                 <hr>
                 <p class="h5 text-white">Descriptions</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+                    eget
                     quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
             </div>
             <div class="modal-footer">
