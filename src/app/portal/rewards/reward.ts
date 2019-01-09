@@ -1,6 +1,7 @@
 export enum Redemption {
     
     ELIGIBLE = 'Eligible',
+    INELIGIBLE = 'Ineligible',
     PENDING = 'Pending',
     REDEEMED = 'Redeemed'
     
@@ -12,6 +13,9 @@ export namespace Redemption {
         switch (redemption) {
             case 'Eligible':
                 return Redemption.ELIGIBLE;
+                
+            case 'Ineligible':
+                return Redemption.INELIGIBLE;
                 
             case 'Pending':
                 return Redemption.PENDING;

@@ -1,0 +1,32 @@
+<div class="card overlay dark outline shadows" style="width:18rem;">
+    <div class="card-header text-white" style="background-color:#E57682;">
+        <br/>
+    </div>
+    <img class="img-fluid" src={{reward.image}} alt="Reward Image" style="height: 200px;">
+    <div class="card-body" style="background-color:#E57682;">
+        <h6 class="card-title text-white">{{reward.description}}</h6>
+        <div class="media">
+            <div class="media-body">
+                <p class="text-white"><i class="fas fa-money-bill"></i> {{reward.points}} Bytes</p>
+            </div>
+        </div>
+        <div class="row rounded" [ngSwitch]="reward.status">
+            <div class="col">
+                <a *ngSwitchCase="'Eligible'" (click)="redemption.next(reward)" class="btn btn-success btn-sm text-white">Redeem</a>
+                <a *ngSwitchCase="'Ineligible'" class="btn btn-danger btn-sm text-white">Unable to redeem</a>
+                <a *ngSwitchCase="'Pending'" 
+                    class="btn btn-warning btn-sm text-white" data-toggle="tooltip" data-placement="top" 
+                    title="You will be notified when your reward is ready">
+                    Processing
+                </a>
+                <a *ngSwitchCase="'Redeemed'" class="btn btn-info btn-sm text-white">Redeemed</a>
+                
+                <!-- <a *ngIf="service.identity().role == 'staffs'" class="btn btn-info btn-sm text-white">Edit</a> TODO -->
+            </div>
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
