@@ -16,7 +16,7 @@
             <div class="order-1 p-1 card bg-big-card-transparent">
                   <div class="card-body">
                     <div class="text-center">
-                      <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
+                      <img src="{{factions[0].image}}" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
                     </div>
                     <div class="text-center">
                       <p class="mb-0">{{factions[0].name}}</p>
@@ -30,7 +30,7 @@
             <div class="order-2 p-1 card bg-medium-card-transparent">
               <div class="card-body">
                 <div class="text-center">
-                  <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
+                  <img src="{{factions[1].image}}" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
                 </div>
                 <div class="text-center">
                   <p class="mb-0">{{factions[1].name}}</p>
@@ -44,7 +44,7 @@
             <div class="order-3 p-1 card bg-small-card-transparent">
               <div class="card-body">
                 <div class="text-center">
-                  <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
+                  <img src="{{factions[2].image}}" class="rounded" alt="Profile pic" style="width: 50%; height: 50%;">
                 </div>
                 <div class="text-center">
                   <p class="mb-0">{{factions[2].name}}</p>
@@ -67,7 +67,7 @@
       <div *ngFor="let faction of factions">
         <div class="row">
           <div class="p-3 mr-0">
-            <img src="../../../assets/images/profile_pic.png" class="img-responsive" alt="Profile pic" style="width: 15%;">
+            <img src="{{faction.image}}" class="img-responsive" alt="Profile pic" style="width: 15%;">
           </div>
           <div class="p-3 align-self-center">
             <p class="h6 text-left text-purple"><strong>{{faction.name}}</strong></p>

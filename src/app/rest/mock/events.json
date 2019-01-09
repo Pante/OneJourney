@@ -303,6 +303,358 @@
             }
         },
         {
+            "id": "43",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver IT Workshop",
+                "description": "Volunteer to serve the community through IT workshops in November!",
+                "event-datetime": "2017-11-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/44/activity44.jpeg"
+            }
+        },
+        {
+            "id": "42",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver IT Workshop",
+                "description": "Volunteer to serve the community through IT workshops in November!",
+                "event-datetime": "2017-11-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/44/activity44.jpeg"
+            }
+        },
+        {
+            "id": "41",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver IT Workshop",
+                "description": "Volunteer to serve the community through IT workshops in November!",
+                "event-datetime": "2017-11-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/44/activity44.jpeg"
+            }
+        },
+        {
+            "id": "40",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "39",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "38",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "37",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "36",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
             "id": "35",
             "type": "activities",
             "attributes": {
@@ -348,6 +700,402 @@
         },
         {
             "id": "34",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "33",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "32",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "31",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "30",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "29",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "28",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "27",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "26",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "25",
             "type": "activities",
             "attributes": {
                 "title": "Food from the Heart",
