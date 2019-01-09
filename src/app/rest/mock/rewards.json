@@ -43,6 +43,105 @@
                 "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/4/reward_catalogue4.png"
             }
         }
+      
+      {
+            "id": "5",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket ExtraGoodVibes",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/p4YIDfD.jpg"
+            }
+        },
 
+      {
+            "id": "6",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket GoodVibesOnly",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/AuYwPlV.jpg"
+            }
+        },
+      
+      {
+            "id": "7",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket xtragoodvibes",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/rkmecgt.jpg"
+            }
+        },
+      
+      {
+            "id": "8",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+      
+      {
+            "id": "9",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+      
+      {
+            "id": "10",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+      
+      {
+            "id": "11",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+      
+      {
+            "id": "12",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+      
+      {
+            "id": "13",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        }
+     
     ]
 }
