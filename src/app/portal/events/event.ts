@@ -12,9 +12,6 @@ export namespace Enrolement {
     
     export function from(enrolment: any): Enrolement {
         switch (enrolment) {
-            case 'Unenrolled':
-                return Enrolement.UNENROLLED;
-                
             case 'Interested':
                 return Enrolement.INTERESTED;
                 
@@ -25,7 +22,7 @@ export namespace Enrolement {
                 return Enrolement.REJECTED;
             
             default:
-                return undefined;
+                return Enrolement.UNENROLLED;
         }
     }
     

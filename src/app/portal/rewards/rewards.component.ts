@@ -1,15 +1,14 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import * as $ from 'jquery';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
 
+import { AlertService } from 'src/app/alert/alert.service';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Paginated } from '../../pagination/paginated';
 import { RewardService } from './reward.service';
 import { Reward } from './reward';
-import { Role } from '../../authentication/identity/identity';
 
 
 @Component({
@@ -19,21 +18,20 @@ import { Role } from '../../authentication/identity/identity';
 })
 export class RewardsComponent implements OnInit, OnDestroy {
     
+    private alerts: AlertService;
     private service: RewardService;
     private subscription: Subscription;
     
+    authentication: AuthenticationService;
     rewards: Paginated<Reward>;
-    
-    details: boolean;
-    confirmation: boolean;
-    
     selected: Reward;
     
     
-    constructor(service: RewardService, device: DeviceDetectorService, title: Title) {
+    constructor(alerts: AlertService, authentication: AuthenticationService, service: RewardService, device: DeviceDetectorService, title: Title) {
+        this.alerts = alerts;
+        this.authentication = authentication;
         this.service = service;
         this.rewards = Paginated.of<Reward>(device);
-        this.confirmation = false;
         title.setTitle('OneJourney - Rewards');
     }
 
@@ -46,13 +44,21 @@ export class RewardsComponent implements OnInit, OnDestroy {
     }
     
     
-    expand(reward: Reward) {
+    details(reward: Reward) {
         this.selected = reward;
-        // TODO;
     }
     
-    redeem(reward: Reward) {
-        this.selected = reward;
+    confirm() {
+        this.service.redeem(this.selected).subscribe(success => {
+            // TODO: REFRESH PAGE FROM API
+            if (success) {
+                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+                
+            } else {
+                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+            }
+            
+        });
     }
 
 }

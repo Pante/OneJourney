@@ -7,19 +7,19 @@
     </div>
     <ul class="list-unstyled components">
       <li class="text-center">
-        <a routerLink='/portal/events' class="sidebar-link"><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
+        <a routerLink='/portal/events' class="navlink"><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
       </li>
       <li class="text-center">
-        <a routerLink='/portal/profile'><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
+        <a routerLink='/portal/profile' class="navlink"><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
       </li>
       <li class="text-center">
-        <a routerLink='/portal/leaderboard'><span><i class="fa fa-trophy"></i></span><br />Leader<br />board</a>
+        <a routerLink='/portal/leaderboard' class="navlink"><span><i class="fa fa-trophy"></i></span><br />Leader<br />board</a>
       </li>
       <li class="text-center">
-        <a routerLink='/portal/medCert'><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
+        <a routerLink='/portal/medCert' class="navlink"><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
       </li>
       <li class="text-center">
-        <a routerLink='/portal/rewards'><span><i class="fas fa-gift"></i></span><br />Rewards</a>
+        <a routerLink='/portal/rewards' class="navlink"><span><i class="fas fa-gift"></i></span><br />Rewards</a>
       </li>
     </ul>
     <ul class="list-unstyled CTAs">
@@ -32,13 +32,12 @@
   <div id="content" class="bg-main">
     <!--Top Navigation Row-->
     <div class="row">
-      <div class="d-flex align-self-center" style="margin: 10px 310px 10px 50px;">
+      <div class="d-flex align-self-center" style="margin: 5px 310px 5px 10px;">
         <button type="button" id="sidebarCollapse" class="btn btn-lg" style="background-color: #8b2f8a">
           <i class="fas fa-align-left text-white"></i>
         </button>
       </div>
     </div>
-    <hr>
     <router-outlet></router-outlet>
   </div>
 </div>

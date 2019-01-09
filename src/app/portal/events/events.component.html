@@ -6,61 +6,21 @@
         </p>
     </div>
 </div>
+<app-alert></app-alert>
 <!--Secondary Nested View-->
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
-        <div class="row justify-content-between">
+        <div class="row justify-content-around">
             <div class="p-1" *ngFor="let event of events.displayed">
-                <div class="card overlay dark outline shadows" style="width: 18rem;">
-                    <div class="card-header text-white" style="background-color: #8B2F8A;">
-                        <span class="badge badge-secondary bg-warning">{{event.category.name | category}}</span>
-                    </div>
-                    <img src={{event.image}} alt='Event Image' style="height: 150px;">
-                    <div class="card-body" style="background-color: #8B2F8A;">
-                        <h5 class="card-title text-white">{{event.title}}</h5>
-                        <p class="card-text text-white">{{event.description | shorten}}</p>
-                        <div class="row rounded">
-                            <div class="col">
-                                <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Find
-                                    More....</a>
-                            </div>
-                            <div class="col d-flex justify-content-around">
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
         </div>
     </div>
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
             <div class="p-1" *ngFor="let event of events.displayed">
-                <div class="card overlay dark outline shadows" style="width: 18rem;">
-
-                    <div class="card-header text-white" style="background-color: #8B2F8A;">
-                        <span class="badge badge-secondary bg-warning">{{event.category.name | category}}</span>
-                    </div>
-                    <img src={{event.image}} alt='Event Image' style="height: 150px;">
-                    <div class="card-body" style="background-color: #8B2F8A;">
-                        <h5 class="card-title text-white">{{event.title}}</h5>
-                        <p class="card-text text-white">{{event.description | shorten}}</p>
-                        <div class="row rounded">
-                            <div class="col">
-                                <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Find
-                                    More....</a>
-                            </div>
-                            <div class="col d-flex justify-content-around">
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
         </div>
     </div>
@@ -79,71 +39,64 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content outline-modal" style="width:45rem;">
             <div class="modal-header">
-                <h5 class="modal-title text-white font-weight-normal">Title</h5>
-                <br/>
-                <h6 class="text-white font-weight-light" style="font-size:0.5rem;">12/12/2019 - 15/12/2019</h6>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title text-white font-weight-normal">{{selected?.title}}</h5>
+                <br />
+                <h6 class="text-white font-weight-light" style="font-size:0.8rem;">{{selected?.date.toLocaleDateString('en-US',
+                    { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</h6>
             </div>
             <div class="modal-body">
-                <div class="d-flex d-row flex-wrap justify-content-center">
+                <div class="d-flex d-row flex-wrap justify-content-left align-items-center">
                     <div class="p-1">
-                        <div class="alert outline-alert">
+                        <div class="outline-alert">
                             <div class="media">
                                 <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
                                     alt="badges">
                                 <div class="media-body">
-                                    <h6 class="mt-3 text-white font-weight-light">Name</h6>
-                                    <p class="text-violet">??</p>
+                                    <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
+                                    <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US',
+                                        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="alert outline-alert">
-                            <div class="media">
-                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
-                                    alt="badges">
+                        <div class="outline-alert">
+                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Category</h6>
-                                    <p class="text-violet">??</p>
+                                    <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="alert outline-alert">
-                            <div class="media">
-                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
-                                    alt="badges">
+                        <div class="outline-alert">
+                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
-                                    <p class="text-violet">??</p>
+                                    <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>{{selected?.points}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img src="../../../assets/images/Events.jpg" class="rounded" alt="Events" style="width:500px; height:281px;">
+                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:500px; height:281px;">
                 </div>
-                <p class="h5 text-white">Descriptions</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
-                    eget
-                    quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p class="h5 text-white"></p>
+                <p>{{selected?.description}}</p>
             </div>
-            <div class="modal-footer">
-                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-violet text-white">Save changes</button>-->
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
+            <div class="modal-footer" [ngSwitch]="selected?.enrolement">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button *ngSwitchCase="'Unenrolled'" (click)="enrol()" data-dismiss="modal" type="button" class="btn btn-success text-white">Enrol</button>
+                <button *ngSwitchCase="'Interested'" (click)="unenrol()" data-dismiss="modal" type="button" class="btn btn-warning text-white">Unenrol</button>
+                <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-info text-white unclickable">Enrolled</button>
+                <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-danger text-white unclickable">Rejected</button>
             </div>
         </div>
     </div>
