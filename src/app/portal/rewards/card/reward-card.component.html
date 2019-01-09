@@ -1,10 +1,10 @@
-<div (click)="details.next(reward)" data-toggle="modal" data-target="#confirmation" data-dismiss="modal" class="card overlay dark outline shadows" style="width:18rem;">
+<div (click)="details.next(reward)" data-toggle="modal" data-target="#details" data-dismiss="modal" class="card overlay dark outline shadows" style="width:18rem;">
     <div class="card-header text-white" style="background-color:#E57682;">
         <br/>
     </div>
     <img class="img-fluid" src={{reward.image}} alt="Reward Image" style="height: 200px;">
     <div class="card-body" style="background-color:#E57682;">
-        <h6 class="card-title text-white">{{reward.description}}</h6>
+        <h6 class="card-title text-white">{{reward.description | shorten: 28}}</h6>
         <div class="media">
             <div class="media-body">
                 <p class="text-white"><i class="fas fa-money-bill"></i> {{reward.points}} Bytes</p>

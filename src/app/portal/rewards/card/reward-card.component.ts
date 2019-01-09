@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Reward } from '../reward';
-import { AuthenticationService } from 'src/app/authentication/authentication.service';
 
 
 @Component({
@@ -11,14 +10,11 @@ import { AuthenticationService } from 'src/app/authentication/authentication.ser
 })
 export class RewardCardComponent {
     
-    service: AuthenticationService;
-    
     @Input() reward: Reward;
     @Output() details: EventEmitter<Reward>;
     
     
-    constructor(service: AuthenticationService) {
-        this.service = service;
+    constructor() {
         this.details = new EventEmitter<Reward>();
     }
     
