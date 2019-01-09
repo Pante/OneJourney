@@ -30,6 +30,10 @@
   color: #b637fb
 }
 
+.text-grey {
+  color: grey;
+}
+
 .outline {
   border: 1px solid darkslategrey;
   margin-bottom: 5%;
@@ -95,17 +99,6 @@
 
 .shadows {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* ---------------------------------------------------
-    EXPLICITE OVERWRITE FOR MODAL CSS
------------------------------------------------------ */
-.modal-header{
-  border-bottom: 0px solid #ffffff;
-}
-
-.modal-footer {
-  border-top: 0px solid #ffffff;
 }
 
 /* ---------------------------------------------------
