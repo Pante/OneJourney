@@ -56,7 +56,6 @@
 
 .outline-alert {
     border: 1px solid transparent;
-    margin-bottom: 5%;
     background-repeat: no-repeat;
     background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
     background-position: center; 

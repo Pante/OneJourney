@@ -20,7 +20,7 @@
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
             <div class="p-1" *ngFor="let event of events.displayed">
-                 <app-event-card (details)="details($event)" [event]="event"></app-event-card>
+                <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
         </div>
     </div>
@@ -39,45 +39,47 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content outline-modal" style="width:45rem;">
             <div class="modal-header">
                 <h5 class="modal-title text-white font-weight-normal">{{selected?.title}}</h5>
-                <br/>
-                <h6 class="text-white font-weight-light" style="font-size:0.8rem;">{{selected?.date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</h6>
+                <br />
+                <h6 class="text-white font-weight-light" style="font-size:0.8rem;">{{selected?.date.toLocaleDateString('en-US',
+                    { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</h6>
             </div>
             <div class="modal-body">
-                <div class="d-flex d-row flex-wrap justify-content-left">
+                <div class="d-flex d-row flex-wrap justify-content-left align-items-center">
                     <div class="p-1">
-                        <div class="media">
-                            <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"alt="badges">
-                            <div class="media-body">
-                                <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
-                                <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
+                        <div class="outline-alert">
+                            <div class="media">
+                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
+                                    alt="badges">
+                                <div class="media-body">
+                                    <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
+                                    <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US',
+                                        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="alert outline-alert">
-                            <div class="media">
+                        <div class="outline-alert">
+                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Category</h6>
+                                    <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
                                 </div>
-                                <!-- this text should go below "Category" -->
-                                {{selected?.category.name | category}}
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="alert outline-alert">
-                            <div class="media">
+                        <div class="outline-alert">
+                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
+                                    <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>{{selected?.points}}</p>
                                 </div>
-                                <!-- this text should go below "Bytes" -->
-                                <i class="fas fa-money-bill"></i> {{selected?.points}}
                             </div>
                         </div>
                     </div>
