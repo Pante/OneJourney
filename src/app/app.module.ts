@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PortalComponent } from './portal/portal.component';
+import { AlertComponent } from './alert/alert.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/events.component';
 import { RewardsComponent } from './portal/rewards/rewards.component';
@@ -21,6 +22,7 @@ import { PaginationButtonsComponent } from './pagination/pagination-buttons.comp
 import { EventCategoryPipe } from './portal/events/event-category.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
 
+import { AlertService } from './alert/alert.service';
 import { ErrorService } from './error/error.service';
 import { EventService } from './portal/events/event.service';
 import { LeaderboardService } from './portal/leaderboard/leaderboard.service';
@@ -33,6 +35,7 @@ import { interceptors } from 'src/environments/interceptors';
     declarations: [
         AppComponent,
         PortalComponent,
+        AlertComponent,
         ErrorComponent,
         EventsComponent,
         RewardsComponent,
@@ -53,7 +56,7 @@ import { interceptors } from 'src/environments/interceptors';
         AppRoutingModule
     ],
     providers: [
-        ErrorService, EventService, LeaderboardService, ProfileService, RewardService, interceptors
+        AlertService, ErrorService, EventService, LeaderboardService, ProfileService, RewardService, interceptors
     ],
     bootstrap: [AppComponent]
 })

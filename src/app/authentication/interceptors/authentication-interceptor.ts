@@ -30,10 +30,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     
     replace(event: HttpResponse<any>): HttpEvent<any> {
         if (event.body.name === 'ICT-FintechDemo1 /ICT') {
-            event = event.clone({ body: staff });
+            event = event.clone({ body: student });
             
         } else if (event.body.name === 'ICT-FintechDemo2 /ICT') {
-            event = event.clone({ body: student });
+            event = event.clone({ body: staff });
         }
         
         return event;
