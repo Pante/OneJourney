@@ -1,4 +1,4 @@
-<div (click)="details.next(reward)" class="card overlay dark outline shadows" style="width:18rem;">
+<div (click)="details.next(reward)" data-toggle="modal" data-target="#confirmation" data-dismiss="modal" class="card overlay dark outline shadows" style="width:18rem;">
     <div class="card-header text-white" style="background-color:#E57682;">
         <br/>
     </div>
@@ -10,18 +10,6 @@
                 <p class="text-white"><i class="fas fa-money-bill"></i> {{reward.points}} Bytes</p>
             </div>
         </div>
-        <div class="row rounded" [ngSwitch]="reward.status">
-            <div class="col">
-                <a *ngSwitchCase="'Eligible'" data-toggle="modal" data-target="#confirmation" class="btn btn-success btn-sm text-white">Redeem</a>
-                <a *ngSwitchCase="'Ineligible'" class="btn btn-danger btn-sm text-white">Unable to redeem</a>
-                <a *ngSwitchCase="'Pending'" 
-                    class="btn btn-warning btn-sm text-white" data-toggle="tooltip" data-placement="top" 
-                    title="You will be notified when your reward is ready">
-                    Processing
-                </a>
-                <a *ngSwitchCase="'Redeemed'" class="btn btn-info btn-sm text-white">Redeemed</a>
-                
-                <!-- <a *ngIf="service.identity().role == 'staffs'" class="btn btn-info btn-sm text-white">Edit</a> TODO -->
     </div>
 </div>
 

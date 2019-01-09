@@ -38,18 +38,52 @@
     <div class="col-1"></div>
 </div>
 
-<!--Modal-->
-<div class="modal" id="confirmation" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content outline-modal">
+
+<!-- Modal -->
+<div class="modal fade" id="modalMoreDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content outline-modal" style="width:45rem;">
             <div class="modal-header">
-                <h5 class="modal-title text-white">{{selected}}</h5>
+                <h5 class="modal-title text-white font-weight-normal">Title</h5>
+                <br/>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p class="h6 font-weight-light text-white">Are you sure you want to purchase this product?</p>
+                <div class="text-center">
+                    <img src="../../../assets/images/Events.jpg" class="rounded" alt="Events" style="width:500px; height:281px;">
+                </div>
+                <div class="media">
+                    <div class="media-body">
+                        <p class="text-white"><i class="fas fa-money-bill"></i> ?? Bytes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn bg-violet text-white">Save changes</button>-->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary disabled">Edit</button>
+                <button type="button" class="btn bg-violet text-white" data-toggle="modal" data-target="#ConfirmationModal" data-dismiss="modal">Redeem</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+<div class="modal show" id="confirmation" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content outline-modal">
+            <div class="modal-header">
+                <h5 class="modal-title text-white">{{selected?.description}}</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="h6 font-weight-light text-white">Do you want to redeem this for {{selected?.points}} Bytes?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
