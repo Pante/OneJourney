@@ -90,10 +90,26 @@
   opacity: 0.8;
 }
 
+.outline-alert {
+  border: 1px solid #ffffff;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-blend-mode: normal;
+  opacity: 0.9;
+}
+
+
 .shadows {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+hr {
+  background-color: #ffffff;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

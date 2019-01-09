@@ -12,7 +12,7 @@
     <div class="col-10 display-lg-above">
         <div class="row justify-content-between">
             <div class="p-1" *ngFor="let event of events.displayed">
-                 <div class="card overlay dark outline shadows" style="width: 18rem;">
+                <div class="card overlay dark outline shadows" style="width: 18rem;">
                     <div class="card-header text-white" style="background-color: #8B2F8A;">
                         <span class="badge badge-secondary bg-warning">{{event.category.name | category}}</span>
                     </div>
@@ -39,7 +39,8 @@
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
             <div class="p-1" *ngFor="let event of events.displayed">
-                 <div class="card overlay dark outline shadows" style="width: 18rem;">
+                <div class="card overlay dark outline shadows" style="width: 18rem;">
+
                     <div class="card-header text-white" style="background-color: #8B2F8A;">
                         <span class="badge badge-secondary bg-warning">{{event.category.name | category}}</span>
                     </div>
@@ -79,27 +80,70 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content outline-modal">
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content outline-modal" style="width:45rem;">
             <div class="modal-header">
-                <h5 class="modal-title text-white" id="exampleModalLongTitle">Title</h5>
+                <h5 class="modal-title text-white font-weight-normal">Title</h5>
+                <br/>
+                <h6 class="text-white font-weight-light" style="font-size:0.5rem;">12/12/2019 - 15/12/2019</h6>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p class="h5 text-white">Subtitle</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
-                    quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                <hr>
+                <div class="d-flex d-row flex-wrap justify-content-center">
+                    <div class="p-1">
+                        <div class="alert outline-alert">
+                            <div class="media">
+                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
+                                    alt="badges">
+                                <div class="media-body">
+                                    <h6 class="mt-3 text-white font-weight-light">Name</h6>
+                                    <p class="text-violet">??</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-1">
+                        <div class="alert outline-alert">
+                            <div class="media">
+                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
+                                    alt="badges">
+                                <div class="media-body">
+                                    <h6 class="mt-3 text-white font-weight-light">Category</h6>
+                                    <p class="text-violet">??</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-1">
+                        <div class="alert outline-alert">
+                            <div class="media">
+                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
+                                    alt="badges">
+                                <div class="media-body">
+                                    <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
+                                    <p class="text-violet">??</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="../../../assets/images/Events.jpg" class="rounded" alt="Events" style="width:500px; height:281px;">
+                </div>
                 <p class="h5 text-white">Descriptions</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
+                    eget
                     quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-violet text-white">Save changes</button>
+                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn bg-violet text-white">Save changes</button>-->
+                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
+                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
+                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
             </div>
         </div>
     </div>
