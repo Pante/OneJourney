@@ -12,7 +12,7 @@
         </div>
         <div class="row rounded" [ngSwitch]="reward.status">
             <div class="col">
-                <a *ngSwitchCase="'Eligible'" (click)="redemption.next(reward)" class="btn btn-success btn-sm text-white">Redeem</a>
+                <a *ngSwitchCase="'Eligible'" data-toggle="modal" data-target="#ConfirmationModal" class="btn btn-success btn-sm text-white">Redeem</a>
                 <a *ngSwitchCase="'Ineligible'" class="btn btn-danger btn-sm text-white">Unable to redeem</a>
                 <a *ngSwitchCase="'Pending'" 
                     class="btn btn-warning btn-sm text-white" data-toggle="tooltip" data-placement="top" 
