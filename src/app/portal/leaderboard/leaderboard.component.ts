@@ -29,6 +29,9 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.subscription = this.service.factions().subscribe(factions => this.factions = factions);
+        this.factions.sort((a, b) => {
+            if (a.points < b.points) { return 1; } else if (a.points > b.points) { return -1; } else { return 0; }
+        });
     }
 
     ngOnDestroy() {
