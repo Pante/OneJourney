@@ -15,13 +15,11 @@ export class RewardCardComponent {
     
     @Input() reward: Reward;
     @Output() details: EventEmitter<Reward>;
-    @Output() redemption: EventEmitter<Reward>;
     
     
     constructor(service: AuthenticationService) {
         this.service = service;
         this.details = new EventEmitter<Reward>();
-        this.redemption = new EventEmitter<Reward>();
     }
     
 }

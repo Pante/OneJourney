@@ -24,8 +24,8 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     rewards: Paginated<Reward>;
     
-    details: boolean;
-    confirmation: boolean;
+    expand: boolean;
+    confirm: boolean;
     
     selected: Reward;
     
@@ -33,7 +33,8 @@ export class RewardsComponent implements OnInit, OnDestroy {
     constructor(service: RewardService, device: DeviceDetectorService, title: Title) {
         this.service = service;
         this.rewards = Paginated.of<Reward>(device);
-        this.confirmation = false;
+        this.expand = false;
+        this.confirm = false;
         title.setTitle('OneJourney - Rewards');
     }
 
@@ -46,13 +47,9 @@ export class RewardsComponent implements OnInit, OnDestroy {
     }
     
     
-    expand(reward: Reward) {
+    details(reward: Reward) {
         this.selected = reward;
-        // TODO;
-    }
-    
-    redeem(reward: Reward) {
-        this.selected = reward;
+        this.expand = true;
     }
 
 }
