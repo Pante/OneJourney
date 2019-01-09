@@ -90,7 +90,7 @@ export class Paginated<T> {
     }
     
     set(page: number): boolean {
-        const valid = 1 <= page && page <= this.end && page != this.page;
+        const valid = 1 <= page && page <= this.end && page !== this.page;
         if (valid) {
             this.to(page);
         }
@@ -107,7 +107,7 @@ export class Paginated<T> {
     
     
     pages(): number[] {
-        const left = this.page - Math.floor((this.configuration.pages - 1)/ 2);
+        const left = this.page - Math.floor((this.configuration.pages - 1) / 2);
         const right = this.page + Math.floor(this.configuration.pages / 2);
         
         const leftmost = Math.max(left - Math.max(right - this.end, 0), 1);

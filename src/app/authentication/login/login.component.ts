@@ -18,4 +18,3 @@ export class LoginComponent extends AuthenticationComponent {
     }
 
 }
-/*this.authentication.login()*/
