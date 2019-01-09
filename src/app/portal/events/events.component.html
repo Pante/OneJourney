@@ -18,8 +18,8 @@
                     </div>
                     <img src={{event.image}} alt='Event Image' style="height: 150px;">
                     <div class="card-body" style="background-color: #8B2F8A;">
-                        <h5 class="card-title text-white">{{event.title}}</h5>
-                        <p class="card-text text-white">{{event.description | shorten}}</p>
+                        <h5 class="card-title text-white">{{event.title | shorten: 22}}</h5>
+                        <p class="card-text text-white">{{event.description | shorten: 38 }}</p>
                         <div class="row rounded">
                             <div class="col">
                                 <a href="#" class="btn btn-info btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter">Find
@@ -53,7 +53,7 @@
                                     More....</a>
                             </div>
                             <div class="col d-flex justify-content-around">
-                                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
+                                <a href="#" class="btn btn-outline-light bt----n-sm"><span><i class="fa fa-star"></i></span></a>
                                 <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
                                 <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
                             </div>
