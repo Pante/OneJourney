@@ -1,0 +1,11 @@
+<div (click)="details(event)" class="card overlay dark outline shadows" style="width: 18rem;">
+    <div class="card-header text-white" style="background-color: #8B2F8A;">
+        <span class="badge badge-secondary bg-info">{{event.category.name | category}}</span>
+    </div>
+    <img src={{event.image}} alt='Event Image' style="height: 150px;">
+    <div class="card-body" style="background-color: #8B2F8A;">
+        <h5 class="card-title text-white">{{event.title}}</h5>
+        <p class="card-text text-white">{{event.description | shorten}}</p>
+        <div class="row rounded mb-3"></div>
+    </div>
+</div>

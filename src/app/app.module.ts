@@ -12,6 +12,7 @@ import { PortalComponent } from './portal/portal.component';
 import { AlertComponent } from './alert/alert.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/events.component';
+import { EventCardComponent } from './portal/events/card/event-card.component';
 import { RewardsComponent } from './portal/rewards/rewards.component';
 import { RewardCardComponent } from './portal/rewards/card/reward-card.component';
 import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
@@ -38,6 +39,7 @@ import { interceptors } from 'src/environments/interceptors';
         AlertComponent,
         ErrorComponent,
         EventsComponent,
+        EventCardComponent,
         RewardsComponent,
         RewardCardComponent,
         MedSubmissionComponent,
