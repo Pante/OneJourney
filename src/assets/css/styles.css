@@ -60,7 +60,7 @@ a:focus {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 200vh;
     z-index: 999;
     background-color: #8b2f8a;
     /*background-image: linear-gradient(to bottom,#2b2628 20%,#2b2628 20%);*/  
@@ -164,7 +164,7 @@ a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #sidebar {
         margin-left: -100px;
     }
@@ -182,7 +182,7 @@ a.article:hover {
     }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 600px) {
     #sidebarCollapse {
         visibility: hidden;
     }
