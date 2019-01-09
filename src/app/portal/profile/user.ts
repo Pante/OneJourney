@@ -50,6 +50,7 @@ export interface Award {
     id: number;
     name: string;
     amount: number;
+    image: string;
     
 }
 
@@ -59,7 +60,8 @@ export namespace Award {
         return {
             id: award.id,
             name: award['award-name'],
-            amount: award.amount
+            amount: award.amount,
+            image: award['image-url']
         };
     }
     
