@@ -42,9 +42,9 @@
                 "redeem-status": "Pending",
                 "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/4/reward_catalogue4.png"
             }
-        }
+        },
       
-      {
+        {
             "id": "5",
             "type": "reward-catalogues",
             "attributes": {
@@ -55,7 +55,7 @@
             }
         },
 
-      {
+        {
             "id": "6",
             "type": "reward-catalogues",
             "attributes": {
@@ -65,8 +65,8 @@
                 "image-url": "https://imgur.com/AuYwPlV.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "7",
             "type": "reward-catalogues",
             "attributes": {
@@ -76,8 +76,8 @@
                 "image-url": "https://imgur.com/rkmecgt.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "8",
             "type": "reward-catalogues",
             "attributes": {
@@ -87,8 +87,8 @@
                 "image-url": "https://imgur.com/o6eNSAD.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "9",
             "type": "reward-catalogues",
             "attributes": {
@@ -98,8 +98,8 @@
                 "image-url": "https://imgur.com/nNIEP8D.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "10",
             "type": "reward-catalogues",
             "attributes": {
@@ -109,8 +109,8 @@
                 "image-url": "https://imgur.com/4PeJlyR.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "11",
             "type": "reward-catalogues",
             "attributes": {
@@ -120,8 +120,8 @@
                 "image-url": "https://imgur.com/GUfdgAu.png"
             }
         },
-      
-      {
+
+        {
             "id": "12",
             "type": "reward-catalogues",
             "attributes": {
@@ -131,8 +131,8 @@
                 "image-url": "https://imgur.com/lJ9ywNU.jpg"
             }
         },
-      
-      {
+
+        {
             "id": "13",
             "type": "reward-catalogues",
             "attributes": {
