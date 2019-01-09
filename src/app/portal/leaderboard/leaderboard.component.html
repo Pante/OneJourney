@@ -65,11 +65,11 @@
   <div class="p-2 align-self-stretch container-outline-white shadows">
     <div class="container">
       <div *ngFor="let faction of factions">
-        <div class="row">
+        <div class="d-flex d-row justify-content-between">
           <div class="p-3 mr-0">
             <img src="{{faction.image}}" class="img-responsive" alt="Profile pic" style="width: 15%;">
           </div>
-          <div class="p-3 align-self-center">
+          <div class="p-3 align-self-center ">
             <p class="h6 text-left text-purple"><strong>{{faction.name}}</strong></p>
             <p class="h6 text-right text-white">{{faction.points}}<small> pts</small></p>
           </div>

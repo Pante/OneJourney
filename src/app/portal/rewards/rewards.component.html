@@ -42,21 +42,16 @@
 <!-- Modal -->
 <div class="modal fade" id="details" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content outline-modal" style="width:45rem;">
+        <div class="modal-content outline-modal">
             <div class="modal-header">
                 <h5 class="modal-title text-white font-weight-normal">{{selected?.description}}</h5>
                 <br/>
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <img src={{selected?.image}} class="rounded" alt="Events" style="width:500px; height:400px;">
+                    <img src={{selected?.image}} class="rounded" alt="Events" style="width:200px; height:150px;">
                 </div>
-                <div class="media">
-                    <div class="media-body">
-                        <br>
-                        <p class="text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
-                    </div>
-                </div>
+                <p class="h6 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -69,7 +64,7 @@
 
 <!--Modal-->
 <div class="modal fade" id="confirmation" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content outline-modal">
             <div class="modal-header">
                 <h5 class="modal-title text-white">{{selected?.description}}</h5>
