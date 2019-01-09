@@ -12,13 +12,13 @@ import { PortalComponent } from './portal/portal.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/events.component';
 import { RewardsComponent } from './portal/rewards/rewards.component';
+import { RewardCardComponent } from './portal/rewards/card/reward-card.component';
 import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
 
 import { EventCategoryPipe } from './portal/events/event-category.pipe';
-import { RedemptionStatusPipe } from './portal/rewards/redemption-status.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
 
 import { ErrorService } from './error/error.service';
@@ -36,13 +36,13 @@ import { interceptors } from 'src/environments/interceptors';
         ErrorComponent,
         EventsComponent,
         RewardsComponent,
+        RewardCardComponent,
         MedSubmissionComponent,
         LeaderboardComponent,
         ProfileComponent,
         PaginationButtonsComponent,
         
         EventCategoryPipe,
-        RedemptionStatusPipe,
         ShortenPipe
     ],
     imports: [
