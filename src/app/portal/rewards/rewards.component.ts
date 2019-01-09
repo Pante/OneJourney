@@ -1,5 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
+import * as $ from 'jquery';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
@@ -7,6 +9,7 @@ import { Subscription } from 'rxjs';
 import { Paginated } from '../../pagination/paginated';
 import { RewardService } from './reward.service';
 import { Reward } from './reward';
+import { Role } from '../../authentication/identity/identity';
 
 
 @Component({
@@ -18,12 +21,19 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     private service: RewardService;
     private subscription: Subscription;
+    
     rewards: Paginated<Reward>;
+    
+    details: boolean;
+    confirmation: boolean;
+    
+    selected: Reward;
     
     
     constructor(service: RewardService, device: DeviceDetectorService, title: Title) {
         this.service = service;
         this.rewards = Paginated.of<Reward>(device);
+        this.confirmation = false;
         title.setTitle('OneJourney - Rewards');
     }
 
@@ -33,6 +43,16 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     ngOnDestroy() {
         this.subscription.unsubscribe();
+    }
+    
+    
+    expand(reward: Reward) {
+        this.selected = reward;
+        // TODO;
+    }
+    
+    redeem(reward: Reward) {
+        this.selected = reward;
     }
 
 }
