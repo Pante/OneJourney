@@ -49,13 +49,13 @@
                 <h6 class="text-white font-weight-light" style="font-size:0.8rem;">{{selected?.date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</h6>
             </div>
             <div class="modal-body">
-                <div class="d-flex d-row flex-wrap justify-content-left align-items-center">
+                <div class="d-flex d-row flex-wrap justify-content-left">
                     <div class="p-1">
                         <div class="media">
-                            <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
-                                alt="badges">
+                            <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"alt="badges">
                             <div class="media-body">
-                                <h6 class="mt-3 text-white font-weight-light">Test</h6>
+                                <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
+                                <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
                             </div>
                         </div>
                     </div>
@@ -65,6 +65,8 @@
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Category</h6>
                                 </div>
+                                <!-- this text should go below "Category" -->
+                                {{selected?.category.name | category}}
                             </div>
                         </div>
                     </div>
@@ -74,24 +76,25 @@
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
                                 </div>
+                                <!-- this text should go below "Bytes" -->
+                                <i class="fas fa-money-bill"></i> {{selected?.points}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img src="../../../assets/images/Events.jpg" class="rounded" alt="Events" style="width:500px; height:281px;">
+                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:500px; height:281px;">
                 </div>
-                <p class="h5 text-white">Descriptions</p>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas
-                    eget
-                    quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <p class="h5 text-white"></p>
+                <p>{{selected?.description}}</p>
             </div>
-            <div class="modal-footer">
-                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-violet text-white">Save changes</button>-->
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-star"></i></span></a>
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-heart"></i></span></a>
-                <a href="#" class="btn btn-outline-light btn-sm"><span><i class="fa fa-times-circle"></i></span></a>
+            <div class="modal-footer" [ngSwitch]="selected?.enrolement">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button *ngSwitchCase="'Unenrolled'" (click)="enrol()" data-dismiss="modal" type="button" class="btn btn-success text-white">Enrol</button>
+                <button *ngSwitchCase="'Interested'" (click)="unenrol()" data-dismiss="modal" type="button" class="btn btn-warning text-white">Unenrol</button>
+                <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-info text-white unclickable">Enrolled</button>
+                <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-danger text-white unclickable">Rejected</button>
             </div>
         </div>
     </div>
