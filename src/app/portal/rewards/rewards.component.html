@@ -47,9 +47,6 @@
             <div class="modal-header">
                 <h5 class="modal-title text-white font-weight-normal">Title</h5>
                 <br/>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <div class="text-center">
@@ -78,16 +75,13 @@
         <div class="modal-content outline-modal">
             <div class="modal-header">
                 <h5 class="modal-title text-white">{{selected?.description}}</h5>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <p class="h6 font-weight-light text-white">Do you want to redeem this for {{selected?.points}} Bytes?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-violet text-white">Confirmed</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                <button type="button" class="btn btn-success"><i class="fas fa-check"></i></button>
             </div>
         </div>
     </div>
