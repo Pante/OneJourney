@@ -118,3 +118,19 @@
   background-color: #ddd;
   border-radius: 5px;
 }
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 824px) {
+  .display-lg-above {
+    display: none;
+  }
+}
+
+@media (min-width: 823px) {
+  .display-lg-below {
+      display: none;
+  }
+}
