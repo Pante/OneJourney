@@ -23,6 +23,12 @@ export class RewardService {
     }
     
     
+    redeem(reward: Reward): Observable<boolean> {
+        // TODO: POST REQUEST TO RESTFUL API
+        return of(true);
+    }
+    
+    
     rewards(): Observable<Reward[]> {
         return this.http.get<List>(`${environment.api}/reward_catelogues?id=`).pipe(
             map(response => response.data.map(data => Reward.from(data)))
