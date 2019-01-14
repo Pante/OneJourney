@@ -27,7 +27,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscription = this.service.alerts().subscribe(alert => {
             this.alerts.unshift(alert);
-            setTimeout(() => this.alerts.pop(), 7500);
+            setTimeout(() => this.alerts.pop(), 5000);
         });
     }
     
