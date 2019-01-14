@@ -22,6 +22,10 @@
     color: #b637fb
 }
 
+.non-active {
+    color:#ffffff;
+}
+
 .outline {
     border: 1px solid #ffffff;
     border-radius: 1rem;
@@ -33,11 +37,6 @@
     background-size: cover;
     background-blend-mode: normal;
     opacity: 0.8;
-}
-
-.outline:hover {
-    border-radius: 1rem;
-    box-shadow: 5px 10px 18px grey;
 }
 
 .shadows {

@@ -5,7 +5,8 @@
             "type": "faction",
             "attributes": {
                 "name": "Vanguard",
-                "points": 820
+                "points": 820,
+                "image-url": "https://i.imgur.com/vmmaAPs.png"
             }
         },
         {
@@ -13,7 +14,8 @@
             "type": "faction",
             "attributes": {
                 "name": "Valor",
-                "points": 840
+                "points": 840,
+                "image-url": "https://i.imgur.com/E5aynec.png"
             }
         },
         {
@@ -21,7 +23,8 @@
             "type": "faction",
             "attributes": {
                 "name": "Abnegator",
-                "points": 620
+                "points": 620,
+                "image-url": "https://i.imgur.com/ncOZYsL.png"
             }
         },
         {
@@ -29,7 +32,9 @@
             "type": "faction",
             "attributes": {
                 "name": "Enforcer",
-                "points": 470
+                "points": 470,
+                "image-url": "https://i.imgur.com/LDwiJi8.png"
+              
             }
         },
         {
@@ -37,7 +42,8 @@
             "type": "faction",
             "attributes": {
                 "name": "Commando",
-                "points": 610
+                "points": 610,
+                "image-url": "https://i.imgur.com/EpQc2yI.png"
             }
         }
     ]

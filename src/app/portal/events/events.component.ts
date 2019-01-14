@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
 
+import { AlertService } from 'src/app/alert/alert.service';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Paginated } from '../../pagination/paginated';
 import { EventService } from './event.service';
 import { Event } from './event';
@@ -16,13 +18,18 @@ import { Event } from './event';
 })
 export class EventsComponent implements OnInit, OnDestroy {
     
+    private alerts: AlertService;
     private service: EventService;
     private subscription: Subscription;
+    authentication: AuthenticationService;
     events: Paginated<Event>;
+    selected?: Event;
     
     
-    constructor(service: EventService, device: DeviceDetectorService, title: Title) {
+    constructor(alerts: AlertService, service: EventService, authentication: AuthenticationService, device: DeviceDetectorService, title: Title) {
+        this.alerts = alerts;
         this.service = service;
+        this.authentication = authentication;
         this.events = Paginated.of<Event>(device);
         title.setTitle('OneJourney - Events');
     }
@@ -33,6 +40,34 @@ export class EventsComponent implements OnInit, OnDestroy {
   
     ngOnDestroy() {
         this.subscription.unsubscribe();
+    }
+    
+    
+    details(event: Event) {
+        this.selected = event;
+    }
+    
+    
+    enrol() {
+        this.service.enrol(this.selected).subscribe(success => {
+            if (success) {
+                this.alerts.push(`You have enrolled in '${this.selected.title}'.`, 'alert-success');
+                
+            } else {
+                this.alerts.push(`Unable to enrol you in '${this.selected.title}'.`, 'alert-danger');
+            }
+        });
+    }
+    
+    unenrol() {
+        this.service.unenrol(this.selected).subscribe(success => {
+            if (success) {
+                this.alerts.push(`You have unenrolled from '${this.selected.title}'.`, 'alert-success');
+                
+            } else {
+                this.alerts.push(`Unable to unerol you from '${this.selected.title}'.`, 'alert-danger');
+            }
+        });
     }
 
 }

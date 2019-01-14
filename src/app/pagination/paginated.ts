@@ -19,7 +19,7 @@ export interface Devices {
 export const devices: Devices = {
     
     desktop: {
-        size: 12,
+        size: 30,
         pages: 15
     },
     

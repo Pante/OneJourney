@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
@@ -21,6 +21,18 @@ export class EventService {
         this.authentication = authentication;
         this.http = http;
     }
+    
+    
+    enrol(event: Event): Observable<boolean> {
+        // TODO: POST request
+        return of(true);
+    }
+    
+    unenrol(event: Event): Observable<boolean> {
+        // TODO: POST request
+        return of(true);
+    }
+    
     
     events(): Observable<Event[]> {
         return this.http.get<List>(`${environment.api}/activities?id=`).pipe(

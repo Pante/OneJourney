@@ -6,20 +6,21 @@
         </p>
     </div>
 </div>
+<app-alert></app-alert>
 <!--Secondary Nested View-->
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
         <div class="row justify-content-between">
             <div class="p-1" *ngFor="let reward of rewards.displayed">
-                 <app-reward-card (details)="expand($event)" (redemption)="redeem($event)" [reward]="reward"></app-reward-card>
+                 <app-reward-card (details)="details($event)" [reward]="reward"></app-reward-card>
             </div>
         </div>
     </div>
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
             <div class="p-1" *ngFor="let reward of rewards.displayed">
-                <app-reward-card (details)="expand($event)" (redemption)="redeem($event)" [reward]="reward"></app-reward-card>
+                <app-reward-card (details)="details($event)" [reward]="reward"></app-reward-card>
             </div>
         </div>
     </div>
@@ -40,42 +41,45 @@
 
 
 <!-- Modal -->
-<div #details class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content outline-modal">
+<div class="modal fade" id="details" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content outline-modal" style="width:45rem;">
             <div class="modal-header">
-                <h5 class="modal-title text-white" id="exampleModalLongTitle">{{selected?.description}}</h5>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title text-white font-weight-normal">{{selected?.description}}</h5>
+                <br/>
             </div>
             <div class="modal-body">
-                <img src={{selected?.image}} alt="Selected Image"/>
-                <p class="text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
+                <div class="text-center">
+                    <img src={{selected?.image}} class="rounded" alt="Events" style="width:500px; height:400px;">
+                </div>
+                <br/>
+                <p class="h4 font-weight-normal text-grey"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" [ngSwitch]="selected?.status">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button *ngSwitchCase="'Eligible'" type="button" class="btn btn-success text-white" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Redeem</button>
+                <button *ngSwitchCase="'Ineligible'" type="button" class="btn btn-danger text-white unclickable" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Unable to redeem</button>
+                <button *ngSwitchCase="'Pending'" type="button" class="btn btn-warning text-white unclickable">Processing</button>
+                <button *ngSwitchCase="'Redeemed'" type="button" class="btn btn-info text-white unclickable">Redeemed</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
-<div #confirmation class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+<!--Modal-->
+<div class="modal fade" id="confirmation" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content outline-modal">
             <div class="modal-header">
-                <h5 class="modal-title text-white" id="exampleModalLongTitle">{{selected?.description}}</h5>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title text-white">{{selected?.description}}</h5>
             </div>
             <div class="modal-body">
-                <img src={{selected?.image}} alt="Selected Image"/>
-                <p class="text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
+                <p class="h6 font-weight-light text-white">Redeem for {{selected?.points}} Bytes?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()">Confirm</button>
             </div>
         </div>
     </div>

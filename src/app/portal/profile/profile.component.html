@@ -1,8 +1,8 @@
 <div class="container">
   <div class="col-12 text-center">
     <h1 class="display-4 text-white">Profile</h1>
-    <p class="lead text-white">
-      It's good to update...... once a year for security purposes!
+    <p class="lead">
+        Do we even exist?
     </p>
   </div>
 </div>
@@ -10,119 +10,40 @@
 <div class="container">
   <div class="d-flex justify-content-around outline shadows flex-wrap">
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">200 <br/> Byte Points </p>
+      <p class="h4 lead text-white">{{user.bytes}} <br/> Byte Points </p>
     </div>
     <div class="p-2 text-center">
       <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 20%; height: 100%;">
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">200 <br/> Faction Points </p>
+      <p class="h4 lead text-white">{{user.group.faction.points}} <br/> Faction Points </p>
     </div>
   </div>
   <div class="card text-center bg-purple outline shadows">
-      <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
+    <div class="card-header">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Personal</a>
+            <a class="nav-link non-active active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-purple" href="#">Badges</a>
+            <a class="nav-link non-active" id="badges-tab" data-toggle="tab" href="#badges" role="tab" aria-controls="badge" aria-selected="false">Badges</a>
           </li>
         </ul>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title text-white">Special title treatment</h5>
-        <p class="card-text text-white">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn bg-violet text-white">Go somewhere</a>
-      </div>
     </div>
-</div>
-
-<!--<div class="col">
-  <div class="d-flex d-row flex-wrap justify-content-around">
-    <div class="p-2">
-      <div class="card">
-        <div class="card-header text-center text-white" style="background-color:#8b2f8a">
-          Profile
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <p class="h4 lead card-title text-white">Group: <br> {{user.group.code}}</p>
+          <p class="h4 lead card-title text-white">Mentor: <br> {{user.group.staff.name}}</p>
         </div>
-        <div class="card-body">
-          <div class="text-center">
-            <img src="../../assets/images/profile_pic.png" class="rounded" alt="Profile_pic.png" style="width:50%; height:50%; border-radius: 50px;">
+        <div class="tab-pane fade text-white" id="badges" role="tabpanel" aria-labelledby="badges-tab">
+          <div class="d-flex d-row justify-content-around flex-wrap mb-5">
+            <div *ngFor="let award of user.awards">
+              <div class="order-{{award.id}} p-1">
+                <div class="text-center">
+                  <img src="{{award.image}}" class="rounded" alt="Profile pic" style=" width: 50%; height: 50%">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <hr>
-          </div>
-          <form>
-            <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="p-2 flex-grow-1">
-      <div class="card">
-        <div class="card-header text-center text-white" style="background-color:#8b2f8a">
-          Details
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary text-white" style="background-color:#8b2f8a">Sign in</button>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
-</div>-->
+</div>
