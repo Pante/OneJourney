@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { DeviceDetectorModule } from 'ngx-device-detector';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +52,6 @@ import { interceptors } from 'src/environments/interceptors';
     imports: [
         BrowserModule,
         DeviceDetectorModule.forRoot(),
-        LazyLoadImageModule,
         AuthenticationModule.forRoot(),
         AppRoutingModule
     ],
