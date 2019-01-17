@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
-import { List } from 'src/app/rest/body';
+import { List, Box } from 'src/app/rest/body';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { Reward } from './reward';
 
@@ -25,6 +25,7 @@ export class RewardService {
     
     redeem(reward: Reward): Observable<boolean> {
         // TODO: POST REQUEST TO RESTFUL API
+        this.http.post<Box>(`${environment.api}/reward_catelogues?id=`, reward);
         return of(true);
     }
     
@@ -35,5 +36,14 @@ export class RewardService {
         );
     }
     
+    edit(reward: Reward): Observable<boolean> {
+        this.http.patch<Box>(`${environment.api}/reward_catelogues?id=`, reward);
+        return of(true);
+    }
+
+    create(reward: Reward): Observable<boolean> {
+        this.http.post<Box>(`${environment.api}/reward_catelogues`, reward);
+        return of(true);
+    }
 }
 
