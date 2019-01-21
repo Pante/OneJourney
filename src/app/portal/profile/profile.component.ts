@@ -7,6 +7,32 @@ import { ProfileService } from './profile.service';
 import { User } from './user';
 
 
+export const defaultUser: User = {
+    id: 0,
+    type: 'students',
+    studentNumber: 'student number',
+    name: 'Placeholder',
+    points: 0,
+    bytes: 9001,
+    group: {
+        id: 0,
+        code: '',
+        faction: {
+            id: 0,
+            image: null,
+            name: 'Faction',
+            points: 0
+        },
+        staff: {
+            id: 0,
+            name: 'staff',
+            email: 'email'
+        }
+    },
+    awards: []
+};
+
+
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
@@ -14,14 +40,15 @@ import { User } from './user';
 })
 export class ProfileComponent implements OnInit, OnDestroy {
 
-    private subscription: Subscription;
     private service: ProfileService;
+    private subscription: Subscription;
 
     user?: User;
 
 
     constructor(service: ProfileService, title: Title) {
         this.service = service;
+        this.user = defaultUser;
         title.setTitle('OneJourney - Profile');
     }
 

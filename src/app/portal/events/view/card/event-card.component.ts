@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Event } from '../event';
+import { Event } from '../../event';
 
 
 @Component({
