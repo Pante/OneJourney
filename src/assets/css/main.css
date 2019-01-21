@@ -89,7 +89,7 @@ a[aria-expanded="true"] {
   cursor: pointer;
 };
 
-a[data-toggle="collapse"] {
+li[data-toggle="collapse"] {
   position: relative;
 }
 
@@ -103,7 +103,6 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.5em !important;
   padding-left: 10px !important;
-  background: #8b2f8a;
 }
 
 ul.CTAs a {
@@ -225,7 +224,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-image: url('../../assets/images/Main_bg_Test.jpg');
+  background-color: rgba(45, 40, 62);
   background-attachment: scroll;
   background-position: center;
   background-repeat: repeat;
