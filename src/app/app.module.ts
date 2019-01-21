@@ -29,6 +29,11 @@ import { LeaderboardService } from './portal/leaderboard/leaderboard.service';
 import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
 import { interceptors } from 'src/environments/interceptors';
+import { EditEventsComponent } from './portal/events/edit-events/edit-events.component';
+import { AddEventsComponent } from './portal/events/add-events/add-events.component';
+import { EditRewardsComponent } from './portal/rewards/edit-rewards/edit-rewards.component';
+import { AddRewardsComponent } from './portal/rewards/add-rewards/add-rewards.component';
+import { ViewMedSubmissionComponent } from './portal/med-submission/view-med-submission/view-med-submission.component';
 
 
 @NgModule({
@@ -47,7 +52,12 @@ import { interceptors } from 'src/environments/interceptors';
         PaginationButtonsComponent,
         
         EventCategoryPipe,
-        ShortenPipe
+        ShortenPipe,
+        EditEventsComponent,
+        AddEventsComponent,
+        EditRewardsComponent,
+        AddRewardsComponent,
+        ViewMedSubmissionComponent
     ],
     imports: [
         BrowserModule,

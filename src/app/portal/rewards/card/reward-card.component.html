@@ -1,13 +1,10 @@
-<div (click)="details.next(reward)" data-toggle="modal" data-target="#details" class="card overlay dark outline shadows" style="width:18rem;">
-    <div class="card-header text-white" style="background-color:#E57682;">
-        <br/>
-    </div>
+<div (click)="details.next(reward)" data-toggle="modal" data-target="#details" class="card outline overlay dark shadows" style="width:18rem;">
     <img class="img-fluid" src={{reward.image}} alt="Reward Image" style="height: 200px;">
-    <div class="card-body" style="background-color:#E57682;">
-        <h6 class="card-title text-white">{{reward.description | shorten: 28}}</h6>
+    <div class="card-body events-custom">
+        <h6 class="card-title text-secondary">{{reward.description | shorten: 28}}</h6>
         <div class="media mb-3">
             <div class="media-body">
-                <p class="h6 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{reward.points}} Bytes</p>
+                <p class="h6 font-weight-normal text-secondary"><i class="fas fa-money-bill"></i> {{reward.points}} Bytes</p>
             </div>
         </div>
     </div>

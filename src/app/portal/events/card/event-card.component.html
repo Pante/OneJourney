@@ -1,11 +1,9 @@
-<div (click)="details.next(event)" data-toggle="modal" data-target="#details" class="card overlay dark outline shadows" style="width: 18rem;">
-    <div class="card-header text-white" style="background-color: #8B2F8A;">
-        <span class="badge badge-secondary bg-info">{{event.category.name | category}}</span>
-    </div>
+<div (click)="details.next(event)" data-toggle="modal" data-target="#details" class="card outline overlay dark shadows" style="width: 18rem;">
     <img src={{event.image}} alt='Event Image' style="height: 150px;">
-    <div class="card-body" style="background-color: #8B2F8A;">
-        <h5 class="card-title text-white">{{event.title | shorten: 21}}</h5>
-        <p class="card-text text-white">{{event.description | shorten: 38}}</p>
+    <div class="card-body events-custom">
+        <h5 class="card-title text-secondary">{{event.title | shorten: 21}}</h5>
+        <p class="card-text text-secondary">{{event.description | shorten: 38}}</p>
+        <span class="badge badge-secondary bg-info">{{event.category.name | category}}</span>
         <div class="row rounded mb-3"></div>
     </div>
 </div>

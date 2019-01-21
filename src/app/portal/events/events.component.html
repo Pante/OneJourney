@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 text-center">
-        <h1 class="display-4 text-white">Events</h1>
+        <h1 class="display-thick-3 text-primary">Events</h1>
         <p class="lead">
             What's trending......
         </p>
@@ -24,7 +24,7 @@
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
         <div class="row justify-content-around">
-            <div class="p-1" *ngFor="let event of events.displayed">
+            <div class="p-1 outline" *ngFor="let event of events.displayed">
                 <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <div class="col-10">
         <div class="d-flex justify-content-center">
             <div class="p-2">
-                <app-pagination-buttons [display]="events" [colour]="'#7e1e80'"></app-pagination-buttons>
+                <app-pagination-buttons [display]="events" [colour]="'#4c495d'"></app-pagination-buttons>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
                             <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                                 <div class="media-body">
                                     <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
-                                    <p class="text-white font-weight-light"> {{selected?.points}} <i class="fas fa-money-bill"></i></p>
+                                    <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>{{selected?.points}}</p>
                                 </div>
                             </div>
                         </div>
