@@ -6,9 +6,9 @@ import { Subscription } from 'rxjs';
 
 import { AlertService } from 'src/app/alert/alert.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
-import { Paginated } from '../../pagination/paginated';
-import { EventService } from './event.service';
-import { Event } from './event';
+import { Paginated } from '../../../pagination/paginated';
+import { EventService } from '../event.service';
+import { Event } from '../event';
 
 
 @Component({

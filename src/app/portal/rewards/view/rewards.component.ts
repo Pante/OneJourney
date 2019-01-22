@@ -6,9 +6,9 @@ import { Subscription } from 'rxjs';
 
 import { AlertService } from 'src/app/alert/alert.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
-import { Paginated } from '../../pagination/paginated';
-import { RewardService } from './reward.service';
-import { Reward } from './reward';
+import { Paginated } from '../../../pagination/paginated';
+import { RewardService } from '../reward.service';
+import { Reward } from '../reward';
 
 
 @Component({
@@ -61,5 +61,28 @@ export class RewardsComponent implements OnInit, OnDestroy {
         });
     }
 
+    update() {
+        this.service.edit(this.selected).subscribe(success => {
+            window.location.reload();
+            if (success) {
+                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+                
+            } else {
+                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+            }
+        });
+    }
+
+    create() {
+        this.service.create(this.selected).subscribe(success => {
+            window.location.reload();
+            if (success) {
+                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+                
+            } else {
+                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+            }
+        });
+    }
 }
 

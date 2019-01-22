@@ -29,52 +29,6 @@
     </ul>
   </nav>
 
-  <!-- Sidebar (Teachers)  -->
-  <!-- <nav id="sidebar">
-    <div id="sidebar-header" class="sidebar-header">
-      <a routerLink='/portal/'><img src="../assets/images/Logo.png" alt="OneJourney logo" class="img-fluid img-thumbnail"
-          style="background: transparent; border: 0px"></a>
-    </div>
-    <ul class="list-unstyled components">
-      <li data-toggle="collapse" href="#eventsSubMenu" aria-expanded="false" class="text-center">
-        <a routerLink='/portal/events' class="dropdown-toggle navlink" routerLinkActive="active"><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
-        <ul class="collapse list-unstyled" id="eventsSubMenu">
-          <li>
-            <a routerLink="/portal/edit-events" routerLinkActive="active">Edit</a>
-          </li>
-          <li>
-            <a routerLink="/portal/add-events" routerLinkActive="active">Add</a>
-          </li>
-        </ul>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/profile' class="navlink" routerLinkActive="active"><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/leaderboard' class="navlink" routerLinkActive="active"><span><i class="fa fa-trophy"></i></span><br />Leader<br />board</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/view-medCert' class="navlink" routerLinkActive="active"><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
-      </li>
-      <li data-toggle="collapse" href="#rewardsSubMenu" aria-expanded="false" class="text-center">
-        <a routerLink='/portal/rewards' class="dropdown-toggle navlink" routerLinkActive="active"><span><i class="fas fa-gift"></i></span><br />Rewards</a>
-        <ul class="collapse list-unstyled" id="rewardsSubMenu">
-          <li>
-            <a routerLink="/portal/edit-rewards" routerLinkActive="active">Edit</a>
-          </li>
-          <li>
-            <a routerLink="/portal/add-rewards" routerLinkActive="active">Add</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="list-unstyled CTAs">
-      <li class="text-center">
-        <a class="download" (click)='authentication.logout()'><span><i class="fas fa-sign-out-alt"></i></span><br />Logout</a>
-      </li>
-    </ul>
-  </nav> -->
-
   <!-- Page Content  -->
   <div id="content" class="bg-main">
     <!--Navigation Row-->
@@ -86,5 +40,6 @@
       </div>
     </div>
     <router-outlet></router-outlet>
+    <app-alert></app-alert>
   </div>
 </div>

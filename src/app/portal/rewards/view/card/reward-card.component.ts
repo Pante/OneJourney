@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Reward } from '../reward';
+import { Reward } from '../../reward';
 
 
 @Component({
