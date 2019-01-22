@@ -7,6 +7,23 @@
   background-blend-mode: normal;
   opacity: 0.9;
 }
+
+.events-custom-pad-full {
+    /*background-color: #564f6f;*/
+    background-color: #564F6F;
+    height: 115px;
+}
+
+.front-float {
+    z-index: 1000;
+}
+
+.outline-border {
+    border: 3px solid #802BB1;
+    margin-bottom: 5%;
+    opacity: 0.9;
+}
+
 .overlay {
   position: relative;
 }
