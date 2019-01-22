@@ -102,7 +102,7 @@ export class Paginated<T> {
     }
         
     private to(page: number): void {
-        let last = (page * this.configuration.size) - this.insertions;
+        const last = (page * this.configuration.size) - this.insertions;
         
         this.displayed = this.items.slice(Math.max(0, last - this.configuration.size), last);
         this.page = page;
