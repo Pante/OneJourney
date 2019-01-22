@@ -50,12 +50,12 @@
 .outline-modal {
   margin-bottom: 5%;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%); 
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
   background-blend-mode: normal;
-  opacity: 0.9
+  opacity: 0.9;
+  background-color: #564F6F;
 }
 
 .outline-pagination {
