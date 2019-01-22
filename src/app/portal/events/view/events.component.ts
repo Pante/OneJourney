@@ -6,10 +6,10 @@ import { Subscription } from 'rxjs';
 
 import { AlertService } from 'src/app/alert/alert.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { Role } from 'src/app/authentication/identity/identity';
 import { Paginated } from '../../../pagination/paginated';
 import { EventService } from '../event.service';
 import { Event } from '../event';
-
 
 @Component({
     selector: 'app-events',
@@ -35,7 +35,9 @@ export class EventsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.events().subscribe(events => this.events.load(events));
+        this.subscription = this.service.events().subscribe(events => {
+            this.events.load(events, 1, this.authentication.identity().role === Role.STAFF ? 1 : 0);
+        });
     }
   
     ngOnDestroy() {

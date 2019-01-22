@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 
 import { AlertService } from 'src/app/alert/alert.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { Role } from 'src/app/authentication/identity/identity';
 import { Paginated } from '../../../pagination/paginated';
 import { RewardService } from '../reward.service';
 import { Reward } from '../reward';
@@ -35,7 +36,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.rewards().subscribe(events => this.rewards.load(events));
+        this.subscription = this.service.rewards().subscribe(events => this.rewards.load(events, 1, this.authentication.identity().role === Role.STAFF ? 1 : 0));
     }
     
     ngOnDestroy() {

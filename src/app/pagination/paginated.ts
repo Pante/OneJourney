@@ -42,6 +42,7 @@ export class Paginated<T> {
     configuration: Configuration;
     displayed: T[];
     page: number;
+    insertions: number;
     end: number;
     
         
@@ -63,12 +64,14 @@ export class Paginated<T> {
         this.configuration = configuration;
         this.displayed = [];
         this.page = 0;
+        this.insertions = 0;
     }
     
     
-    load(items: T[], page: number = 1) {
+    load(items: T[], page: number, insertions: number) {
         this.items = items;
-        this.end = Math.ceil(this.items.length / this.configuration.size);
+        this.insertions = insertions;
+        this.end = Math.ceil((this.insertions + this.items.length) / this.configuration.size);
         this.set(page);
     } 
     
@@ -99,9 +102,9 @@ export class Paginated<T> {
     }
         
     private to(page: number): void {
-        const end = page * this.configuration.size;
+        let last = (page * this.configuration.size) - this.insertions;
         
-        this.displayed = this.items.slice(end - this.configuration.size, end);
+        this.displayed = this.items.slice(Math.max(0, last - this.configuration.size), last);
         this.page = page;
     }
     
