@@ -5,8 +5,9 @@ import { Subject, Observable } from 'rxjs';
 
 export interface Alert {
     
+    header: string;
     message: string;
-    type: string;
+    image: string;
     
 }
 
@@ -22,8 +23,8 @@ export class AlertService {
     }
     
     
-    push(message: string, type: string = 'alert-info'): void {
-        this.emitter.next({ message: message, type: type});
+    push(header: string, message: string, image: string): void {
+        this.emitter.next({ header: header, message: message, image: image});
     }
     
     alerts(): Observable<Alert> {

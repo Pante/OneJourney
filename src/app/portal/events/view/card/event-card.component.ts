@@ -18,5 +18,10 @@ export class EventCardComponent {
         this.details = new EventEmitter<Event>();
     }
     
+    
+    pad(value: string, maximum: number, padding: number): number {
+        return value.length < maximum ? padding : 0;
+    }
+    
 }
 

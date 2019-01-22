@@ -51,10 +51,10 @@ export class EventsComponent implements OnInit, OnDestroy {
     enrol() {
         this.service.enrol(this.selected).subscribe(success => {
             if (success) {
-                this.alerts.push(`You have enrolled in '${this.selected.title}'.`, 'alert-success');
+//                this.alerts.push('Events Notifiaction', `You have been enrolled in '${this.selected.title}'.`, 'alert-success');
                 
             } else {
-                this.alerts.push(`Unable to enrol you in '${this.selected.title}'.`, 'alert-danger');
+//                this.alerts.push('Events Notification', `Unable to enrol you in '${this.selected.title}'. Please try again.`, 'alert-danger');
             }
         });
     }
@@ -62,10 +62,10 @@ export class EventsComponent implements OnInit, OnDestroy {
     unenrol() {
         this.service.unenrol(this.selected).subscribe(success => {
             if (success) {
-                this.alerts.push(`You have unenrolled from '${this.selected.title}'.`, 'alert-success');
+//                this.alerts.push(`You have been unenrolled from '${this.selected.title}'.`, 'alert-success');
                 
             } else {
-                this.alerts.push(`Unable to unerol you from '${this.selected.title}'.`, 'alert-danger');
+//                this.alerts.push(`Unable to unerol you from '${this.selected.title}'.`, 'alert-danger');
             }
         });
     }
