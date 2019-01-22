@@ -13,7 +13,7 @@
     <div class="col-10">
         <div class="d-flex justify-content-center">
             <div class="p-2">
-                <app-pagination-buttons [display]="rewards" [colour]="'#E57682'"></app-pagination-buttons>
+                <app-pagination-buttons [display]="rewards" [colour]="'#564F6F'"></app-pagination-buttons>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
         <div class="row justify-content-between">
-            <div class="p-1 outline">
+            <div *ngIf="authentication.identity().role == 'staffs' && rewards.page === 1" class="p-1 outline">
                 <div class="card outline-border overlay grey shadows" style="width: 18rem;">
                     <img src="../../../assets/images/Add-page.jpg" alt='Event Image' style="height: 200px;">
                     <div class="front-float text-center">
@@ -43,6 +43,18 @@
     </div>
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
+            <div *ngIf="authentication.identity().role == 'staffs' && rewards.page === 1" class="p-1 outline">
+                <div class="card outline-border overlay grey shadows" style="width: 18rem;">
+                    <img src="../../../assets/images/Add-page.jpg" alt='Event Image' style="height: 200px;">
+                    <div class="front-float text-center">
+                        <button class="btn btn-primary" style="border-radius: 200%; height:80px; width:80px;position: absolute;bottom:75px;left:100px;">
+                            <span><i class="fas fa-plus"></i></span>
+                        </button>
+                    </div>
+                    <div class="card-body events-custom-pad-full">
+                    </div>
+                </div>
+            </div>
             <div class="p-1 outline" *ngFor="let reward of rewards.displayed">
                 <app-reward-card (details)="details($event)" [reward]="reward"></app-reward-card>
             </div>
@@ -80,12 +92,12 @@
                 <p class="h4 font-weight-normal text-grey"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
             <div class="modal-footer" [ngSwitch]="selected?.status">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
                 <button *ngSwitchCase="'Eligible'" type="button" class="btn btn-success text-white" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Redeem</button>
                 <button *ngSwitchCase="'Ineligible'" type="button" class="btn btn-danger text-white unclickable" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Unable to redeem</button>
                 <button *ngSwitchCase="'Pending'" type="button" class="btn btn-warning text-white unclickable">Processing</button>
                 <button *ngSwitchCase="'Redeemed'" type="button" class="btn btn-info text-white unclickable">Redeemed</button>
+                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

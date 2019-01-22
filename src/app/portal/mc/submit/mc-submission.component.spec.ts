@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MedSubmissionComponent } from './med-submission.component';
+import { MCSubmissionComponent } from './mc-submission.component';
 
-describe('MedSubmissionComponent', () => {
-  let component: MedSubmissionComponent;
-  let fixture: ComponentFixture<MedSubmissionComponent>;
+describe('MCSubmissionComponent', () => {
+  let component: MCSubmissionComponent;
+  let fixture: ComponentFixture<MCSubmissionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MedSubmissionComponent ]
+      declarations: [ MCSubmissionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MedSubmissionComponent);
+    fixture = TestBed.createComponent(MCSubmissionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
