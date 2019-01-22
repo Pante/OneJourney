@@ -10,7 +10,6 @@ import { Paginated } from '../../../pagination/paginated';
 import { RewardService } from '../reward.service';
 import { Reward } from '../reward';
 
-
 @Component({
   selector: 'app-rewards',
     templateUrl: './rewards.component.html',
@@ -50,38 +49,38 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     confirm() {
         this.service.redeem(this.selected).subscribe(success => {
-            // TODO: REFRESH PAGE FROM API
-            if (success) {
-                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-                
-            } else {
-                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-            }
+//            // TODO: REFRESH PAGE FROM API
+//            if (success) {
+//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+//                
+//            } else {
+//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+//            }
             
         });
     }
 
     update() {
         this.service.edit(this.selected).subscribe(success => {
-            window.location.reload();
-            if (success) {
-                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-                
-            } else {
-                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-            }
+//            window.location.reload();
+//            if (success) {
+//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+//                
+//            } else {
+//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+//            }
         });
     }
 
     create() {
         this.service.create(this.selected).subscribe(success => {
-            window.location.reload();
-            if (success) {
-                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-                
-            } else {
-                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-            }
+//            window.location.reload();
+//            if (success) {
+//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
+//                
+//            } else {
+//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
+//            }
         });
     }
 }

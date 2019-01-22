@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-med-submission',
-  templateUrl: './med-submission.component.html',
-  styleUrls: ['./med-submission.component.css']
+  selector: 'app-mc-submission',
+  templateUrl: './mc-submission.component.html',
+  styleUrls: ['./mc-submission.component.css']
 })
-export class MedSubmissionComponent implements OnInit {
+export class MCSubmissionComponent implements OnInit {
 
     constructor(title: Title) {
         title.setTitle('OneJourney - MC');

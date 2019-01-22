@@ -18,6 +18,11 @@ export class RewardCardComponent {
         this.details = new EventEmitter<Reward>();
     }
     
+    
+    pad(value: string, maximum: number, padding: number): number {
+        return value.length < maximum ? padding : 0;
+    }
+    
 }
 
 

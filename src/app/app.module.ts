@@ -19,8 +19,8 @@ import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { RewardCardComponent } from './portal/rewards/view/card/reward-card.component';
 import { AddRewardsComponent } from './portal/rewards/add/add-rewards.component';
 import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
-import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
-import { ViewMedSubmissionComponent } from './portal/med-submission/view-med-submission/view-med-submission.component';
+import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
+import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
@@ -52,8 +52,8 @@ import { interceptors } from 'src/environments/interceptors';
         RewardCardComponent,
         AddRewardsComponent,
         EditRewardsComponent,
-        MedSubmissionComponent,
-        ViewMedSubmissionComponent,
+        MCSubmissionComponent,
+        ViewMCSubmissionComponent,
         LeaderboardComponent,
         ProfileComponent,
         PaginationButtonsComponent,

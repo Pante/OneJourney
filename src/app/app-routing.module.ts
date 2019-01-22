@@ -10,8 +10,8 @@ import { EditEventsComponent } from './portal/events/edit/edit-events.component'
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { AddRewardsComponent } from './portal/rewards/add/add-rewards.component';
 import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
-import { MedSubmissionComponent } from './portal/med-submission/med-submission.component';
-import { ViewMedSubmissionComponent } from './portal/med-submission/view-med-submission/view-med-submission.component';
+import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
+import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { IdentityComponent } from './authentication/identity/identity.component';
@@ -55,8 +55,14 @@ const routes: Routes = [
                     },
                 ]
             },
-            { path: 'medCert', component: MedSubmissionComponent, canActivate: [StudentGuardService] },
-            { path: 'view-medCert', component: ViewMedSubmissionComponent, canActivate: [StudentGuardService] },
+            { 
+                path: 'mc', 
+                component: BlankComponent,
+                children: [
+                    { path: 'view', component: ViewMCSubmissionComponent, canActivate: [StaffGuardService] },
+                    { path: 'submit', component: MCSubmissionComponent, canActivate: [StudentGuardService] }
+                ]
+            },
             { path: 'leaderboard', component: LeaderboardComponent, canActivate: [StudentGuardService] },
             {
                 path: '',
