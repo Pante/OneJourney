@@ -13,11 +13,11 @@ import { AlertComponent } from './alert/alert.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { EventCardComponent } from './portal/events/view/card/event-card.component';
-import { AddEventsComponent } from './portal/events/add/add-events.component';
+import { NewEventComponent } from './portal/events/new/new-event.component';
 import { EditEventsComponent } from './portal/events/edit/edit-events.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { RewardCardComponent } from './portal/rewards/view/card/reward-card.component';
-import { AddRewardsComponent } from './portal/rewards/add/add-rewards.component';
+import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
@@ -46,11 +46,11 @@ import { interceptors } from 'src/environments/interceptors';
         ErrorComponent,
         EventsComponent,
         EventCardComponent,
-        AddEventsComponent,
+        NewEventComponent,
         EditEventsComponent,
         RewardsComponent,
         RewardCardComponent,
-        AddRewardsComponent,
+        NewRewardComponent,
         EditRewardsComponent,
         MCSubmissionComponent,
         ViewMCSubmissionComponent,
