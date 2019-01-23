@@ -72,7 +72,7 @@ a:focus {
 
 #sidebar ul li a.active {
   color: #fcefeeef;
-  background: #ffffff8c;
+  background: rgb(76, 73, 93);
 }
 
 #sidebar ul li.active>a,
