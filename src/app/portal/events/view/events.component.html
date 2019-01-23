@@ -78,7 +78,7 @@
 <!-- Modal -->
 <div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content outline-modal outline-border" style="width:45rem;">
+        <div class="modal-content outline-modal outline-border" style="width:25rem; margin-left:1rem;">
             <div class="modal-header">
                 <h5 class="modal-title text-white font-weight-normal">{{selected?.title}}</h5>
                 <br />
@@ -101,23 +101,23 @@
                     <div class="p-1">
                         <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                             <div class="media-body">
-                                <h6 class="mt-3 text-white font-weight-light">Category</h6>
-                                <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-1">
-                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">
-                            <div class="media-body">
                                 <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
                                 <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>
                                     &nbsp;{{selected?.points}}</p>
                             </div>
                         </div>
                     </div>
+                    <div class="p-1">
+                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">
+                            <div class="media-body">
+                                <h6 class="mt-3 text-white font-weight-light">Category</h6>
+                                <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="text-center">
-                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:500px; height:281px;">
+                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:100%; height:100%;">
                 </div>
                 <p class="h5 text-white"></p>
                 <p>{{selected?.description}}</p>
