@@ -1,5 +1,5 @@
-.container-outline-purple {
-  border: 1px solid #ffffff;
+.container-outline-purple-left {
+  border: 2px solid #802BB1;
   border-radius: 1rem;
   margin-bottom: 5%;
   background-repeat: no-repeat;
@@ -13,8 +13,8 @@
   margin-right: 2%;
 }
 
-.container-outline-white {
-  border: 1px solid #ffffff;
+.container-outline-purple-right {
+  border: 2px solid #802BB1;
   border-radius: 1rem;
   margin-bottom: 5%;
   background-repeat: no-repeat;
