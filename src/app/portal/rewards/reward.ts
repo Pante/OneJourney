@@ -1,27 +1,31 @@
-export enum Redemption {
+export enum Status {
     
     ELIGIBLE = 'Eligible',
     INELIGIBLE = 'Ineligible',
     PENDING = 'Pending',
+    COLLECTION = 'Collection',
     REDEEMED = 'Redeemed'
     
 }
 
-export namespace Redemption {
+export namespace Status {
     
-    export function from(redemption: any): Redemption {
+    export function from(redemption: any): Status {
         switch (redemption) {
             case 'Eligible':
-                return Redemption.ELIGIBLE;
+                return Status.ELIGIBLE;
                 
             case 'Ineligible':
-                return Redemption.INELIGIBLE;
+                return Status.INELIGIBLE;
                 
             case 'Pending':
-                return Redemption.PENDING;
+                return Status.PENDING;
+                
+            case 'Collection':
+                return Status.COLLECTION;
                 
             case 'Redeemed':
-                return Redemption.REDEEMED;
+                return Status.REDEEMED;
             
             default:
                 return undefined;
@@ -30,6 +34,27 @@ export namespace Redemption {
     
 }
 
+export interface Locker {
+    
+    id: number;
+    otp: string;
+    
+}
+
+export namespace Locker {
+    
+    export function from(locker: any): Locker {
+        if (locker === undefined) {
+            return undefined;
+        }
+        
+        return {
+            id: locker.id,
+            otp: locker.otp
+        };
+    }
+    
+}
 
 export interface Reward {
     
@@ -37,15 +62,12 @@ export interface Reward {
     image: string;
     description: string;
     points: number;
-    status: Redemption;
+    status: Status;
+    locker: Locker;
     
 }
 
 export namespace Reward {
-    
-    export function to(reward: Reward): any {
-        return null; // TODO
-    }
     
     export function from(reward: any): Reward {
         const attributes = reward.attributes;
@@ -54,9 +76,29 @@ export namespace Reward {
             image: attributes['image-url'],
             description: attributes.description,
             points: attributes.points,
-            status: Redemption.from(attributes['redeem-status'])
+            status: Status.from(attributes['redeem-status']),
+            locker: Locker.from(attributes.locker)
         };
-    } 
+    }
+    
+    export function redeem(id: number, items: [number, number][]): any {
+        return {
+            'student-no': id,
+            'items': formatItems(items)
+        };
+    }
+    
+    function formatItems(items: [number, number][]): any[] {
+        const array = [];
+        for (const item of items) {
+            array.push({
+                'reward-catelogue-id': item[0],
+                'quantity': items[1]
+            });
+        }
+        
+        return array;
+    }
     
 }
 

@@ -11,6 +11,7 @@ import { Paginated } from '../../../pagination/paginated';
 import { EventService } from '../event.service';
 import { Event } from '../event';
 
+
 @Component({
     selector: 'app-events',
     templateUrl: './events.component.html',
@@ -35,8 +36,9 @@ export class EventsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.events().subscribe(events => {
-            this.events.load(events, 1, this.authentication.identity().role === Role.STAFF ? 1 : 0);
+        this.subscription = this.service.get().subscribe(events => {
+            const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
+            this.events.load(events, 1, insertions);
         });
     }
   
@@ -50,25 +52,15 @@ export class EventsComponent implements OnInit, OnDestroy {
     }
     
     
-    enrol() {
-        this.service.enrol(this.selected).subscribe(success => {
-            if (success) {
-//                this.alerts.push('Events Notifiaction', `You have been enrolled in '${this.selected.title}'.`, 'alert-success');
-                
-            } else {
-//                this.alerts.push('Events Notification', `Unable to enrol you in '${this.selected.title}'. Please try again.`, 'alert-danger');
-            }
+    join() {
+        this.service.join(this.selected).subscribe(response => {
+            // TODO
         });
     }
     
-    unenrol() {
-        this.service.unenrol(this.selected).subscribe(success => {
-            if (success) {
-//                this.alerts.push(`You have been unenrolled from '${this.selected.title}'.`, 'alert-success');
-                
-            } else {
-//                this.alerts.push(`Unable to unerol you from '${this.selected.title}'.`, 'alert-danger');
-            }
+    leave() {
+        this.service.leave(this.selected).subscribe(success => {
+            // TODO
         });
     }
 

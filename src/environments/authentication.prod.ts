@@ -13,3 +13,7 @@ export const authentication: AuthConfig = {
     tokenEndpoint: 'https://ictpjfin.ict.np.edu.sg/oauth/token',
     userinfoEndpoint: 'https://ictpjfin.ict.np.edu.sg/accounts/user_info'
 };
+
+export function profile(id?: number): string {
+    return authentication.userinfoEndpoint;
+}

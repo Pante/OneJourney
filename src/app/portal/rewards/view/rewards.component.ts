@@ -36,7 +36,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = this.service.rewards().subscribe(events => this.rewards.load(events, 1, this.authentication.identity().role === Role.STAFF ? 1 : 0));
+        this.subscription = this.service.get().subscribe(events => this.rewards.load(events, 1, this.authentication.identity().role === Role.STAFF ? 1 : 0));
     }
     
     ngOnDestroy() {
@@ -47,42 +47,6 @@ export class RewardsComponent implements OnInit, OnDestroy {
     details(reward: Reward) {
         this.selected = reward;
     }
-    
-    confirm() {
-        this.service.redeem(this.selected).subscribe(success => {
-//            // TODO: REFRESH PAGE FROM API
-//            if (success) {
-//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-//                
-//            } else {
-//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-//            }
-            
-        });
-    }
 
-    update() {
-        this.service.edit(this.selected).subscribe(success => {
-//            window.location.reload();
-//            if (success) {
-//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-//                
-//            } else {
-//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-//            }
-        });
-    }
-
-    create() {
-        this.service.create(this.selected).subscribe(success => {
-//            window.location.reload();
-//            if (success) {
-//                this.alerts.push(`Your redemption of ${this.selected.description} is now being processed.`, 'alert-success');
-//                
-//            } else {
-//                this.alerts.push(`Unable to redeem ${this.selected.description}, please try again.`, 'alert-danger');
-//            }
-        });
-    }
 }
 
