@@ -25,7 +25,7 @@ export class MCService {
     }
     
     approve(link: string): void {
-        this.http.delete(`${environment.api}/medical_certificates?link=${link}`)
+        this.http.delete(`${environment.api}/medical_certificates?link=${link}`);
     }
     
     get(): Observable<string[]> {
