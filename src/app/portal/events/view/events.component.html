@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 text-center">
-        <h1 class="display-thick-3 text-primary">Events</h1>
+        <h1 class="display-thick-4 text-primary">Events</h1>
         <p class="lead">
             What's trending......
         </p>
@@ -24,6 +24,18 @@
     <div class="col-1"></div>
     <div class="col-10 display-lg-above">
         <div class="row justify-content-around">
+            <div *ngIf="authentication.identity().role == 'staffs' && events.page === 1" class="p-1 outline">
+                <div class="card outline-border overlay dark shadows" style="width: 18rem;">
+                    <img src="../../../assets/images/Add-page.jpg" alt='Event Image' style="height: 150px;">
+                    <div class="front-float text-center">
+                        <button class="btn btn-primary" routerLink="/portal/events/new" style="border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;">
+                            <span><i class="fas fa-plus"></i></span>
+                        </button>
+                    </div>
+                    <div class="card-body events-custom-pad-full">
+                    </div>
+                </div>
+            </div>
             <div class="p-1 outline" *ngFor="let event of events.displayed">
                 <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
@@ -31,6 +43,18 @@
     </div>
     <div class="col-10 display-lg-below">
         <div class="row justify-content-center">
+            <div *ngIf="authentication.identity().role == 'staffs' && events.page === 1" class="p-1 outline">
+                <div class="card outline-border overlay dark shadows" style="width: 18rem;">
+                    <img src="../../../assets/images/Add-page.jpg" alt='Event Image' style="height: 150px;">
+                    <div class="front-float text-center">
+                        <button class="btn btn-primary" routerLink="/portal/events/new" style="border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;">
+                            <span><i class="fas fa-plus"></i></span>
+                        </button>
+                    </div>
+                    <div class="card-body events-custom-pad-full">
+                    </div>
+                </div>
+            </div>
             <div class="p-1" *ngFor="let event of events.displayed">
                 <app-event-card (details)="details($event)" [event]="event"></app-event-card>
             </div>
@@ -54,7 +78,7 @@
 <!-- Modal -->
 <div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content outline-modal" style="width:45rem;">
+        <div class="modal-content outline-modal outline-border" style="width:25rem; margin-left:1rem;">
             <div class="modal-header">
                 <h5 class="modal-title text-white font-weight-normal">{{selected?.title}}</h5>
                 <br />
@@ -64,41 +88,36 @@
             <div class="modal-body">
                 <div class="d-flex d-row flex-wrap justify-content-left align-items-center">
                     <div class="p-1">
-                        <div class="outline-alert">
-                            <div class="media">
-                                <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
-                                    alt="badges">
-                                <div class="media-body">
-                                    <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
-                                    <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US',
-                                        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
-                                </div>
+                        <div class="media">
+                            <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"
+                                alt="badges">
+                            <div class="media-body">
+                                <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>
+                                <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString('en-US',
+                                    { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="outline-alert">
-                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
-                                <div class="media-body">
-                                    <h6 class="mt-3 text-white font-weight-light">Category</h6>
-                                    <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
-                                </div>
+                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">
+                            <div class="media-body">
+                                <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
+                                <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>
+                                    &nbsp;{{selected?.points}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-1">
-                        <div class="outline-alert">
-                            <div class="media" style="margin-bottom:2px; margin-left: 10px;">
-                                <div class="media-body">
-                                    <h6 class="mt-3 text-white font-weight-light">Bytes</h6>
-                                    <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i> &nbsp;{{selected?.points}}</p>
-                                </div>
+                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">
+                            <div class="media-body">
+                                <h6 class="mt-3 text-white font-weight-light">Category</h6>
+                                <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:500px; height:281px;">
+                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:100%; height:100%;">
                 </div>
                 <p class="h5 text-white"></p>
                 <p>{{selected?.description}}</p>

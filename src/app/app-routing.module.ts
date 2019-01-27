@@ -5,10 +5,10 @@ import { PortalComponent } from './portal/portal.component';
 import { BlankComponent } from './shared/blank/blank.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/view/events.component';
-import { AddEventsComponent } from './portal/events/add/add-events.component';
+import { NewEventComponent } from './portal/events/new/new-event.component';
 import { EditEventsComponent } from './portal/events/edit/edit-events.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
-import { AddRewardsComponent } from './portal/rewards/add/add-rewards.component';
+import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
                 component: BlankComponent,
                 children: [
                     { path: 'view', component: EventsComponent, canActivate: [StudentGuardService] },
-                    { path: 'add', component: AddEventsComponent, canActivate: [StaffGuardService] },
+                    { path: 'new', component: NewEventComponent, canActivate: [StaffGuardService] },
                     { path: 'edit', component: EditEventsComponent, canActivate: [StaffGuardService] },
                     {
                         path: '',
@@ -46,7 +46,7 @@ const routes: Routes = [
                 component: BlankComponent, 
                 children: [
                     { path: 'view', component: RewardsComponent, canActivate: [StudentGuardService] },
-                    { path: 'add', component: AddRewardsComponent, canActivate: [StaffGuardService] },
+                    { path: 'new', component: NewRewardComponent, canActivate: [StaffGuardService] },
                     { path: 'edit', component: EditRewardsComponent, canActivate: [StaffGuardService] },
                     {
                         path: '',
