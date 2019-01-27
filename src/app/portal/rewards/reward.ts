@@ -44,7 +44,7 @@ export interface Locker {
 export namespace Locker {
     
     export function from(locker: any): Locker {
-        if (locker === undefined) {
+        if (locker === null) {
             return undefined;
         }
         
