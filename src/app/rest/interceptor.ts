@@ -9,15 +9,16 @@ import { environment } from 'src/environments/environment';
 @Injectable({ providedIn: 'root' })
 export class RESTInterceptor implements HttpInterceptor {
     
-    private urls: Array<[string, any]>;
+    private urls: [string, any][];
     
     
     constructor() {
-        this.urls = new Array<[string, any]>(
-            [`${environment.api}/activities?id=`, require('./mock/events.json')],
-            [`${environment.api}/reward_catelogues?id=`, require('./mock/rewards.json')],
+        this.urls = [
+            [`${environment.api}/activities`, require('./mock/events.json')],
+            [`${environment.api}/student_transactions`, 'success'],
+            [`${environment.api}/reward_catelogues`, require('./mock/rewards.json')],
             [`${environment.api}/factions`, require('./mock/factions.json')]
-        );
+        ];
     }
     
     
