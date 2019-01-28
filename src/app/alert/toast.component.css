@@ -1,0 +1,15 @@
+.events-custom {
+    /*background-color: #564f6f;*/
+    background-color: #4c495d;
+}
+.outline {
+    border: 2px solid #802BB1;
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.8;
+}
