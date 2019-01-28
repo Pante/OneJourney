@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import * as $ from 'jquery';
 
 import { Subscription } from 'rxjs';
 
@@ -26,7 +25,6 @@ export class ToastComponent implements OnInit, OnDestroy {
 
 
     ngOnInit() {
-        ($('.toast') as any).toast();
         this.subscription = this.service.toasts().subscribe(alert => {
             
         });
