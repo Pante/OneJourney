@@ -63,7 +63,6 @@ export interface Reward {
     description: string;
     points: number;
     status: Status;
-    locker: Locker;
     
 }
 
@@ -76,8 +75,7 @@ export namespace Reward {
             image: attributes['image-url'],
             description: attributes.description,
             points: attributes.points,
-            status: Status.from(attributes['redeem-status']),
-            locker: Locker.from(attributes.locker)
+            status: Status.from(attributes['redeem-status'])
         };
     }
     
