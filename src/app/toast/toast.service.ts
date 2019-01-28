@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 
-export interface Alert {
+export interface Toast {
     
     header: string;
     message: string;
@@ -15,11 +15,11 @@ export interface Alert {
 @Injectable({ providedIn: 'root' })
 export class AlertService {
     
-    private emitter: Subject<Alert>;
+    private emitter: Subject<Toast>;
     
     
     constructor() {
-        this.emitter = new Subject<Alert>();
+        this.emitter = new Subject<Toast>();
     }
     
     
@@ -27,7 +27,7 @@ export class AlertService {
         this.emitter.next({ header: header, message: message, image: image});
     }
     
-    alerts(): Observable<Alert> {
+    alerts(): Observable<Toast> {
         return this.emitter;
     }
     

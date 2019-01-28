@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
-import { AlertService, Alert } from './toast.service';
+import { AlertService, Toast } from './toast.service';
 
 
 
@@ -15,7 +15,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     
     private service: AlertService;
     private subscription: Subscription;
-    alerts: Alert[];
+    alerts: Toast[];
     
     
     constructor(service: AlertService) {
