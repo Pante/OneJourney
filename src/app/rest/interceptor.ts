@@ -17,7 +17,8 @@ export class RESTInterceptor implements HttpInterceptor {
             [`${environment.api}/activities`, require('./mock/events.json')],
             [`${environment.api}/student_transactions`, 'success'],
             [`${environment.api}/reward_catelogues`, require('./mock/rewards.json')],
-            [`${environment.api}/factions`, require('./mock/factions.json')]
+            [`${environment.api}/factions`, require('./mock/factions.json')],
+            [`${environment.api}/notifications`, require('./mock/notifications.json')],
         ];
     }
     

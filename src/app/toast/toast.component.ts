@@ -1,35 +1,37 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import * as $ from 'jquery';
 
 import { Subscription } from 'rxjs';
 
-import { AlertService, Toast } from './toast.service';
+import { ToastService, Toast } from './toast.service';
 
 
 
 @Component({
-    selector: 'app-alert',
+    selector: 'app-toast',
     templateUrl: './toast.component.html',
     styleUrls: ['./toast.component.css']
 })
-export class AlertComponent implements OnInit, OnDestroy { 
+export class ToastComponent implements OnInit, OnDestroy { 
     
-    private service: AlertService;
+    private service: ToastService;
     private subscription: Subscription;
-    alerts: Toast[];
+    toasts: Toast[];
     
     
-    constructor(service: AlertService) {
+    constructor(service: ToastService) {
         this.service = service;
-        this.alerts = [];
+        this.toasts = [];
     }
 
 
     ngOnInit() {
-        this.subscription = this.service.alerts().subscribe(alert => {
-            this.alerts.unshift(alert);
-            setTimeout(() => this.alerts.pop(), 5000);
+        ($('.toast') as any).toast();
+        this.subscription = this.service.toasts().subscribe(alert => {
+            
         });
     }
+    
     
     ngOnDestroy() {
         this.subscription.unsubscribe();

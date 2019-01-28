@@ -91,11 +91,8 @@
                 <br />
                 <p class="h4 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
-            <div class="modal-footer" [ngSwitch]="selected?.status">
-                <button *ngSwitchCase="'Eligible'" type="button" class="btn btn-outline-purple" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Redeem</button>
-                <button *ngSwitchCase="'Ineligible'" type="button" class="btn btn-outline-purple unclickable" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Unable to redeem</button>
-                <button *ngSwitchCase="'Pending'" type="button" class="btn btn-outline-purple unclickable">Processing</button>
-                <button *ngSwitchCase="'Redeemed'" type="button" class="btn btn-outline-purple unclickable">Redeemed</button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-purple" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Add to Cart</button>
                 <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal">Close</button>
             </div>

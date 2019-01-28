@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
 
-import { AlertService } from 'src/app/toast/toast.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Role } from 'src/app/authentication/identity/identity';
 import { Paginated } from '../../../pagination/paginated';
@@ -19,7 +18,6 @@ import { Event } from '../event';
 })
 export class EventsComponent implements OnInit, OnDestroy {
     
-    private alerts: AlertService;
     private service: EventService;
     private subscription: Subscription;
     authentication: AuthenticationService;
@@ -27,8 +25,7 @@ export class EventsComponent implements OnInit, OnDestroy {
     selected?: Event;
     
     
-    constructor(alerts: AlertService, service: EventService, authentication: AuthenticationService, device: DeviceDetectorService, title: Title) {
-        this.alerts = alerts;
+    constructor(service: EventService, authentication: AuthenticationService, device: DeviceDetectorService, title: Title) {
         this.service = service;
         this.authentication = authentication;
         this.events = Paginated.of<Event>(device);

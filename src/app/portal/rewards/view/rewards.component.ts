@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Subscription } from 'rxjs';
 
-import { AlertService } from 'src/app/toast/toast.service';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 import { Role } from 'src/app/authentication/identity/identity';
 import { Paginated } from '../../../pagination/paginated';
@@ -18,7 +17,6 @@ import { Reward } from '../reward';
 })
 export class RewardsComponent implements OnInit, OnDestroy {
     
-    private alerts: AlertService;
     private service: RewardService;
     private subscription: Subscription;
     
@@ -27,8 +25,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
     selected: Reward;
     
     
-    constructor(alerts: AlertService, authentication: AuthenticationService, service: RewardService, device: DeviceDetectorService, title: Title) {
-        this.alerts = alerts;
+    constructor(authentication: AuthenticationService, service: RewardService, device: DeviceDetectorService, title: Title) {
         this.authentication = authentication;
         this.service = service;
         this.rewards = Paginated.of<Reward>(device);

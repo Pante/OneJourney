@@ -1,33 +1,40 @@
 import { Injectable } from '@angular/core';
 
 import { Subject, Observable } from 'rxjs';
+import { NotificationService } from '../portal/notifications/notification.service';
 
+
+export enum Type {
+    
+    INFO = 'info',
+    WARNING = 'warning',
+    DANGER = 'danger'
+    
+}
 
 export interface Toast {
     
-    header: string;
     message: string;
-    image: string;
+    date: Date;
+    type: Type;
     
 }
 
 
 @Injectable({ providedIn: 'root' })
-export class AlertService {
+export class ToastService {
     
+    private notifications: NotificationService;
     private emitter: Subject<Toast>;
     
     
-    constructor() {
+    constructor(notifications: NotificationService) {
+        this.notifications = notifications;
         this.emitter = new Subject<Toast>();
     }
+
     
-    
-    push(header: string, message: string, image: string): void {
-        this.emitter.next({ header: header, message: message, image: image});
-    }
-    
-    alerts(): Observable<Toast> {
+    toasts(): Observable<Toast> {
         return this.emitter;
     }
     

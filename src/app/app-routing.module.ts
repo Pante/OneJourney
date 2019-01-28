@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PortalComponent } from './portal/portal.component';
-import { BlankComponent } from './shared/blank/blank.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { IdentityComponent } from './authentication/identity/identity.component';
 import { ErrorComponent } from './error/error.component';
+import { PortalComponent } from './portal/portal.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { NewEventComponent } from './portal/events/new/new-event.component';
 import { EditEventsComponent } from './portal/events/edit/edit-events.component';
+import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
+import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
+import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
+import { NotificationsComponent } from './portal/notifications/notifications.component';
+import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
-import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
-import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
-import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { IdentityComponent } from './authentication/identity/identity.component';
-import { ProfileComponent } from './portal/profile/profile.component';
+import { BlankComponent } from './shared/blank/blank.component';
 
 import { LoginGuardService } from './authentication/guard.service';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard.service';
-import { ElockerComponent } from './portal/elocker/elocker.component';
-import { AddLockerComponent } from './portal/elocker/add/add-locker.component';
-import { ViewLockerComponent } from './portal/elocker/view/view-locker.component';
-import { EditLockerComponent } from './portal/elocker/edit/edit-locker.component';
 
 
 const routes: Routes = [
@@ -30,6 +27,10 @@ const routes: Routes = [
         path: 'portal',
         component: PortalComponent,
         children: [
+            { 
+                path: 'notifications', 
+                component: NotificationsComponent, 
+            },
             { 
                 path: 'events', 
                 component: BlankComponent,
@@ -46,20 +47,6 @@ const routes: Routes = [
             },
             { path: 'profile', component: ProfileComponent, canActivate: [StudentGuardService] },
             { 
-                path: 'rewards', 
-                component: BlankComponent, 
-                children: [
-                    { path: 'view', component: RewardsComponent, canActivate: [StudentGuardService] },
-                    { path: 'new', component: NewRewardComponent, canActivate: [StaffGuardService] },
-                    { path: 'edit', component: EditRewardsComponent, canActivate: [StaffGuardService] },
-                    {
-                        path: '',
-                        redirectTo: 'view',
-                        pathMatch: 'full'
-                    },
-                ]
-            },
-            { 
                 path: 'mc', 
                 component: BlankComponent,
                 children: [
@@ -74,12 +61,12 @@ const routes: Routes = [
                 pathMatch: 'full'
             },
             { 
-                path: 'eLocker', 
-                component: ElockerComponent, 
+                path: 'rewards', 
+                component: BlankComponent, 
                 children: [
-                    { path: 'view', component: ViewLockerComponent, canActivate: [StudentGuardService] },
-                    { path: 'add', component: AddLockerComponent, canActivate: [StaffGuardService] },
-                    { path: 'edit', component: EditLockerComponent, canActivate: [StaffGuardService] },
+                    { path: 'view', component: RewardsComponent, canActivate: [StudentGuardService] },
+                    { path: 'new', component: NewRewardComponent, canActivate: [StaffGuardService] },
+                    { path: 'edit', component: EditRewardsComponent, canActivate: [StaffGuardService] },
                     {
                         path: '',
                         redirectTo: 'view',
