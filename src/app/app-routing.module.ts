@@ -19,6 +19,10 @@ import { ProfileComponent } from './portal/profile/profile.component';
 
 import { LoginGuardService } from './authentication/guard.service';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard.service';
+import { ElockerComponent } from './portal/elocker/elocker.component';
+import { AddLockerComponent } from './portal/elocker/add/add-locker.component';
+import { ViewLockerComponent } from './portal/elocker/view/view-locker.component';
+import { EditLockerComponent } from './portal/elocker/edit/edit-locker.component';
 
 
 const routes: Routes = [
@@ -68,6 +72,20 @@ const routes: Routes = [
                 path: '',
                 redirectTo: 'events',
                 pathMatch: 'full'
+            },
+            { 
+                path: 'eLocker', 
+                component: ElockerComponent, 
+                children: [
+                    { path: 'view', component: ViewLockerComponent, canActivate: [StudentGuardService] },
+                    { path: 'add', component: AddLockerComponent, canActivate: [StaffGuardService] },
+                    { path: 'edit', component: EditLockerComponent, canActivate: [StaffGuardService] },
+                    {
+                        path: '',
+                        redirectTo: 'view',
+                        pathMatch: 'full'
+                    },
+                ]
             },
         ]
     },
