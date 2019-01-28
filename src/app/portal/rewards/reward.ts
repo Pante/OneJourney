@@ -41,21 +41,6 @@ export interface Locker {
     
 }
 
-export namespace Locker {
-    
-    export function from(locker: any): Locker {
-        if (locker === null) {
-            return undefined;
-        }
-        
-        return {
-            id: locker.id,
-            otp: locker.otp
-        };
-    }
-    
-}
-
 export interface Reward {
     
     id: number;
