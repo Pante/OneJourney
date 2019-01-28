@@ -15,7 +15,7 @@ export class IdentityComponent extends AuthenticationComponent {
 
     constructor(authentication: AuthenticationService, router: Router) {
         super(authentication, router, '/identity', () => {
-            this.authentication.identify()
+            this.authentication.identify();
         });
     }
 
