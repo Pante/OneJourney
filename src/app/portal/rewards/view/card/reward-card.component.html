@@ -1,5 +1,5 @@
 <div (click)="details.next(reward)" data-toggle="modal" data-target="#details" class="card outline overlay dark shadows" style="width:18rem;">
-    <img class="img-fluid" src={{reward.image}} alt="Reward Image" style="height: 187px;">
+    <img class="img-fluid" src={{reward.image}} alt="Reward Image" style="height: 200px;">
     <div class="card-body events-custom">
         <h6 class="card-title text-secondary" [ngStyle]="{'padding-bottom.px': pad(reward.description, 34, 20)}">{{reward.description | shorten:58}}</h6>
         <div class="media mb-3">

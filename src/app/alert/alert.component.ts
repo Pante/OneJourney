@@ -2,14 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
-import { AlertService, Alert } from './toast.service';
+import { AlertService, Alert } from './alert.service';
 
 
 
 @Component({
     selector: 'app-alert',
-    templateUrl: './toast.component.html',
-    styleUrls: ['./toast.component.css']
+    templateUrl: './alert.component.html',
+    styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit, OnDestroy { 
     

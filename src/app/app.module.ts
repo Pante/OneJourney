@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PortalComponent } from './portal/portal.component';
 import { BlankComponent } from './shared/blank/blank.component';
-import { AlertComponent } from './alert/toast.component';
+import { AlertComponent } from './alert/alert.component';
 import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { EventCardComponent } from './portal/events/view/card/event-card.component';
@@ -28,17 +28,14 @@ import { PaginationButtonsComponent } from './pagination/pagination-buttons.comp
 import { EventCategoryPipe } from './portal/events/event-category.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
 
-import { AlertService } from './alert/toast.service';
+import { AlertService } from './alert/alert.service';
 import { ErrorService } from './error/error.service';
 import { EventService } from './portal/events/event.service';
 import { LeaderboardService } from './portal/leaderboard/leaderboard.service';
 import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
 import { interceptors } from 'src/environments/interceptors';
-import { ElockerComponent } from './portal/elocker/elocker.component';
-import { ViewLockerComponent } from './portal/elocker/view/view-locker.component';
-import { AddLockerComponent } from './portal/elocker/add/add-locker.component';
-import { EditLockerComponent } from './portal/elocker/edit/edit-locker.component';
+
 
 @NgModule({
     declarations: [
@@ -62,14 +59,7 @@ import { EditLockerComponent } from './portal/elocker/edit/edit-locker.component
         PaginationButtonsComponent,
         
         EventCategoryPipe,
-        ShortenPipe,
-        ElockerComponent,
-        ViewLockerComponent,
-        AddLockerComponent,
-        EditLockerComponent,
-        AddLockerComponent,
-        ViewLockerComponent,
-        EditLockerComponent
+        ShortenPipe
     ],
     imports: [
         BrowserModule,
