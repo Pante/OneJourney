@@ -122,13 +122,13 @@
                 <p class="h5 text-white"></p>
                 <p>{{selected?.description}}</p>
             </div>
-            <div class="modal-footer" [ngSwitch]="selected?.enrolement">
-                <button *ngSwitchCase="'Unenrolled'" (click)="enrol()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Enrol</button>
-                <button *ngSwitchCase="'Interested'" (click)="unenrol()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Unenrol</button>
-                <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-outline-purple unclickable">Enrolled</button>
-                <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-outline-purple unclickable">Rejected</button>
-                <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
-                <button type="button" class="btn btn-outline-purple" data-dismiss="modal">Close</button>
+            <div class="modal-footer" [ngSwitch]="selected?.enrollment">
+                <button *ngSwitchCase="'Unenrolled'" (click)="join()" data-dismiss="modal" type="button" class="btn btn-success text-white">Enrol</button>
+                <button *ngSwitchCase="'Interested'" (click)="leave()" data-dismiss="modal" type="button" class="btn btn-warning text-white">Unenrol</button>
+                <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-info text-white unclickable">Enrolled</button>
+                <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-danger text-white unclickable">Rejected</button>
+                <button type="button" class="btn btn-info" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

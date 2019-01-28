@@ -1,5 +1,7 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
+import { environment } from './environment';
+
 
 export const authentication: AuthConfig = {
     clientId: '2f5759af-53a4-42e2-a62c-f40312a3bac6',
@@ -15,5 +17,5 @@ export const authentication: AuthConfig = {
 };
 
 export function profile(id?: number): string {
-    return authentication.userinfoEndpoint;
+    return `${environment.api}/user_info?id=${id}`;
 }

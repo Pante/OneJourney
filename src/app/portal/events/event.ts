@@ -1,28 +1,28 @@
 import * as moment from 'moment';
 
 
-export enum Enrolement {
+export enum Status {
     UNENROLLED = 'Unenrolled',
     INTERESTED = 'Interested',
     ENROLLED = 'Enrolled',
     REJECTED = 'Rejected'
 }
 
-export namespace Enrolement {
+export namespace Status {
     
-    export function from(enrolment: any): Enrolement {
+    export function from(enrolment: any): Status {
         switch (enrolment) {
             case 'Interested':
-                return Enrolement.INTERESTED;
+                return Status.INTERESTED;
                 
             case 'Enrolled':
-                return Enrolement.ENROLLED;
+                return Status.ENROLLED;
                 
             case 'Rejected':
-                return Enrolement.REJECTED;
+                return Status.REJECTED;
             
             default:
-                return Enrolement.UNENROLLED;
+                return Status.UNENROLLED;
         }
     }
     
@@ -60,7 +60,7 @@ export interface Event {
     points: number;   
 
     staff: string;
-    enrolement?: Enrolement;
+    enrollment?: Status;
     updated: Date;
     groups: number[];
     
@@ -72,6 +72,7 @@ export interface Event {
     awards: Award[];
     
 }
+
 
 export namespace Event {
   
@@ -86,7 +87,7 @@ export namespace Event {
             points: attributes.points,
 
             staff: attributes.staff,
-            enrolement: Enrolement.from(attributes['enrol-status']),
+            enrollment: Status.from(attributes['enrol-status']),
             updated: moment(attributes['updated-at'], moment.HTML5_FMT.DATETIME_LOCAL_MS).toDate(),
             groups: attributes['mentor-groups'],
            
@@ -99,8 +100,11 @@ export namespace Event {
         };
     }
     
-    export function to(event: Event): any {
-        return null; // TODO
+    export function update(id: number, event: Event): any {
+        return {
+            'student-no': id,
+            'activity-id': event.id
+        };
     }
     
 }
