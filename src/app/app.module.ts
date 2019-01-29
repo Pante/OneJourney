@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -26,18 +27,24 @@ import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.componen
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
 import { BlankComponent } from './shared/blank/blank.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 import { StyledToastComponent } from './toast/styled-toast.component';
+
+import { FutureDateValidatorDirective } from './shared/input/future-date.directive';
+import { NumericValidatorDirective } from './shared/input/numeric.directive';
 
 import { EventCategoryPipe } from './portal/events/event-category.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
 
 import { ErrorService } from './error/error.service';
 import { EventService } from './portal/events/event.service';
+import { EventBindingService } from './portal/events/event-binding.service';
 import { LeaderboardService } from './portal/leaderboard/leaderboard.service';
 import { MailService } from './portal/mail/mail.service';
 import { MCService } from './portal/mc/mc.service';
 import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
+import { LoadingService } from './shared/loading/loading.service';
 import { interceptors } from 'src/environments/interceptors';
 
 
@@ -61,7 +68,11 @@ import { interceptors } from 'src/environments/interceptors';
         NewRewardComponent,
         EditRewardsComponent,
         BlankComponent,
+        LoadingComponent,
         StyledToastComponent,
+        
+        FutureDateValidatorDirective,
+        NumericValidatorDirective,
         
         EventCategoryPipe,
         ShortenPipe
@@ -69,6 +80,7 @@ import { interceptors } from 'src/environments/interceptors';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        FormsModule,
         DeviceDetectorModule.forRoot(),
         ToastrModule.forRoot({
             toastComponent: StyledToastComponent,
@@ -82,7 +94,16 @@ import { interceptors } from 'src/environments/interceptors';
     ],
     entryComponents: [StyledToastComponent],
     providers: [
-        ErrorService, EventService, LeaderboardService, MailService, MCService, ProfileService, RewardService, interceptors
+        ErrorService, 
+        EventService, 
+        EventBindingService, 
+        LeaderboardService, 
+        MailService, 
+        MCService, 
+        ProfileService, 
+        RewardService, 
+        LoadingService, 
+        interceptors
     ],
     bootstrap: [AppComponent]
 })

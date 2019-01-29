@@ -123,39 +123,12 @@
                 <p>{{selected?.description}}</p>
             </div>
             <div class="modal-footer" [ngSwitch]="selected?.enrollment">
-                <button *ngSwitchCase="'Unenrolled'" (click)="signup()" data-dismiss="modal" data-toggle="modal" data-target="#processing"  type="button" class="btn btn-outline-purple">Sign Up!</button>
+                <button *ngSwitchCase="'Unenrolled'" (click)="signup()" data-dismiss="modal" data-toggle="modal" type="button" class="btn btn-outline-purple">Sign Up!</button>
                 <button *ngSwitchCase="'Interested'" (click)="quit()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Quit Event</button>
                 <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-outline-purple unclickable">Enrolled</button>
                 <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-outline-purple unclickable">Rejected</button>
-                <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="edit()" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="processing" tabindex="-1" style ="pointer-events: none" data-dismiss="modal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                </div>
-                <div class="text-center">
-                    <div class="spinner-border text-info" style="width:15rem; height:15rem;" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-                <div class="col">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <h1 class="display-2 text-white">Processing</h1>
-                    <p>
-                        <em>Please wait...</em>
-                    </p>
-                </div>
             </div>
         </div>
     </div>

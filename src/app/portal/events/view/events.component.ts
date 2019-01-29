@@ -1,14 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { ToastrService } from 'ngx-toastr';
-import { Subscription } from 'rxjs';
 
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { LoadingService } from 'src/app/shared/loading/loading.service';
 import { Role } from 'src/app/authentication/identity/identity';
 import { Paginated } from '../../../pagination/paginated';
 import { EventService } from '../event.service';
+import { EventBindingService } from '../event-binding.service';
 import { Event } from '../event';
 
 
@@ -19,16 +22,22 @@ import { Event } from '../event';
 })
 export class EventsComponent implements OnInit {
     
+    private router: Router;
     private service: EventService;
+    private loading: LoadingService;
+    private binding: EventBindingService;
     private toaster: ToastrService;
     authentication: AuthenticationService;
     events: Paginated<Event>;
     selected?: Event;
     
     
-    constructor(service: EventService, authentication: AuthenticationService, device: DeviceDetectorService, toaster: ToastrService, title: Title) {
+    constructor(router: Router, service: EventService, authentication: AuthenticationService, loading: LoadingService, binding: EventBindingService, device: DeviceDetectorService, toaster: ToastrService, title: Title) {
+        this.router = router;
         this.service = service;
         this.authentication = authentication;
+        this.loading = loading;
+        this.binding = binding;
         this.toaster = toaster;
         this.events = Paginated.of<Event>(device);
         title.setTitle('OneJourney - Events');
@@ -48,18 +57,30 @@ export class EventsComponent implements OnInit {
     }
     
     
+    edit() {
+        this.binding.push(this.selected);
+        this.router.navigate(['/portal/events/edit']);
+    }
+    
+    
     signup() {
+        this.loading.render(true, 'Processing', 'Please Wait...');
         this.service.signup(this.selected).subscribe(response => {
-            this.service.get().subscribe(events => {
-                this.events.load(events, this.events.page, this.events.insertions);
-                this.toaster.show(response.status === 200 ? `You have signed up for "${this.selected.title}"` : `Unable to sign up for "${this.selected.title}"`, 'Event Notification');
-            });
+            this.update(response, `You have signed up for "${this.selected.title}"`, `Unable to sign up for "${this.selected.title}"`);
         });
     }
     
     quit() {
-        this.service.quit(this.selected).subscribe(success => {
-            // TODO
+        this.service.quit(this.selected).subscribe(response => {
+            this.update(response, `You have quit from "${this.selected.title}"`, `Unable to quit from "${this.selected.title}"`);
+        });
+    }
+    
+    private update(response: HttpResponse<any>, success: string, failure: string): void {
+        this.service.get().subscribe(events => {
+            this.events.load(events, this.events.page, this.events.insertions);
+            this.toaster.show(response.status === 200 ? success : failure, 'Event Notification');
+            this.loading.render(false);
         });
     }
 

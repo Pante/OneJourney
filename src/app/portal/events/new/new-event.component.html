@@ -12,41 +12,69 @@
     <div class="col-8">
         <div class="outline-border events-custom">
             <div class="container">
-                <div class="d-flex d-row flex-wrap justify-content-center">
-                    <div class="p-3 align-self-center mr-5">
-                        <img src="../../../../assets/images/profile_pic.png" class="rounded float-left" alt="..." style="width:300px; height:300px;">
+                <form (ngSubmit)="create()" #createEventForm="ngForm">
+                    <div class="d-flex d-row flex-wrap justify-content-center">
+                        <div class="p-3 align-self-center mr-5">
+                            <img src={{url}} class="rounded float-left" alt="..." style="width:300px; height:300px;">
+                        </div>
+                        <div class="p-3 flex-grow-1 align-self-center">
+                            <label for="title" class="form-label lead text-left">Title</label>
+                            <input type="text" required [(ngModel)]="transaction.title" name="title" #title="ngModel" class="form-control" id="title" placeholder="Title">
+                            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                                <div *ngIf="title.errors.required">
+                                    Title is required.
+                                </div>
+                            </div>
+                                   
+                            <label for="date" class="form-label  lead text-left">Event Date</label>
+                            <input type="date" required appFutureDate [(ngModel)]="transaction.date" name="date" #date="ngModel" class="form-control" id="date" placeholder="Date">
+                            <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger">
+                                <div *ngIf="date.errors.required">
+                                    Event Date is required.
+                                </div>
+                                <div *ngIf="date.errors.older">
+                                    Event Date cannot be in the past.
+                                </div>
+                            </div>
+                            
+                            <label for="description" class="form-label lead text-left">Description</label>
+                            <textarea [(ngModel)]="transaction.description" name="description" class="form-control" id="description" placeholder="Description"></textarea>
+                            
+                            <label for ="bytes" class="form-label lead text-left">Bytes</label>
+                            <input type="text" required appNumeric [(ngModel)]="transaction.bytes" name="bytes" #bytes="ngModel" class="form-control" id="bytes" placeholder="Bytes">
+                            <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-danger">
+                                <div *ngIf="bytes.errors.required">
+                                    Bytes is required.
+                                </div>
+                            </div>
+                                   
+                            <label for="category" class="form-label lead text-left">Category</label>
+                            <select type="text" required [(ngModel)]="transaction.category" name="category" class="form-control" id="category" placeholder="Category">
+                                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="p-3 flex-grow-1 align-self-center">
-                        <p class="lead text-left">Title</p>
-                        <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="Title">
-                        <p class="lead text-left">Description</p>
-                        <input type="text" class="form-control" id="title" aria-describedby="description" placeholder="Description">
-                        <p class="lead text-left">Date</p>
-                        <input type="date" class="form-control" id="date" aria-describedby="date" placeholder="Date">
-                        <p class="lead text-left">Bytes</p>
-                        <input type="number" class="form-control" id="title" aria-describedby="bytes" placeholder="Bytes">
-                        <p class="lead text-left">Category</p>
-                        <input type="text" class="form-control" id="title" aria-describedby="category" placeholder="Category">
-                    </div>
-                </div>
-                <div class="d-flex d-row flex-wrap justify-content-start">
-                    <div class="p-3 align-self-center">
-                        <div class="float-left">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="ImageUpload">
-                                <label class="custom-file-label" for="ImageUpload">Choose file</label>
+                    <div class="d-flex d-row flex-wrap justify-content-start">
+                        <div class="p-3 align-self-center">
+                            <div class="float-left">
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="ImageUpload">{{selected}}</label>
+                                    <input #file type="file" accept="image/*" class="custom-file-input" id="ImageUpload" (change)="select($event)">
+                                </div>
+                                <div *ngIf="error" class="alert alert-danger">
+                                    {{error}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex d-row flex-wrap justify-content-end">
-                    <div class="p-3 align-self-center">
-                        <div class="float-right">
-                            <button type="submit" class="btn btn-outline-purple">Submit</button>
+                    <div class="d-flex d-row flex-wrap justify-content-end">
+                        <div class="p-3 align-self-center">
+                            <div class="float-right">
+                                <button type="submit" class="btn btn-outline-purple" [disabled]="!createEventForm.form.valid">Create</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </form>
             </div>
         </div>
     </div>
