@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { Subscription } from 'rxjs';
+
+import { LoadingService, Screen } from './loading.service';
 
 
 @Component({
@@ -6,14 +10,24 @@ import { Component } from '@angular/core';
   templateUrl: './loading.component.html',
   styles: ['./loading.component.css']
 }) 
-export class LoadingComponent {
+export class LoadingComponent implements OnInit, OnDestroy {
     
-    enable: boolean;
-    title: string;
-    message: string;
-    
-    
+    private service: LoadingService;
+    private subscription: Subscription;
+    screen: Screen;
     
     
+    constructor(service: LoadingService) {
+        this.service = service;
+    }
+    
+    
+    ngOnInit(): void {
+        this.subscription = this.service.updates().subscribe(screen => this.screen = screen);
+    }
+    
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
     
 }
