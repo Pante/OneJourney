@@ -1,0 +1,11 @@
+.loading-backdrop.show {
+    opacity: 0.5;
+}
+
+.loading-backdrop.fade {
+    opacity: 0;
+}
+
+.fade {
+    transition: opacity 0.15s linear;
+}
