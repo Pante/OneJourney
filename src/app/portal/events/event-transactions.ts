@@ -6,9 +6,10 @@ export interface Transaction {
     staff?: number;
     type?: number; // Unsupported
     title?: string;
+    category?: string;
     description?: string;
     date?: string;
-    bytes?: string;
+    bytes?: number;
     hours?: number; // Unsupported
     minimum?: number; // Unsupported
     awards?: [number, number][]; // Unsupported

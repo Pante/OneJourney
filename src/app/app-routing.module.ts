@@ -8,7 +8,7 @@ import { PortalComponent } from './portal/portal.component';
 import { MailComponent } from './portal/mail/mail.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { NewEventComponent } from './portal/events/new/new-event.component';
-import { EditEventsComponent } from './portal/events/edit/edit-events.component';
+import { EditEventComponent } from './portal/events/edit/edit-event.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
@@ -37,7 +37,7 @@ const routes: Routes = [
                 children: [
                     { path: 'view', component: EventsComponent, canActivate: [StudentGuardService] },
                     { path: 'new', component: NewEventComponent, canActivate: [StaffGuardService] },
-                    { path: 'edit', component: EditEventsComponent, canActivate: [StaffGuardService] },
+                    { path: 'edit', component: EditEventComponent, canActivate: [StaffGuardService] },
                     {
                         path: '',
                         redirectTo: 'view',

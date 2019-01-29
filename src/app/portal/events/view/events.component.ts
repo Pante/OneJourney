@@ -44,7 +44,7 @@ export class EventsComponent implements OnInit {
     }
 
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.service.get().subscribe(events => {
             const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
             this.events.load(events, 1, insertions);
@@ -52,25 +52,32 @@ export class EventsComponent implements OnInit {
     }
     
     
-    details(event: Event) {
+    details(event: Event): void {
         this.selected = event;
     }
     
     
-    edit() {
+    edit(): void {
         this.binding.push(this.selected);
         this.router.navigate(['/portal/events/edit']);
     }
     
+    delete(): void {
+        this.loading.render(true, 'Deleting Event', 'Please Hold...');
+        this.service.delete(this.selected.id).subscribe(response => {
+            this.update(response, `You have deleted "${this.selected.title}"`, `Unable to delete "${this.selected.title}"`);
+        });
+    }
     
-    signup() {
+    
+    signup(): void {
         this.loading.render(true, 'Processing', 'Please Wait...');
         this.service.signup(this.selected).subscribe(response => {
             this.update(response, `You have signed up for "${this.selected.title}"`, `Unable to sign up for "${this.selected.title}"`);
         });
     }
     
-    quit() {
+    quit(): void {
         this.service.quit(this.selected).subscribe(response => {
             this.update(response, `You have quit from "${this.selected.title}"`, `Unable to quit from "${this.selected.title}"`);
         });

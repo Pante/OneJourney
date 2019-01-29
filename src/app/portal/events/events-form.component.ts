@@ -19,7 +19,7 @@ export class EventFormComponent implements OnInit {
     toast: ToastrService;
     loading: LoadingService;
     profile: ProfileService;
-    categories: string[]; // Requires REST API to retrieve
+    categories: [string, string][]; // Requires REST API to retrieve
 
     transaction: Transaction;
     url: any;
@@ -34,7 +34,7 @@ export class EventFormComponent implements OnInit {
         this.toast = toast;
         this.loading = loading;
         this.profile = profile;
-        this.categories = ['Community Service', 'Volunteer'];
+        this.categories = [['CommServe', 'Community Service'], ['Volunteer', 'Volunteer']];
         this.transaction = {
             type: 0,
             description: '',
