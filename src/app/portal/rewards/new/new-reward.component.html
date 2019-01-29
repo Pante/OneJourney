@@ -1,35 +1,67 @@
 <div class="row">
     <div class="col-12 text-center">
-        <h1 class="display-thick-4 text-primary">New Reward</h1>
+        <h1 class="display-thick-4 text-primary">New Rewards</h1>
         <p class="lead">
-            Make it a rewarding experience
+            More Rewards
         </p>
     </div>
-  </div>
-  <!--Secondary Nested View-->
-  <div class="row">
+</div>
+<!--Secondary Nested View-->
+<div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <form class="text-white">
-            <div class="form-group">
-              <label for="Title">Title</label>
-              <input type="text" class="form-control" id="Title" placeholder="Title">
+        <div class="outline-border events-custom">
+            <div class="container">
+                <form (ngSubmit)="create()" #createEventForm="ngForm">
+                    <div class="d-flex d-row flex-wrap justify-content-center">
+                        <div class="p-3 align-self-center mr-5">
+                            <img src={{url}} class="rounded float-left" alt="..." style="width:300px; height:300px;">
+                        </div>
+                        <div class="p-3 flex-grow-1 align-self-center">
+                            <label for="title" class="form-label lead text-left">Title</label>
+                            <input type="text" required [(ngModel)]="transaction.title" name="title" #title="ngModel"
+                                class="form-control" id="title" placeholder="Title">
+                            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                                <div *ngIf="title.errors.required">
+                                    Title is required.
+                                </div>
+                            </div>
+
+                            <label for="bytes" class="form-label lead text-left">Bytes</label>
+                            <input type="text" required appNumeric [(ngModel)]="transaction.bytes" name="bytes" #bytes="ngModel"
+                                class="form-control" id="bytes" placeholder="Bytes">
+                            <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-danger">
+                                <div *ngIf="bytes.errors.required">
+                                    Bytes is required.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="d-flex d-row flex-wrap justify-content-start">
+                        <div class="p-3 align-self-center">
+                            <div class="float-left">
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="ImageUpload">{{selected}}</label>
+                                    <input #file type="file" accept="image/*" class="custom-file-input" id="ImageUpload"
+                                        (change)="select($event)">
+                                </div>
+                                <div *ngIf="error" class="alert alert-danger">
+                                    {{error}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex d-row flex-wrap justify-content-end">
+                        <div class="p-3 align-self-center">
+                            <div class="float-right">
+                                <button type="submit" class="btn btn-outline-purple" [disabled]="!createEventForm.form.valid">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="Bytes">Bytes</label>
-                <input type="number" class="form-control" id="Bytes" placeholder="Bytes">
-            </div>
-            <div class="form-group">
-                <label for="ImageUpload">Image Upload</label>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="ImageUpload">
-                    <label class="custom-file-label" for="ImageUpload">Choose file</label>
-                </div>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
+        </div>
     </div>
     <div class="col"></div>
-  </div>
+</div>
