@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 text-center">
-        <h1 class="display-thick-4 text-primary">New Rewards</h1>
+        <h1 class="display-thick-4 text-primary">New Reward</h1>
         <p class="lead">
             More Rewards
         </p>
@@ -12,18 +12,18 @@
     <div class="col-8">
         <div class="outline-border events-custom">
             <div class="container">
-                <form (ngSubmit)="create()" #createEventForm="ngForm">
+                <form (ngSubmit)="create()" #createRewardForm="ngForm">
                     <div class="d-flex d-row flex-wrap justify-content-center">
                         <div class="p-3 align-self-center mr-5">
                             <img src={{url}} class="rounded float-left" alt="..." style="width:300px; height:300px;">
                         </div>
                         <div class="p-3 flex-grow-1 align-self-center">
-                            <label for="title" class="form-label lead text-left">Title</label>
-                            <input type="text" required [(ngModel)]="transaction.title" name="title" #title="ngModel"
-                                class="form-control" id="title" placeholder="Title">
-                            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
-                                <div *ngIf="title.errors.required">
-                                    Title is required.
+                            <label for="description" class="form-label lead text-left">Description</label>
+                            <input type="text" required [(ngModel)]="transaction.description" name="description" #description="ngModel"
+                                class="form-control" id="description" placeholder="Description">
+                            <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+                                <div *ngIf="description.errors.required">
+                                    Description is required.
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
                     <div class="d-flex d-row flex-wrap justify-content-end">
                         <div class="p-3 align-self-center">
                             <div class="float-right">
-                                <button type="submit" class="btn btn-outline-purple" [disabled]="!createEventForm.form.valid">Create</button>
+                                <button type="submit" class="btn btn-outline-purple" [disabled]="!createRewardForm.form.valid">Create</button>
                             </div>
                         </div>
                     </div>

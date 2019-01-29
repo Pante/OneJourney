@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { LoadingService } from 'src/app/shared/loading/loading.service';
 import { ProfileService } from '../../profile/profile.service';
 import { EventService } from '../event.service';
-import { EventFormComponent } from '../events-form.component';
+import { EventFormComponent } from '../event-form.component';
 
 
 @Component({
