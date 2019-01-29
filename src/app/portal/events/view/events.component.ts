@@ -49,14 +49,14 @@ export class EventsComponent implements OnInit, OnDestroy {
     }
     
     
-    join() {
-        this.service.join(this.selected).subscribe(response => {
-            // TODO
+    signup() {
+        this.service.signup(this.selected).subscribe(response => {
+            window.location.reload();
         });
     }
     
-    leave() {
-        this.service.leave(this.selected).subscribe(success => {
+    quit() {
+        this.service.quit(this.selected).subscribe(success => {
             // TODO
         });
     }

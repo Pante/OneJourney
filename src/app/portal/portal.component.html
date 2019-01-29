@@ -1,47 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="wrapper">
-  <!-- Sidebar -->
-  <nav id="sidebar">
-    <div id="sidebar-header" class="sidebar-header">
-        <a routerLink='/portal/'><img src="../assets/images/Logo.png" alt = "OneJourney logo"class="img-fluid img-thumbnail" style="background: transparent; border: 0px;"></a>
-    </div>
-    <ul class="list-unstyled components">
-      <li class="text-center">
-        <a routerLink='/portal/events/view' class="navlink" routerLinkActive="active"><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/profile' class="navlink" routerLinkActive="active"><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/leaderboard' class="navlink" routerLinkActive="active"><span><i class="fa fa-trophy"></i></span><br />Leader<br />board</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/mc/submit' class="navlink" routerLinkActive="active"><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/rewards/view' class="navlink" routerLinkActive="active"><span><i class="fas fa-gift"></i></span><br />Rewards</a>
-      </li>
-      <li class="text-center">
-        <a routerLink='/portal/notifications' class="navlink" routerLinkActive="active"><span><i class="fas fa-th"></i></span><br />eLocker</a>
-      </li>
-    </ul>
-    <ul class="list-unstyled CTAs">
-      <li class="text-center">
-        <a class="download" (click)='authentication.logout()'><span><i class="fas fa-sign-out-alt"></i></span><br />Logout</a>
-      </li>
-    </ul>
-  </nav>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div id="sidebar-header" class="sidebar-header">
+            <a routerLink='/portal/'><img src="../assets/images/Logo.png" alt = "OneJourney logo"class="img-fluid img-thumbnail" style="background: transparent; border: 0px;"></a>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="text-center">
+                <a routerLink='/portal/mail' class="navlink" routerLinkActive="active">
+                    <span *ngIf="unread; else closed">
+                        <i class="fas fa-envelope-open"></i>
+                    </span>
+                    <ng-template #closed>
+                        <i class="fas fa-envelope"></i>
+                    </ng-template>
+                    <br />Mail
+                </a>
+            </li>
+            <li class="text-center">
+                <a routerLink='/portal/events/view' class="navlink" routerLinkActive="active"><span><i class="fas fa-calendar-alt"></i></span><br />Events</a>
+            </li>
+            <li class="text-center">
+                <a routerLink='/portal/profile' class="navlink" routerLinkActive="active"><span><i class="fas fa-user-circle"></i></span><br />Profile</a>
+            </li>
+            <li class="text-center">
+                <a routerLink='/portal/leaderboard' class="navlink" routerLinkActive="active"><span><i class="fa fa-trophy"></i></span><br />Leader<br />board</a>
+            </li>
+            <li class="text-center">
+                <a routerLink='/portal/mc/submit' class="navlink" routerLinkActive="active"><span><i class="fas fa-file-medical"></i></span><br />MCs</a>
+            </li>
+            <li class="text-center">
+                <a routerLink='/portal/rewards/view' class="navlink" routerLinkActive="active"><span><i class="fas fa-gift"></i></span><br />Rewards</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+            <li class="text-center">
+                <a class="download" (click)='authentication.logout()'><span><i class="fas fa-sign-out-alt"></i></span><br />Logout</a>
+            </li>
+        </ul>
+    </nav>
 
-  <!-- Page Content  -->
-  <div id="content" class="bg-main">
-    <!--Navigation Row-->
-    <div class="row">
-      <div class="d-flex align-self-center" style="margin: 5px 310px 5px 10px;">
-        <button type="button" id="sidebarCollapse" class="btn btn-lg" style="background-color: #8b2f8a">
-          <i class="fas fa-align-left text-white"></i>
-        </button>
-      </div>
+    <!-- Page Content  -->
+    <div id="content" class="bg-main">
+        <!--Navigation Row-->
+        <div class="row">
+            <div class="d-flex align-self-center" style="margin: 5px 310px 5px 10px;">
+                <button type="button" id="sidebarCollapse" class="btn btn-lg" style="background-color: #8b2f8a">
+                    <i class="fas fa-align-left text-white"></i>
+                </button>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
-  </div>
 </div>

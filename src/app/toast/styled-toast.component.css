@@ -2,6 +2,42 @@
     /*background-color: #564f6f;*/
     background-color: #4c495d;
 }
+
+
+.styled-toast {
+    max-width: 350px;
+    overflow: hidden;
+    font-size: 0.875rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+    opacity: 0.8;
+}
+
+.styled-toast:hover {
+    cursor: pointer;
+}
+
+.styled-toast-header {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    color: #6c757d;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-clip: padding-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.styled-toast-body {
+    padding: 0.75rem;
+}
+
+
 .outline {
     border: 2px solid #802BB1;
     margin-bottom: 5%;

@@ -92,7 +92,7 @@
                 <p class="h4 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-purple" data-toggle="modal" data-target="#confirmation" data-dismiss="modal">Add to Cart</button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" data-toggle="modal" sdata-target="#confirmation" >Add to Cart</button>
                 <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal">Close</button>
             </div>

@@ -51,11 +51,11 @@ export class EventService {
     }
     
     
-    join(event: Event): Observable<HttpResponse<Object>> {
+    signup(event: Event): Observable<HttpResponse<Object>> {
         return this.update('enrol_activity`', event);
     }
     
-    leave(event: Event): Observable<HttpResponse<Object>> {
+    quit(event: Event): Observable<HttpResponse<Object>> {
         return this.update('unenrol_activity`', event);
     }
     

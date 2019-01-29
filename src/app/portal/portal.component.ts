@@ -1,9 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
-import * as $ from 'jquery';
+import { filter, tap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import * as $ from 'jquery';
 
-import {AuthenticationService} from '../authentication/authentication.service';
+import { AuthenticationService } from '../authentication/authentication.service';
+import { MailService } from './mail/mail.service';
+import { Status } from './mail/mail';
 
 @Component({
     selector: 'app-main',
@@ -13,16 +17,28 @@ import {AuthenticationService} from '../authentication/authentication.service';
 
 export class PortalComponent implements OnInit {
 
+    router: Router;
     authentication: AuthenticationService;
+    mail: MailService;
     toaster: ToastrService;
+    unread: boolean
     
-    constructor(authentication: AuthenticationService, toaster: ToastrService) {
+    
+    constructor(router: Router, authentication: AuthenticationService, mail: MailService, toaster: ToastrService) {
+        this.router = router;
         this.authentication = authentication;
+        this.mail = mail;
         this.toaster = toaster;
+        this.router.events.pipe(filter(event => event instanceof NavigationEnd && event.urlAfterRedirects.includes('portal')))
+                          .subscribe(event => {
+                              this.mail.toast(this.mail.getFlat().pipe(tap(mail => {if (mail.status !== Status.READ) {
+                                  this.unread = true;
+                              }})));
+                          });
+        this.unread = false;
     }
 
     ngOnInit(): void {
-        setTimeout(() => this.toaster.success('Onwards to glory', 'Keep moving forward'));
         $(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar, #content').toggleClass('active');

@@ -30,7 +30,7 @@ export namespace Status {
 }
 
 
-export interface Notification {
+export interface Mail {
     
     id: number;
     message: string;
@@ -39,9 +39,9 @@ export interface Notification {
     
 }
 
-export namespace Notification {
+export namespace Mail {
     
-    export function from(notification: any): Notification {
+    export function from(notification: any): Mail {
         return {
             id: notification.id,
             message: notification.message,

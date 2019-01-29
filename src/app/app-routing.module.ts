@@ -5,13 +5,13 @@ import { LoginComponent } from './authentication/login/login.component';
 import { IdentityComponent } from './authentication/identity/identity.component';
 import { ErrorComponent } from './error/error.component';
 import { PortalComponent } from './portal/portal.component';
+import { MailComponent } from './portal/mail/mail.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { NewEventComponent } from './portal/events/new/new-event.component';
 import { EditEventsComponent } from './portal/events/edit/edit-events.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
-import { NotificationsComponent } from './portal/notifications/notifications.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
@@ -28,8 +28,8 @@ const routes: Routes = [
         component: PortalComponent,
         children: [
             { 
-                path: 'notifications', 
-                component: NotificationsComponent, 
+                path: 'mail', 
+                component: MailComponent, 
             },
             { 
                 path: 'events', 
