@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 import { ToastrService } from 'ngx-toastr';
 import { Observable, of } from 'rxjs';
@@ -32,8 +32,8 @@ export class MailService {
     }
     
     
-    read(mail: number): void {
-        this.http.patch(`${environment.api}/mail`, { id: this.authentication.identity().id, mail: mail }); // Proposed API
+    read(mail: number): Observable<HttpResponse<Object>> {
+        return this.http.patch(`${environment.api}/mail`, { id: this.authentication.identity().id, mail: mail }, {observe: 'response'}); // Proposed API
     }
     
     
