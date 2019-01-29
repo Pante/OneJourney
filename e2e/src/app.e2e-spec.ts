@@ -30,6 +30,7 @@ describe('Protractor e2e test', () => {
     unenroll.click();
   });
 
+  //Failed: element not interactable inconsistencies
   it('click on close', () => {
     const closecard = getEventBtn('Close');
     closecard.click();
@@ -61,4 +62,9 @@ describe('Protractor e2e test', () => {
     expect(page.getRewardsText()).toEqual('Rewards');
     browser.pause();
   });
+
+    it('should go into Logout page', () => {
+    page.getLogoutPage();
+  });
+
 });  

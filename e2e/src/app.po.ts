@@ -47,6 +47,10 @@ export class AppPage {
     return element(by.css('li:nth-of-type(6)')).click();
   }
 
+  getLogoutPage() {
+    return element(by.css('app-main ul:nth-of-type(2)')).click();
+  }
+
 }
 
 export function getProfileBadge(tabName: string): any {
