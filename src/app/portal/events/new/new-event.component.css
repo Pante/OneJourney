@@ -1,0 +1,22 @@
+.outline-border {
+    border: 3px solid #802BB1;
+    margin-bottom: 5%;
+    opacity: 0.9;
+}
+
+.events-custom {
+    /*background-color: #564f6f;*/
+    background-color: #4c495d;
+}
+
+.btn-outline-purple {
+    color: #ffffff;
+    border-color: #a653d5;
+    background-color: #a653d5;
+}
+
+.btn-outline-purple:hover {
+    color: #a653d5;
+    border-color: #a653d5;
+    background-color: transparent;
+}
