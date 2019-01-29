@@ -22,7 +22,7 @@ export class NewEventComponent extends EventFormComponent {
 
     
     create(): void {
-        this.loading.render(true, 'Processing Form', 'Rome wasn\'t built in a day...');
+        this.loading.render(true, 'Creating Event', 'Rome wasn\'t built in a day...');
         this.service.create(this.transaction, this.file).subscribe(response => {
             this.loading.render(false);
             if (response.status === 200) {

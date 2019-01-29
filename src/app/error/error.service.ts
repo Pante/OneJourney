@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 
 export interface Message {
@@ -23,7 +23,10 @@ export class ErrorService {
     
     constructor(router: Router) {
         this.router = router;
-        this.messages = new Subject<Message>();
+        this.messages = new BehaviorSubject<Message>({
+            message: '404',
+            details: 'This is not the page you are looking for.'
+        });
     }
     
     

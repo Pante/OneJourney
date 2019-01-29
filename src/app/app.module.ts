@@ -15,7 +15,7 @@ import { ErrorComponent } from './error/error.component';
 import { EventsComponent } from './portal/events/view/events.component';
 import { EventCardComponent } from './portal/events/view/card/event-card.component';
 import { NewEventComponent } from './portal/events/new/new-event.component';
-import { EditEventsComponent } from './portal/events/edit/edit-events.component';
+import { EditEventComponent } from './portal/events/edit/edit-event.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { MailComponent } from './portal/mail/mail.component';
 import { ProfileComponent } from './portal/profile/profile.component';
@@ -57,7 +57,7 @@ import { interceptors } from 'src/environments/interceptors';
         EventsComponent,
         EventCardComponent,
         NewEventComponent,
-        EditEventsComponent,
+        EditEventComponent,
         LeaderboardComponent,
         MailComponent,
         MCSubmissionComponent,
