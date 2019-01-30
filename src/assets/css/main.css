@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-label {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-family: 'Exo 2', sans-serif;
   font-size: 0.7em;
   line-height: 1.7em;
