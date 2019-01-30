@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 
 export interface Message {
@@ -34,6 +34,7 @@ export class ErrorService {
         this.messages.next({ message: message, details: details, button: button, action: action });
         this.router.navigate(['/error']);
     }
+    
     
     errors(): Observable<Message> {
         return this.messages;

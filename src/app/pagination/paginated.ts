@@ -89,8 +89,9 @@ export class Paginated<T> {
     }
     
     last(): void {
-        return this.to(this.end);
+        this.set(this.end);
     }
+    
     
     set(page: number): boolean {
         const valid = 1 <= page && page <= this.end;
@@ -103,7 +104,8 @@ export class Paginated<T> {
         
         return valid;
     }
-        
+    
+    
     private to(page: number): void {
         const last = (page * this.configuration.size) - this.insertions;
         

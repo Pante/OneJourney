@@ -4,7 +4,7 @@
             <div class="col">
             </div>
             <div class="col-6 text-center">
-                <img src="../../assets/images/error404.png" style="width:50%; height:100%;" />
+                <img src="assets/images/404.png" style="width:50%; height:100%;" />
             </div>
             <div class="col">
             </div>
@@ -19,17 +19,16 @@
             <div class="col text-center">
                 <div *ngIf="error.button !== undefined && error.action !== undefined; then custom; else default"></div>
                 <ng-template #custom>
-                    <button type="button" class="btn btn-outline-warning" (click) = "error.action()">{{error.button}}</button>
+                    <button type="button" class="btn btn-outline-purple" (click) = "error.action()">{{error.button}}</button>
                 </ng-template>
 
                 <ng-template #default>
-                    <div *ngIf="authentication.authenticated(); then back; else login"></div>
-                    <ng-template #back>
-                        <button type="button" class="btn btn-outline-warning" (click) = "location.back()">Take me back</button>
-                    </ng-template>
-
+                    <div *ngIf="!authentication.authenticated(); then login; else back"></div>
                     <ng-template #login>
-                        <button type="button" class="btn btn-outline-warning" (click) = "authentication.login()">Login</button>
+                        <button type="button" class="btn btn-outline-purple" (click) = "authentication.login()">Login</button>
+                    </ng-template>
+                    <ng-template #back>
+                        <button type="button" class="btn btn-outline-purple" (click) = "location.back()">Take me back</button>
                     </ng-template>
                 </ng-template>
 

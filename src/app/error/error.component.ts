@@ -4,8 +4,8 @@ import { Title } from '@angular/platform-browser';
 
 import { take } from 'rxjs/operators';
 
-import { ErrorService, Message } from './error.service';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { ErrorService, Message } from './error.service';
 
 
 @Component({
