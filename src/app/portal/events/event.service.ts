@@ -52,11 +52,11 @@ export class EventService {
     
     
     signup(event: Event): Observable<HttpResponse<Object>> {
-        return this.update('enrol_activity`', event);
+        return this.update('enrol_activity', event);
     }
     
     quit(event: Event): Observable<HttpResponse<Object>> {
-        return this.update('unenrol_activity`', event);
+        return this.update('unenrol_activity', event);
     }
     
     private update(path: string, event: Event): Observable<HttpResponse<Object>> {

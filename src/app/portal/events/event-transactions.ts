@@ -20,6 +20,11 @@ export interface Transaction {
 export namespace Transaction {
     
     export function create(transaction: Transaction): any {
+
+        const vlal = {
+            activity: Transaction.format(transaction)
+        };
+                console.log(vlal);
         return {
             activity: Transaction.format(transaction)
         };
@@ -41,6 +46,7 @@ export namespace Transaction {
             description: transaction.description,
             'event-datetime': moment(transaction.date).format(moment.HTML5_FMT.DATETIME_LOCAL_MS),
             points: transaction.bytes,
+            category: transaction.category,
             'duration-hours': transaction.hours,
             'num-required': transaction.minimum,
             'award-type': formatAwardType(transaction.awards),

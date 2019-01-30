@@ -6,6 +6,7 @@ export class InvalidRoleError extends Error {
     
 }
 
+
 export enum Role {
     
     STAFF = 'staffs',

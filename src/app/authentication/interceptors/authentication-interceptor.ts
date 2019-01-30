@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { authentication } from 'src/environments/authentication';
 
@@ -19,7 +19,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
         return next.handle(request).pipe( 
             map(event => {
                 if (event instanceof HttpResponse && event.url === authentication.userinfoEndpoint) {
-                    return this.replace(event as HttpResponse<any>);
+                    return this.mock(event as HttpResponse<any>);
                     
                 }  else {
                     return event;
@@ -28,7 +28,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
         );
     }
     
-    replace(event: HttpResponse<any>): HttpEvent<any> {
+    mock(event: HttpResponse<any>): HttpEvent<any> {
         if (event.body.name === 'ICT-FintechDemo1 /ICT') {
             event = event.clone({ body: student });
             

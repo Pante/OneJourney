@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 import { AuthenticationService } from './authentication.service';
-import { Identity } from './identity/identity';
 
 
 export abstract class GuardService implements CanActivate {

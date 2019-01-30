@@ -93,7 +93,7 @@ export namespace Event {
            
            category: {
                name: attributes.category,
-               description: attributes.description
+               description: attributes['category-desc']
            },
            
             awards: (attributes['activity-awards'] as any[]).map(award => Award.deserialize(award))

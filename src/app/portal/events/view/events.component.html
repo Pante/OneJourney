@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="p-1 outline" *ngFor="let event of events.displayed">
-                <app-event-card (details)="details($event)" [event]="event"></app-event-card>
+                <app-event-card (details)="expand($event)" [event]="event"></app-event-card>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="p-1" *ngFor="let event of events.displayed">
-                <app-event-card (details)="details($event)" [event]="event"></app-event-card>
+                <app-event-card (details)="expand($event)" [event]="event"></app-event-card>
             </div>
         </div>
     </div>

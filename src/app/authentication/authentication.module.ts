@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { OAuthModule, ValidationHandler, JwksValidationHandler, AuthConfig, OAuthStorage } from 'angular-oauth2-oidc';
+import { AuthConfig, JwksValidationHandler, OAuthModule, OAuthStorage, ValidationHandler } from 'angular-oauth2-oidc';
 
 import { LoginComponent } from './login/login.component';
 import { IdentityComponent } from './identity/identity.component';
@@ -9,6 +9,7 @@ import { IdentityComponent } from './identity/identity.component';
 import { AuthenticationService } from './authentication.service';
 import { LoginGuardService } from './guard.service';
 import { StaffGuardService, StudentGuardService } from './role-guard.service';
+
 import { authentication } from '../../environments/authentication';
 import { environment } from '../../environments/environment';
 

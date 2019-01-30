@@ -68,12 +68,12 @@ export class Paginated<T> {
     }
     
     
-    load(items: T[], page: number, insertions: number) {
+    load(items: T[], page: number = this.page, insertions: number = this.insertions) {
         this.items = items;
         this.insertions = insertions;
         this.end = Math.ceil((this.insertions + this.items.length) / this.configuration.size);
         this.set(page);
-    } 
+    }
     
     
     first(): void {
@@ -93,9 +93,12 @@ export class Paginated<T> {
     }
     
     set(page: number): boolean {
-        const valid = 1 <= page && page <= this.end && page !== this.page;
+        const valid = 1 <= page && page <= this.end;
         if (valid) {
             this.to(page);
+            
+        } else {
+            this.last();
         }
         
         return valid;

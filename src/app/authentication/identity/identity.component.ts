@@ -1,8 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../authentication.service';
 import { AuthenticationComponent } from '../authentication.component';
+import { AuthenticationService } from '../authentication.service';
 
 
 @Component({
@@ -14,9 +14,7 @@ import { AuthenticationComponent } from '../authentication.component';
 export class IdentityComponent extends AuthenticationComponent {
 
     constructor(authentication: AuthenticationService, router: Router) {
-        super(authentication, router, '/identity', () => {
-            this.authentication.identify();
-        });
+        super(authentication, router, '/identity', () => this.authentication.identify());
     }
 
 }

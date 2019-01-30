@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
-import { LoadingService } from 'src/app/shared/loading/loading.service';
-import { Role } from 'src/app/authentication/identity/identity';
-import { Paginated } from '../../../pagination/paginated';
 import { EventService } from '../event.service';
 import { EventBindingService } from '../event-binding.service';
 import { Event } from '../event';
+import { LoadingService } from 'src/app/shared/loading/loading.service';
+import { Paginated } from '../../../pagination/paginated';
+import { Role } from 'src/app/authentication/identity/identity';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class EventsComponent implements OnInit {
     private loading: LoadingService;
     private binding: EventBindingService;
     private toaster: ToastrService;
+    
     authentication: AuthenticationService;
     events: Paginated<Event>;
     selected?: Event;
@@ -52,7 +54,7 @@ export class EventsComponent implements OnInit {
     }
     
     
-    details(event: Event): void {
+    expand(event: Event): void {
         this.selected = event;
     }
     
@@ -62,33 +64,45 @@ export class EventsComponent implements OnInit {
         this.router.navigate(['/portal/events/edit']);
     }
     
+    
     delete(): void {
-        this.loading.render(true, 'Deleting Event', 'Please Hold...');
-        this.service.delete(this.selected.id).subscribe(response => {
-            this.update(response, `You have deleted "${this.selected.title}"`, `Unable to delete "${this.selected.title}"`);
-        });
+        this.loading.render(true, 'Deleting Event');
+        this.after(this.service.delete(this.selected.id), 
+                   `You have deleted "${this.selected.title}".`, 'Successfully Deleted Event',
+                   `$"{this.selected.title}" does not exist or could not be deleted. Please try again.`, 'Failed to Delete Event'
+                  );
     }
     
     
     signup(): void {
-        this.loading.render(true, 'Processing', 'Please Wait...');
-        this.service.signup(this.selected).subscribe(response => {
-            this.update(response, `You have signed up for "${this.selected.title}"`, `Unable to sign up for "${this.selected.title}"`);
-        });
+        this.loading.render(true, 'Signing you up!');
+        this.after(this.service.signup(this.selected), 
+                   `You have signed up for "${this.selected.title}"`, 'Sucessful Sign up',
+                   `Could not sign up for "${this.selected.title}". Event does not exist or you have already signed up.`, 'Failed to Sign Up'
+                  );
     }
+    
     
     quit(): void {
-        this.service.quit(this.selected).subscribe(response => {
-            this.update(response, `You have quit from "${this.selected.title}"`, `Unable to quit from "${this.selected.title}"`);
-        });
+        this.loading.render(true, `Quiting "${this.selected.title}"`);
+        this.after(this.service.quit(this.selected),
+                    `You have quit "${this.selected.title}"`, 'Successfully Quitted Event',
+                    `Could not quit "${this.selected.title}". Event does not exist or you have already quit`, `Failed to Quit Event`
+                  );
     }
     
-    private update(response: HttpResponse<any>, success: string, failure: string): void {
-        this.service.get().subscribe(events => {
-            this.events.load(events, this.events.page, this.events.insertions);
-            this.toaster.show(response.status === 200 ? success : failure, 'Event Notification');
-            this.loading.render(false);
-        });
+    
+    private after(results: Observable<any>, successMessage: string, successTitle: string, failureMessage: string, failureTitle: string): void {
+        results.subscribe(
+            success => {
+                this.service.get().pipe(tap(e => this.loading.render(false))).subscribe(fetched => this.events.load(fetched));
+                this.toaster.success(successMessage, successTitle);
+            }, 
+            error => {
+                this.service.get().pipe(tap(e => this.loading.render(false))).subscribe(fetched => this.events.load(fetched));
+                this.toaster.error(failureMessage, failureTitle);
+            }
+        );
     }
 
 }

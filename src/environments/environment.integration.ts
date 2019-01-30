@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    api: 'http://206.189.152.144'
+    api: 'http://localhost:80'
 };
 
 

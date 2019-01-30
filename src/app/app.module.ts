@@ -89,9 +89,9 @@ import { CartComponent } from './portal/cart/cart.component';
         ToastrModule.forRoot({
             toastComponent: StyledToastComponent,
             toastClass: '',
-            timeOut: 3000,
+            timeOut: 5000,
             preventDuplicates: true,
-            positionClass: 'toast-bottom-right'
+            positionClass: 'toast-top-right'
         }),
         AuthenticationModule.forRoot(),
         AppRoutingModule
