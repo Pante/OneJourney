@@ -11,11 +11,11 @@
     <div class="col-2"></div>
     <div class="col-8">
         <form (ngSubmit)="submit()" #submitMCForm="ngForm" class="text-white">
-            <img src="{{picURL}}" class="img-fluid" alt="MC Submission">
+            <img src="{{picURL}}" class="img-fluid custom-alignment" alt="MC Submission">
             <div class="form-group">
                 <label for="fileSubmission">Medical Certificate</label>
                 <div class="custom-file">
-                    <input #file type="file" required class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)">
+                    <input type="file" class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)" required>
                     <label class="custom-file-label" for="customFile">{{selected}}</label>
                 </div>
                 <div *ngIf="error" class="alert alert-danger">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!submitMCForm.form.valid">Submit</button>
             </div>
         </form>
     </div>
