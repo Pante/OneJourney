@@ -15,7 +15,7 @@ export abstract class AuthenticationComponent implements OnDestroy {
     
     constructor(authentication: AuthenticationService, router: Router, url: string, subscriber: (value: Event) => void) {
         this.authentication = authentication;
-        router.events.pipe(filter(event => event instanceof NavigationEnd && event.urlAfterRedirects.includes(url))).subscribe(subscriber);
+        this.subscription = router.events.pipe(filter(event => event instanceof NavigationEnd && event.urlAfterRedirects.includes(url))).subscribe(subscriber);
     }
     
     
