@@ -32,7 +32,7 @@ export class EventsComponent implements OnInit {
     selected?: Event;
     
     
-    constructor(router: Router, service: EventService, authentication: AuthenticationService, loading: LoadingService, binding: EventBindingService, device: DeviceDetectorService, toaster: ToastrService, title: Title) {
+    constructor(router: Router, service: EventService, authentication: AuthenticationService, loading: LoadingService, binding: EventBindingService, toaster: ToastrService, device: DeviceDetectorService, title: Title) {
         this.router = router;
         this.service = service;
         this.authentication = authentication;

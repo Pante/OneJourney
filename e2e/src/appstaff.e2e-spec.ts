@@ -1,7 +1,7 @@
 import { AppPage, getEventBtn, getProfileBadge } from './app.po';
 import { browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 
-describe('Protractor e2e test', () => {
+describe('Protractor staff account e2e test', () => {
   let page: AppPage;
   const cards = element.all(by.css('app-event-card'));
   //const tabs = element.all(by.css('app-profile-nav-item'));
@@ -32,14 +32,16 @@ describe('Protractor e2e test', () => {
 
   //Failed: element not interactable inconsistencies
   it('click on close', () => {
-  	page.navigateTo();
-  	firstCard.click();
     const closecard = getEventBtn('Close');
     closecard.click();
   });
 
+  it('create an event', () => {
+    
+  });
+
   it('should go into profile page', () => {
-    //page.navigateTo();
+    page.navigateTo();
     //expect(page.getProfileSidebar().click());
     page.getProfileSidebar().click();
     expect(page.getProfileText()).toEqual('Profile');

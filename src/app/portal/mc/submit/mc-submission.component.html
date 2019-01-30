@@ -10,14 +10,16 @@
 <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <form class="text-white">
-            <!--Dummy image currently, replace wih relevant assets-->
-            <img src="../../../../assets/images/temporary.png" class="img-fluid" alt="MC Submission">
+        <form (ngSubmit)="submit()" #submitMCForm="ngForm" class="text-white">
+            <img src="{{picURL}}" class="img-fluid" alt="MC Submission">
             <div class="form-group">
                 <label for="fileSubmission">Medical Certificate</label>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="fileSubmission">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input #file type="file" required class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)">
+                    <label class="custom-file-label" for="customFile">{{selected}}</label>
+                </div>
+                <div *ngIf="error" class="alert alert-danger">
+                    {{error}}
                 </div>
             </div>
             <div class="text-center">

@@ -9,7 +9,7 @@ import { LoadingService } from 'src/app/shared/loading/loading.service';
 import { ProfileService } from '../../profile/profile.service';
 import { EventBindingService } from '../event-binding.service';
 import { EventService } from '../event.service';
-import { EventFormComponent } from '../events-form.component';
+import { EventFormComponent } from '../event-form.component';
 
 
 @Component({

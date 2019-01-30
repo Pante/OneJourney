@@ -15,7 +15,7 @@ import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.c
 import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
-import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
+import { EditRewardComponent } from './portal/rewards/edit/edit-reward.component';
 import { BlankComponent } from './shared/blank/blank.component';
 
 import { LoginGuardService } from './authentication/guard.service';
@@ -67,7 +67,7 @@ const routes: Routes = [
                 children: [
                     { path: 'view', component: RewardsComponent, canActivate: [StudentGuardService] },
                     { path: 'new', component: NewRewardComponent, canActivate: [StaffGuardService] },
-                    { path: 'edit', component: EditRewardsComponent, canActivate: [StaffGuardService] },
+                    { path: 'edit', component: EditRewardComponent, canActivate: [StaffGuardService] },
                     {
                         path: '',
                         redirectTo: 'view',

@@ -5,7 +5,7 @@ import { Binding } from 'src/app/shared/binding';
 
 
 @Injectable({ providedIn: 'root' })
-export class EventBindingService extends Binding<Reward> {
+export class RewardBindingService extends Binding<Reward> {
     
 }
 

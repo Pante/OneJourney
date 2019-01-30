@@ -22,7 +22,7 @@ import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { RewardCardComponent } from './portal/rewards/view/card/reward-card.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
-import { EditRewardsComponent } from './portal/rewards/edit/edit-rewards.component';
+import { EditRewardComponent } from './portal/rewards/edit/edit-reward.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
@@ -44,9 +44,11 @@ import { MailService } from './portal/mail/mail.service';
 import { MCService } from './portal/mc/mc.service';
 import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
+import { RewardBindingService } from './portal/rewards/reward-binding.service';
 import { LoadingService } from './shared/loading/loading.service';
 import { interceptors } from 'src/environments/interceptors';
 import { CartComponent } from './portal/cart/cart.component';
+
 
 
 @NgModule({
@@ -67,7 +69,7 @@ import { CartComponent } from './portal/cart/cart.component';
         RewardsComponent,
         RewardCardComponent,
         NewRewardComponent,
-        EditRewardsComponent,
+        EditRewardComponent,
         BlankComponent,
         LoadingComponent,
         StyledToastComponent,
@@ -103,7 +105,8 @@ import { CartComponent } from './portal/cart/cart.component';
         MailService, 
         MCService, 
         ProfileService, 
-        RewardService, 
+        RewardService,
+        RewardBindingService,
         LoadingService, 
         interceptors
     ],
