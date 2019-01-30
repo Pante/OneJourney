@@ -2,48 +2,51 @@
   <div class="col-12 text-center">
     <h1 class="display-thick-4 text-primary">Profile</h1>
     <p class="lead">
-        Do we even exist?
+      Do we even exist?
     </p>
   </div>
 </div>
 
 <div class="container">
   <div class="d-flex justify-content-around outline shadows flex-wrap">
-    <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">Byte Points <br/> {{user.bytes}} </p>
-    </div>
-    <div class="p-2 text-center">
-      <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 20%; height: 100%;">
+    <div class="p-2 text-left">
+      <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 100px; height: 100px;">
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">Faction Points <br/> {{user.group.faction.points}} </p>
+      <p class="h4 lead card-title text-white">Name: <br /> {{user.name}}</p>
+    </div>
+    <div class="p-2 text-center align-self-center">
+      <p class="h4 lead card-title text-white">Group: <br /> {{user.group.code}}</p>
+    </div>
+    <div class="p-2 text-center align-self-center">
+      <p class="h4 lead card-title text-white">Mentor: <br /> {{user.group.staff.name}}</p>
+    </div>
+    <div class="p-2 text-center align-self-center">
+      <p class="h4 lead text-white">Faction Points <br /> {{user.group.faction.points}} </p>
+    </div>
+    <div class="p-2 text-center align-self-center">
+      <p class="h4 lead text-white">Byte Points <br /> {{user.bytes}} </p>
     </div>
   </div>
   <div class="card text-center bg-purple outline shadows">
     <div class="card-header">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link non-active active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link non-active" id="badges-tab" data-toggle="tab" href="#badges" role="tab" aria-controls="badge" aria-selected="false">Badges</a>
-          </li>
-        </ul>
+        <li class="nav-item">
+          <a class="nav-link non-active active" id="badges-tab" data-toggle="tab" href="#badges" role="tab"
+            aria-controls="badge" aria-selected="false">Badges</a>
+        </li>
+      </ul>
     </div>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <p class="h4 lead card-title text-white">Group: <br> {{user.group.code}}</p>
-          <p class="h4 lead card-title text-white">Mentor: <br> {{user.group.staff.name}}</p>
-        </div>
-        <div class="tab-pane fade text-white" id="badges" role="tabpanel" aria-labelledby="badges-tab">
-          <div class="d-flex d-row justify-content-around flex-wrap mb-5">
-            <div *ngFor="let award of user.awards">
-              <div class="order-{{award.id}} p-1">
-                <div class="text-center">
-                  <img src="{{award.image}}" class="rounded" alt="Profile pic" style=" width: 50%; height: 50%">
-                </div>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active text-white" id="badges" role="tabpanel" aria-labelledby="badges-tab">
+        <div class="d-flex d-row justify-content-around flex-wrap mb-5">
+          <div *ngFor="let award of user.awards">
+            <div class="order-{{award.id}} p-1">
+              <div class="text-center">
+                <img src="{{award.image}}" class="rounded" alt="Profile pic" style=" width: 50%; height: 50%">
               </div>
             </div>
           </div>
-  </div>
-</div>
+        </div>
+      </div>
+    </div>

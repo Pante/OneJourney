@@ -21,7 +21,7 @@ export class PortalComponent implements OnInit {
     authentication: AuthenticationService;
     mail: MailService;
     toaster: ToastrService;
-    unread: boolean
+    unread: boolean;
     
     
     constructor(router: Router, authentication: AuthenticationService, mail: MailService, toaster: ToastrService) {
@@ -31,7 +31,7 @@ export class PortalComponent implements OnInit {
         this.toaster = toaster;
         this.router.events.pipe(filter(event => event instanceof NavigationEnd && event.urlAfterRedirects.includes('portal')))
                           .subscribe(event => {
-                              this.mail.toast(this.mail.getFlat().pipe(tap(mail => {if (mail.status !== Status.READ) {
+                              this.mail.toast(this.mail.getFlat().pipe(tap(each => {if (each.status !== Status.READ) {
                                   this.unread = true;
                               }})));
                           });

@@ -1,11 +1,34 @@
+.loading-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1049;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
 .loading-backdrop.show {
     opacity: 0.5;
 }
 
-.loading-backdrop.fade {
-    opacity: 0;
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    opacity: 1;
 }
 
 .fade {
     transition: opacity 0.15s linear;
+}
+
+.loading-backdrop.fade {
+    opacity: 0;
 }

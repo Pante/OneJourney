@@ -3,16 +3,17 @@ import * as moment from 'moment';
 
 export interface Transaction {
     
-    staff: number;
+    staff?: number;
     type?: number; // Unsupported
-    title: string;
-    description: string;
-    date: Date;
-    points: string;
-    hours: number;
-    minimum: number;
-    awards: [number, number][];
-    groups: number[];
+    title?: string;
+    category?: string;
+    description?: string;
+    date?: string;
+    bytes?: number;
+    hours?: number; // Unsupported
+    minimum?: number; // Unsupported
+    awards?: [number, number][]; // Unsupported
+    groups?: number[]; // Unsupported
     
 }
 
@@ -39,7 +40,7 @@ export namespace Transaction {
             title: transaction.title,
             description: transaction.description,
             'event-datetime': moment(transaction.date).format(moment.HTML5_FMT.DATETIME_LOCAL_MS),
-            points: transaction.points,
+            points: transaction.bytes,
             'duration-hours': transaction.hours,
             'num-required': transaction.minimum,
             'award-type': formatAwardType(transaction.awards),

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 export interface Screen {
     
-    enable: boolean;
+    enabled: boolean;
     title: string;
     description: string;
     
@@ -24,9 +24,9 @@ export class LoadingService {
     }
     
     
-    push(enable: boolean, title: string = "Loading", description: string = "Please wait..."): void {
+    render(enable: boolean, title: string = 'Loading', description: string = 'Please wait...'): void {
         this.emitter.next({
-            enable: enable,
+            enabled: enable,
             title: title,
             description: description
         });

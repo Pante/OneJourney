@@ -92,27 +92,10 @@
                 <p class="h4 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" data-toggle="modal" sdata-target="#confirmation" >Add to Cart</button>
-                <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'">Edit</button>
-                <button type="button" class="btn btn-outline-purple" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Modal-->
-<div class="modal fade" id="confirmation" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content outline-modal outline-border">
-            <div class="modal-header">
-                <h5 class="modal-title text-white">{{selected?.description}}</h5>
-            </div>
-            <div class="modal-body">
-                <p class="h6 font-weight-light text-white">Redeem for {{selected?.points}} Bytes?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()">Confirm</button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" data-toggle="modal" sdata-target="#confirmation" ><span><i class="fas fa-shopping-cart"></i></span></button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="delete()" *ngIf="authentication.identity().role == 'staffs'"><span><i class="fas fa-trash-alt"></i></span></button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="edit()" *ngIf="authentication.identity().role == 'staffs'"><span><i class="fas fa-pen"></i></span></button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal"><span><i class="fas fa-times-circle"></i></span></button>
             </div>
         </div>
     </div>
