@@ -14,13 +14,13 @@ import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.componen
 import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
+import { RewardCartComponent } from './portal/rewards/cart/reward-cart.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardComponent } from './portal/rewards/edit/edit-reward.component';
 import { BlankComponent } from './shared/blank/blank.component';
 
 import { LoginGuardService } from './authentication/guard.service';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard.service';
-import { CartComponent } from './portal/cart/cart.component';
 
 
 const routes: Routes = [
@@ -65,6 +65,7 @@ const routes: Routes = [
                 path: 'rewards', 
                 component: BlankComponent, 
                 children: [
+                    { path: 'cart', component: RewardCartComponent, canActivate: [StudentGuardService] },
                     { path: 'view', component: RewardsComponent, canActivate: [StudentGuardService] },
                     { path: 'new', component: NewRewardComponent, canActivate: [StaffGuardService] },
                     { path: 'edit', component: EditRewardComponent, canActivate: [StaffGuardService] },
@@ -74,8 +75,7 @@ const routes: Routes = [
                         pathMatch: 'full'
                     },
                 ]
-            },
-            {  path: 'cart', component: CartComponent, canActivate: [StudentGuardService] }
+            }
         ]
     },
     

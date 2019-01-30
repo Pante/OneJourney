@@ -21,6 +21,7 @@ import { MailComponent } from './portal/mail/mail.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { RewardCardComponent } from './portal/rewards/view/card/reward-card.component';
+import { RewardCartComponent } from './portal/rewards/cart/reward-cart.component';
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardComponent } from './portal/rewards/edit/edit-reward.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
@@ -33,7 +34,6 @@ import { StyledToastComponent } from './toast/styled-toast.component';
 import { FutureDateValidatorDirective } from './shared/input/future-date.directive';
 import { NumericValidatorDirective } from './shared/input/numeric.directive';
 
-import { EventCategoryPipe } from './portal/events/event-category.pipe';
 import { ShortenPipe } from './shared/shorten.pipe';
 
 import { ErrorService } from './error/error.service';
@@ -47,7 +47,6 @@ import { RewardService } from './portal/rewards/reward.service';
 import { RewardBindingService } from './portal/rewards/reward-binding.service';
 import { LoadingService } from './shared/loading/loading.service';
 import { interceptors } from 'src/environments/interceptors';
-import { CartComponent } from './portal/cart/cart.component';
 
 
 
@@ -68,6 +67,7 @@ import { CartComponent } from './portal/cart/cart.component';
         ProfileComponent,
         RewardsComponent,
         RewardCardComponent,
+        RewardCartComponent,
         NewRewardComponent,
         EditRewardComponent,
         BlankComponent,
@@ -77,9 +77,7 @@ import { CartComponent } from './portal/cart/cart.component';
         FutureDateValidatorDirective,
         NumericValidatorDirective,
         
-        EventCategoryPipe,
-        ShortenPipe,
-        CartComponent
+        ShortenPipe
     ],
     imports: [
         BrowserModule,

@@ -3,7 +3,7 @@
     <div class="card-body events-custom">
         <h5 class="card-title text-secondary">{{event.title | shorten: 19}}</h5>
         <p class="card-text text-secondary" [ngStyle]="{'padding-bottom.px': pad(event.description, 45, 19)}">{{event.description | shorten: 80}}</p>
-        <span class="badge badge-secondary bg-info">{{event.category.name | category}}</span>
+        <span class="badge badge-secondary bg-info">{{event.category.description}}</span>
         <div class="row rounded mb-3"></div>
     </div>
 </div>

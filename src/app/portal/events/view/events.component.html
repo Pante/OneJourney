@@ -111,7 +111,7 @@
                         <div class="media" style="margin-bottom:2px; margin-left: 10px;">
                             <div class="media-body">
                                 <h6 class="mt-3 text-white font-weight-light">Category</h6>
-                                <p class="text-white font-weight-light">{{selected?.category.name | category}}</p>
+                                <p class="text-white font-weight-light">{{selected?.category.description}}</p>
                             </div>
                         </div>
                     </div>
@@ -123,10 +123,10 @@
                 <p>{{selected?.description}}</p>
             </div>
             <div class="modal-footer" [ngSwitch]="selected?.enrollment">
-                <button *ngSwitchCase="'Unenrolled'" (click)="signup()" data-dismiss="modal" data-toggle="modal" type="button" class="btn btn-outline-purple">Sign Up!</button>
-                <button *ngSwitchCase="'Interested'" (click)="quit()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Quit Event</button>
-                <button *ngSwitchCase="'Enrolled'" type="button" class="btn btn-outline-purple unclickable">Enrolled</button>
-                <button *ngSwitchCase="'Rejected'" type="button" class="btn btn-outline-purple unclickable">Rejected</button>
+                <button *ngSwitchCase="'unenrolled'" (click)="signup()" data-dismiss="modal" data-toggle="modal" type="button" class="btn btn-outline-purple">Sign Up!</button>
+                <button *ngSwitchCase="'interested'" (click)="quit()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Quit Event</button>
+                <button *ngSwitchCase="'enrolled'" type="button" class="btn btn-outline-purple unclickable">Enrolled</button>
+                <button *ngSwitchCase="'rejected'" type="button" class="btn btn-outline-purple unclickable">Rejected</button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="delete()" *ngIf="authentication.identity().role == 'staffs'"><span><i class="fas fa-trash-alt"></i></span></button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="edit()" *ngIf="authentication.identity().role == 'staffs'"><span><i class="fas fa-pen"></i></span></button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal"><span><i class="fas fa-times-circle"></i></span></button>

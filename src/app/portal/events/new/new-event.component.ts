@@ -23,15 +23,15 @@ export class NewEventComponent extends EventFormComponent {
 
     
     create(): void {
-        this.loading.render(true, 'Creating Event', 'Rome wasn\'t built in a day...');
+        this.loading.render(true, 'Creating Event');
         this.service.create(this.transaction, this.file).pipe(tap(e => this.loading.render(false))).subscribe(
             response => {
                 this.router.navigate(['/portal/events/view']);
-                this.toast.show(`You have created a new event titled "${this.transaction.title}"!`, 'New Event Notification');
+                this.toast.show(`You have created a event titled "${this.transaction.title}"!`, 'Sucessfully Created Event');
             },
             error => {
                 this.loading.render(false);
-                this.toast.show(`Failed to create an event titled "${this.transaction.title}"`, `Event Creation Failure`);
+                this.toast.show(`Failed to create an event titled "${this.transaction.title}". Please try again.`, `Failed to Create Event`);
             }
         );
     }

@@ -1,15 +1,16 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { tap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import * as moment from 'moment';
 
+import { EventBindingService } from '../event-binding.service';
+import { EventFormComponent } from '../event-form.component';
+import { EventService } from '../event.service';
 import { LoadingService } from 'src/app/shared/loading/loading.service';
 import { ProfileService } from '../../profile/profile.service';
-import { EventBindingService } from '../event-binding.service';
-import { EventService } from '../event.service';
-import { EventFormComponent } from '../event-form.component';
 
 
 @Component({
@@ -54,16 +55,13 @@ export class EditEventComponent extends EventFormComponent implements OnDestroy 
     
     edit(): void {
         this.loading.render(true, 'Saving Changes to Event', 'Ready Player 1');
-        this.service.edit(this.id, this.transaction, this.file).subscribe(response => {
-            this.loading.render(false);
-            if (response.status === 200) {
+        this.service.edit(this.id, this.transaction, this.file).pipe(tap(e => this.loading.render(false))).subscribe(
+            success => {
                 this.router.navigate(['/portal/events/view']);
-                this.toast.show(`You have edited "${this.transaction.title}"!`, 'Event Notification');
-                
-            } else {
-                this.toast.show(`Failed to edit "${this.transaction.title}"`, `Event Edition Failure`);
-            }
-        });
+                this.toast.show(`You have edited "${this.transaction.title}"`, 'Succesfully Edited Event');
+            },
+            error => this.toast.show(`Could not edit "${this.transaction.title}". Please try again.`, `Failed to Edit Event`)
+        );
     }
 
 }

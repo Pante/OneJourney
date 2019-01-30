@@ -2,23 +2,23 @@ import * as moment from 'moment';
 
 
 export enum Status {
-    UNENROLLED = 'Unenrolled',
-    INTERESTED = 'Interested',
-    ENROLLED = 'Enrolled',
-    REJECTED = 'Rejected'
+    UNENROLLED = 'unenrolled',
+    INTERESTED = 'interested',
+    ENROLLED = 'enrolled',
+    REJECTED = 'rejected'
 }
 
 export namespace Status {
     
     export function from(enrolment: any): Status {
-        switch (enrolment) {
-            case 'Interested':
+        switch ((enrolment as string).toLowerCase()) {
+            case 'interested':
                 return Status.INTERESTED;
                 
-            case 'Enrolled':
+            case 'enrolled':
                 return Status.ENROLLED;
                 
-            case 'Rejected':
+            case 'rejected':
                 return Status.REJECTED;
             
             default:
