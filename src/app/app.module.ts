@@ -46,6 +46,7 @@ import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
 import { LoadingService } from './shared/loading/loading.service';
 import { interceptors } from 'src/environments/interceptors';
+import { CartComponent } from './portal/cart/cart.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { interceptors } from 'src/environments/interceptors';
         NumericValidatorDirective,
         
         EventCategoryPipe,
-        ShortenPipe
+        ShortenPipe,
+        CartComponent
     ],
     imports: [
         BrowserModule,

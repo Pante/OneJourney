@@ -92,7 +92,8 @@
                 <p class="h4 font-weight-normal text-white"><i class="fas fa-money-bill"></i> {{selected?.points}} Bytes</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" data-toggle="modal" sdata-target="#confirmation" ><span><i class="fas fa-shopping-cart"></i></span></button>
+                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" data-toggle="modal" sdata-target="#confirmation" routerLink="/portal/cart">
+                <span><i class="fas fa-shopping-cart"></i></span></button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal"><span><i class="fas fa-trash-alt"></i></span></button>
                 <button type="button" class="btn btn-outline-purple" *ngIf="authentication.identity().role == 'staffs'"><span><i class="fas fa-pen"></i></span></button>
                 <button type="button" class="btn btn-outline-purple" data-dismiss="modal"><span><i class="fas fa-times-circle"></i></span></button>

@@ -20,6 +20,7 @@ import { BlankComponent } from './shared/blank/blank.component';
 
 import { LoginGuardService } from './authentication/guard.service';
 import { StaffGuardService, StudentGuardService } from './authentication/role-guard.service';
+import { CartComponent } from './portal/cart/cart.component';
 
 
 const routes: Routes = [
@@ -74,6 +75,7 @@ const routes: Routes = [
                     },
                 ]
             },
+            {  path: 'cart', component: CartComponent, canActivate: [StudentGuardService] }
         ]
     },
     
