@@ -22,7 +22,7 @@
                                 <label for="title" class="form-label lead text-left">Title</label>
                                 <input type="text" required [(ngModel)]="transaction.title" name="title" #title="ngModel"
                                     class="form-control" id="title" placeholder="Title">
-                                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-outline-red mt-3">
                                     <div *ngIf="title.errors.required">
                                         Title is required.
                                     </div>
@@ -33,7 +33,7 @@
                                 <label for="date" class="form-label  lead text-left">Event Date</label>
                                 <input type="datetime-local" required appFutureDate [(ngModel)]="transaction.date" name="date"
                                     #date="ngModel" class="form-control" id="date" placeholder="Date">
-                                <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger">
+                                <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-outline-red mt-3">
                                     <div *ngIf="date.errors.required">
                                         Event Date is required.
                                     </div>
@@ -53,7 +53,7 @@
                                 <label for="bytes" class="form-label lead text-left">Bytes</label>
                                 <input type="text" required appNumeric [(ngModel)]="transaction.bytes" name="bytes"
                                     #bytes="ngModel" class="form-control" id="bytes" placeholder="Bytes">
-                                <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-danger">
+                                <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-outline-red mt-3">
                                     <div *ngIf="bytes.errors.required">
                                         Bytes is required.
                                     </div>

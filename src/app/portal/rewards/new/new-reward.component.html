@@ -22,7 +22,7 @@
                                 <label for="description" class="form-label lead text-left">Description</label>
                                 <input type="text" required [(ngModel)]="transaction.description" name="description"
                                     #description="ngModel" class="form-control" id="description" placeholder="Description">
-                                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+                                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-outline-red mt-3">
                                     <div *ngIf="description.errors.required">
                                         Description is required.
                                     </div>
@@ -33,7 +33,7 @@
                                 <label for="bytes" class="form-label lead text-left">Bytes</label>
                                 <input type="text" required appNumeric [(ngModel)]="transaction.bytes" name="bytes"
                                     #bytes="ngModel" class="form-control" id="bytes" placeholder="Bytes">
-                                <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-danger">
+                                <div *ngIf="bytes.invalid && (bytes.dirty || bytes.touched)" class="alert alert-outline-red mt-3">
                                     <div *ngIf="bytes.errors.required">
                                         Bytes is required.
                                     </div>
