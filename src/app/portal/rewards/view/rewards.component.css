@@ -51,8 +51,10 @@
 }
 
 .overlay:hover:before{
+  cursor: pointer;
   display: block;
 }
+
 
 .dark:before {
   background-color: rgba(0,0,0,0.1);

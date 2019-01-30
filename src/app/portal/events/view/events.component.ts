@@ -59,6 +59,11 @@ export class EventsComponent implements OnInit {
     }
     
     
+    add() {
+        this.router.navigate(['portal/events/new']);
+    }
+    
+    
     edit(): void {
         this.binding.push(this.selected);
         this.router.navigate(['/portal/events/edit']);
