@@ -47,10 +47,13 @@ export class EventsComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.service.get().subscribe(events => {
-            const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
-            this.events.load(events, 1, insertions);
-        });
+        this.service.get().subscribe(
+            events => {
+                const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
+                this.events.load(events, 1, insertions);
+            },
+            error => this.toaster.error('Please refresh the page.', 'Failed to Get Events')
+        );
     }
     
     

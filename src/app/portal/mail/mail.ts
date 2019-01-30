@@ -12,7 +12,7 @@ export enum Status {
 export namespace Status {
     
     export function from(status: any): Status {
-        switch (status) {
+        switch ((status as string).toLowerCase()) {
             case 'new':
                 return Status.NEW;
                 

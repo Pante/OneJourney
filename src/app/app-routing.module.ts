@@ -11,7 +11,6 @@ import { NewEventComponent } from './portal/events/new/new-event.component';
 import { EditEventComponent } from './portal/events/edit/edit-event.component';
 import { LeaderboardComponent } from './portal/leaderboard/leaderboard.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
-import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { ProfileComponent } from './portal/profile/profile.component';
 import { RewardsComponent } from './portal/rewards/view/rewards.component';
 import { RewardCartComponent } from './portal/rewards/cart/reward-cart.component';
@@ -51,7 +50,6 @@ const routes: Routes = [
                 path: 'mc', 
                 component: BlankComponent,
                 children: [
-                    { path: 'view', component: ViewMCSubmissionComponent, canActivate: [StaffGuardService] },
                     { path: 'submit', component: MCSubmissionComponent, canActivate: [StudentGuardService] }
                 ]
             },

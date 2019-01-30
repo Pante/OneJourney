@@ -25,7 +25,6 @@ import { RewardCartComponent } from './portal/rewards/cart/reward-cart.component
 import { NewRewardComponent } from './portal/rewards/new/new-reward.component';
 import { EditRewardComponent } from './portal/rewards/edit/edit-reward.component';
 import { MCSubmissionComponent } from './portal/mc/submit/mc-submission.component';
-import { ViewMCSubmissionComponent } from './portal/mc/view/view-mc-submission.component';
 import { PaginationButtonsComponent } from './pagination/pagination-buttons.component';
 import { BlankComponent } from './shared/blank/blank.component';
 import { LoadingComponent } from './shared/loading/loading.component';
@@ -63,7 +62,6 @@ import { interceptors } from 'src/environments/interceptors';
         LeaderboardComponent,
         MailComponent,
         MCSubmissionComponent,
-        ViewMCSubmissionComponent,
         ProfileComponent,
         RewardsComponent,
         RewardCardComponent,
