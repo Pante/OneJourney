@@ -20,3 +20,8 @@
     border-color: #a653d5;
     background-color: transparent;
 }
+
+.alert-outline-red {
+    color: #ff5353;
+    background-color: #3f3d4d;
+}
