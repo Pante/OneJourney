@@ -29,20 +29,24 @@ export class MailComponent implements OnInit {
 
 
     ngOnInit() {
-        this.service.get().subscribe(mails => {
-            this.all = mails;
-            this.unread = mails.filter(mail => mail.status !== Status.READ);
-        })
+        this.service.get().subscribe(
+            mails => {
+                this.all = mails;
+                this.unread = mails.filter(mail => mail.status !== Status.READ);
+            },
+            error => this.toaster.error('Failed to get mail. Please refresh the page.', 'Failed to Get Mail')
+        )
     }
     
     
     mark(index: number): void {
         const mail = this.unread.splice(index, 1)[0];
-        this.service.read(mail.id).subscribe(response => {
-            if (response.status !== 200) {
-                this.toaster.show('Unable to mark message as read', 'Fail to Mark Mail');
-            }
-        });
+        this.service.read(mail.id).subscribe(
+            success => {
+                
+            },
+            error => this.toaster.error('Unable to mark message as read. Please try again', 'Failed to Read Mail')
+        );
     }
     
     

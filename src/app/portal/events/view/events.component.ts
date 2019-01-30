@@ -52,7 +52,7 @@ export class EventsComponent implements OnInit {
                 const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
                 this.events.load(events, 1, insertions);
             },
-            error => this.toaster.error('Please refresh the page.', 'Failed to Get Events')
+            error => this.toaster.error('Failed to get events. Please try again later', 'Failed to Get Events')
         );
     }
     

@@ -35,7 +35,7 @@ export class EditEventComponent extends EventFormComponent implements OnDestroy 
         super.ngOnInit();
         this.subscription = this.binding.pull().subscribe(event => {
             if (event === null) {
-                this.toast.show('Something went wrong when editing your event. Please try again', 'Oops')
+                this.toast.error('Something went wrong when editing your event. Please try again', 'Oops')
                 this.router.navigate(['portal/events/view']);
             }
             this.id = event.id;
@@ -58,9 +58,9 @@ export class EditEventComponent extends EventFormComponent implements OnDestroy 
         this.service.edit(this.id, this.transaction, this.file).pipe(tap(e => this.loading.render(false))).subscribe(
             success => {
                 this.router.navigate(['/portal/events/view']);
-                this.toast.show(`You have edited "${this.transaction.title}"`, 'Succesfully Edited Event');
+                this.toast.success(`You have edited "${this.transaction.title}"`, 'Succesfully Edited Event');
             },
-            error => this.toast.show(`Could not edit "${this.transaction.title}". Please try again.`, `Failed to Edit Event`)
+            error => this.toast.error(`Could not edit "${this.transaction.title}". Please try again.`, `Failed to Edit Event`)
         );
     }
 
