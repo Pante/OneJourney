@@ -39,18 +39,10 @@ describe('Protractor e2e test', () => {
   });
 
   it('should go into profile page', () => {
-    //page.navigateTo();
+    page.navigateTo();
     //expect(page.getProfileSidebar().click());
     page.getProfileSidebar().click();
     expect(page.getProfileText()).toEqual('Profile');
-  });
-
-  it('should click into profile badges', () => {
-    //const profilebadge = getProfileBadge('Badges');
-    //profilebadge.click();
-    //page.getBadgesTab().click();
-    page.clickBadgesTab();
-    expect(page.getBadgesTab()).toEqual('Badges');
   });
 
   it('should go into leaderboard page', () => {
