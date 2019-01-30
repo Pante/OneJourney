@@ -11,6 +11,10 @@ export enum Status {
 export namespace Status {
     
     export function from(enrolment: any): Status {
+        if (typeof enrolment !== 'string') {
+            return Status.UNENROLLED;
+        }
+        
         switch ((enrolment as string).toLowerCase()) {
             case 'interested':
                 return Status.INTERESTED;
