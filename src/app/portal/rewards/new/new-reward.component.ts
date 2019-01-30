@@ -14,24 +14,24 @@ import { RewardFormComponent } from '../reward-form.component';
     styleUrls: ['./new-reward.component.css']
 })
 export class NewRewardComponent extends RewardFormComponent {
-
+    
     constructor(router: Router, service: RewardService, toast: ToastrService, loading: LoadingService) {
         super(router, service, toast, loading);
     }
 
 
     create(): void {
-        this.loading.render(true, 'Creating Event', 'Rome wasn\'t built in a day...');
-        this.service.create(this.transaction, this.file).subscribe(response => {
-            this.loading.render(false);
-            if (response.status === 200) {
-                this.router.navigate(['/portal/rewards/view']);
-                this.toast.show(`You have added "${this.transaction.description}" as a reward!`, 'New Reward Notification');
-
-            } else {
-                this.toast.show(`Failed to create add "${this.transaction.description}" as a reward`, `Reward Creation Failure`);
+        this.loading.render(true, 'Creating Reward');
+        this.service.create(this.transaction, this.file).subscribe(
+            success => {
+                this.router.navigate(['portal/rewards/view']);
+                this.toaster.success(`You have create "${this.transaction.description}"`, `Successfully Created Reward`);
+            },
+            error => {
+                this.loading.render(false);
+                this.toaster.error(`Failed to create "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Create Reward')
             }
-        });
+        );
     }
 
 }

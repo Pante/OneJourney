@@ -34,7 +34,7 @@ export class MailComponent implements OnInit {
                 this.all = mails;
                 this.unread = mails.filter(mail => mail.status !== Status.READ);
             },
-            error => this.toaster.error('Failed to get mail. Please refresh the page.', 'Failed to Get Mail')
+            error => this.toaster.error('Could not get mail. Please try again later.', 'Failed to Get Mail')
         )
     }
     

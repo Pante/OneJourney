@@ -34,13 +34,6 @@ export namespace Status {
     
 }
 
-export interface Locker {
-    
-    id: number;
-    otp: string;
-    
-}
-
 export interface Reward {
     
     id: number;
@@ -62,25 +55,6 @@ export namespace Reward {
             points: attributes.points,
             status: Status.from(attributes['redeem-status'])
         };
-    }
-    
-    export function redeem(id: number, items: [number, number][]): any {
-        return {
-            'student-no': id,
-            'items': formatItems(items)
-        };
-    }
-    
-    function formatItems(items: [number, number][]): any[] {
-        const array = [];
-        for (const item of items) {
-            array.push({
-                'reward-catelogue-id': item[0],
-                'quantity': items[1]
-            });
-        }
-        
-        return array;
     }
     
 }

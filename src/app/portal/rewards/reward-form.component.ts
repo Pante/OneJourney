@@ -14,7 +14,7 @@ export class RewardFormComponent {
 
     router: Router;
     service: RewardService;
-    toast: ToastrService;
+    toaster: ToastrService;
     loading: LoadingService;
 
     transaction: Transaction;
@@ -27,7 +27,7 @@ export class RewardFormComponent {
     constructor(router: Router, service: RewardService, toast: ToastrService, loading: LoadingService) {
         this.router = router;
         this.service = service;
-        this.toast = toast;
+        this.toaster = toast;
         this.loading = loading;
         this.transaction = {
             description: '',

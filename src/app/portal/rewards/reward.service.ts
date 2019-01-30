@@ -51,11 +51,6 @@ export class RewardService {
     }
     
     
-    redeem(id: number, items: [number, number][]): Observable<HttpResponse<Object>> {
-        return this.http.post(`${environment.api}/reward_catelogues?id=${id}`, Reward.redeem(id, items), {observe: 'response'});
-    }
-    
-    
     get(): Observable<Reward[]> {
         return this.http.get<List>(`${environment.api}/reward_catelogues?id=${this.authentication.identity().id}`).pipe(
             map(response => response.data.map(data => Reward.from(data)))
