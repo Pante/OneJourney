@@ -30,17 +30,13 @@ describe('Protractor e2e test', () => {
     unenroll.click();
   });
 
-  //Failed: element not interactable inconsistencies
   it('click on close', () => {
-  	page.navigateTo();
-  	firstCard.click();
     const closecard = getEventBtn('Close');
     closecard.click();
   });
 
   it('should go into profile page', () => {
     page.navigateTo();
-    //expect(page.getProfileSidebar().click());
     page.getProfileSidebar().click();
     expect(page.getProfileText()).toEqual('Profile');
   });
@@ -48,13 +44,11 @@ describe('Protractor e2e test', () => {
   it('should go into leaderboard page', () => {
     page.getLeaderboardPage();
     expect(page.getLeaderboardText()).toEqual('Leaderboard');
-    browser.pause();
   });
 
   it('should go into rewards page', () => {
     page.getRewardsPage();
     expect(page.getRewardsText()).toEqual('Rewards');
-    browser.pause();
   });
 
     it('should go into Logout page', () => {
