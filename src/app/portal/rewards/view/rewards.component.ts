@@ -77,5 +77,9 @@ export class RewardsComponent implements OnInit, OnDestroy {
         });
     }
 
+    sig2AddRewards() {
+        this.router.navigate(['portal/rewards/new']);
+    }
+
 }
 

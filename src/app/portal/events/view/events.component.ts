@@ -13,6 +13,7 @@ import { Paginated } from '../../../pagination/paginated';
 import { EventService } from '../event.service';
 import { EventBindingService } from '../event-binding.service';
 import { Event } from '../event';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 
 @Component({
@@ -89,6 +90,10 @@ export class EventsComponent implements OnInit {
             this.toaster.show(response.status === 200 ? success : failure, 'Event Notification');
             this.loading.render(false);
         });
+    }
+
+    sig2AddEvents() {
+        this.router.navigate(['portal/events/new']);
     }
 
 }
