@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 
+import { LoadingService } from 'src/app/shared/loading/loading.service';
 import { ProfileService } from '../../profile/profile.service';
 import { User } from '../../profile/user';
 import { Reward } from '../reward';
@@ -20,15 +22,19 @@ export class RewardCartComponent implements OnInit, OnDestroy {
     service: RewardService;
     profile: ProfileService;
     cart: RewardCartService;
+    router: Router;
+    loading: LoadingService;
     toaster: ToastrService;
     user: User;
     rewards: Reward[];
     
     
-    constructor(service: RewardService, profile: ProfileService, cart: RewardCartService, toaster: ToastrService) {
+    constructor(service: RewardService, profile: ProfileService, cart: RewardCartService, router: Router, loading: LoadingService, toaster: ToastrService) {
         this.service = service;
         this.profile = profile;
         this.cart = cart;
+        this.router = router;
+        this.loading = loading;
         this.toaster = toaster;
         this.rewards = [];
     }
@@ -106,7 +112,14 @@ export class RewardCartComponent implements OnInit, OnDestroy {
     confirm(): void {
         this.cart.redeem().subscribe(
             success => {
-            
+                this.loading.render(false);
+                this.cart.clear();
+                this.router.navigate(['/portal/rewards/view']);
+                this.toaster.success(`You have redeemded your rewards`, 'Succesfully Redeemed Rewards');
+            },
+            error => {
+                this.loading.render(false);
+                this.toaster.error(`Could not redeem rewards. Please try again.`, `Failed to Redeem Rewards`);
             }
         );
     }
