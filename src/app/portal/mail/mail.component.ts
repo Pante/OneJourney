@@ -31,8 +31,8 @@ export class MailComponent implements OnInit {
     ngOnInit() {
         this.service.get().subscribe(
             mails => {
-                this.all = mails;
-                this.unread = mails.filter(mail => mail.status !== Status.READ);
+                this.all = mails.sort((a, b) => b.date.getTime() - a.date.getTime());
+                this.unread = mails.filter(mail => mail.status !== Status.READ).sort((a, b) => b.date.getTime() - a.date.getTime());
             },
             error => this.toaster.error('Could not get mail. Please try again later.', 'Failed to Get Mail')
         )
