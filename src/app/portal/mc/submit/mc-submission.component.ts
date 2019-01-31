@@ -76,6 +76,7 @@ export class MCSubmissionComponent implements OnInit {
 
         }
     }
+    
     checkFileisValid(): boolean {
         if (this.file != null) {
             return true;
