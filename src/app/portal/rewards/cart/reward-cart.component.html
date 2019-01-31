@@ -12,14 +12,14 @@
         <div class="col"></div>
         <div class="col-10 text-left">
             <p class="lead">
-                {{cart.items.size === 0 ? "Your cart is currently empty." : "You currently have " + cart.items.size + " items in your cart"}}
+                {{cart.items.size === 0 ? "Your cart is currently empty." : "You currently have " + cart.total() + " items in your cart"}}
             </p>
         </div>
         <div class="col"></div>
     </div>
     <div class="row">
         <div class="col"></div>
-        <div class="d-flex flex-column bd-highlight mb-5 col-10">
+        <form (ngSubmit)="redeem()" #cartForm="ngForm" class="d-flex flex-column bd-highlight mb-5 col-10">
             <div *ngFor="let reward of rewards">
                 <div class="d-flex flex-row bd-highlight outline-border events-custom align-items-center justify-content-between pt-3 pb-3 pl-2 pr-2 flex-wrap">
                     <div class="p-2 align-self-center">
@@ -35,13 +35,14 @@
                     <div class="p-2 align-self-center">
                         <div class="float-right">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
+                                <label (click)="decrease(reward)" class="btn btn-secondary active">
                                     <input type="radio" name="options" id="option1" autocomplete="off" checked><span><i class="fas fa-minus"></i></span>
                                 </label>
                                 <label class="btn btn-secondary">
-                                    <input appNumeric type="text" name="options" id="option2" autocomplete="off" style="width:3rem;">
+                                    <input type="text" required appNumeric [(ngModel)]="cart.items[reward.id]" name="options-{{reward.id}}" id="bytes-{{reward.id}}" autocomplete="off" style="width:3rem;">
+
                                 </label>
-                                <label class="btn btn-secondary">
+                                <label (click)="increase(reward)" class="btn btn-secondary">
                                     <input type="radio" name="options" id="option3" autocomplete="off"><span><i class="fas fa-plus"></i></span>
                                 </label>
                             </div>
@@ -49,13 +50,13 @@
                     </div>
                     <div class="p-2 align-self-center mr-4 mt-3">
                         <div class="float-right">
-                            <p class="h6 text-light">Price</p>
-                            <p>Price</p>
+                            <p class="h6 text-light">Bytes</p>
+                            <p>{{reward.points * this.cart.items[reward.id]}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="col"></div>
     </div>
     <div class="row">
@@ -66,18 +67,37 @@
                     <div class="p-2">
                         <div class="d-flex flex-row flex-wrap justify-content-between">
                             <div class="p-1 align-self-center">
-                                <p style="font-size: 0.8rem;">Order Sub-Total</p>
-                                <p style="font-size: 0.8rem;">1 items</p>
+                                <p style="font-size: 0.8rem;">{{cart.total()}} items</p>
                             </div>
                             <div class="p-1 align-self-center">
-                                <p class="display-thick-5">$ Price</p>
+                                <p class="display-thick-5"><i class="fas fa-money-bill"></i> {{total()}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="p-2">
-                        <button type="button" class="btn btn-outline-purple">Redeem</button>
+                        <button type="button" class="btn btn-outline-purple" data-toggle="modal" data-target="#confirmation" [disabled]="!cartForm.form.valid || total() === 0 || total() > this.user?.bytes">Redeem</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+<!--Modal-->
+<div class="modal fade" id="confirmation" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content outline-modal outline-border">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                <p class="h6 font-weight-ligh">Redeem for {{total()}} Bytes?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()">(TICK)</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">X</button>
+            </div>
+        </div>
+    </div>
+</div>

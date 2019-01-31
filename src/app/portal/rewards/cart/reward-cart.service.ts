@@ -11,33 +11,43 @@ import { Redemption } from './reward-cart-transactions';
 @Injectable({ providedIn: 'root' })
 export class RewardCartService {
     
-    private id: number;
+    private authentication: AuthenticationService;
     private http: HttpClient;
     private task: any;
-    items: Map<number, number>;
+    items: { [key: number] : number };
     
     
     constructor(authentication: AuthenticationService, http: HttpClient) {
-        this.id = authentication.identity().id;
+        this.authentication = authentication;
         this.http = http;
-        if (this.id === localStorage['cart-id']) {
-            this.items = new Map<number, number>(JSON.parse(localStorage['cart']));
-            
+        if (this.authentication.identity().id === localStorage['cart-id']) {
+            this.items = JSON.parse(localStorage['cart']);
+ 
         } else {
-            this.items = new Map<number, number>();
-            this.save();
+            this.clear();
         }
     }
     
     
     redeem(): Observable<HttpResponse<Object>> {
-        return this.http.post(`${environment.api}/reward_transactions`, Redemption.format(this.id, this.items), {observe: 'response'});
+        return this.http.post(`${environment.api}/reward_transactions`, Redemption.format(this.authentication.identity().id, this.items), {observe: 'response'});
+    }
+
+    
+    total(): number {
+        let all = 0;
+        for (const id of Object.keys(this.items)) {
+            all += Number(this.items[id]);
+        }
+        
+        return all;
     }
     
     
     start(): void {
-        this.task = setInterval(() => this.save(), 30000);
+        this.task = setInterval(() => this.save(), 10000);
     }
+    
     
     stop(): void {
         if (this.task !== null) {
@@ -47,12 +57,12 @@ export class RewardCartService {
         
     
     save(): void {
-        localStorage['cart-id'] = this.id;
-        localStorage['cart'] = JSON.stringify(Array.from(this.items.entries()))
+        localStorage['cart-id'] = this.authentication.identity().id;
+        localStorage['cart'] = JSON.stringify(this.items);
     }
     
     clear(): void {
-        this.items.clear();
+        this.items = {};
         this.save();
     }
     

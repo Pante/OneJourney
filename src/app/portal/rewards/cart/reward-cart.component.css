@@ -15,7 +15,7 @@
     background-color: #a653d5;
 }
 
-.btn-outline-purple:hover {
+.btn-outline-purple:hover:not([disabled]) {
     color: #a653d5;
     border-color: #a653d5;
     background-color: transparent;

@@ -54,6 +54,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
             rewards => {
                 const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
                 this.rewards.load(rewards, 1, insertions);
+                this.cart.start();
             },
             error => this.toaster.error('Could not get rewards. Please try again later.', 'Failed to Get Rewards')
         );
@@ -61,6 +62,7 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     ngOnDestroy() {
         this.subscription.unsubscribe();
+        this.cart.stop();
     }
 
     
@@ -74,8 +76,8 @@ export class RewardsComponent implements OnInit, OnDestroy {
     
     
     addToCart() {
-        const amount = this.cart.items.get(this.selected.id);
-        this.cart.items.set(this.selected.id, amount + 1);
+        const amount = this.cart.items[this.selected.id];
+        this.cart.items[this.selected.id] = amount ? amount + 1 : 1;
         this.toaster.info(`Added "${this.selected.description}" to your cart`, 'Added Item to Cart');
     }
     

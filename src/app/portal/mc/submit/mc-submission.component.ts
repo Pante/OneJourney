@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
+
 import { MCService } from '../mc.service';
 import { LoadingService } from '../../../shared/loading/loading.service';
-import { load } from '@angular/core/src/render3';
 
 
 const defaultpic = '../../../../assets/images/temporary.png';

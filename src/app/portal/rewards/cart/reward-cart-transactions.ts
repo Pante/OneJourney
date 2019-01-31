@@ -1,20 +1,23 @@
+import {Reward} from "../reward";
+
+
 export interface Item {
     
-    id: number;
+    reward: Reward[];
     quantity: number;
     
 }
 
 export namespace Item {
     
-    export function format(items: Map<number, number>): any {
+    export function format(items: { [key: number]: number }): any {
         const list: any[] = [];
-        items.forEach((id, quantity) => {
+        for (const id of Object.keys(items)) {
             list.push({
                 'reward-catelogue-id': id,
-                quantity: quantity
+                quantity: items[id]
             });
-        });
+        }
         
         return list;
     }
@@ -24,7 +27,7 @@ export namespace Item {
 
 export namespace Redemption {
     
-    export function format(id: number, items: Map<number, number>): any {
+    export function format(id: number, items: { [key: number]: number }): any {
         return {
             'student-no': id,
             items: Item.format(items)
