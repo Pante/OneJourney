@@ -52,7 +52,7 @@ export class EventsComponent implements OnInit {
                 const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
                 this.events.load(events, 1, insertions);
             },
-            error => this.toaster.error('Failed to get events. Please try again later', 'Failed to Get Events')
+            error => this.toaster.error('Could not get events. Please try again later', 'Failed to Get Events')
         );
     }
     
@@ -86,7 +86,7 @@ export class EventsComponent implements OnInit {
         this.loading.render(true, 'Signing you up!');
         this.after(this.service.signup(this.selected), 
                    `You have signed up for "${this.selected.title}"`, 'Sucessful Sign up',
-                   `Could not sign up for "${this.selected.title}". Event does not exist or you have already signed up.`, 'Failed to Sign Up'
+                   `"${this.selected.title}" does not exist or you have already signed up. Please try again.`, 'Failed to Sign Up'
                   );
     }
     
@@ -95,7 +95,7 @@ export class EventsComponent implements OnInit {
         this.loading.render(true, `Quiting "${this.selected.title}"`);
         this.after(this.service.quit(this.selected),
                     `You have quit "${this.selected.title}"`, 'Successfully Quitted Event',
-                    `Could not quit "${this.selected.title}". Event does not exist or you have already quit`, `Failed to Quit Event`
+                    `"${this.selected.title}" does not exist or you have already quit. Please try again`, 'Failed to Quit Event'
                   );
     }
     

@@ -54,13 +54,17 @@ export class EditEventComponent extends EventFormComponent implements OnDestroy 
     
     
     edit(): void {
-        this.loading.render(true, 'Saving Changes to Event', 'Ready Player 1');
-        this.service.edit(this.id, this.transaction, this.file).pipe(tap(e => this.loading.render(false))).subscribe(
+        this.loading.render(true, 'Saving Changes to Event');
+        this.service.edit(this.id, this.transaction, this.file).subscribe(
             success => {
+                this.loading.render(false);
                 this.router.navigate(['/portal/events/view']);
                 this.toast.success(`You have edited "${this.transaction.title}"`, 'Succesfully Edited Event');
             },
-            error => this.toast.error(`Could not edit "${this.transaction.title}". Please try again.`, `Failed to Edit Event`)
+            error => {
+                this.loading.render(false);
+                this.toast.error(`Could not edit "${this.transaction.title}". Please try again.`, `Failed to Edit Event`);
+            }
         );
     }
 

@@ -31,7 +31,7 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit {
     ngOnInit(): void {
         this.subscription = this.binding.pull().subscribe(reward => {
             if (reward === null) {
-                this.toast.show('Something went wrong when editing your event. Please try again', 'Oops')
+                this.toaster.show('Something went wrong when editing your event. Please try again', 'Oops')
                 this.router.navigate(['portal/rewards/view']);
             }
             this.id = reward.id;
@@ -47,17 +47,17 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit {
     
     
     edit(): void {
-        this.loading.render(true, 'Saving Changes to Reward', 'Got to go fast');
-        this.service.edit(this.id, this.transaction, this.file).subscribe(response => {
-            this.loading.render(false);
-            if (response.status === 200) {
-                this.router.navigate(['/portal/rewards/view']);
-                this.toast.show(`You have edited "${this.transaction.description}"!`, 'Reward Notification');
-                
-            } else {
-                this.toast.show(`Failed to edit "${this.transaction.description}"`, `Reward Edition Failure`);
+        this.loading.render(true, 'Saving Changes to Reward');
+        this.service.edit(this.id, this.transaction, this.file).subscribe(
+            success => {
+                this.router.navigate(['portal/rewards/view']);
+                this.toaster.success(`You have edited "${this.transaction.description}"`, `Successfully Edited Reward`);
+            },
+            error => {
+                this.loading.render(false);
+                this.toaster.error(`Could not edit "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Edit Reward')
             }
-        });
+        );
     }
 
 }

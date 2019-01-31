@@ -44,6 +44,7 @@ import { MCService } from './portal/mc/mc.service';
 import { ProfileService } from './portal/profile/profile.service';
 import { RewardService } from './portal/rewards/reward.service';
 import { RewardBindingService } from './portal/rewards/reward-binding.service';
+import { RewardCartService } from './portal/rewards/cart/reward-cart.service';
 import { LoadingService } from './shared/loading/loading.service';
 import { interceptors } from 'src/environments/interceptors';
 
@@ -103,6 +104,7 @@ import { interceptors } from 'src/environments/interceptors';
         ProfileService, 
         RewardService,
         RewardBindingService,
+        RewardCartService,
         LoadingService, 
         interceptors
     ],
