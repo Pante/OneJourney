@@ -89,14 +89,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content outline-modal outline-border">
             <div class="modal-header">
-                <h5 class="modal-title">Confirmation</h5>
+                <h5 class="modal-title text-white">Confirmation</h5>
             </div>
             <div class="modal-body">
-                <p class="h6 font-weight-ligh">Redeem for {{total()}} Bytes?</p>
+                <p class="h6 font-weight-light text-white">Redeem for {{total()}} Bytes?</p>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()">(TICK)</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">X</button>
+            <div class="modal-footer" style="border-top: 0;">
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()"><span><i class="fas fa-check"></i></span></button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><span><i class="fas fa-times"></i></span></button>
             </div>
         </div>
     </div>

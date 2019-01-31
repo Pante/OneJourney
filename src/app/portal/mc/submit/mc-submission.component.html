@@ -14,7 +14,7 @@
                 <form (ngSubmit)="submit()" #submitMCForm="ngForm" class="text-white pt-5 pb-5 pl-5 pr-5">
                         <img src="{{picURL}}" class="img-fluid custom-alignment" alt="MC Submission">
                         <div class="form-group">
-                            <label for="fileSubmission">Medical Certificate</label>
+                            <p class="lead mt-3" for="fileSubmission" style="margin-bottom:0rem;">Medical Certificate</p>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)" required>
                                 <label class="custom-file-label" for="customFile">{{selected}}</label>
