@@ -52,13 +52,17 @@ describe('Protractor e2e test', () => {
     expect(page.getRewardsText()).toEqual('Rewards');
   });
 
-  it('should click into a reward', () => {
-    firstReward.click();
-    expect(page.getRewardsText()).toEqual('Rewards');
+  it('should click into a reward card', () => {
+  	firstReward.click();
+  });
+
+  it('should close reward overlay', () => {
+    const closecard = getEventBtn('...')
+    closecard.click();
   });
 
   it('should go into Logout page', () => {
     page.getLogoutPage();
   });
 
-});  
+});

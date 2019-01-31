@@ -4,8 +4,9 @@ import { browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 describe('Protractor staff account e2e test', () => {
   let page: AppPage;
   const cards = element.all(by.css('app-event-card'));
-  //const tabs = element.all(by.css('app-profile-nav-item'));
+  const rewardcards = element.all(by.css('app-reward-card'));
   const firstCard = cards.get(0);
+  const firstReward = rewardcards.get(0);
   beforeEach(() => {
     page = new AppPage();
   });
@@ -56,6 +57,11 @@ describe('Protractor staff account e2e test', () => {
     page.getRewardsPage();
     expect(page.getRewardsText()).toEqual('Rewards');
   });
+
+  it('should close reward overlay', () => {
+    const closecard = getEventBtn('...')
+    closecard.click();
+  });  
 
   it('should go into Logout page', () => {
     page.getLogoutPage();
