@@ -53,10 +53,6 @@ export class AppPage {
 
 }
 
-export function getProfileBadge(tabName: string): any {
-    return element(by.id('badges-tab')).all(by.anchor(tabName));
-  }
-
 export function getEventBtn(btnName: string): any {
     return element(by.className('modal-footer')).all(by.buttonText(btnName));
   }

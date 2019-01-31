@@ -1,4 +1,4 @@
-import { AppPage, getEventBtn, getProfileBadge } from './app.po';
+import { AppPage, getEventBtn} from './app.po';
 import { browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 
 describe('Protractor staff account e2e test', () => {
@@ -37,7 +37,7 @@ describe('Protractor staff account e2e test', () => {
   });
 
   it('create an event', () => {
-    
+        
   });
 
   it('should go into profile page', () => {
@@ -47,27 +47,17 @@ describe('Protractor staff account e2e test', () => {
     expect(page.getProfileText()).toEqual('Profile');
   });
 
-  it('should click into profile badges', () => {
-    //const profilebadge = getProfileBadge('Badges');
-    //profilebadge.click();
-    //page.getBadgesTab().click();
-    page.clickBadgesTab();
-    expect(page.getBadgesTab()).toEqual('Badges');
-  });
-
   it('should go into leaderboard page', () => {
     page.getLeaderboardPage();
     expect(page.getLeaderboardText()).toEqual('Leaderboard');
-    browser.pause();
   });
 
   it('should go into rewards page', () => {
     page.getRewardsPage();
     expect(page.getRewardsText()).toEqual('Rewards');
-    browser.pause();
   });
 
-    it('should go into Logout page', () => {
+  it('should go into Logout page', () => {
     page.getLogoutPage();
   });
 

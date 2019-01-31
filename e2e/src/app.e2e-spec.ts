@@ -1,11 +1,12 @@
-import { AppPage, getEventBtn, getProfileBadge } from './app.po';
+import { AppPage, getEventBtn} from './app.po';
 import { browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 
 describe('Protractor e2e test', () => {
   let page: AppPage;
   const cards = element.all(by.css('app-event-card'));
-  //const tabs = element.all(by.css('app-profile-nav-item'));
+  const rewardcards = element.all(by.css('app-reward-card'));
   const firstCard = cards.get(0);
+  const firstReward = rewardcards.get(0);
   beforeEach(() => {
     page = new AppPage();
   });
@@ -51,7 +52,12 @@ describe('Protractor e2e test', () => {
     expect(page.getRewardsText()).toEqual('Rewards');
   });
 
-    it('should go into Logout page', () => {
+  it('should click into a reward', () => {
+    firstReward.click();
+    expect(page.getRewardsText()).toEqual('Rewards');
+  });
+
+  it('should go into Logout page', () => {
     page.getLogoutPage();
   });
 
