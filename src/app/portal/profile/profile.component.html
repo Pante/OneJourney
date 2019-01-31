@@ -13,19 +13,24 @@
       <img src="../../../assets/images/profile_pic.png" class="rounded" alt="Profile pic" style="width: 100px; height: 100px;">
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead card-title text-white">Name: <br /> {{user.name}}</p>
+      <p class="lead card-title text-white">Name:</p>
+      <p class="h6 text-white">{{user.name}}</p>
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead card-title text-white">Group: <br /> {{user.group.code}}</p>
+      <p class="lead card-title text-white">Group:</p>
+      <p class="h6 text-white">{{user.group.code}}</p>
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead card-title text-white">Mentor: <br /> {{user.group.staff.name}}</p>
+      <p class="lead card-title text-white">Mentor: </p>
+      <p class="h6 text-white">{{user.group.staff.name}}</p>
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">Faction Points <br /> {{user.group.faction.points}} </p>
+      <p class="lead text-white">Faction Points </p>
+      <p class="h6 text-white">{{user.group.faction.points}} </p>
     </div>
     <div class="p-2 text-center align-self-center">
-      <p class="h4 lead text-white">Byte Points <br /> {{user.bytes}} </p>
+      <p class="lead text-white">Byte Points</p>
+      <p class="h6 text-white">{{user.bytes}}</p>
     </div>
   </div>
   <div class="card text-center bg-purple outline shadows">

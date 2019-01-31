@@ -10,22 +10,24 @@
 <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <form (ngSubmit)="submit()" #submitMCForm="ngForm" class="text-white">
-            <img src="{{picURL}}" class="img-fluid custom-alignment" alt="MC Submission">
-            <div class="form-group">
-                <label for="fileSubmission">Medical Certificate</label>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)" required>
-                    <label class="custom-file-label" for="customFile">{{selected}}</label>
-                </div>
-                <div *ngIf="error" class="alert alert-danger">
-                    {{error}}
-                </div>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary" [disabled]="!submitMCForm.form.valid">Submit</button>
-            </div>
-        </form>
+        <div class="outline dark shadows events-custom">
+                <form (ngSubmit)="submit()" #submitMCForm="ngForm" class="text-white pt-5 pb-5 pl-5 pr-5">
+                        <img src="{{picURL}}" class="img-fluid custom-alignment" alt="MC Submission">
+                        <div class="form-group">
+                            <label for="fileSubmission">Medical Certificate</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="fileSubmission" accept="image/*" (change)="getFile($event)" required>
+                                <label class="custom-file-label" for="customFile">{{selected}}</label>
+                            </div>
+                            <div *ngIf="error" class="alert alert-danger">
+                                {{error}}
+                            </div>
+                        </div>
+                        <div class="text-right mt-5">
+                            <button type="submit" class="btn btn-primary" [disabled]="!submitMCForm.form.valid">Submit</button>
+                        </div>
+                    </form>
+        </div>
     </div>
     <div class="col"></div>
 </div>
