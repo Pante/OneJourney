@@ -14,7 +14,7 @@ export class RewardCartService {
     private authentication: AuthenticationService;
     private http: HttpClient;
     private task: any;
-    items: { [key: number] : number };
+    items: { [key: number]: number };
     
     
     constructor(authentication: AuthenticationService, http: HttpClient) {

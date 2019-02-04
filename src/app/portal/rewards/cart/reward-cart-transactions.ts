@@ -1,4 +1,4 @@
-import {Reward} from "../reward";
+import {Reward} from '../reward';
 
 
 export interface Item {

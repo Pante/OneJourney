@@ -2,57 +2,68 @@ import { browser, by, element } from 'protractor';
 
 export class AppPage {
 
+    navigateTo() {
+        return browser.get('/');
+    }
 
-  navigateTo() {
-    return browser.get('/');
-  }
 
-  navigateToProfile() {
-    return browser.get('/portal/profile');
-  }
+    navigateToProfile() {
+        return browser.get('/portal/profile');
+    }
 
-  getEventText() {
-    return element(by.css('app-events h1')).getText();
-  }
 
-  getLeaderboardText() {
-    return element(by.css('app-leaderboard h1')).getText();
-  }
+    getEventText() {
+        return element(by.css('app-events h1')).getText();
+    }
 
-  getRewardsText() {
-    return element(by.css('app-rewards h1')).getText();
-  }
 
-  getProfileText() {
-    return element(by.css('app-profile h1')).getText();
-  }
-  
-  getProfileSidebar() {
-    return element(by.css('[routerlink="/portal/profile"]'));
-  }
+    getLeaderboardText() {
+        return element(by.css('app-leaderboard h1')).getText();
+    }
 
-  getBadgesTab() {
-    return element(by.css('app-profile li:nth-of-type(2)')).getText();
-  }
 
-  clickBadgesTab() {
-    return element(by.css('app-profile li:nth-of-type(2)')).click();
-  }
+    getRewardsText() {
+        return element(by.css('app-rewards h1')).getText();
+    }
 
-  getLeaderboardPage() {
-    return element(by.css('li:nth-of-type(4)')).click();
-  }
 
-  getRewardsPage() {
-    return element(by.css('li:nth-of-type(6)')).click();
-  }
+    getProfileText() {
+        return element(by.css('app-profile h1')).getText();
+    }
 
-  getLogoutPage() {
-    return element(by.css('app-main ul:nth-of-type(2)')).click();
-  }
+
+    getProfileSidebar() {
+        return element(by.css('[routerlink="/portal/profile"]'));
+    }
+
+
+    getBadgesTab() {
+        return element(by.css('app-profile li:nth-of-type(2)')).getText();
+    }
+
+
+    clickBadgesTab() {
+        return element(by.css('app-profile li:nth-of-type(2)')).click();
+    }
+
+
+    getLeaderboardPage() {
+        return element(by.css('li:nth-of-type(4)')).click();
+    }
+
+
+    getRewardsPage() {
+        return element(by.css('li:nth-of-type(6)')).click();
+    }
+
+
+    getLogoutPage() {
+        return element(by.css('app-main ul:nth-of-type(2)')).click();
+    }
 
 }
 
+
 export function getEventBtn(btnName: string): any {
     return element(by.className('modal-footer')).all(by.buttonText(btnName));
-  }
+}

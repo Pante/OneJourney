@@ -35,7 +35,7 @@ export class MailComponent implements OnInit {
                 this.unread = mails.filter(mail => mail.status !== Status.READ).sort((a, b) => b.date.getTime() - a.date.getTime());
             },
             error => this.toaster.error('Could not get mail. Please try again later.', 'Failed to Get Mail')
-        )
+        );
     }
     
     

@@ -29,7 +29,7 @@ export class NewRewardComponent extends RewardFormComponent {
             },
             error => {
                 this.loading.render(false);
-                this.toaster.error(`Failed to create "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Create Reward')
+                this.toaster.error(`Failed to create "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Create Reward');
             }
         );
     }

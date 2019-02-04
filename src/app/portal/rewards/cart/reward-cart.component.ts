@@ -90,7 +90,7 @@ export class RewardCartComponent implements OnInit, OnDestroy {
         }
     }
     
-    increase(reward : Reward): void {
+    increase(reward: Reward): void {
         const amount = Number(this.cart.items[reward.id]);
         this.cart.items[reward.id] = amount + 1;
     }

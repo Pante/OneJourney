@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { tap } from 'rxjs/operators';
@@ -18,7 +18,7 @@ import { ProfileService } from '../../profile/profile.service';
   templateUrl: './edit-event.component.html',
   styleUrls: ['./edit-event.component.css']
 })
-export class EditEventComponent extends EventFormComponent implements OnDestroy {
+export class EditEventComponent extends EventFormComponent implements OnInit, OnDestroy {
     
     private binding: EventBindingService;
     private subscription: Subscription;
@@ -35,7 +35,7 @@ export class EditEventComponent extends EventFormComponent implements OnDestroy 
         super.ngOnInit();
         this.subscription = this.binding.pull().subscribe(event => {
             if (event === null) {
-                this.toast.error('Something went wrong when editing your event. Please try again', 'Oops')
+                this.toast.error('Something went wrong when editing your event. Please try again', 'Oops');
                 this.router.navigate(['portal/events/view']);
             }
             this.id = event.id;

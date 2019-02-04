@@ -27,7 +27,7 @@ export class MailService {
     
     toast(mails: Observable<Mail> = this.getFlat()): void {
         mails.pipe(filter(mail => mail.status === Status.NEW), concatMap(mail => of(mail).pipe(delay(500)))).subscribe(mail =>
-            this.toaster.show(mail.message, 'Mail')
+            this.toaster.show(mail.message, 'New Mail')
         );
     }
     

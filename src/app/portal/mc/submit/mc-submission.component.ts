@@ -18,7 +18,7 @@ export class MCSubmissionComponent implements OnInit {
 
     toast: ToastrService;
     service: MCService;
-    loading : LoadingService;
+    loading: LoadingService;
     file: File;
 
     picURL: any;
@@ -44,14 +44,14 @@ export class MCSubmissionComponent implements OnInit {
             this.service.upload(this.file).subscribe(response => {
                 if (response.status === 200) {
                     this.loading.render(false);
-                    this.toast.show('You have submitted a new MC', 'MC Submission Success');
+                    this.toast.show('You have submitted a MC', 'Successfully Submitted MC');
 
                 } else {
-                    this.toast.show('Fail to submit MC', 'MC Submission Failure');
+                    this.toast.show('Could not submit MC', 'Failed to Submit MC');
                 }
             });
         } else {
-            this.error = 'No images are not uploaded!'
+            this.error = 'No images uploaded!';
         }
     }
 

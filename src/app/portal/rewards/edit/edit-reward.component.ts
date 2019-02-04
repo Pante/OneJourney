@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
@@ -15,7 +15,7 @@ import { RewardFormComponent } from '../reward-form.component';
   templateUrl: './edit-reward.component.html',
   styleUrls: ['./edit-reward.component.css']
 })
-export class EditRewardComponent extends RewardFormComponent implements OnInit {
+export class EditRewardComponent extends RewardFormComponent implements OnInit, OnDestroy {
 
     private binding: RewardBindingService;
     private subscription: Subscription;
@@ -31,7 +31,7 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit {
     ngOnInit(): void {
         this.subscription = this.binding.pull().subscribe(reward => {
             if (reward === null) {
-                this.toaster.show('Something went wrong when editing your event. Please try again', 'Oops')
+                this.toaster.show('Something went wrong when editing your event. Please try again', 'Oops');
                 this.router.navigate(['portal/rewards/view']);
             }
             this.id = reward.id;
@@ -55,7 +55,7 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit {
             },
             error => {
                 this.loading.render(false);
-                this.toaster.error(`Could not edit "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Edit Reward')
+                this.toaster.error(`Could not edit "${this.transaction.description}" as a reward. Please try again.`, 'Failed to Edit Reward');
             }
         );
     }
