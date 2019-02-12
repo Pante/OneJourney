@@ -1,0 +1,1245 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>one-journey documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">one-journey documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RewardCartComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/portal/rewards/cart/reward-cart.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-reward-cart</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./reward-cart.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./reward-cart.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cart">cart</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#profile">profile</a>
+                            </li>
+                            <li>
+                                <a href="#rewards">rewards</a>
+                            </li>
+                            <li>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                <a href="#service">service</a>
+                            </li>
+                            <li>
+                                <a href="#toaster">toaster</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#confirm">confirm</a>
+                            </li>
+                            <li>
+                                <a href="#decrease">decrease</a>
+                            </li>
+                            <li>
+                                <a href="#increase">increase</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#redeem">redeem</a>
+                            </li>
+                            <li>
+                                <a href="#total">total</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/RewardService.html">RewardService</a>, profile: <a href="../injectables/ProfileService.html">ProfileService</a>, cart: <a href="../injectables/RewardCartService.html">RewardCartService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, loading: <a href="../injectables/LoadingService.html">LoadingService</a>, toaster: ToastrService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RewardService.html" target="_self" >RewardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>profile</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cart</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RewardCartService.html" target="_self" >RewardCartService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loading</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toaster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="confirm"></a>
+                        <span class="name">
+                            <b>
+                            confirm
+                            </b>
+                            <a href="#confirm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>confirm()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:112</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="decrease"></a>
+                        <span class="name">
+                            <b>
+                            decrease
+                            </b>
+                            <a href="#decrease"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>decrease(reward: Reward)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reward</td>
+                                                        <td>
+                                                                    <code>Reward</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="increase"></a>
+                        <span class="name">
+                            <b>
+                            increase
+                            </b>
+                            <a href="#increase"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>increase(reward: Reward)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reward</td>
+                                                        <td>
+                                                                    <code>Reward</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="redeem"></a>
+                        <span class="name">
+                            <b>
+                            redeem
+                            </b>
+                            <a href="#redeem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>redeem()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="total"></a>
+                        <span class="name">
+                            <b>
+                            total
+                            </b>
+                            <a href="#total"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>total()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:99</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cart"></a>
+                        <span class="name">
+                            <b>
+                            cart</b>
+                            <a href="#cart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/RewardCartService.html" target="_self" >RewardCartService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="profile"></a>
+                        <span class="name">
+                            <b>
+                            profile</b>
+                            <a href="#profile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rewards"></a>
+                        <span class="name">
+                            <b>
+                            rewards</b>
+                            <a href="#rewards"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Reward[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                            router</b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="service"></a>
+                        <span class="name">
+                            <b>
+                            service</b>
+                            <a href="#service"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/RewardService.html" target="_self" >RewardService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toaster"></a>
+                        <span class="name">
+                            <b>
+                            toaster</b>
+                            <a href="#toaster"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>User</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/portal/rewards/cart/reward-cart.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+
+import { LoadingService } from &#x27;src/app/shared/loading/loading.service&#x27;;
+import { ProfileService } from &#x27;../../profile/profile.service&#x27;;
+import { User } from &#x27;../../profile/user&#x27;;
+import { Reward } from &#x27;../reward&#x27;;
+import { RewardService } from &#x27;../reward.service&#x27;;
+import { RewardCartService } from &#x27;./reward-cart.service&#x27;;
+
+
+
+@Component({
+    selector: &#x27;app-reward-cart&#x27;,
+    templateUrl: &#x27;./reward-cart.component.html&#x27;,
+    styleUrls: [&#x27;./reward-cart.component.css&#x27;]
+})
+export class RewardCartComponent implements OnInit, OnDestroy {
+    
+    service: RewardService;
+    profile: ProfileService;
+    cart: RewardCartService;
+    router: Router;
+    loading: LoadingService;
+    toaster: ToastrService;
+    user: User;
+    rewards: Reward[];
+    
+    
+    constructor(service: RewardService, profile: ProfileService, cart: RewardCartService, router: Router, loading: LoadingService, toaster: ToastrService) {
+        this.service &#x3D; service;
+        this.profile &#x3D; profile;
+        this.cart &#x3D; cart;
+        this.router &#x3D; router;
+        this.loading &#x3D; loading;
+        this.toaster &#x3D; toaster;
+        this.rewards &#x3D; [];
+    }
+
+
+    ngOnInit() {
+        this.cart.start();
+        this.service.get().subscribe(
+            fetched &#x3D;&gt; {
+                const mapped &#x3D; new Map&lt;number, Reward&gt;();
+                for (const val of fetched) {
+                    mapped.set(val.id, val);
+                }
+                
+                const invalid: number[] &#x3D; [];
+                for (const id of Object.keys(this.cart.items)) {
+                    const reward &#x3D; mapped.get(Number(id));
+                    if (reward) {
+                        this.rewards.push(reward);
+                        
+                    } else {
+                        invalid.push(Number(id));
+                    }
+                }
+                
+                for (const val of invalid) {
+                    delete this.cart.items[val];
+                }
+            },
+            error &#x3D;&gt; this.toaster.error(&#x27;Could not get rewards. Please try again later.&#x27;, &#x27;Failed to Get Rewards&#x27;)
+        );
+        this.profile.user().subscribe(
+            fetched &#x3D;&gt; {
+                this.user &#x3D; fetched;
+            },
+            error &#x3D;&gt; this.toaster.error(&#x27;Could not get profile. Please try again later.&#x27;, &#x27;Failed to Get Profile&#x27;)
+        );
+    }
+    
+    ngOnDestroy() {
+        this.cart.stop();
+    }
+    
+    
+    decrease(reward: Reward): void {
+        const amount &#x3D; Number(this.cart.items[reward.id]) - 1;
+        if (amount &lt;&#x3D; 0) {
+            this.rewards &#x3D; this.rewards.filter(r &#x3D;&gt; r.id !&#x3D;&#x3D; reward.id);
+            delete this.cart.items[reward.id];
+            
+        } else {
+            this.cart.items[reward.id] &#x3D; amount;
+        }
+    }
+    
+    increase(reward: Reward): void {
+        const amount &#x3D; Number(this.cart.items[reward.id]);
+        this.cart.items[reward.id] &#x3D; amount + 1;
+    }
+    
+    
+    total(): number {
+        let cost &#x3D; 0;
+        for (const reward of this.rewards) {
+            cost +&#x3D; reward.points * this.cart.items[reward.id];
+        }
+        return cost;
+    }
+    
+    
+    redeem(): void {
+        
+    }
+    
+    confirm(): void {
+        this.cart.redeem().subscribe(
+            success &#x3D;&gt; {
+                this.loading.render(false);
+                this.cart.clear();
+                this.router.navigate([&#x27;/portal/rewards/view&#x27;]);
+                this.toaster.success(&#x60;You have redeemded your rewards&#x60;, &#x27;Succesfully Redeemed Rewards&#x27;);
+            },
+            error &#x3D;&gt; {
+                this.loading.render(false);
+                this.toaster.error(&#x60;Could not redeem rewards. Please try again.&#x60;, &#x60;Failed to Redeem Rewards&#x60;);
+            }
+        );
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12 text-center&quot;&gt;
+        &lt;h1 class&#x3D;&quot;display-thick-4 text-primary&quot;&gt;Cart&lt;/h1&gt;
+        &lt;p class&#x3D;&quot;lead&quot;&gt;
+            Shop till you drop!
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--Secondary Nested View--&gt;
+&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-10 text-left&quot;&gt;
+            &lt;p class&#x3D;&quot;lead&quot;&gt;
+                {{cart.items.size &#x3D;&#x3D;&#x3D; 0 ? &quot;Your cart is currently empty.&quot; : &quot;You currently have &quot; + cart.total() + &quot; items in your cart&quot;}}
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
+        &lt;form (ngSubmit)&#x3D;&quot;redeem()&quot; #cartForm&#x3D;&quot;ngForm&quot; class&#x3D;&quot;d-flex flex-column bd-highlight mb-5 col-10&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let reward of rewards&quot;&gt;
+                &lt;div class&#x3D;&quot;d-flex flex-row bd-highlight outline-border events-custom align-items-center justify-content-between pt-3 pb-3 pl-2 pr-2 flex-wrap&quot;&gt;
+                    &lt;div class&#x3D;&quot;p-2 align-self-center&quot;&gt;
+                        &lt;div class&#x3D;&quot;text-wrap&quot; style&#x3D;&quot;width:30rem;&quot;&gt;
+                            &lt;div class&#x3D;&quot;media&quot;&gt;
+                                &lt;img src&#x3D;{{reward.image}} class&#x3D;&quot;align-self-center mr-3&quot; alt&#x3D;&quot;Cart Image&quot; style&#x3D;&quot;width:100px; height:100px;&quot;&gt;
+                                &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                    &lt;h5 class&#x3D;&quot;mt-0 text-light&quot;&gt;{{reward.description}}&lt;/h5&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;p-2 align-self-center&quot;&gt;
+                        &lt;div class&#x3D;&quot;float-right&quot;&gt;
+                            &lt;div class&#x3D;&quot;btn-group btn-group-toggle&quot; data-toggle&#x3D;&quot;buttons&quot;&gt;
+                                &lt;label (click)&#x3D;&quot;decrease(reward)&quot; class&#x3D;&quot;btn btn-secondary active&quot;&gt;
+                                    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;options&quot; id&#x3D;&quot;option1&quot; autocomplete&#x3D;&quot;off&quot; checked&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-minus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                &lt;/label&gt;
+                                &lt;label class&#x3D;&quot;btn btn-secondary&quot;&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; required appNumeric [(ngModel)]&#x3D;&quot;cart.items[reward.id]&quot; name&#x3D;&quot;options-{{reward.id}}&quot; id&#x3D;&quot;bytes-{{reward.id}}&quot; autocomplete&#x3D;&quot;off&quot; style&#x3D;&quot;width:3rem;&quot;&gt;
+
+                                &lt;/label&gt;
+                                &lt;label (click)&#x3D;&quot;increase(reward)&quot; class&#x3D;&quot;btn btn-secondary&quot;&gt;
+                                    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;options&quot; id&#x3D;&quot;option3&quot; autocomplete&#x3D;&quot;off&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;p-2 align-self-center mr-4 mt-3&quot;&gt;
+                        &lt;div class&#x3D;&quot;float-right&quot;&gt;
+                            &lt;p class&#x3D;&quot;h6 text-light&quot;&gt;Bytes&lt;/p&gt;
+                            &lt;p&gt;{{reward.points * this.cart.items[reward.id]}}&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-8&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-3&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex flex-column mb-5&quot;&gt;
+                &lt;div class&#x3D;&quot;d-flex flex-column bd-highlight mb-3&quot;&gt;
+                    &lt;div class&#x3D;&quot;p-2&quot;&gt;
+                        &lt;div class&#x3D;&quot;d-flex flex-row flex-wrap justify-content-between&quot;&gt;
+                            &lt;div class&#x3D;&quot;p-1 align-self-center&quot;&gt;
+                                &lt;p style&#x3D;&quot;font-size: 0.8rem;&quot;&gt;{{cart.total()}} items&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;p-1 align-self-center&quot;&gt;
+                                &lt;p class&#x3D;&quot;display-thick-5&quot;&gt;&lt;i class&#x3D;&quot;fas fa-money-bill&quot;&gt;&lt;/i&gt; {{total()}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;p-2&quot;&gt;
+                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#confirmation&quot; [disabled]&#x3D;&quot;!cartForm.form.valid || total() &#x3D;&#x3D;&#x3D; 0 || total() &gt; this.user?.bytes&quot;&gt;Redeem&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!--Modal--&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;confirmation&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content outline-modal outline-border&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title text-white&quot;&gt;Confirmation&lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                &lt;p class&#x3D;&quot;h6 font-weight-light text-white&quot;&gt;Redeem for {{total()}} Bytes?&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot; style&#x3D;&quot;border-top: 0;&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;confirm()&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./reward-cart.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.outline-border {
+    border: 3px solid #802BB1;
+    margin-bottom: 5%;
+    opacity: 0.9;
+}
+
+.events-custom {
+    /*background-color: #564f6f;*/
+    background-color: #4c495d;
+}
+
+.btn-outline-purple {
+    color: #ffffff;
+    border-color: #a653d5;
+    background-color: #a653d5;
+}
+
+.btn-outline-purple:hover:not([disabled]) {
+    color: #a653d5;
+    border-color: #a653d5;
+    background-color: transparent;
+}
+
+.outline-modal {
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.9;
+    background-color: #2d283e;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">    <div class="col-12 text-center">        <h1 class="display-thick-4 text-primary">Cart</h1>        <p class="lead">            Shop till you drop!        </p>    </div></div><!--Secondary Nested View--><div class="container mt-5">    <div class="row">        <div class="col"></div>        <div class="col-10 text-left">            <p class="lead">                {{cart.items.size === 0 ? "Your cart is currently empty." : "You currently have " + cart.total() + " items in your cart"}}            </p>        </div>        <div class="col"></div>    </div>    <div class="row">        <div class="col"></div>        <form (ngSubmit)="redeem()" #cartForm="ngForm" class="d-flex flex-column bd-highlight mb-5 col-10">            <div *ngFor="let reward of rewards">                <div class="d-flex flex-row bd-highlight outline-border events-custom align-items-center justify-content-between pt-3 pb-3 pl-2 pr-2 flex-wrap">                    <div class="p-2 align-self-center">                        <div class="text-wrap" style="width:30rem;">                            <div class="media">                                <img src={{reward.image}} class="align-self-center mr-3" alt="Cart Image" style="width:100px; height:100px;">                                <div class="media-body">                                    <h5 class="mt-0 text-light">{{reward.description}}</h5>                                </div>                            </div>                        </div>                    </div>                    <div class="p-2 align-self-center">                        <div class="float-right">                            <div class="btn-group btn-group-toggle" data-toggle="buttons">                                <label (click)="decrease(reward)" class="btn btn-secondary active">                                    <input type="radio" name="options" id="option1" autocomplete="off" checked><span><i class="fas fa-minus"></i></span>                                </label>                                <label class="btn btn-secondary">                                    <input type="text" required appNumeric [(ngModel)]="cart.items[reward.id]" name="options-{{reward.id}}" id="bytes-{{reward.id}}" autocomplete="off" style="width:3rem;">                                </label>                                <label (click)="increase(reward)" class="btn btn-secondary">                                    <input type="radio" name="options" id="option3" autocomplete="off"><span><i class="fas fa-plus"></i></span>                                </label>                            </div>                        </div>                    </div>                    <div class="p-2 align-self-center mr-4 mt-3">                        <div class="float-right">                            <p class="h6 text-light">Bytes</p>                            <p>{{reward.points * this.cart.items[reward.id]}}</p>                        </div>                    </div>                </div>            </div>        </form>        <div class="col"></div>    </div>    <div class="row">        <div class="col-8"></div>        <div class="col-3">            <div class="d-flex flex-column mb-5">                <div class="d-flex flex-column bd-highlight mb-3">                    <div class="p-2">                        <div class="d-flex flex-row flex-wrap justify-content-between">                            <div class="p-1 align-self-center">                                <p style="font-size: 0.8rem;">{{cart.total()}} items</p>                            </div>                            <div class="p-1 align-self-center">                                <p class="display-thick-5"><i class="fas fa-money-bill"></i> {{total()}}</p>                            </div>                        </div>                    </div>                    <div class="p-2">                        <button type="button" class="btn btn-outline-purple" data-toggle="modal" data-target="#confirmation" [disabled]="!cartForm.form.valid || total() === 0 || total() > this.user?.bytes">Redeem</button>                    </div>                </div>            </div>        </div>    </div></div><!--Modal--><div class="modal fade" id="confirmation" tabindex="-1" role="dialog">    <div class="modal-dialog modal-dialog-centered" role="document">        <div class="modal-content outline-modal outline-border">            <div class="modal-header">                <h5 class="modal-title text-white">Confirmation</h5>            </div>            <div class="modal-body">                <p class="h6 font-weight-light text-white">Redeem for {{total()}} Bytes?</p>            </div>            <div class="modal-footer" style="border-top: 0;">                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="confirm()"><span><i class="fas fa-check"></i></span></button>                <button type="button" class="btn btn-danger" data-dismiss="modal"><span><i class="fas fa-times"></i></span></button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlankComponent', 'selector': 'app-blank'},{'name': 'EditEventComponent', 'selector': 'app-edit-event'},{'name': 'EditRewardComponent', 'selector': 'app-edit-reward'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'EventCardComponent', 'selector': 'app-event-card'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailComponent', 'selector': 'app-mail'},{'name': 'MCSubmissionComponent', 'selector': 'app-mc-submission'},{'name': 'NewEventComponent', 'selector': 'app-new-event'},{'name': 'NewRewardComponent', 'selector': 'app-new-reward'},{'name': 'PaginationButtonsComponent', 'selector': 'app-pagination-buttons'},{'name': 'PortalComponent', 'selector': 'app-main'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RewardCardComponent', 'selector': 'app-reward-card'},{'name': 'RewardCartComponent', 'selector': 'app-reward-cart'},{'name': 'RewardsComponent', 'selector': 'app-rewards'},{'name': 'StyledToastComponent', 'selector': 'app-styled-toast'}];
+    var DIRECTIVES = [{'name': 'FutureDateValidatorDirective', 'selector': '[appFutureDate]'},{'name': 'NumericValidatorDirective', 'selector': '[appNumeric]'}];
+    var ACTUAL_COMPONENT = {'name': 'RewardCartComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RewardCartComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

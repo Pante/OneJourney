@@ -1,0 +1,1473 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>one-journey documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">one-journey documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EventsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/portal/events/view/events.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-events</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./events.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./events.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#authentication">authentication</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#binding">binding</a>
+                            </li>
+                            <li>
+                                <a href="#events">events</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router">router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selected">selected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#service">service</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toaster">toaster</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#add">add</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#after">after</a>
+                            </li>
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#expand">expand</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#quit">quit</a>
+                            </li>
+                            <li>
+                                <a href="#signup">signup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, service: <a href="../injectables/EventService.html">EventService</a>, authentication: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>, loading: <a href="../injectables/LoadingService.html">LoadingService</a>, binding: <a href="../injectables/EventBindingService.html">EventBindingService</a>, toaster: ToastrService, device: <a href="../undefineds/to.html">DeviceDetectorService</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/portal/events/view/events.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/EventService.html" target="_self" >EventService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authentication</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loading</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>binding</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/EventBindingService.html" target="_self" >EventBindingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toaster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>device</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/functions.html#to" target="_self" >DeviceDetectorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="add"></a>
+                        <span class="name">
+                            <b>
+                            add
+                            </b>
+                            <a href="#add"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>add()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/portal/events/view/events.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="after"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            after
+                            </b>
+                            <a href="#after"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>after(results: Observable<any>, successMessage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, successTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, failureMessage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, failureTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/portal/events/view/events.component.ts:104</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>results</td>
+                                                        <td>
+                                                                    <code>Observable&lt;any&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>successMessage</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>successTitle</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>failureMessage</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>failureTitle</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delete"></a>
+                        <span class="name">
+                            <b>
+                            delete
+                            </b>
+                            <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>delete()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/portal/events/view/events.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <span class="name">
+                            <b>
+                            edit
+                            </b>
+                            <a href="#edit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>edit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/portal/events/view/events.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expand"></a>
+                        <span class="name">
+                            <b>
+                            expand
+                            </b>
+                            <a href="#expand"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>expand(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/portal/events/view/events.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/portal/events/view/events.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="quit"></a>
+                        <span class="name">
+                            <b>
+                            quit
+                            </b>
+                            <a href="#quit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>quit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/portal/events/view/events.component.ts:94</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signup"></a>
+                        <span class="name">
+                            <b>
+                            signup
+                            </b>
+                            <a href="#signup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>signup()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/portal/events/view/events.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="authentication"></a>
+                        <span class="name">
+                            <b>
+                            authentication</b>
+                            <a href="#authentication"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/portal/events/view/events.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="binding"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            binding</b>
+                            <a href="#binding"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/EventBindingService.html" target="_self" >EventBindingService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/portal/events/view/events.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="events"></a>
+                        <span class="name">
+                            <b>
+                            events</b>
+                            <a href="#events"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Paginated.html" target="_self" >Paginated&lt;Event&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/portal/events/view/events.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/portal/events/view/events.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            router</b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/portal/events/view/events.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            selected</b>
+                            <a href="#selected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/portal/events/view/events.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="service"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            service</b>
+                            <a href="#service"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/EventService.html" target="_self" >EventService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/portal/events/view/events.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toaster"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            toaster</b>
+                            <a href="#toaster"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ToastrService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/portal/events/view/events.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { DeviceDetectorService } from &#x27;ngx-device-detector&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { tap } from &#x27;rxjs/operators&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+
+import { AuthenticationService } from &#x27;src/app/authentication/authentication.service&#x27;;
+import { EventService } from &#x27;../event.service&#x27;;
+import { EventBindingService } from &#x27;../event-binding.service&#x27;;
+import { Event } from &#x27;../event&#x27;;
+import { LoadingService } from &#x27;src/app/shared/loading/loading.service&#x27;;
+import { Paginated } from &#x27;../../../pagination/paginated&#x27;;
+import { Role } from &#x27;src/app/authentication/identity/identity&#x27;;
+
+
+@Component({
+    selector: &#x27;app-events&#x27;,
+    templateUrl: &#x27;./events.component.html&#x27;,
+    styleUrls: [&#x27;./events.component.css&#x27;]
+})
+export class EventsComponent implements OnInit {
+    
+    private router: Router;
+    private service: EventService;
+    private loading: LoadingService;
+    private binding: EventBindingService;
+    private toaster: ToastrService;
+    
+    authentication: AuthenticationService;
+    events: Paginated&lt;Event&gt;;
+    selected?: Event;
+    
+    
+    constructor(router: Router, service: EventService, authentication: AuthenticationService, loading: LoadingService, binding: EventBindingService, toaster: ToastrService, device: DeviceDetectorService, title: Title) {
+        this.router &#x3D; router;
+        this.service &#x3D; service;
+        this.authentication &#x3D; authentication;
+        this.loading &#x3D; loading;
+        this.binding &#x3D; binding;
+        this.toaster &#x3D; toaster;
+        this.events &#x3D; Paginated.of&lt;Event&gt;(device);
+        title.setTitle(&#x27;OneJourney - Events&#x27;);
+    }
+
+
+    ngOnInit(): void {
+        this.service.get().subscribe(
+            events &#x3D;&gt; {
+                const insertions &#x3D; this.authentication.identity().role &#x3D;&#x3D;&#x3D; Role.STAFF ? 1 : 0;
+                this.events.load(events, 1, insertions); // loads &#x27;add card&#x27;
+            },
+            error &#x3D;&gt; this.toaster.error(&#x27;Could not get events. Please try again later&#x27;, &#x27;Failed to Get Events&#x27;)
+        );
+    }
+    
+    
+    expand(event: Event): void {
+        this.selected &#x3D; event;
+    }
+    
+    
+    add() {
+        this.router.navigate([&#x27;portal/events/new&#x27;]);
+    }
+    
+    
+    edit(): void {
+        this.binding.push(this.selected);
+        this.router.navigate([&#x27;/portal/events/edit&#x27;]);
+    }
+    
+    
+    delete(): void {
+        this.loading.render(true, &#x27;Deleting Event&#x27;);
+        this.after(this.service.delete(this.selected.id), 
+                   &#x60;You have deleted &quot;${this.selected.title}&quot;.&#x60;, &#x27;Successfully Deleted Event&#x27;,
+                   &#x60;$&quot;{this.selected.title}&quot; does not exist or could not be deleted. Please try again.&#x60;, &#x27;Failed to Delete Event&#x27;
+                  );
+    }
+    
+    
+    signup(): void {
+        this.loading.render(true, &#x27;Signing you up!&#x27;);
+        this.after(this.service.signup(this.selected), 
+                   &#x60;You have signed up for &quot;${this.selected.title}&quot;&#x60;, &#x27;Sucessful Sign up&#x27;,
+                   &#x60;&quot;${this.selected.title}&quot; does not exist or you have already signed up. Please try again.&#x60;, &#x27;Failed to Sign Up&#x27;
+                  );
+    }
+    
+    
+    quit(): void {
+        this.loading.render(true, &#x60;Quiting &quot;${this.selected.title}&quot;&#x60;);
+        this.after(this.service.quit(this.selected),
+                    &#x60;You have quit &quot;${this.selected.title}&quot;&#x60;, &#x27;Successfully Quitted Event&#x27;,
+                    &#x60;&quot;${this.selected.title}&quot; does not exist or you have already quit. Please try again&#x60;, &#x27;Failed to Quit Event&#x27;
+                  );
+    }
+    
+    
+    // Finish loading &amp; display success/error message
+    private after(results: Observable&lt;any&gt;, successMessage: string, successTitle: string, failureMessage: string, failureTitle: string): void {
+        results.subscribe(
+            success &#x3D;&gt; {
+                this.service.get().pipe(tap(e &#x3D;&gt; this.loading.render(false))).subscribe(fetched &#x3D;&gt; this.events.load(fetched));
+                this.toaster.success(successMessage, successTitle);
+            }, 
+            error &#x3D;&gt; {
+                this.service.get().pipe(tap(e &#x3D;&gt; this.loading.render(false))).subscribe(fetched &#x3D;&gt; this.events.load(fetched));
+                this.toaster.error(failureMessage, failureTitle);
+            }
+        );
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12 text-center&quot;&gt;
+        &lt;h1 class&#x3D;&quot;display-thick-4 text-primary&quot;&gt;Events&lt;/h1&gt;
+        &lt;p class&#x3D;&quot;lead&quot;&gt;
+            What&#x27;s trending......
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--Secondary Nested View--&gt;
+&lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-10&quot;&gt;
+        &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+            &lt;div class&#x3D;&quot;p-2&quot;&gt;
+                &lt;app-pagination-buttons [display]&#x3D;&quot;events&quot; [colour]&#x3D;&quot;&#x27;#4c495d&#x27;&quot;&gt;&lt;/app-pagination-buttons&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-10 display-lg-above&quot;&gt;
+        &lt;div class&#x3D;&quot;row justify-content-around&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;authentication.identity().role &#x3D;&#x3D; &#x27;staffs&#x27; &amp;&amp; events.page &#x3D;&#x3D;&#x3D; 1&quot; class&#x3D;&quot;p-1 outline&quot;&gt;
+                &lt;div (click)&#x3D;&quot;add()&quot; class&#x3D;&quot;card outline-border overlay dark shadows&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+                    &lt;img src&#x3D;&quot;../../../assets/images/Add-page-Rewards.jpg&quot; alt&#x3D;&#x27;Event Image&#x27; style&#x3D;&quot;width:100%; height:100%&quot;&gt;
+                    &lt;div class&#x3D;&quot;front-float text-center&quot;&gt;
+                        &lt;button class&#x3D;&quot;btn btn-primary&quot; routerLink&#x3D;&quot;/portal/events/new&quot; style&#x3D;&quot;border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;&quot;&gt;
+                            &lt;span&gt;&lt;i class&#x3D;&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-body&quot; style&#x3D;&quot;padding:0;&quot;&gt;
+                        &lt;img src&#x3D;&quot;../../../assets/images/Add-page.jpg&quot; alt&#x3D;&#x27;Event Image&#x27; style&#x3D;&quot;width:100%; height:100%&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;p-1 outline&quot; *ngFor&#x3D;&quot;let event of events.displayed&quot;&gt;
+                &lt;app-event-card (details)&#x3D;&quot;expand($event)&quot; [event]&#x3D;&quot;event&quot;&gt;&lt;/app-event-card&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-10 display-lg-below&quot;&gt;
+        &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;authentication.identity().role &#x3D;&#x3D; &#x27;staffs&#x27; &amp;&amp; events.page &#x3D;&#x3D;&#x3D; 1&quot; class&#x3D;&quot;p-1 outline&quot;&gt;
+                &lt;div (click)&#x3D;&quot;add()&quot; class&#x3D;&quot;card outline-border overlay dark shadows&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+                    &lt;img src&#x3D;&quot;../../../assets/images/Add-page-Rewards.jpg&quot; alt&#x3D;&#x27;Event Image&#x27; style&#x3D;&quot;width:100%; height:100%&quot;&gt;
+                    &lt;div class&#x3D;&quot;front-float text-center&quot;&gt;
+                        &lt;button class&#x3D;&quot;btn btn-primary&quot; style&#x3D;&quot;border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;&quot;&gt;
+                            &lt;span&gt;&lt;i class&#x3D;&quot;fas fa-plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-body&quot; style&#x3D;&quot;padding:0;&quot;&gt;
+                        &lt;img src&#x3D;&quot;../../../assets/images/Add-page.jpg&quot; alt&#x3D;&#x27;Event Image&#x27; style&#x3D;&quot;width:100%; height:100%&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;p-1&quot; *ngFor&#x3D;&quot;let event of events.displayed&quot;&gt;
+                &lt;app-event-card (details)&#x3D;&quot;expand($event)&quot; [event]&#x3D;&quot;event&quot;&gt;&lt;/app-event-card&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-10&quot;&gt;
+        &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+            &lt;div class&#x3D;&quot;p-2&quot;&gt;
+                &lt;app-pagination-buttons [display]&#x3D;&quot;events&quot; [colour]&#x3D;&quot;&#x27;#4c495d&#x27;&quot;&gt;&lt;/app-pagination-buttons&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;details&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;exampleModalCenterTitle&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content outline-modal outline-border&quot; style&#x3D;&quot;width:50rem; margin-left:1rem;&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title text-white font-weight-normal&quot;&gt;{{selected?.title}}&lt;/h5&gt;
+                &lt;br /&gt;
+                &lt;h6 class&#x3D;&quot;text-white font-weight-light&quot; style&#x3D;&quot;font-size:0.8rem;&quot;&gt;{{selected?.date.toLocaleDateString(&#x27;en-US&#x27;,
+                    { weekday: &#x27;long&#x27;, year: &#x27;numeric&#x27;, month: &#x27;long&#x27;, day: &#x27;numeric&#x27; })}}&lt;/h6&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                &lt;div class&#x3D;&quot;d-flex d-row flex-wrap justify-content-left align-items-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;p-1&quot;&gt;
+                        &lt;div class&#x3D;&quot;media&quot;&gt;
+                            &lt;img src&#x3D;&quot;../../../assets/images/profile_pic.png&quot; class&#x3D;&quot;align-self-center mr-3&quot; style&#x3D;&quot;width:3rem;&quot;
+                                alt&#x3D;&quot;badges&quot;&gt;
+                            &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                &lt;h6 class&#x3D;&quot;mt-3 text-white font-weight-light&quot;&gt;{{selected?.staff}}&lt;/h6&gt;
+                                &lt;p class&#x3D;&quot;text-white&quot;&gt;Last updated: {{selected?.updated.toLocaleDateString(&#x27;en-US&#x27;,
+                                    { weekday: &#x27;long&#x27;, year: &#x27;numeric&#x27;, month: &#x27;long&#x27;, day: &#x27;numeric&#x27; })}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;p-1&quot;&gt;
+                        &lt;div class&#x3D;&quot;media&quot; style&#x3D;&quot;margin-bottom:2px; margin-left: 10px;&quot;&gt;
+                            &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                &lt;h6 class&#x3D;&quot;mt-3 text-white font-weight-light&quot;&gt;Bytes&lt;/h6&gt;
+                                &lt;p class&#x3D;&quot;text-white font-weight-light&quot;&gt;&lt;i class&#x3D;&quot;fas fa-money-bill&quot;&gt;&lt;/i&gt;
+                                    &amp;nbsp;{{selected?.points}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;p-1&quot;&gt;
+                        &lt;div class&#x3D;&quot;media&quot; style&#x3D;&quot;margin-bottom:2px; margin-left: 10px;&quot;&gt;
+                            &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                &lt;h6 class&#x3D;&quot;mt-3 text-white font-weight-light&quot;&gt;Category&lt;/h6&gt;
+                                &lt;p class&#x3D;&quot;text-white font-weight-light&quot;&gt;{{selected?.category.description}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                    &lt;img src&#x3D;{{selected?.image}} class&#x3D;&quot;rounded&quot; alt&#x3D;&quot;Event&quot; style&#x3D;&quot;width:100%; height:100%;&quot;&gt;
+                &lt;/div&gt;
+                &lt;p class&#x3D;&quot;h5 text-white&quot;&gt;&lt;/p&gt;
+                &lt;p&gt;{{selected?.description}}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot; [ngSwitch]&#x3D;&quot;selected?.enrollment&quot;&gt;
+                &lt;button *ngSwitchCase&#x3D;&quot;&#x27;unenrolled&#x27;&quot; (click)&#x3D;&quot;signup()&quot; data-dismiss&#x3D;&quot;modal&quot; data-toggle&#x3D;&quot;modal&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot;&gt;Sign Up!&lt;/button&gt;
+                &lt;button *ngSwitchCase&#x3D;&quot;&#x27;interested&#x27;&quot; (click)&#x3D;&quot;quit()&quot; data-dismiss&#x3D;&quot;modal&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot;&gt;Quit Event&lt;/button&gt;
+                &lt;button *ngSwitchCase&#x3D;&quot;&#x27;enrolled&#x27;&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple unclickable&quot;&gt;Enrolled&lt;/button&gt;
+                &lt;button *ngSwitchCase&#x3D;&quot;&#x27;rejected&#x27;&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple unclickable&quot;&gt;Rejected&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;delete()&quot; *ngIf&#x3D;&quot;authentication.identity().role &#x3D;&#x3D; &#x27;staffs&#x27;&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-trash-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;edit()&quot; *ngIf&#x3D;&quot;authentication.identity().role &#x3D;&#x3D; &#x27;staffs&#x27;&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-pen&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-purple&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;&lt;span&gt;&lt;i class&#x3D;&quot;fas fa-times-circle&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./events.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.dark:before {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.overlay {
+    position: relative;
+}
+
+.overlay:before{
+    position: absolute;
+    content:&quot; &quot;;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: none;
+    z-index:0;
+}
+
+.overlay:hover:before{
+    cursor: pointer;
+    display: block;
+}
+
+.outline {
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.9;
+}
+
+.events-custom-pad-full {
+    /*background-color: #564f6f;*/
+    background-color: #4c495d;
+    height: 120px;
+}
+
+.front-float {
+    z-index: 1000;
+}
+
+.outline-border {
+    border: 3px solid #802BB1;
+    margin-bottom: 5%;
+    opacity: 0.9;
+}
+
+.btn-outline-purple {
+    color: #a653d5;
+    border-color: #a653d5;
+}
+
+.btn-outline-purple:hover {
+    color: #ffffff;
+    border-color: #a653d5;
+    background-color: #a653d5;
+}
+
+.outline-modal {
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.9;
+    background-color: #2d283e;
+}
+
+.outline-pagination {
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,#4c495d 20%,#4c495d 20%); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.8;
+}
+
+
+.shadows {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+hr {
+    background-color: #ffffff;
+}
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 824px) {
+    .display-lg-above {
+        display: none;
+    }
+}
+
+@media (min-width: 823px) {
+    .display-lg-below {
+        display: none;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">    <div class="col-12 text-center">        <h1 class="display-thick-4 text-primary">Events</h1>        <p class="lead">            What\'s trending......        </p>    </div></div><!--Secondary Nested View--><div class="row">    <div class="col-1"></div>    <div class="col-10">        <div class="d-flex justify-content-center">            <div class="p-2">                <app-pagination-buttons [display]="events" [colour]="\'#4c495d\'"></app-pagination-buttons>            </div>        </div>    </div>    <div class="col-1"></div></div><div class="row">    <div class="col-1"></div>    <div class="col-10 display-lg-above">        <div class="row justify-content-around">            <div *ngIf="authentication.identity().role == \'staffs\' && events.page === 1" class="p-1 outline">                <div (click)="add()" class="card outline-border overlay dark shadows" style="width: 18rem;">                    <img src="../../../assets/images/Add-page-Rewards.jpg" alt=\'Event Image\' style="width:100%; height:100%">                    <div class="front-float text-center">                        <button class="btn btn-primary" routerLink="/portal/events/new" style="border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;">                            <span><i class="fas fa-plus"></i></span>                        </button>                    </div>                    <div class="card-body" style="padding:0;">                        <img src="../../../assets/images/Add-page.jpg" alt=\'Event Image\' style="width:100%; height:100%">                    </div>                </div>            </div>            <div class="p-1 outline" *ngFor="let event of events.displayed">                <app-event-card (details)="expand($event)" [event]="event"></app-event-card>            </div>        </div>    </div>    <div class="col-10 display-lg-below">        <div class="row justify-content-center">            <div *ngIf="authentication.identity().role == \'staffs\' && events.page === 1" class="p-1 outline">                <div (click)="add()" class="card outline-border overlay dark shadows" style="width: 18rem;">                    <img src="../../../assets/images/Add-page-Rewards.jpg" alt=\'Event Image\' style="width:100%; height:100%">                    <div class="front-float text-center">                        <button class="btn btn-primary" style="border-radius: 200%; height:100px; width:100px;position: absolute;bottom:100px;left:90px;">                            <span><i class="fas fa-plus"></i></span>                        </button>                    </div>                    <div class="card-body" style="padding:0;">                        <img src="../../../assets/images/Add-page.jpg" alt=\'Event Image\' style="width:100%; height:100%">                    </div>                </div>            </div>            <div class="p-1" *ngFor="let event of events.displayed">                <app-event-card (details)="expand($event)" [event]="event"></app-event-card>            </div>        </div>    </div>    <div class="col-1"></div></div><div class="row">    <div class="col-1"></div>    <div class="col-10">        <div class="d-flex justify-content-center">            <div class="p-2">                <app-pagination-buttons [display]="events" [colour]="\'#4c495d\'"></app-pagination-buttons>            </div>        </div>    </div>    <div class="col-1"></div></div><!-- Modal --><div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">    <div class="modal-dialog modal-dialog-centered" role="document">        <div class="modal-content outline-modal outline-border" style="width:50rem; margin-left:1rem;">            <div class="modal-header">                <h5 class="modal-title text-white font-weight-normal">{{selected?.title}}</h5>                <br />                <h6 class="text-white font-weight-light" style="font-size:0.8rem;">{{selected?.date.toLocaleDateString(\'en-US\',                    { weekday: \'long\', year: \'numeric\', month: \'long\', day: \'numeric\' })}}</h6>            </div>            <div class="modal-body">                <div class="d-flex d-row flex-wrap justify-content-left align-items-center">                    <div class="p-1">                        <div class="media">                            <img src="../../../assets/images/profile_pic.png" class="align-self-center mr-3" style="width:3rem;"                                alt="badges">                            <div class="media-body">                                <h6 class="mt-3 text-white font-weight-light">{{selected?.staff}}</h6>                                <p class="text-white">Last updated: {{selected?.updated.toLocaleDateString(\'en-US\',                                    { weekday: \'long\', year: \'numeric\', month: \'long\', day: \'numeric\' })}}</p>                            </div>                        </div>                    </div>                    <div class="p-1">                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">                            <div class="media-body">                                <h6 class="mt-3 text-white font-weight-light">Bytes</h6>                                <p class="text-white font-weight-light"><i class="fas fa-money-bill"></i>                                    &nbsp;{{selected?.points}}</p>                            </div>                        </div>                    </div>                    <div class="p-1">                        <div class="media" style="margin-bottom:2px; margin-left: 10px;">                            <div class="media-body">                                <h6 class="mt-3 text-white font-weight-light">Category</h6>                                <p class="text-white font-weight-light">{{selected?.category.description}}</p>                            </div>                        </div>                    </div>                </div>                <div class="text-center">                    <img src={{selected?.image}} class="rounded" alt="Event" style="width:100%; height:100%;">                </div>                <p class="h5 text-white"></p>                <p>{{selected?.description}}</p>            </div>            <div class="modal-footer" [ngSwitch]="selected?.enrollment">                <button *ngSwitchCase="\'unenrolled\'" (click)="signup()" data-dismiss="modal" data-toggle="modal" type="button" class="btn btn-outline-purple">Sign Up!</button>                <button *ngSwitchCase="\'interested\'" (click)="quit()" data-dismiss="modal" type="button" class="btn btn-outline-purple">Quit Event</button>                <button *ngSwitchCase="\'enrolled\'" type="button" class="btn btn-outline-purple unclickable">Enrolled</button>                <button *ngSwitchCase="\'rejected\'" type="button" class="btn btn-outline-purple unclickable">Rejected</button>                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="delete()" *ngIf="authentication.identity().role == \'staffs\'"><span><i class="fas fa-trash-alt"></i></span></button>                <button type="button" class="btn btn-outline-purple" data-dismiss="modal" (click)="edit()" *ngIf="authentication.identity().role == \'staffs\'"><span><i class="fas fa-pen"></i></span></button>                <button type="button" class="btn btn-outline-purple" data-dismiss="modal"><span><i class="fas fa-times-circle"></i></span></button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlankComponent', 'selector': 'app-blank'},{'name': 'EditEventComponent', 'selector': 'app-edit-event'},{'name': 'EditRewardComponent', 'selector': 'app-edit-reward'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'EventCardComponent', 'selector': 'app-event-card'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailComponent', 'selector': 'app-mail'},{'name': 'MCSubmissionComponent', 'selector': 'app-mc-submission'},{'name': 'NewEventComponent', 'selector': 'app-new-event'},{'name': 'NewRewardComponent', 'selector': 'app-new-reward'},{'name': 'PaginationButtonsComponent', 'selector': 'app-pagination-buttons'},{'name': 'PortalComponent', 'selector': 'app-main'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RewardCardComponent', 'selector': 'app-reward-card'},{'name': 'RewardCartComponent', 'selector': 'app-reward-cart'},{'name': 'RewardsComponent', 'selector': 'app-rewards'},{'name': 'StyledToastComponent', 'selector': 'app-styled-toast'}];
+    var DIRECTIVES = [{'name': 'FutureDateValidatorDirective', 'selector': '[appFutureDate]'},{'name': 'NumericValidatorDirective', 'selector': '[appNumeric]'}];
+    var ACTUAL_COMPONENT = {'name': 'EventsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EventsComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

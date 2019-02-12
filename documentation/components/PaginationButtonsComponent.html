@@ -1,0 +1,391 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>one-journey documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">one-journey documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PaginationButtonsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pagination/pagination-buttons.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-pagination-buttons</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./pagination-buttons.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./pagination-buttons.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#colour">colour</a>
+                            </li>
+                            <li>
+                                <a href="#display">display</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colour"></a>
+                        <b>colour</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pagination/pagination-buttons.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="display"></a>
+                        <b>display</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code><a href="../classes/Paginated.html" target="_self" >Paginated&lt;any&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pagination/pagination-buttons.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+
+import { Paginated } from &#x27;./paginated&#x27;;
+
+
+@Component({
+    selector: &#x27;app-pagination-buttons&#x27;,
+    templateUrl: &#x27;./pagination-buttons.component.html&#x27;,
+    styleUrls: [&#x27;./pagination-buttons.component.css&#x27;]
+})
+export class PaginationButtonsComponent {
+    
+    @Input() display: Paginated&lt;any&gt;;
+    @Input() colour: string;
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;pagination&quot;&gt;
+    &lt;span *ngIf&#x3D;&quot;display.page &gt; 1; else disable_first&quot;&gt;
+        &lt;a (click)&#x3D;&quot;display.first()&quot;&gt;&amp;laquo;&amp;laquo;&lt;/a&gt;
+    &lt;/span&gt;
+    &lt;ng-template #disable_first&gt;
+        &lt;a class&#x3D;&quot;disabled&quot;&gt;&amp;laquo;&amp;laquo;&lt;/a&gt;
+    &lt;/ng-template&gt;
+
+    
+    &lt;span *ngIf&#x3D;&quot;display.hasBack(); else disable_back&quot;&gt;
+        &lt;a (click)&#x3D;&quot;display.back()&quot;&gt;&amp;laquo;&lt;/a&gt;
+    &lt;/span&gt;
+    &lt;ng-template #disable_back&gt;
+        &lt;a class&#x3D;&quot;disabled&quot;&gt;&amp;laquo;&lt;/a&gt;
+    &lt;/ng-template&gt;
+
+    
+    &lt;span *ngFor&#x3D;&quot;let i of display.pages()&quot;&gt;
+        &lt;span *ngIf&#x3D;&quot;i &#x3D;&#x3D;&#x3D; display.page; else page&quot;&gt;
+            &lt;a class&#x3D;&quot;active&quot; [style.backgroundColor]&#x3D;&quot;colour&quot;&gt;{{i}}&lt;/a&gt;
+        &lt;/span&gt;
+        &lt;ng-template #page&gt;
+            &lt;a (click)&#x3D;&quot;display.set(i)&quot;&gt;{{i}}&lt;/a&gt;
+        &lt;/ng-template&gt;
+    &lt;/span&gt;
+
+    
+    &lt;span *ngIf&#x3D;&quot;display.hasNext(); else disable_next&quot;&gt;
+        &lt;a (click)&#x3D;&quot;display.next()&quot;&gt;&amp;raquo;&lt;/a&gt;
+    &lt;/span&gt;
+    &lt;ng-template #disable_next&gt;
+        &lt;a class&#x3D;&quot;disabled&quot;&gt;&amp;raquo;&lt;/a&gt;
+    &lt;/ng-template&gt;
+
+    
+    &lt;span *ngIf&#x3D;&quot;display.page &lt; display.end; else disable_last&quot;&gt;
+        &lt;a (click)&#x3D;&quot;display.last()&quot;&gt;&amp;raquo;&amp;raquo;&lt;/a&gt;
+    &lt;/span&gt;
+    &lt;ng-template #disable_last&gt;
+        &lt;a class&#x3D;&quot;disabled&quot;&gt;&amp;raquo;&amp;raquo;&lt;/a&gt;
+    &lt;/ng-template&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./pagination-buttons.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    cursor: pointer;
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active):not(.disabled) {
+    background-color: #D1D7E0;
+    border-radius: 5px;
+}
+
+.pagination a.disabled {
+    color: gray;
+    cursor: default
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="pagination">    <span *ngIf="display.page > 1; else disable_first">        <a (click)="display.first()">&laquo;&laquo;</a>    </span>    <ng-template #disable_first>        <a class="disabled">&laquo;&laquo;</a>    </ng-template>        <span *ngIf="display.hasBack(); else disable_back">        <a (click)="display.back()">&laquo;</a>    </span>    <ng-template #disable_back>        <a class="disabled">&laquo;</a>    </ng-template>        <span *ngFor="let i of display.pages()">        <span *ngIf="i === display.page; else page">            <a class="active" [style.backgroundColor]="colour">{{i}}</a>        </span>        <ng-template #page>            <a (click)="display.set(i)">{{i}}</a>        </ng-template>    </span>        <span *ngIf="display.hasNext(); else disable_next">        <a (click)="display.next()">&raquo;</a>    </span>    <ng-template #disable_next>        <a class="disabled">&raquo;</a>    </ng-template>        <span *ngIf="display.page < display.end; else disable_last">        <a (click)="display.last()">&raquo;&raquo;</a>    </span>    <ng-template #disable_last>        <a class="disabled">&raquo;&raquo;</a>    </ng-template></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlankComponent', 'selector': 'app-blank'},{'name': 'EditEventComponent', 'selector': 'app-edit-event'},{'name': 'EditRewardComponent', 'selector': 'app-edit-reward'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'EventCardComponent', 'selector': 'app-event-card'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailComponent', 'selector': 'app-mail'},{'name': 'MCSubmissionComponent', 'selector': 'app-mc-submission'},{'name': 'NewEventComponent', 'selector': 'app-new-event'},{'name': 'NewRewardComponent', 'selector': 'app-new-reward'},{'name': 'PaginationButtonsComponent', 'selector': 'app-pagination-buttons'},{'name': 'PortalComponent', 'selector': 'app-main'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RewardCardComponent', 'selector': 'app-reward-card'},{'name': 'RewardCartComponent', 'selector': 'app-reward-cart'},{'name': 'RewardsComponent', 'selector': 'app-rewards'},{'name': 'StyledToastComponent', 'selector': 'app-styled-toast'}];
+    var DIRECTIVES = [{'name': 'FutureDateValidatorDirective', 'selector': '[appFutureDate]'},{'name': 'NumericValidatorDirective', 'selector': '[appNumeric]'}];
+    var ACTUAL_COMPONENT = {'name': 'PaginationButtonsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PaginationButtonsComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

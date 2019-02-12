@@ -1,0 +1,462 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>one-journey documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">one-journey documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>StyledToastComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/toast/styled-toast.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The default toast class is overriden to &#39;&#39; in app.module to avoid a naming
+conflict between the toasts in Bootstrap 4.2.X &amp; ngx-toastr 9.1.1 which causes
+the opacity to be set to 0.</p>
+<p>See <a href="https://github.com/scttcper/ngx-toastr/issues/602">https://github.com/scttcper/ngx-toastr/issues/602</a></p>
+<p>We don&#39;t want to apply the default &#39;.toast&#39; class to <app-styled-toast/> itself
+as we cannot override the CSS style inside this component.</p>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+            <code>Toast</code>
+    </p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-styled-toast</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./styled-toast.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./styled-toast.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: ToastrService, toastPackage: ToastPackage)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/toast/styled-toast.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastPackage</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastPackage</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { animate, keyframes, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+
+import { Toast, ToastrService, ToastPackage } from &#x27;ngx-toastr&#x27;;
+
+
+/**
+ * The default toast class is overriden to &#x27;&#x27; in app.module to avoid a naming
+ * conflict between the toasts in Bootstrap 4.2.X &amp; ngx-toastr 9.1.1 which causes
+ * the opacity to be set to 0.
+ * 
+ * See https://github.com/scttcper/ngx-toastr/issues/602
+ * 
+ * We don&#x27;t want to apply the default &#x27;.toast&#x27; class to &lt;app-styled-toast/&gt; itself
+ * as we cannot override the CSS style inside this component.
+ */
+@Component({
+    selector: &#x27;app-styled-toast&#x27;,
+    templateUrl: &#x27;./styled-toast.component.html&#x27;,
+    styleUrls: [&#x27;./styled-toast.component.css&#x27;],
+    animations: [
+        trigger(&#x27;flyInOut&#x27;, [
+            state(&#x27;inactive&#x27;, style({
+                display: &#x27;none&#x27;,
+                opacity: 0
+            })),
+            transition(&#x27;inactive &#x3D;&gt; active&#x27;, animate(&#x27;300ms ease-out&#x27;, keyframes([
+                style({
+                    opacity: 0,
+                    bottom: &#x27;-15px&#x27;,
+                    &#x27;max-height&#x27;: 0,
+                    &#x27;max-width&#x27;: 0,
+                    &#x27;margin-top&#x27;: 0,
+                }),
+                style({
+                    opacity: 0.8,
+                    bottom: &#x27;-3px&#x27;,
+                }),
+                style({
+                    opacity: 1,
+                    bottom: &#x27;0&#x27;,
+                    &#x27;max-height&#x27;: &#x27;200px&#x27;,
+                    &#x27;margin-top&#x27;: &#x27;12px&#x27;,
+                    &#x27;max-width&#x27;: &#x27;400px&#x27;,
+                }),
+            ]))),
+            state(&#x27;active&#x27;, style({
+                bottom: &#x27;0&#x27;,
+                &#x27;max-height&#x27;: &#x27;200px&#x27;,
+                &#x27;margin-top&#x27;: &#x27;12px&#x27;,
+                &#x27;max-width&#x27;: &#x27;400px&#x27;,
+            })),
+            transition(&#x27;active &#x3D;&gt; removed&#x27;, animate(&#x27;300ms ease-out&#x27;, keyframes([
+                style({
+                    opacity: 0.6,
+                    bottom: 0,
+                }),
+                style({
+                    opacity: 0.1,
+                    bottom: &#x27;-3px&#x27;,
+                }),
+                style({
+                    opacity: 0,
+                    bottom: &#x27;-15px&#x27;,
+                }),
+            ]))),
+        ]),
+    ],
+})
+export class StyledToastComponent extends Toast { 
+    
+    constructor(service: ToastrService, toastPackage: ToastPackage) {
+        super(service, toastPackage);
+    }
+
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;styled-toast outline overlay dark shadows&quot;&gt;
+    &lt;div class&#x3D;&quot;styled-toast-header bg-dark text-white&quot;&gt;
+        &lt;!--This is for you matt.....--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;text-white&quot; *ngIf&#x3D;&#x27;condition &#x3D; success&#x27;&gt;
+            &lt;span class&#x3D;&quot;text-white&quot;&gt;&lt;i class&#x3D;&quot;fas fa-check&quot;&gt;&lt;/i&gt;&amp;nbsp;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text-white&quot; *ngIf&#x3D;&#x27;condition &#x3D; warning&#x27;&gt;
+            &lt;span class&#x3D;&quot;text-white&quot;&gt;&lt;i class&#x3D;&quot;fas fa-exclamation&quot;&gt;&lt;/i&gt;&amp;nbsp;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text-white&quot; *ngIf&#x3D;&#x27;condition &#x3D; danger&#x27;&gt;
+            &lt;span class&#x3D;&quot;text-white&quot;&gt;&lt;i class&#x3D;&quot;fas fa-times&quot;&gt;&lt;/i&gt;&amp;nbsp;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text-white&quot; *ngIf&#x3D;&#x27;condition &#x3D; info&#x27;&gt;
+            &lt;span class&#x3D;&quot;text-white&quot;&gt;&lt;i class&#x3D;&quot;fas fa-info&quot;&gt;&lt;/i&gt;&amp;nbsp;&lt;/span&gt;
+        &lt;/div&gt;--&gt;
+        &lt;span class&#x3D;&quot;text-white&quot;&gt;&lt;i class&#x3D;&quot;fas fa-exclamation&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+        &lt;strong class&#x3D;&quot;mr-auto text-light&quot;&gt; {{title}}&lt;/strong&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;ml-2 mb-1 close text-white&quot;&gt;
+            &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;styled-toast-body text-light&quot;&gt;{{message}}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./styled-toast.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.events-custom {
+    /*background-color: #564f6f;*/
+    background-color: #4c495d;
+}
+
+
+.styled-toast {
+    max-width: 350px;
+    overflow: hidden;
+    font-size: 0.875rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+    opacity: 0.8;
+}
+
+.styled-toast:hover {
+    cursor: pointer;
+}
+
+.styled-toast-header {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    color: #6c757d;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-clip: padding-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.styled-toast-body {
+    padding: 0.75rem;
+}
+
+
+.outline {
+    border: 2px solid #802BB1;
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom,#3d393b 20%,#3d393b 20%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal;
+    opacity: 0.8;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="styled-toast outline overlay dark shadows">    <div class="styled-toast-header bg-dark text-white">        <!--This is for you matt.....-->        <!--<div class="text-white" *ngIf=\'condition = success\'>            <span class="text-white"><i class="fas fa-check"></i>&nbsp;</span>        </div>        <div class="text-white" *ngIf=\'condition = warning\'>            <span class="text-white"><i class="fas fa-exclamation"></i>&nbsp;</span>        </div>        <div class="text-white" *ngIf=\'condition = danger\'>            <span class="text-white"><i class="fas fa-times"></i>&nbsp;</span>        </div>        <div class="text-white" *ngIf=\'condition = info\'>            <span class="text-white"><i class="fas fa-info"></i>&nbsp;</span>        </div>-->        <span class="text-white"><i class="fas fa-exclamation"></i>&nbsp;&nbsp;</span>        <strong class="mr-auto text-light"> {{title}}</strong>        <button type="button" class="ml-2 mb-1 close text-white">            <span aria-hidden="true">&times;</span>        </button>    </div>    <div class="styled-toast-body text-light">{{message}}</div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlankComponent', 'selector': 'app-blank'},{'name': 'EditEventComponent', 'selector': 'app-edit-event'},{'name': 'EditRewardComponent', 'selector': 'app-edit-reward'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'EventCardComponent', 'selector': 'app-event-card'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LeaderboardComponent', 'selector': 'app-leaderboard'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailComponent', 'selector': 'app-mail'},{'name': 'MCSubmissionComponent', 'selector': 'app-mc-submission'},{'name': 'NewEventComponent', 'selector': 'app-new-event'},{'name': 'NewRewardComponent', 'selector': 'app-new-reward'},{'name': 'PaginationButtonsComponent', 'selector': 'app-pagination-buttons'},{'name': 'PortalComponent', 'selector': 'app-main'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RewardCardComponent', 'selector': 'app-reward-card'},{'name': 'RewardCartComponent', 'selector': 'app-reward-cart'},{'name': 'RewardsComponent', 'selector': 'app-rewards'},{'name': 'StyledToastComponent', 'selector': 'app-styled-toast'}];
+    var DIRECTIVES = [{'name': 'FutureDateValidatorDirective', 'selector': '[appFutureDate]'},{'name': 'NumericValidatorDirective', 'selector': '[appNumeric]'}];
+    var ACTUAL_COMPONENT = {'name': 'StyledToastComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StyledToastComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
