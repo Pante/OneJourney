@@ -4,6 +4,10 @@ import { NG_VALIDATORS, Validator, AbstractControl, ValidatorFn, ValidationError
 
 export const pattern = /^[0-9]*$/;
 
+/**
+ * Validator for number
+ * Checks for number in string field
+ */
 export function numericValidator(): ValidatorFn {
     return control => {
         const value = control.value;

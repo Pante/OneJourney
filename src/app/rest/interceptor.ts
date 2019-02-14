@@ -12,6 +12,9 @@ export class RESTInterceptor implements HttpInterceptor {
     private urls: [string, any][];
     
     
+    /**
+     * List of RESTful API & corresponding mock data
+     */
     constructor() {
         this.urls = [
             [`${environment.api}/activities`, require('./mock/events.json')],
@@ -23,6 +26,16 @@ export class RESTInterceptor implements HttpInterceptor {
     }
     
     
+    /**
+     * Intercepts url with own mock data
+     * 
+     * @param request - HTTP Request
+     * @param next - Http handler
+     * 
+     * Run through the list of url
+     * Check whether user is requesting from these url
+     * Show them mock data
+     */
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         for (const entry of this.urls) {
             if (request.url.includes(entry[0])) {

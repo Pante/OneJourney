@@ -21,6 +21,9 @@ export abstract class RESTListService<T> {
     }
     
     
+    /**
+     * Get data from RESTful API
+     */
     get(): Observable<T[]> {
         return this.http.get(`${environment.api}/${this.url}`).pipe(
             map((response: any) => (response['data'] as any[]).map(data => this.deserialize(data)))

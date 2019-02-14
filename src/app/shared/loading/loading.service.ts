@@ -24,6 +24,14 @@ export class LoadingService {
     }
     
     
+    /**
+     * 
+     * @param enable - load page
+     * @param title - title of action
+     * @param description - description of action
+     * 
+     * Render loading
+     */
     render(enable: boolean, title: string = 'Loading', description: string = 'Please wait...'): void {
         this.emitter.next({
             enabled: enable,

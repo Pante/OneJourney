@@ -4,6 +4,10 @@ import { NG_VALIDATORS, Validator, AbstractControl, ValidatorFn, ValidationError
 import * as moment from 'moment';
 
 
+/**
+ * Validator for date
+ * Checks date is before current date
+ */
 export function futureDateValidator(): ValidatorFn {
     return control => {
         const value = control.value;
