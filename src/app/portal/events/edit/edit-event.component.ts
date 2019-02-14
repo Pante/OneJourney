@@ -31,10 +31,16 @@ export class EditEventComponent extends EventFormComponent implements OnInit, On
     }
     
     
+    /**
+     * Get user info
+     * Get the event clicked 
+     * If event is not loaded, show error and return user back to view event
+     * Else set details of events
+     */
     ngOnInit(): void {
         super.ngOnInit();
         this.subscription = this.binding.pull().subscribe(event => {
-            if (event === null) {
+            if (event === null) { 
                 this.toast.error('Something went wrong when editing your event. Please try again', 'Oops');
                 this.router.navigate(['portal/events/view']);
             }
@@ -52,7 +58,15 @@ export class EditEventComponent extends EventFormComponent implements OnInit, On
         this.subscription.unsubscribe();
     }
     
-    
+
+    /**
+     * Render loading of page when click edit button
+     * Try to POST event to RESTful API
+     * If able to POST, 
+     *  finish loading, navigate back to view event and display success message
+     * else unable to POST
+     *  finish loading and display error message
+     */
     edit(): void {
         this.loading.render(true, 'Saving Changes to Event');
         this.service.edit(this.id, this.transaction, this.file).subscribe(

@@ -65,7 +65,9 @@ export class RewardsComponent implements OnInit, OnDestroy {
         this.cart.stop();
     }
 
-    
+    /**
+     * Redirect to create reward
+     */
     add() {
         this.router.navigate(['portal/rewards/new']);
     }
@@ -74,20 +76,34 @@ export class RewardsComponent implements OnInit, OnDestroy {
         this.selected = reward;
     }
     
-    
+    /**
+     * Add reward to cart
+     * 
+     * Get the number of that reward in cart
+     * Increase the number of that reward by 1
+     * Display message 
+     */
     addToCart() {
         const amount = this.cart.items[this.selected.id];
         this.cart.items[this.selected.id] = amount ? amount + 1 : 1;
         this.toaster.info(`Added "${this.selected.description}" to your cart`, 'Added Item to Cart');
     }
     
-    
+    /**
+     * Redirect to edit reward
+     */
     edit(): void {
         this.binding.push(this.selected);
         this.router.navigate(['/portal/rewards/edit']);
     }
     
-    
+    /**
+     * Delete selected event
+     * 
+     * Render loading
+     * DELETE reward from RESTful API
+     * Display the success/error message after trying to delete reward
+     */
     delete(): void {
         this.loading.render(true, 'Deleting Reward');
         this.service.delete(this.selected.id).subscribe(

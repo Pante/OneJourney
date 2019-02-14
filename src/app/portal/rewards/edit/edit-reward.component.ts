@@ -28,6 +28,12 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit, 
     }
     
     
+    /**
+     * Get user info
+     * Get the event clicked 
+     * If event is not loaded, show error and return user back to view event
+     * Else set details of events
+     */
     ngOnInit(): void {
         this.subscription = this.binding.pull().subscribe(reward => {
             if (reward === null) {
@@ -46,6 +52,14 @@ export class EditRewardComponent extends RewardFormComponent implements OnInit, 
     }
     
     
+    /**
+     * Render loading of page when click edit button
+     * Try to POST reward to RESTful API
+     * If able to POST, 
+     *  finish loading, navigate back to view reward and display success message
+     * else unable to POST
+     *  finish loading and display error message
+     */
     edit(): void {
         this.loading.render(true, 'Saving Changes to Reward');
         this.service.edit(this.id, this.transaction, this.file).subscribe(

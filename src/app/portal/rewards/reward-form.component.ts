@@ -38,6 +38,17 @@ export class RewardFormComponent {
     }
 
 
+    /**
+     * select the event and uploading of image
+     * 
+     * @param event - the selected event
+     * 
+     * if there is no file, end process
+     * Else get file
+     * Check file is an image
+     *  if file is an image, populate data of file
+     * else show error
+     */
     select(event: any): void {
         if (!event.target.files || !event.target.files[0]) {
             return;

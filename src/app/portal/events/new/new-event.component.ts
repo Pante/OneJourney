@@ -22,6 +22,15 @@ export class NewEventComponent extends EventFormComponent {
     }
 
     
+    /**
+     * when add button is clicked
+     * Render loading 
+     * Try to CREATE event on RESTful API
+     * If able to CREATE, 
+     *  finish loading, navigate back to view event and display success message
+     * else unable to CREATE
+     *  finish loading and display error message
+     */
     create(): void {
         this.loading.render(true, 'Creating Event');
         this.service.create(this.transaction, this.file).subscribe(

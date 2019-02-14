@@ -46,11 +46,19 @@ export class EventsComponent implements OnInit {
     }
 
 
+    /**
+     * Load all the events
+     * 
+     * GET events from RESTful API
+     * check whether the user is a staff
+     * if user is staff add one more card for add button
+     * If unable to retrieve events, display error message
+     */
     ngOnInit(): void {
         this.service.get().subscribe(
             events => {
                 const insertions = this.authentication.identity().role === Role.STAFF ? 1 : 0;
-                this.events.load(events, 1, insertions);
+                this.events.load(events, 1, insertions); 
             },
             error => this.toaster.error('Could not get events. Please try again later', 'Failed to Get Events')
         );
@@ -61,18 +69,33 @@ export class EventsComponent implements OnInit {
         this.selected = event;
     }
     
-    
+
+    /**
+     * Redirect to create new event
+     */
     add() {
         this.router.navigate(['portal/events/new']);
     }
     
     
+    /**
+     * 
+     * Get the event that was selected
+     * Redirect to editting of event
+     */
     edit(): void {
         this.binding.push(this.selected);
         this.router.navigate(['/portal/events/edit']);
     }
     
     
+    /**
+     * Delete selected event
+     * 
+     * Render loading
+     * DELETE event from RESTful API
+     * Display the success/failure message after trying to delete event
+     */
     delete(): void {
         this.loading.render(true, 'Deleting Event');
         this.after(this.service.delete(this.selected.id), 
@@ -82,6 +105,13 @@ export class EventsComponent implements OnInit {
     }
     
     
+    /**
+     * Sign up for the selected event
+     * 
+     * Render loading
+     * PATCH event from RESTful API
+     * Display the success/failure message after trying to edit event
+     */
     signup(): void {
         this.loading.render(true, 'Signing you up!');
         this.after(this.service.signup(this.selected), 
@@ -90,7 +120,13 @@ export class EventsComponent implements OnInit {
                   );
     }
     
-    
+    /**
+     * Quit for the selected event
+     * 
+     * Render loading
+     * PATCH event from RESTful API
+     * Display the success/failure message after trying to edit event
+     */
     quit(): void {
         this.loading.render(true, `Quiting "${this.selected.title}"`);
         this.after(this.service.quit(this.selected),
@@ -100,6 +136,17 @@ export class EventsComponent implements OnInit {
     }
     
     
+    /**
+     * 
+     * @param results - the response body for http method
+     * @param successMessage - the message when http method is a success
+     * @param successTitle - the title when http method is a success
+     * @param failureMessage - the message when there is error for http method
+     * @param failureTitle - the title when there is error for http method
+     * 
+     * If success, load all events and display success message
+     * else if there is error, load all events and display error message
+     */
     private after(results: Observable<any>, successMessage: string, successTitle: string, failureMessage: string, failureTitle: string): void {
         results.subscribe(
             success => {

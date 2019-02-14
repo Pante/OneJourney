@@ -17,6 +17,16 @@ export class RewardCartService {
     items: { [key: number]: number };
     
     
+    /**
+     * 
+     * @param authentication - the user information
+     * @param http - http 
+     * 
+     * if user id is same as current user
+     *  cache the item
+     * else
+     *  clear cart
+     */
     constructor(authentication: AuthenticationService, http: HttpClient) {
         this.authentication = authentication;
         this.http = http;
@@ -28,7 +38,9 @@ export class RewardCartService {
         }
     }
     
-    
+    /**
+     * POST a new reward transaction
+     */
     redeem(): Observable<HttpResponse<Object>> {
         return this.http.post(`${environment.api}/reward_transactions`, Redemption.format(this.authentication.identity().id, this.items), {observe: 'response'});
     }

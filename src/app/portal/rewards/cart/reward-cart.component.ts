@@ -40,6 +40,15 @@ export class RewardCartComponent implements OnInit, OnDestroy {
     }
 
 
+    /**
+     * Cache id of user
+     * Get reward from RESTful API
+     * Check for valid and invalid rewards
+     * Delete any invalid rewards
+     * if error when getting reward, show error message
+     * Get user from RESTful API
+     * if error when getting user, show error message
+     */
     ngOnInit() {
         this.cart.start();
         this.service.get().subscribe(
@@ -79,6 +88,12 @@ export class RewardCartComponent implements OnInit, OnDestroy {
     }
     
     
+    /**
+     * Decrease the amount of the selected reward
+     * @param reward - selected reward
+     * 
+     * if less than 1, delete the reward from the card
+     */
     decrease(reward: Reward): void {
         const amount = Number(this.cart.items[reward.id]) - 1;
         if (amount <= 0) {
@@ -90,12 +105,21 @@ export class RewardCartComponent implements OnInit, OnDestroy {
         }
     }
     
+    /**
+     * 
+     * @param reward - selected reward
+     * 
+     * Increase the amount of selected reward
+     */
     increase(reward: Reward): void {
         const amount = Number(this.cart.items[reward.id]);
         this.cart.items[reward.id] = amount + 1;
     }
     
     
+    /**
+     * Calculate the total points in the cart
+     */
     total(): number {
         let cost = 0;
         for (const reward of this.rewards) {
@@ -109,6 +133,16 @@ export class RewardCartComponent implements OnInit, OnDestroy {
         
     }
     
+    /**
+     * Confirm redemption of rewards
+     * 
+     * Redeem rewards from RESTful API
+     * finish render loading
+     * if success,
+     *  clear cart, navigate back to viewing of reward and show success message
+     * else error,
+     *  show error message
+     */
     confirm(): void {
         this.cart.redeem().subscribe(
             success => {

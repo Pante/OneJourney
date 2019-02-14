@@ -20,6 +20,15 @@ export class NewRewardComponent extends RewardFormComponent {
     }
 
 
+    /**
+     * when add button is clicked
+     * Render loading 
+     * Try to CREATE reward on RESTful API
+     * If able to CREATE, 
+     *  finish loading, navigate back to view reward and display success message
+     * else unable to CREATE
+     *  finish loading and display error message
+     */
     create(): void {
         this.loading.render(true, 'Creating Reward');
         this.service.create(this.transaction, this.file).subscribe(
