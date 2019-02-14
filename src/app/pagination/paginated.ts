@@ -46,6 +46,11 @@ export class Paginated<T> {
     end: number;
     
         
+    /**
+     * 
+     * @param device - device that is used to view the page
+     * @param configuration - the configuration for the devices
+     */
     static of<T>(device: DeviceDetectorService, configuration: Devices = devices): Paginated<T> {
         if (device.isMobile()) {
             return new Paginated<T>(configuration.mobile);
@@ -68,6 +73,15 @@ export class Paginated<T> {
     }
     
     
+    /**
+     * 
+     * @param items - the list of items
+     * @param page -  number of pages
+     * @param insertions - the additional add card
+     * Set the number of item in a page and the insertion
+     * Caculate the number of item displayed per page
+     * Set the page to be viewed
+     */
     load(items: T[], page: number = this.page, insertions: number = this.insertions) {
         this.items = items;
         this.insertions = insertions;
@@ -93,6 +107,13 @@ export class Paginated<T> {
     }
     
     
+    /**
+     * 
+     * @param page - the page to be set
+     * Check whether the page set is within range of the amount of pages
+     * if within range, set to the page
+     * else set to the last page
+     */
     set(page: number): boolean {
         const valid = 1 <= page && page <= this.end;
         if (valid) {
@@ -105,7 +126,13 @@ export class Paginated<T> {
         return valid;
     }
     
-    
+    /**
+     * 
+     * @param page - the page to be set to
+     *  Calculate the last item for the current page
+     *  Display the list of items of the current page
+     *  Set page to current page
+     */
     private to(page: number): void {
         const last = (page * this.configuration.size) - this.insertions;
         
@@ -114,6 +141,11 @@ export class Paginated<T> {
     }
     
     
+    /**
+     * Calculate the maximum left and right value from the current page
+     * Get the most possible start and end value of the page
+     * return the list of page to be displayed
+     */
     pages(): number[] {
         const left = this.page - Math.floor((this.configuration.pages - 1) / 2);
         const right = this.page + Math.floor(this.configuration.pages / 2);

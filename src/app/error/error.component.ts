@@ -36,6 +36,9 @@ export class ErrorComponent implements OnInit {
     }
 
 
+    /**
+     * Emit error
+     */
     ngOnInit() {
         this.errors.errors().pipe(take(1)).subscribe(error => {
             this.title.setTitle(error.message);

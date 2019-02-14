@@ -29,7 +29,14 @@ export class ErrorService {
         });
     }
     
-    
+    /**
+     * 
+     * @param message - the error title
+     * @param details - the details of the error
+     * @param button - displaying of button
+     * @param action - action of the button
+     * Display error page
+     */
     report(message: any, details?: string, button?: string, action?: () => void): void {
         this.messages.next({ message: message, details: details, button: button, action: action });
         this.router.navigate(['/error']);
