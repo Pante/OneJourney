@@ -25,6 +25,15 @@ export class PortalComponent implements OnInit, OnDestroy {
     unread: boolean;
     
     
+    /**
+     * 
+     * @param router - router to route to pages
+     * @param authentication - authentication of user
+     * @param mail - mail service
+     * @param toaster - Toaster service
+     * 
+     * Display the unread messages using toaster
+     */
     constructor(router: Router, authentication: AuthenticationService, mail: MailService, toaster: ToastrService) {
         this.authentication = authentication;
         this.mail = mail;
@@ -44,6 +53,11 @@ export class PortalComponent implements OnInit, OnDestroy {
     }
 
 
+    /**
+     * Uses Javascript function
+     * 
+     * Collapse navigation side bar when clicking the hamburger button
+     */
     ngOnInit(): void {
         $(function () {
             $('#sidebarCollapse').on('click', function () {

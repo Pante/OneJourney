@@ -23,6 +23,10 @@ export class ProfileService {
     }
 
 
+    /**
+     * GET user from RESTful API
+     * Convert JSON data to object
+     */
     user(): Observable<User> {
         return this.http.get<Box>(`${profile(this.authentication.identity().id)}`).pipe(
             map(response => User.from(response.data))

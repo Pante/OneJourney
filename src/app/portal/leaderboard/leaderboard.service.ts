@@ -20,6 +20,10 @@ export class LeaderboardService {
     }
 
 
+    /**
+     * GET factions from RESTful API
+     * Convert JSON data to objects
+     */
     factions(): Observable<Faction[]> {
         return this.http.get<List>(`${environment.api}/factions`).pipe(
             map(response => response.data.map(data => Faction.from(data)))

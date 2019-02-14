@@ -25,13 +25,21 @@ export class MailService {
     }
     
     
+    /**
+     * Show new mail on side
+     */
     toast(mails: Observable<Mail> = this.getFlat()): void {
         mails.pipe(filter(mail => mail.status === Status.NEW), concatMap(mail => of(mail).pipe(delay(500)))).subscribe(mail =>
             this.toaster.show(mail.message, 'New Mail')
         );
     }
     
-    
+    /**
+     * Change status of mail from new to read 
+     * @param mail - id of mail
+     * 
+     * PATCH mail in RESTful API
+     */
     read(mail: number): Observable<HttpResponse<Object>> {
         return this.http.patch(`${environment.api}/mail`, { id: this.authentication.identity().id, mail: mail }, {observe: 'response'}); // Proposed API
     }
@@ -41,6 +49,10 @@ export class MailService {
         return this.get().pipe(mergeAll());
     }
     
+    /**
+     * GET mail from RESTful API
+     * Convert from JSON to readable data
+     */
     get(): Observable<Mail[]> {
         return this.http.get<any[]>(`${environment.api}/mail?id=${this.authentication.identity().id}`).pipe(
             map(response => response.map(mail => Mail.from(mail)))

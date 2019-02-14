@@ -38,6 +38,18 @@ export class MCSubmissionComponent implements OnInit {
         
     }
 
+    /**
+     * Submit file
+     * 
+     * Check whether the file is empty
+     * If not empty
+     *  render loading
+     *  try to upload file
+     *  if able to upload file, show success message
+     *  else show error message
+     * else empty
+     *  show error message
+     */
     submit() {
         if (this.file != null)  {
             this.loading.render(true, 'Submitting MC');
@@ -55,6 +67,17 @@ export class MCSubmissionComponent implements OnInit {
         }
     }
 
+    /**
+     * select the event and uploading of file
+     * 
+     * @param event - the selected file
+     * 
+     * if there is no file, end process
+     * Else get file
+     * Check file is an image
+     *  if file is an image, populate data of file
+     * else show error
+     */
     getFile(event: any) {
         if (!event.target.files || !event.target.files[0]) {
             return;

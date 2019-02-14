@@ -29,7 +29,11 @@ export class LeaderboardComponent implements OnInit, OnDestroy {
         title.setTitle('OneJourney - Leaderboard');
     }
 
-
+    /*
+    ** Get factions from RESTFUL API when rendering page
+    ** Sort faction based on highest point from desc
+    ** If there is error, print message
+    */
     ngOnInit() {
         this.subscription = this.service.factions().subscribe(
             factions => this.factions = factions.sort((a, b) => b.points - a.points),

@@ -28,6 +28,12 @@ export class MailComponent implements OnInit {
     }
 
 
+    /**
+     * GET mail from RESTful API
+     * Sort mail by date time
+     * Filter mail between unread and read
+     * IF unable to get mail, show error message
+     */
     ngOnInit() {
         this.service.get().subscribe(
             mails => {
@@ -38,7 +44,13 @@ export class MailComponent implements OnInit {
         );
     }
     
-    
+    /**
+     * Mark mail as read
+     * @param index - id of mail
+     * 
+     * Change status of mail from unread to read
+     * IF unable to PATCH to RESTful API, show error message
+     */
     mark(index: number): void {
         const mail = this.unread.splice(index, 1)[0];
         this.service.read(mail.id).subscribe(
