@@ -38,6 +38,10 @@ export class AuthenticationService {
      * we have to disable automated OIDC and manually retrieve the user's role.
      * For reference, CORS is disabled at the JWKS endpoint and thereby disables
      * the user information endpoint.
+     * 
+     * Refreshes authentication token
+     * Authenticate the user
+     * If unable to refresh or authenticate the user show error message and retry authentication
      */
     async login(): Promise<void> {
         try {
@@ -57,6 +61,17 @@ export class AuthenticationService {
     }
 
 
+    /**
+     * Check whether for the cache of name, id, role and a validate authentication token
+     * if valid
+     *  navigate to first page
+     * else not valid
+     *  try login
+     *  get user information
+     *  cache the user information
+     *  navigate to first page
+     * catch any error and display error message and retry login
+     */
     async identify(): Promise<void> {
         try {
             if ((this.current = Identity.cached()) && this.service.hasValidAccessToken()) {
@@ -77,6 +92,10 @@ export class AuthenticationService {
     }
 
 
+    /**
+     * if there is no current user info, assign the cached user info to the current
+     * else use current user info
+     */
     identity(): Identity {
         if (!this.current) {
             this.current = Identity.cached();

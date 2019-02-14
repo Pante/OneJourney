@@ -12,7 +12,12 @@ export abstract class RoleGuardService extends GuardService {
         super(authentication, router);
     }
     
-    
+    /**
+     * @param route - the info of the route
+     * @param state - the state of the router
+     * Check whether the role of user is correct and valid access token
+     * if not valid, redirect user back 
+     */
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         const authenticated = this.authentication.authenticated() && this.validate();
         if (!authenticated) {
@@ -35,6 +40,9 @@ export class StaffGuardService extends RoleGuardService {
     }
     
     
+    /**
+     * Check for the role of the user is staff
+     */
     protected validate(): boolean {
         return this.authentication.identity().role === Role.STAFF;
     }
@@ -50,6 +58,9 @@ export class StudentGuardService extends RoleGuardService {
     }
     
     
+    /**
+     * Check for the role of the user
+     */
     protected validate(): boolean {
         const role = this.authentication.identity().role;
         return role === Role.STUDENT || role === Role.STAFF;

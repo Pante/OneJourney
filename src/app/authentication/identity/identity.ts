@@ -39,6 +39,10 @@ export class Identity {
     readonly role: Role;
     
     
+    /**
+    * Check whether there is stored login name, id and role
+    * Convert the stored details from JSON only if it is not null
+    */
     static cached(): Identity {
         const stored = localStorage['identity'];
         if (stored) {
@@ -49,11 +53,14 @@ export class Identity {
         }
     }
     
+    /**
+     * Check whether there is cache
+     */
     static exists(): boolean {
         return localStorage['identity'] !== undefined;
     }
     
-            
+       
     static from(json: any): Identity {
         return new Identity(json.attributes.name, json.id, Role.from(json.type));
     }
@@ -76,10 +83,16 @@ export class Identity {
     }
     
     
+    /**
+     * Save login name, id and role of the user as cache
+     */
     store(): void {
         localStorage['identity'] = JSON.stringify(Identity.to(this));
     }  
     
+    /**
+     * Clear the cache
+     */
     clear(): void {
         localStorage.removeItem('identity');
     }

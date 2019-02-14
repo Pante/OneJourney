@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
@@ -29,6 +30,12 @@ export class LoginGuardService extends GuardService {
     }
 
 
+    /**
+     * @param route - the info of the route
+     * @param state - the state of the router
+     * Check for valid access token
+     * if valid, authenticate user
+     */
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         if (this.authentication.loggedIn()) {
             this.router.navigate(['/identity']);
