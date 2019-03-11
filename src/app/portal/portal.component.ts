@@ -30,12 +30,17 @@ export class PortalComponent implements OnInit, OnDestroy {
         this.mail = mail;
         this.toaster = toaster;
         this.subscription = router.events.pipe(filter(event => event instanceof NavigationEnd && event.urlAfterRedirects.includes('portal')))
-                                        .subscribe(e => {
-                                            const messages = this.mail.getFlat().pipe(tap(each => {if (each.status !== Status.READ) {
-                                                this.unread = true;
-                                            }}));
-                                            this.mail.toast(messages);
-                                        });
+                                        .subscribe(
+                                            success => {
+                                                const messages = this.mail.getFlat().pipe(tap(each => {if (each.status !== Status.READ) {
+                                                    this.unread = true;
+                                                }}));
+                                                this.mail.toast(messages);
+                                            },
+                                            error => {
+                                                
+                                            }
+                                        );
     }
 
 

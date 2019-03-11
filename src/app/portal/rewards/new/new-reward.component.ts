@@ -24,6 +24,7 @@ export class NewRewardComponent extends RewardFormComponent {
         this.loading.render(true, 'Creating Reward');
         this.service.create(this.transaction, this.file).subscribe(
             success => {
+                this.loading.render(false);
                 this.router.navigate(['portal/rewards/view']);
                 this.toaster.success(`You have create "${this.transaction.description}"`, `Successfully Created Reward`);
             },
